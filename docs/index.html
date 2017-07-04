@@ -55,10 +55,10 @@
             <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="index.html">Documentation</a></li>
-                    <li><a href="https://github.com/admost/AMR/tree/master/Android_Integration/sample"><i
+                    <li><a target="_blank" href="https://github.com/admost/AMR/tree/master/Android_Integration/sample"><i
                             class="fa fa-mobile-phone"></i>&nbsp;&nbsp;Sample App</a></li>
                     <li class="hero"><a
-                            href="https://github.com/admost/AMR/tree/master/Android_Integration"><i
+                            target="_blank" href="https://github.com/admost/AMR/tree/master/Android_Integration"><i
                             class="fa fa-github"></i>&nbsp;&nbsp;Github</a></li>
                 </ul>
             </div>
@@ -240,8 +240,7 @@
                                 </tr>
                                 <tr>
                                     <td><code>/app/src/proguard-rules.pro</code></td>
-                                    <td>This folder contains latest version of jQuery. jQuery is a fast, small, and
-                                        feature-rich JavaScript library.
+                                    <td>The proguard-rules.pro file is where you can add custom ProGuard rules.
                                     </td>
                                 </tr>
                                 <tr>
@@ -259,7 +258,7 @@
                 <h3 id="app-id-zone-id">App ID & Zone ID</h3>
 
                 <p>Application Id provided in Admost Mediation Dashboard.
-                    Zone Id(s) provided in <a href="http://dashboard.admost.com/">Admost Mediation Dashboard</a>.</p>
+                    Zone Id(s) provided in <a href="http://dashboard.admost.com/" target="_blank">Admost Mediation Dashboard</a>.</p>
                 <h3 id="permissions">Permissions</h3>
 
                 <p>Some of the Ad networks requires additional permissions. You have to consider this while adding those
@@ -274,7 +273,6 @@
 &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;
 &lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;/&gt;
 &lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot;/&gt;
-&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;
                 </code></pre>
 
 
@@ -883,6 +881,11 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
                         via Maven integration. For instructions to using new methodology is listed <a href="#setup">above</a>.
                     </p>
 
+                    <div class="callout callout-warning" role="alert">
+                        <p>There are no changes in <a href="#usage">usage</a>, only </a> <a href="#setup">setup</a> changed..</p>
+                    </div>
+
+
                 </section>
 
                 <section id="versions">
@@ -970,7 +973,7 @@ You may try using --multi-dex option.
                                     significant in that it represents the total number of references that can be invoked
                                     by the code within a single Dalvik Executable (DEX) bytecode file. </p>
                                 <p>You can find more information about this error in the following <a
-                                        href="https://developer.android.com/studio/build/multidex.html">link</a></p>
+                                        href="https://developer.android.com/studio/build/multidex.html" target="_blank">link</a></p>
 
                             </div>
                         </li>
