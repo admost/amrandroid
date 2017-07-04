@@ -1,12 +1,947 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>init</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <title>AMR - Android Integration</title>
+
+    <!-- Styles -->
+    <link href="assets/css/theDocs.all.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet'
+          type='text/css'>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/favicon.png">
 </head>
 
-Hello world!
-<body>
+<body data-spy="scroll" data-target=".sidebar" data-offset="200">
+
+<header class="site-header navbar-transparent">
+
+    <!-- Top navbar & branding -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+
+            <!-- Toggle buttons and brand -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="true" aria-controls="navbar">
+                    <span class="glyphicon glyphicon-option-vertical"></span>
+                </button>
+
+                <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="logo"></a>
+            </div>
+            <!-- END Toggle buttons and brand -->
+
+            <!-- Top navbar -->
+            <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="index.html">Documentation</a></li>
+                    <li><a href="page_faq.html"><i class="fa fa-mobile-phone"></i>&nbsp;&nbsp;Sample App</a></li>
+                    <li class="hero"><a
+                            href="http://themeforest.net/item/thedocs-online-documentation-template/13070884?license=regular&open_purchase_for_item_id=13070884&purchasable=source&ref=thethemeio"><i
+                            class="fa fa-github"></i>&nbsp;&nbsp;Github</a></li>
+                </ul>
+            </div>
+            <!-- END Top navbar -->
+
+        </div>
+    </nav>
+    <!-- END Top navbar & branding -->
+
+    <!-- Banner -->
+    <div class="banner auto-size" style="background-color: #5cc7b2">
+        <div class="container text-white">
+            <h1><i class="fa fa-android"></i>&nbsp; &nbsp;Implementation Guide</h1>
+            <h5>This is the easiest way to implement AMR Android SDK and ad networks to your current Android Mobile
+                App.</h5>
+        </div>
+    </div>
+    <!-- END Banner -->
+
+</header>
+
+
+<main class="container">
+    <div class="row">
+
+        <!-- Sidebar -->
+        <aside class="col-sm-3 sidebar">
+
+            <ul class="nav sidenav dropable sticky">
+                <li><a href="#overview">Overview</a></li>
+                <li>
+                    <a href="#requirements">Requirements</a>
+                    <ul>
+                        <li><a href="#android-version">Android Version</a></li>
+                        <li><a href="#ide">IDE</a></li>
+                        <li><a href="#app-id-zone-id">App ID & Zone ID</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#implementation">Implementation</a>
+                    <ul>
+                        <li><a href="#pick-adnetworks">Pick Adnetworks</a></li>
+                        <li><a href="#required-files">Required Files</a></li>
+                        <li><a href="#edit-files">Edit Files</a></li>
+                        <li><a href="#proguard">Proguard</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#usage">Usage</a>
+                    <ul>
+                        <li><a href="#init">Init</a></li>
+                        <li><a href="#banner-ads">Banner Ads</a></li>
+                        <li><a href="#native-ads">Native Ads</a></li>
+                        <li><a href="#interstitial">Interstitial Ads</a></li>
+                        <li><a href="#rewarded">Rewarded</a></li>
+                        <li><a href="#offerwalls">Offerwalls</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#release-notes">Release Notes</a></li>
+                <li><a href="#faq">FAQ</a></li>
+
+            </ul>
+
+        </aside>
+        <!-- END Sidebar -->
+
+
+        <!-- Main content -->
+        <article class="col-sm-9 main-content" role="main">
+
+            <section>
+                <h2 id="overview">Overview</h2>
+                <p>The following document detaily shows that how to implement AMR Android SDK and desired networks via
+                    gradle build setup. There are too many ad networks you may desire to add your current app.
+                    Integrating those ad networks to your application can achievable via gradle. Most of the ad networks
+                    are can be implemented by 1 line of code addition to your project's
+                    <code>app.gradle</code> file and <code>.gradle</code> file. However some of them are requires more
+                    aditions to
+                    <code>AndroidManifest.xml</code> and
+                    <code>project.gradle</code> file.</p>
+            </section>
+
+            <section>
+                <h2 id="requirements">Requirements</h2>
+                <h3 id="android-version">Android Version</h3>
+                <p> Android 2.3 (Gingerbread - API Version 9) or later.</p>
+                <h3 id="ide">IDE</h3>
+                <p>
+                    You have to use Latest Android Studio build. You can download the latest Android Studio from <a
+                        href="https://developer.android.com/studio/index.html">here. </a>
+                </p>
+                <p><code>/app/src/main/AndroidManifest.xml</code>, <code>/app/src/build.gradle</code>, <code>/app/src/proguard-rules.pro</code>
+                    and <code>/build.gradle</code> files may be required in the next parts. You can see where to find
+                    those files in project view structure.</p>
+
+                <div class="code-window">
+                    <div class="code-preview">
+                        <p>Android Studio<i> ~ Project view</i></p>
+                        <div class="file-tree">
+                            <ul>
+                                <li class="is-folder">
+                                    .gradle
+                                </li>
+                                <li class="is-folder">
+                                    .idea
+                                </li>
+                                <li class="is-folder open">
+                                    app
+                                    <ul>
+                                        <li class="is-folder">
+                                            build
+                                        </li>
+                                        <li class="is-folder open">
+                                            src
+                                            <ul>
+                                                <li class="is-folder open">
+                                                    main
+                                                    <ul>
+                                                        <li class="is-folder">java</li>
+                                                        <li class="is-folder">res</li>
+                                                        <li class="is-file"><code>AndroidManifest.xml</code></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="is-file"><code>build.gradle</code><i>app's gradle file </i>
+                                                </li>
+                                                <li class="is-file"><code>proguard-rules.pro</code></li>
+                                            </ul>
+                                        </li>
+                                        <li class="is-folder">
+                                            build
+                                        </li>
+                                        <li class="is-folder">
+                                            .gradle
+                                        </li>
+                                        <li class="is-file"><code>build.gradle</code><i>project's gradle file</i></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Folder/File</th>
+                                    <th>Purpose</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><code>/app/src/main/AndroidManifest.xml</code></td>
+                                    <td>This is your app's AndroidManifest.xml. We will just update inside of <strong>application</strong>
+                                        tags.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>/app/src/build.gradle</code></td>
+                                    <td>If you are using Proguard, we will add some lines to your Proguard file</td>
+                                </tr>
+                                <tr>
+                                    <td><code>/app/src/proguard-rules.pro</code></td>
+                                    <td>This folder contains latest version of jQuery. jQuery is a fast, small, and
+                                        feature-rich JavaScript library.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>/build.gradle</code></td>
+                                    <td>This is project's build.gradle file. We will just update inside of <strong>repositories</strong>
+                                        bracelets.
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 id="app-id-zone-id">App ID & Zone ID</h3>
+
+                <p>Application Id provided in Admost Mediation Dashboard.
+                    Zone Id(s) provided in <a href="http://dashboard.admost.com/">Admost Mediation Dashboard</a>.</p>
+
+            </section>
+
+            <section>
+                <h2 id="implementation">Implementation</h2>
+
+                <h3 id="pick-adnetworks">Pick Adnetworks</h3>
+
+                <p>Please click <code>+</code> icon to add to list and <code>-</code> to remove from list. After finish
+                    selecting ad networks, continue with Step 2 </p>
+                <div class="row" id="adnetwork-button-list">
+                </div>
+                <h3 id="required-files">Required Files</h3>
+                <p>With your selections you are going to work with following files;</p>
+                <ul id="list-of-files">
+                    <li><code>/build.gradle</code></li>
+                    <li><code>/app/src/build.gradle</code></li>
+                </ul>
+                <p>If you are using proguard you have to edit <code>/app/src/proguard-rules.pro</code> too. </p>
+
+                <h3 id="edit-files">Edit Files</h3>
+
+                <div class="row" id="file-projectgradle">
+                </div>
+                <div class="row" id="file-appgradle">
+                </div>
+                <div class="row" id="file-androidmanifest">
+                </div>
+
+                <h3 id="proguard">Proguard</h3>
+                <p>Copy & paste following code snippet in to your <code>/app/src/proguard-rules.pro</code> file</p>
+                <!--
+                <div class="row">
+                    <div class="col-md-11">Copy & paste following code snippet in to your <code>/app/src/proguard-rules.pro</code> file</div>
+                    <div class="col-md-1">
+                        <button class="btn btn-xs btn-primary" onclick="copyToClipboard('#code-proguard')"><i
+                                class="fa fa-copy"></i></if></li> Copy
+                        </button>
+                    </div>
+
+                </div>
+
+                -->
+
+
+                <pre class="pre-scrollable">
+                   <code id="code-proguard" class="language-typescript">
+# ADMOST
+-keepattributes Exceptions, InnerClasses
+-dontwarn admost.sdk.**
+-keep class admost.sdk.** { *; }
+
+# VOLLEY
+-keep class com.android.volley.** { *; }
+-keep interface com.android.volley.** { *; }
+-keep class org.apache.commons.logging.**
+
+# GOOGLE
+-keep class com.android.vending.billing.**
+-keep public class com.google.android.gms.ads.** { public *; }
+-keep public class com.google.ads.** { public *; }
+-keep class com.google.android.gms.** { *; }
+-dontwarn com.google.android.gms.**
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
+-keepnames class * implements android.os.Parcelable
+-keepclassmembers class * implements android.os.Parcelable { public static final *** CREATOR; }
+-keep @interface android.support.annotation.Keep
+-keep @android.support.annotation.Keep class *
+-keepclasseswithmembers class * { @android.support.annotation.Keep <fields>; }
+-keepclasseswithmembers class * { @android.support.annotation.Keep <methods>; }
+-keep @interface com.google.android.gms.common.annotation.KeepName
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
+-keep @interface com.google.android.gms.common.util.DynamiteApi
+-keep public @com.google.android.gms.common.util.DynamiteApi class * { public <fields>; public <methods>; }
+-keep public @com.google.android.gms.common.util.DynamiteApi class * { *; }
+-keep class com.google.android.apps.common.proguard.UsedBy*
+-keep @com.google.android.apps.common.proguard.UsedBy* class *
+-keepclassmembers class * { @com.google.android.apps.common.proguard.UsedBy* *; }
+-dontwarn android.security.NetworkSecurityPolicy
+-dontwarn android.app.Notification
+
+# MILLENNIAL & NEXAGE
+-keep class com.millennialmedia.** { *; }
+-dontwarn com.millennialmedia.**
+
+# MOBFOX
+-dontwarn com.mobfox.**
+-keep class com.mobfox.** { *; }
+
+# MOPUB
+-keepclassmembers class com.mopub.** { public *; }
+-dontnote com.mopub.**
+-dontwarn com.mopub.**
+-keep public class com.mopub.**
+-keep public class android.webkit.JavascriptInterface {}
+-keep class * extends com.mopub.mobileads.CustomEventBanner {}
+-keep class * extends com.mopub.mobileads.CustomEventInterstitial {}
+-keep class * extends com.mopub.nativeads.CustomEventNative {}
+-keep class com.mopub.mobileads.** {*;}
+
+# REVMOB
+-dontwarn com.revmob.**
+-keep class com.revmob.** { public *; }
+
+# INMOBI
+-keepattributes SourceFile,LineNumberTable
+-keep class com.inmobi.** {*;}
+-dontwarn com.inmobi.**
+-keep public class com.google.android.gms.**
+-dontwarn com.google.android.gms.**
+-dontwarn com.squareup.picasso.**
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient{public *;}
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info{public *;}
+-keep class com.squareup.picasso.** {*;}
+-dontwarn com.squareup.picasso.**
+-dontwarn com.squareup.okhttp.**
+-keep class com.moat.** {*;}
+-dontwarn com.moat.**
+-keep class com.integralads.avid.library.* {*;}
+
+# CHARTBOOST
+-dontwarn org.apache.http.**
+-dontwarn com.chartboost.sdk.impl.**
+-keep class com.chartboost.sdk.** { *; }
+-keepattributes *Annotation*
+
+# SMAATO
+-dontwarn com.smaato.**
+-keep class com.smaato.** { public *; }
+-assumenosideeffects class android.util.Log {
+    public static *** d(...);
+    public static *** v(...);
+    public static *** i(...);
+}
+-keep public class com.smaato.soma.internal.connector.OrmmaBridge { public *; }
+-keepattributes *Annotation*
+
+# ADCOLONY
+-dontwarn com.jirbo.adcolony.**
+-keep class com.jirbo.adcolony.** { *; }
+
+# VUNGLE
+-dontwarn com.vungle.**
+-keep class com.vungle.** { *; }
+-keep class javax.inject.*
+-keepattributes *Annotation*
+-keepattributes Signature
+-keep class dagger.*
+
+# AMAZON
+-dontwarn com.amazon.**
+-keep class com.amazon.** { *; }
+-dontwarn org.apache.http.**
+-keepattributes *Annotation*
+
+# FACEBOOK
+-dontwarn com.facebook.ads.**
+-dontnote com.facebook.ads.**
+-keep class com.facebook.** { *; }
+-keepattributes Signature
+
+# HEYZAP
+-keep public class com.heyzap.** { *; }
+-dontwarn com.heyzap.**
+
+# FLURRY
+-keep class com.flurry.** { *; }
+-dontwarn com.flurry.**
+-keepattributes *Annotation*,EnclosingMethod,Signature
+-keepclasseswithmembers class * { public <init>(android.content.Context, android.util.AttributeSet, int); }
+
+# IRONSOURCE
+-dontwarn com.ironsource.**
+-keep class com.ironsource.** { *; }
+
+# STARTAPP
+-keepattributes Exceptions, InnerClasses, Signature, Deprecated, SourceFile, LineNumberTable, *Annotation*, EnclosingMethod
+-dontwarn android.webkit.JavascriptInterface
+-keep class com.startapp.** { *; }
+-dontwarn com.startapp.**
+
+# AVOCARROT
+-keep class com.avocarrot.** { *; }
+-dontwarn com.avocarrot.**
+
+# APPLOVIN
+-dontwarn com.applovin.**
+-keep class com.applovin.** { *; }
+
+# LOOPME
+-dontwarn com.loopme.**
+-keep class com.loopme.** { *; }
+
+# ADFALCON
+-dontwarn com.noqoush.**
+-keep class com.noqoush.** { *; }
+
+# MEDIABRIX
+-keep class com.mediabrix.** { *; }
+-keep class com.moat.** { *; }
+-keep class mdos.** { *; }
+-dontwarn com.mediabrix.**
+-dontwarn com.moat.**
+-dontwarn mdos.**
+
+# NATIVEX
+-dontwarn com.nativex.**
+-keep class com.nativex.** { *; }
+
+# UNITY
+-dontwarn com.unity3d.**
+-keep class com.unity3d.ads.** { *; }
+
+# FLYMOB
+-dontwarn com.flymob.sdk.**
+-keep public class com.flymob.sdk.common.** { public *; }
+
+# TAPJOY
+-keep class com.tapjoy.** { *; }
+-keepattributes JavascriptInterface
+-keep class * extends java.util.ListResourceBundle { protected Object[][] getContents(); }
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
+-keepnames class * implements android.os.Parcelable { public static final ** CREATOR; }
+-keep class com.google.android.gms.ads.identifier.** { *; }
+-dontwarn com.tapjoy.internal.**
+
+# PUBNATIVE
+-keepattributes Signature
+-keep class net.pubnative.** { *; }
+-dontwarn net.pubnative.**
+-keep class com.squareup.picasso.** { *; }
+-dontwarn com.squareup.picasso.**
+
+# APPNEXT
+-keep class com.appnext.** { *; }
+-dontwarn com.appnext.**
+
+# DISPLAYIO
+-keep class io.display.sdk.** { *; }
+-dontwarn io.display.sdk.**
+
+# INLOCOMEDIA
+-keep class com.inlocomedia.** { *; }
+-dontwarn com.inlocomedia.**
+
+# TEADS
+# For WebView JavascriptInterface
+-keepattributes JavascriptInterface
+-keep public class tv.teads.sdk.adContainer.layout.webview.** { *; }
+
+# Jackson
+-dontwarn org.w3c.dom.bootstrap.DOMImplementationRegistry
+-keepnames class com.fasterxml.jackson.** { *; }
+-keep public class tv.teads.sdk.adServer.parser.json.** {
+    public protected *;
+    public void set*(***);
+    public *** get*();
+}
+-keepattributes *Annotation*,EnclosingMethod,Signature
+-keep class com.fasterxml.jackson.databind.ObjectMapper {
+    public <methods>;
+    protected <methods>;
+}
+-keep class com.fasterxml.jackson.databind.ObjectWriter {
+    public ** writeValueAsString(**);
+}
+
+# Okio
+-dontwarn okio.**
+
+# Enums
+-keepattributes InnerClasses
+-keep public enum  tv.teads.sdk.adContent.AdContent$** {
+    **[] $VALUES;
+    public *;
+}
+-keep public enum  tv.teads.sdk.publisher.TeadsLog$** {
+    **[] $VALUES;
+    public *;
+}
+
+# Google Play Services (used by reflection)
+-keep public class com.google.android.gms.ads.identifier.AdvertisingIdClient {
+    **[] $VALUES;
+    public *;
+}
+
+-keep public class com.google.android.gms.ads.identifier.AdvertisingIdClient$* {
+   *;
+}
+
+# RUBICON
+-keep public class com.rfm.** { *; }
+-dontwarn com.rfm.**
+
+# FYBER
+-keep public class com.fyber.** { *; }
+-dontwarn com.fyber.**
+
+-keep class com.fyber.mediation.MediationConfigProvider {
+    public static *;
+}
+-keep class com.fyber.mediation.MediationAdapterStarter {
+    public static *;
+}
+-keepclassmembers class com.fyber.ads.videos.mediation.** {
+    void setValue(java.lang.String);
+}
+
+# CONVERSANT
+-keep class com.greystripe.** { *; }
+
+# ARTOFCLICK
+-keep class com.artofclick.publisher_sdk.** { *; }
+-dontwarn com.artofclick.publisher_sdk.**
+
+# INSTAL
+-keep class com.instal.** { *; }
+-dontwarn com.instal.**
+
+# APPBRAIN
+-keep public class com.appbrain.KeepClass
+-keep public class * implements com.appbrain.KeepClass
+-keepclassmembers class * implements com.appbrain.KeepClass {
+    <methods>;
+}
+-keep class android.webkit.JavascriptInterface
+-dontwarn android.webkit.JavascriptInterface
+
+# VIDEMOB
+-keep class com.cydersoft.core.** { *; }
+-dontwarn com.cydersoft.core.**
+
+# YOUAPPI
+-keep class com.youappi.ai.sdk.** { *; }
+-dontwarn com.youappi.ai.sdk.**
+
+# MOBUSI
+-keep class com.mobusi.adsmobusi.** { *; }
+-dontwarn com.mobusi.adsmobusi.**
+
+# LEADBOLT
+-dontwarn android.support.v4.**
+-keep public class com.google.android.gms.* { public *; }
+-dontwarn com.google.android.gms.**
+-keep class com.apptracker.** { *; }
+-dontwarn com.apptracker.**
+-keepclassmembers class **.R$* {
+	public static <fields>;
+}
+-keep class **.R$*
+
+# INNERACTIVE
+-dontwarn com.inneractive.api.ads.**
+-keep class com.inneractive.api.ads.** {*;}
+-keepclassmembers class com.inneractive.api.ads.** {*;}
+-keepclassmembers class com.inneractive.api.ads.sdk.nativead.** {*;}
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.stream.** { *; }
+-keep class com.google.gson.examples.android.model.** { *; }
+-keep class com.google.gson.Gson { *; }
+-keep class com.google.gson.GsonBuilder { *; }
+-keep class com.google.gson.FieldNamingStrategy { *; }
+
+# TAPPX
+-keepattributes *Annotation*
+-keepclassmembers class com.google.**.R$* {
+    public static <fields>;
+}
+-keep public class com.google.ads.** {*;}
+-keep public class com.google.android.gms.** {*;}
+-keep public class com.tappx.** { *; }
+-dontwarn com.tappx.**
+
+                   </code>
+
+
+                </pre>
+
+
+            </section>
+
+            <section>
+                <h2 id="usage">Usage</h2>
+
+                <p>Admost Mediation library is a lean yet complete library that allows you to request and show ads.
+                    Basic integration steps are:</p>
+                <h3 id="init">Init Ads</h3>
+                <p>Initialize the Admost Mediation SDK in your application’s launcher Activity. This starts pre-caching
+                    and prepares the SDK to display ads.</p>
+                typescript
+                <pre><code class="language-java">AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, < ADMOST_APP_ID >);
+
+// OPTIONAL
+configuration.age(24);
+configuration.gender(AdMost.GENDER_MALE);
+configuration.interests(“Games, Sports, News”);
+
+AdMost.getInstance().init(configuration.build());</code></pre>
+                <p>For all ad type, AMR sdk has to be aware of the activities lifecycle. So please use the following
+                    methods of AMR in your activities which ads are called.</p>
+                <pre><code class="language-java">@Override
+public void onStart() {
+    super.onStart();
+    AdMost.getInstance().onStart(this);
+}
+
+@Override
+public void onResume() {
+    super.onResume();
+    AdMost.getInstance().onResume(this);
+}
+
+@Override
+public void onPause() {
+    super.onPause();
+    AdMost.getInstance().onPause(this);
+}
+
+@Override
+public void onStop() {
+    super.onStop();
+    AdMost.getInstance().onStop(this);
+}
+
+@Override
+public void onDestroy() {
+    super.onDestroy();
+    AdMost.getInstance().onDestroy(this);
+}
+
+@Override
+public void onBackPressed() {
+    super.onBackPressed();
+    AdMost.getInstance().onBackPressed(this);
+}
+
+@Override
+public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    //Only for Fyber Publishers
+    if (requestCode == AdMost.FYBER_REQUEST_CODE)
+        OFFERWALL.setFyberResult(resultCode, data);
+}</code></pre>
+                <h3 id="banner-ads">Banner Ads</h3>
+                <pre><code class="language-java">/*
+ZONE_ID : Your ZONE_ID defined on admost mediation panels.
+TYPE    : The height of your banner, it may have 3 values;
+            1. AdMostManager.getInstance().AD_BANNER (50dp)
+            2. AdMostManager.getInstance().AD_LEADERBOARD (90dp)
+            3. AdMostManager.getInstance().AD_MEDIUM_RECTANGLE (250dp)
+BINDER  : You can use your own layout design for banners, if you leave BINDER value null, default design will be applied.
+*/
+
+BANNER = new AdMostView(ACTIVITY, < ZONE_ID >, < TYPE >, new AdMostViewListener() {
+    @Override
+    public void onLoad(String network, int position) {
+        if (network.equals(AdMostAdNetwork.NO_NETWORK)) {
+            // No Ad Found
+        } else {
+            // Ad Loaded
+            // You can get adview by calling BANNER.getView()
+            // Attach it to a layout for impression.
+            // Calling BANNER.getView() method multiple times will not cause any side effect.
+        }
+    }
+}, < BINDER >);
+
+// Add the following line to load an ad.
+BANNER.getView();</code></pre>
+
+                <p>You have to call destroy() method on onDestroy() method of the activity.
+
+                </p>
+
+                <pre><code class="language-java">BANNER.destroy();</code></pre>
+
+                <h3 id="native-ads">Native Ads</h3>
+
+                <p>If you want to create your own design for native ads, you have to create a binder object and pass it
+                    to AdMostView constructor as BINDER value. Example implementation for binder creation is as
+                    follows;</p>
+
+                <pre><code class="language-java">int layout = layout.design_for_your_banner;
+AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
+	.titleId(R.id.ad_headline)
+	.textId(R.id.ad_body)
+	.callToActionId(R.id.ad_call_to_action)
+	.iconImageId(R.id.ad_app_icon)
+	.mainImageId(R.id.ad_image)
+	.backImageId(R.id.ad_back)
+	.attributionId(R.id.ad_attribution)
+    .isRoundedMode(false)
+	.isFixed(false)
+	.isCloseable(false)
+	.build();</code></pre>
+                <h3 id="interstitial">Interstitial</h3>
+
+                <pre><code>AdMostInterstitial INTERSTITIAL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
+    @Override
+    public void onAction(int value) {
+        if (value == AdMostAdListener.LOADED){
+            // if AUTO_SHOW value is TRUE then no need to call show method again.
+            // Otherwise, you have to use show method like below
+            // INTERSTITIAL.show();
+        } else if (value == AdMostAdListener.FAILED) {
+            // No Ad Found
+        } else if (value == AdMostAdListener.CLOSED) {
+            // Ad Closed
+        }
+    }
+});
+
+INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
+
+                <p>
+                    AUTO_SHOW (boolean) : Set true, if you want to show the fullscreen ad as soon as it is ready. Otherwise, you need to call show() method manually.
+                </p>
+
+                <p>                    You have to call destroy method on onDestroy() method of the activity.
+                </p>
+
+                <code><pre>INTERSTITIAL.destroy();</pre></code>
+                <h3 id="rewarded">Rewarded</h3>
+
+                <code><pre>AdMostInterstitial VIDEO = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
+    @Override
+    public void onAction(int value) {
+        if (value == AdMostAdListener.LOADED) {
+            // Ad Loaded
+        } else if (value == AdMostAdListener.COMPLETED) {
+            // Video Ad Completed
+        } else if (value == AdMostAdListener.FAILED) {
+            // No Ad Found
+        } else if (value == AdMostAdListener.CLOSED) {
+            // Ad Closed
+        }
+    }
+
+    @Override
+    public void onRewarded(int value) {
+        // User is Rewarded
+    }
+});</pre></code>
+
+                <h3 id="offerwalls">Offerwalls</h3>
+
+                <pre><code>OFFERWALL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
+    @Override
+    public void onAction(int value) {
+        if (value == AdMostAdListener.LOADED) {
+            // Ad Loaded
+        } else if (value == AdMostAdListener.FAILED) {
+            // No Ad Found
+        } else if (value == AdMostAdListener.CLOSED) {
+            // Ad Closed
+        }
+    }
+});</code></pre>
+
+                <h4 id="spending-virtual-currencies">
+                    Spending Virtual Currencies
+                </h4>
+
+                <code>OFFERWALL.spendVirtualCurrency(new AdMostVirtualCurrencyListener() {
+                    @Override
+                    public void onSuccess(String network, String currency, double balance) {
+                    // User rewarded (This method can be triggered multiple times depends on Offerwall Zone)
+                    }
+
+                    @Override
+                    public void onError(String network, String error) {
+                    // Error
+                    }
+                    });</code>
+
+            </section>
+
+            <section>
+                <h2 id="release-notes">Release Notes</h2>
+
+                <header>
+                    <p>In this page, you can find a record of all the changes made to this project such as bug fixes,
+                        new features, etc.</p>
+
+                    <ol class="toc">
+                        <li><a href="#v1.3.3">Version 1.3.3</a></li>
+                        <li><a href="#v1.2.9">Version 1.2.9</a></li>
+                    </ol>
+                </header>
+
+                <section>
+                    <h3 id="v1.3.3">Version 1.3.3
+                        <small class="release-date">July 4, 2017</small>
+                    </h3>
+                    <br>
+                    <ul class="changelog">
+                        <li class="ch-added">AdTrial</li>
+                        <li class="ch-added">AppLovin Banner & Native Placements</li>
+                        <li class="ch-added">Avocarrot Video Ads</li>
+                        <li class="ch-added">RevMob Native Ads</li>
+
+                        <li class="ch-updated">AppLovin 7.2.0</li>
+                        <li class="ch-updated">AppNext 2.0.3.459</li>
+                        <li class="ch-updated">Avocarrot 3.8.2</li>
+                        <li class="ch-updated">DisplayIO 1.3.12</li>
+                        <li class="ch-updated">Facebook 4.23</li>
+                        <li class="ch-updated">Fyber 8.12.2</li>
+                        <li class="ch-updated">InMobi 6.2.3</li>
+                        <li class="ch-updated">InlocoMedia 3.0.8</li>
+                        <li class="ch-updated">InnerActive 6.5.4</li>
+                        <li class="ch-updated">IronSource 6.6.1</li>
+                        <li class="ch-updated">LoopMe 5.1.7</li>
+                        <li class="ch-updated">MobFox 3.2.7</li>
+                        <li class="ch-updated">Mopub 4.15</li>
+                        <li class="ch-updated">PubNative 2.3.16</li>
+                        <li class="ch-updated">RevMob 10.0.0</li>
+                        <li class="ch-updated">Tapjoy 11.10.2</li>
+                        <li class="ch-updated">Tappx 3.0.4</li>
+                        <li class="ch-updated">Vungle 4.1.0</li>
+                        <li class="ch-updated">YouAppi 2.0.8</li>
+
+                        <li class="ch-removed">AdFalcon</li>
+                        <li class="ch-removed">AppBrain</li>
+                        <li class="ch-removed">Conversant</li>
+                        <li class="ch-removed">Instal</li>
+                        <li class="ch-removed">Rubicon</li>
+                        <li class="ch-removed">Teads</li>
+
+                        <li class="ch-fixed">DisplayIO request counting</li>
+                        <li class="ch-fixed">Leadbolt native banner</li>
+                        <li class="ch-fixed">Various bug fixes</li>
+
+
+                    </ul>
+                </section>
+
+                <section>
+                    <h3 id="v1.2.9">Version 1.2.9
+                        <small class="release-date">Apr 25, 2017</small>
+                    </h3>
+                    <br>
+                    <ul class="changelog">
+                        <li class="ch-fixed">Leadbolt fixed</li>
+                        <li class="ch-fixed">Various bug fixes</li>
+                    </ul>
+                </section>
+
+            </section>
+
+            <section>
+                <h2 id="faq">Frequently Asked Question</h2>
+
+            </section>
+        </article>
+        <!-- END Main content -->
+    </div>
+</main>
+
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <p>Copyright &copy; 2017. All right reserved</p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <ul class="footer-menu">
+                    <li><a href="page_changelog.html">Changelog</a></li>
+                    <li><a href="page_credits.html">Credits</a></li>
+                    <li><a href="mailto:support@thetheme.io">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END Footer -->
+
+<!-- Scripts -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script>
+    window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
+</script>
+<script>function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+}
+</script>
+
+<script src="adnetworks.js" type="text/javascript"></script>
+<script src="assets/js/theDocs.all.min.js"></script>
+<script src="assets/js/custom.js"></script>
 
 </body>
 </html>
