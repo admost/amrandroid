@@ -54,7 +54,8 @@
             <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="index.html">Documentation</a></li>
-                    <li><a href="https://github.com/admost/AMR/tree/master/Android_Integration/sample"><i class="fa fa-mobile-phone"></i>&nbsp;&nbsp;Sample App</a></li>
+                    <li><a href="https://github.com/admost/AMR/tree/master/Android_Integration/sample"><i
+                            class="fa fa-mobile-phone"></i>&nbsp;&nbsp;Sample App</a></li>
                     <li class="hero"><a
                             href="https://github.com/admost/AMR/tree/master/Android_Integration"><i
                             class="fa fa-github"></i>&nbsp;&nbsp;Github</a></li>
@@ -112,7 +113,14 @@
                         <li><a href="#native-ads">Native Ads</a></li>
                         <li><a href="#interstitial">Interstitial Ads</a></li>
                         <li><a href="#rewarded">Rewarded</a></li>
-                        <li><a href="#offerwalls">Offerwalls</a></li>
+
+                        <li>
+                            <a href="#offerwalls" class="has-child open">Offerwalls</a>
+                            <ul style="display: block;">
+                                <li><a href="#spending-virtual-currencies">Spending Virtual Currencies</a></li>
+                            </ul>
+                        </li>
+
 
                     </ul>
                 </li>
@@ -742,7 +750,7 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
 	.build();</code></pre>
                 <h3 id="interstitial">Interstitial</h3>
 
-                <pre><code>AdMostInterstitial INTERSTITIAL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
+                <pre><code class="language-java">AdMostInterstitial INTERSTITIAL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
     @Override
     public void onAction(int value) {
         if (value == AdMostAdListener.LOADED){
@@ -760,16 +768,19 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
 INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
 
                 <p>
-                    AUTO_SHOW (boolean) : Set true, if you want to show the fullscreen ad as soon as it is ready. Otherwise, you need to call show() method manually.
+                    AUTO_SHOW (boolean) : Set true, if you want to show the fullscreen ad as soon as it is ready.
+                    Otherwise, you need to call show() method manually.
                 </p>
 
-                <p>                    You have to call destroy method on onDestroy() method of the activity.
+                <p> You have to call destroy method on onDestroy() method of the activity.
                 </p>
-
-                <code><pre>INTERSTITIAL.destroy();</pre></code>
+                <pre>
+                <code class="language-java">INTERSTITIAL.destroy();
+                </code>
+                    </pre>
                 <h3 id="rewarded">Rewarded</h3>
 
-                <code><pre>AdMostInterstitial VIDEO = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
+                <pre><code class="language-java">AdMostInterstitial VIDEO = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
     @Override
     public void onAction(int value) {
         if (value == AdMostAdListener.LOADED) {
@@ -787,11 +798,12 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
     public void onRewarded(int value) {
         // User is Rewarded
     }
-});</pre></code>
+});
+                </code></pre>
 
                 <h3 id="offerwalls">Offerwalls</h3>
 
-                <pre><code>OFFERWALL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
+                <pre><code class="language-java">OFFERWALL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
     @Override
     public void onAction(int value) {
         if (value == AdMostAdListener.LOADED) {
@@ -803,22 +815,24 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
         }
     }
 });</code></pre>
-
+<br>
                 <h4 id="spending-virtual-currencies">
                     Spending Virtual Currencies
                 </h4>
+                <pre>
+                <code class="language-java">OFFERWALL.spendVirtualCurrency(new AdMostVirtualCurrencyListener() {
+        @Override
+        public void onSuccess(String network, String currency, double balance) {
+            // User rewarded (This method can be triggered multiple times depends on Offerwall Zone)
+        }
 
-                <code>OFFERWALL.spendVirtualCurrency(new AdMostVirtualCurrencyListener() {
-                    @Override
-                    public void onSuccess(String network, String currency, double balance) {
-                    // User rewarded (This method can be triggered multiple times depends on Offerwall Zone)
-                    }
-
-                    @Override
-                    public void onError(String network, String error) {
-                    // Error
-                    }
-                    });</code>
+        @Override
+        public void onError(String network, String error) {
+            // Error
+        }
+    });
+                </code>
+    </pre>
 
             </section>
 
