@@ -7,7 +7,7 @@ var arrayAppGradlePackages = [];
 
 fillAdNetworkList(obj);
 
-var htmlProjectGradle = '<div class="col-md-11" > <p> Add the following lines inside <var> repositories{}</var> bracelets in <code>/build.gradle</code>  file </div><div class="col-md-1"><button class="btn btn-xs btn-primary" onclick="copyToClipboard(\'#code-projectgradle\')"><i class="fa fa-copy"></i></if></li> Copy</button> </div><div class="col-md-12" id="file-gradle"> <pre><code id="code-projectgradle"></code></pre> </div>';
+var htmlProjectGradle = '<div class="col-md-11" > <p Add the following lines inside <var> repositories{}</var> bracelets in <code>/build.gradle</code>  file </div><div class="col-md-1"><button class="btn btn-xs btn-primary" onclick="copyToClipboard(\'#code-projectgradle\')"><i class="fa fa-copy"></i></if></li> Copy</button> </div><div class="col-md-12" id="file-gradle"> <pre><code id="code-projectgradle"></code></pre> </div>';
 var htmlAppGradle = '<div class="col-md-11"> <p> Add the following lines inside <var> dependencies{}</var> bracelets in <code>/app/src/build.gradle</code>file </div><div class="col-md-1"><button class="btn btn-xs btn-primary" onclick="copyToClipboard(\'#code-appgradle\')"><i class="fa fa-copy"></i></if></li> Copy</button> </div><div class="col-md-12" id="file-appgradle"> <pre><code id="code-appgradle"></code></pre> </div>';
 var htmlAndroidManifest = '<div class="col-md-11"> <p> Add the following lines inside <var> &lt;application&gt;</var> tags in <code>/app/src/main/AndroidManifest.xml</code> file </div><div class="col-md-1"><button class="btn btn-xs btn-primary" onclick="copyToClipboard(\'#code-androidmanifest\')"><i class="fa fa-copy"></i></if></li> Copy</button> </div><div class="col-md-12" id="file-androidmanifest"> <pre><code id="code-androidmanifest"></code></pre> </div>';
 
@@ -81,7 +81,7 @@ function fillAdNetworkList() {
  */
 
 function fillFileList() {
-    $('#list-of-files').html("<li><code>project.gradle</code></li><li><code>app.gradle</code></li>");
+    $('#list-of-files').html("<li><code>/build.gradle</code></li><li><code>/app/src/build.gradle</code></li>");
     if (isAndroidManifestNeeded()) {
         $('#list-of-files').append('<li><code>AndroidManifest.xml</code></li>');
     }
