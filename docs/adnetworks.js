@@ -204,6 +204,8 @@ function fillInitMethods() {
     arrayExtraInitMethods = [];
     $('#file-initmethods').html("");
 
+    isAddedBefore = false;
+
 
     for (var i = 0; i < obj.ad_networks.length; i++) {
         if (obj.ad_networks[i].name == "Fyber" && obj.ad_networks[i].status == true) {
@@ -211,14 +213,16 @@ function fillInitMethods() {
         }
 
         if ((obj.ad_networks[i].name == "Chartboost" && obj.ad_networks[i].status == true) || (obj.ad_networks[i].name == "Mopub" && obj.ad_networks[i].status == true)) {
-            arrayExtraInitMethods.push("<p>Chartboost & Mopub</p> <pre><code class=\"language-java\">@Override <br>public void onBackPressed() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.onBackPressed();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AdMost.getInstance().onBackPressed(this);<br>}<br></code></pre>");
+            if(isAddedBefore == false){
+                arrayExtraInitMethods.push("<p>Chartboost & Mopub</p> <pre><code class=\"language-java\">@Override <br>public void onBackPressed() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.onBackPressed();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AdMost.getInstance().onBackPressed(this);<br>}<br></code></pre>");
+                isAddedBefore = true;
+            }
         }
 
     }
 
     for (var i = 0; i < arrayExtraInitMethods.length; i++) {
-
-        $('#file-initmethods').append(arrayExtraInitMethods[i]);
+            $('#file-initmethods').append(arrayExtraInitMethods[i]);
     }
 
 }
