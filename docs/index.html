@@ -128,6 +128,11 @@
 
                     </ul>
                 </li>
+                <li><a href="#extras">Extras</a>
+                    <ul>
+                        <li><a href="#dfp">DFP/Admob Mediation Integration</a></li>
+                    </ul>
+                </li>
                 <li><a href="#release-notes">Release Notes</a>
                     <ul>
                         <li><a href="#upgrading-prior">Upgrading from 1.3.2 and Prior</a></li>
@@ -786,6 +791,32 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
                 </code>
     </pre>
 
+                <h2 id="extras">Extras</h2>
+
+                <h3 id="dfp">DFP/Admob Mediation Integration</h3>
+
+                <p>The AMR DFP Adapter lets publishers integrate Admost Mediation Router ads into applications with DFP
+                    or Admob Mediation set as main ad mediation layer.</p>
+
+                <p>In order to show AMR ads in DFP/Admob Mediation you should first follow dedicated steps of DFP or
+                    Admob Mediation to set AMR as an ad mediation source.</p>
+
+                <p>After adding AMR as an ad mediation source you should define class names for banner and interstitial
+                    ad custom events. Enter <code>admost.sdk.dfp.AmrDfpCustomEventBanner</code> and
+                    <code>admost.sdk.dfp.AmrDfpCustomEventInt</code> class names for
+                    banner and interstitial class names respectively. You must pass your AMR zone Id to custom event via
+                    Parameter field.</p>
+
+                <img class="img-responsive " src="assets/img/dfp_banner.png" alt="shadowed image">
+
+                <br>
+
+                <img class="img-responsive " src="assets/img/dfp_interstitial.png" alt="shadowed image">
+
+
+                <p>Now you can show AMR banner and interstitial ads via DFP or Admob Mediation.</p>
+
+
             </section>
 
             <section>
@@ -835,9 +866,7 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
                         <li class="ch-updated">Smaato 6.1.1</li>
                         <li class="ch-updated">Tapjoy 11.11.0</li>
                         <li class="ch-updated">Tappx 3.0.5</li>
-                        <li class="ch-updated">Vungle 5.1.0</li>
-
-
+                        <li class="ch-updated">Vungle 5.1.0 &nbsp;&nbsp;<small>&nbsp;~ From Admost <a href="http://dashboard.admost.com">dashboard</a> you should enter <code>zone_id</code> from network settings to <strong>Vungle</strong>.</small></li>
                         <li class="ch-fixed">AdTrail Initing</li>
                         <li class="ch-fixed">Various bug fixes</li>
                     </ul>
