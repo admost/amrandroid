@@ -103,7 +103,7 @@
                 <li>
                     <a href="#setup">Setup</a>
                     <ul>
-                        <li><a href="#pick-adnetworks">Pick Adnetworks</a></li>
+                        <li><a href="#pick-adnetworks">Ad-Networks</a></li>
                         <li><a href="#required-files">Required Files</a></li>
                         <li><a href="#edit-files">Edit Files</a></li>
                         <li><a href="#proguard">Proguard</a></li>
@@ -283,7 +283,7 @@
             <section>
                 <h2 id="setup">Setup</h2>
 
-                <h3 id="pick-adnetworks">Pick Adnetworks</h3>
+                <h3 id="pick-adnetworks">Ad-Networks</h3>
 
                 <p>Please click <code>+</code> icon to add to list and <code>-</code> to remove from list. After finish
                     selecting ad networks, continue with next <a href="#edit-files">step</a></p>
@@ -320,11 +320,7 @@
                 </div>
 
                 -->
-
-
-                <pre class="pre-scrollable">
-                   <code id="code-proguard" class="language-typescript">
-# ADMOST
+                 <pre class="pre-scrollable"><code class="language-typescript"  id="code-proguard"># ADMOST
 -keepattributes Exceptions, InnerClasses
 -dontwarn admost.sdk.**
 -keep class admost.sdk.** {*;}
@@ -576,14 +572,18 @@
 -keep class com.unity3d.ads.** { *; }
 
 # VUNGLE
--dontwarn com.vungle.**
--keep class com.vungle.** { *; }
--keep class javax.inject.**
 -keepattributes *Annotation*
 -keepattributes Signature
+-dontwarn com.vungle.**
+-dontnote com.vungle.**
+-keep class com.vungle.** { *; }
+-keep class javax.inject.**
 -keep class dagger.**
 -keep class de.greenbot.**
 -keep class rx.**
+-dontwarn rx.**
+-dontwarn com.moat.**
+-keep class com.moat.** { *; }
 
 # YOUAPPI
 -keep class com.youappi.ai.sdk.** { *; }
@@ -602,7 +602,6 @@
                 <h3 id="init">Init Ads</h3>
                 <p>Initialize the Admost Mediation SDK in your application’s launcher Activity. This starts pre-caching
                     and prepares the SDK to display ads.</p>
-                typescript
                 <pre><code class="language-java">AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, < ADMOST_APP_ID >);
 
 // OPTIONAL
@@ -612,6 +611,16 @@ configuration.interests(“Games, Sports, News”);
 
 AdMost.getInstance().init(configuration.build());</code></pre>
                 <p>Use the following methods of AMR in your Activities which ads are called</p>
+
+                <div class="row">
+                <div class="col-md-12" id="file-initmethods">
+
+                </div>
+                </div>
+
+
+                <p>if the project minSDKVersion is 13 (Honeycomb) or older.</p>
+
                 <pre><code class="language-java">@Override
 public void onStart() {
     super.onStart();
@@ -642,7 +651,7 @@ public void onDestroy() {
     AdMost.getInstance().onDestroy(this);
 }
 
-}</code></pre>
+</code></pre>
                 <h3 id="banner-ads">Banner Ads</h3>
                 <pre><code class="language-java">/*
 ZONE_ID : Your ZONE_ID defined on admost mediation panels.
@@ -787,6 +796,7 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
                         new features, etc.</p>
 
                     <ol class="toc">
+                        <li><a href="#v1.3.5">Version 1.3.5</a></li>
                         <li><a href="#v1.3.4">Version 1.3.4</a></li>
                         <li><a href="#v1.3.3">Version 1.3.3</a></li>
                         <li><a href="#v1.2.9">Version 1.2.9</a></li>
@@ -810,6 +820,27 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
                 </section>
 
                 <section id="versions">
+
+                    <h3 id="v1.3.5">Version 1.3.5
+                        <small class="release-date">July 19, 2017</small>
+                    </h3>
+                    <br>
+                    <ul class="changelog">
+                        <li class="ch-updated">AdTrial 2017-07-17</li>
+                        <li class="ch-updated">Facebook 4.24</li>
+                        <li class="ch-updated">Flurry 7.2.0</li>
+                        <li class="ch-updated">Flymob 2.0.8</li>
+                        <li class="ch-updated">Ironsource 6.6.2.1</li>
+                        <li class="ch-updated">Outbid 1.4</li>
+                        <li class="ch-updated">Smaato 6.1.1</li>
+                        <li class="ch-updated">Tapjoy 11.11.0</li>
+                        <li class="ch-updated">Tappx 3.0.5</li>
+                        <li class="ch-updated">Vungle 5.1.0</li>
+
+
+                        <li class="ch-fixed">AdTrail Initing</li>
+                        <li class="ch-fixed">Various bug fixes</li>
+                    </ul>
 
                     <h3 id="v1.3.4">Version 1.3.4
                         <small class="release-date">July 7, 2017</small>
