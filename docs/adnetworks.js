@@ -15,7 +15,6 @@ fillProjectGradleCode();
 fillAppGradleCode();
 fillAndroidManifestCode();
 
-
 function toggleAdNetworkStatus(adNetworkName) {
     var i = getPositionOfAdNetworkOnJSONArray(adNetworkName);
     if (obj.ad_networks[i].status == true) {
