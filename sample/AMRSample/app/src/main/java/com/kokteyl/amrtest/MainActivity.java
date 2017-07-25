@@ -2,6 +2,7 @@ package com.kokteyl.amrtest;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Binder;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,8 +28,11 @@ import admost.sdk.base.AdMost;
 import admost.sdk.base.AdMostAdNetwork;
 import admost.sdk.base.AdMostConfiguration;
 import admost.sdk.base.AdMostLog;
+import admost.sdk.dfp.AmrDfpCustomEventBanner;
 import admost.sdk.listener.AdMostAdListener;
 import admost.sdk.listener.AdMostViewListener;
+
+import static com.kokteyl.amrtest.R.layout.custom_layout_allgoals;
 
 public class MainActivity extends Activity {
 
@@ -87,11 +91,21 @@ public class MainActivity extends Activity {
             }
         });
 
+        findViewById(R.id.dfp_integration).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DFPIntegration.class);
+                startActivity(intent);
+            }
+        });
+
+        AdMost.getInstance().startTestSuite(new String[] {Statics.BANNER_ZONE, Statics.FULLSCREEN_ZONE, Statics.VIDEO_ZONE});
+
     }
 
-    private void getBanner() {
+        private void getBanner() {
         // This is just for your own style, left null if you want default layout style
-        final AdMostViewBinder binder =  new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
+        final AdMostViewBinder binder =  new AdMostViewBinder.Builder(custom_layout_allgoals)
                 .titleId(R.id.cardTitle)
                 .textId(R.id.cardDetailText)
                 .callToActionId(R.id.CallToActionTextView)
