@@ -427,16 +427,6 @@
 -keep class com.fyber.mediation.MediationAdapterStarter { public static *; }
 -keepclassmembers class com.fyber.ads.videos.mediation.** { void setValue(java.lang.String); }
 
-# INLOCOMEDIA
--dontwarn in.ubee.**, com.inlocomedia.**
--keep class in.ubee.**, com.inlocomedia.** { *; }
--keepclassmembers class in.ubee.**, com.inlocomedia.** { *; }
--keep class com.google.android.gms.common.GooglePlayServicesUtil {*;}
--keep class com.google.android.gms.ads.identifier.AdvertisingIdClient {*;}
--keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info {*;}
--keep class com.google.android.gms.location.Geofence { *; }
--keep class com.google.android.gms.location.ActivityRecognition { *; }
-
 # INMOBI
 -keepattributes SourceFile,LineNumberTable
 -keep class com.inmobi.** {*;}
@@ -500,9 +490,6 @@
 -dontwarn com.mobfox.**
 -keep class com.mobfox.** { *; }
 
-# MOBUSI
--keep class com.mobusi.adsmobusi.** { *; }
--dontwarn com.mobusi.adsmobusi.**
 
 # MOPUB
 -keepclassmembers class com.mopub.** { public *; }
