@@ -581,6 +581,16 @@
 # YOUAPPI
 -keep class com.youappi.ai.sdk.** { *; }
 -dontwarn com.youappi.ai.sdk.**
+
+# FLYMOB
+-dontwarn com.flymob.sdk.**
+-keep public class com.flymob.sdk.common.** { public *; }
+# MOBUSI
+-keep class com.mobusi.adsmobusi.** { *; }
+-dontwarn com.mobusi.adsmobusi.**
+# INLOCOMEDIA
+-dontwarn in.ubee.**, com.inlocomedia.**
+-keep class in.ubee.**, com.inlocomedia.** { *; }
 </code>
                 </pre>
 
