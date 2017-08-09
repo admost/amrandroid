@@ -673,11 +673,29 @@ BANNER = new AdMostView(ACTIVITY, < ZONE_ID >, < TYPE >, new AdMostViewListener(
 // Add the following line to load an ad.
 BANNER.getView();</code></pre>
 
-                <p>You have to call destroy() method on onDestroy() method of the activity.
+                <p>You have to call destroy(), pause() and resume() methods in the activity.
 
                 </p>
 
-                <pre><code class="language-java">BANNER.destroy();</code></pre>
+                <pre><code class="language-java">@Override
+public void onResume() {
+    super.onResume();
+    BANNER.resume();
+}
+
+@Override
+public void onPause() {
+    BANNER.pause();
+    AdMost.getInstance().onPause(this);
+}
+
+
+@Override
+public void onDestroy() {
+    super.onDestroy();
+    BANNER.destroy();
+}
+</code></pre>
 
                 <h3 id="native-ads">Native Ads</h3>
 
