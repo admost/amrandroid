@@ -685,8 +685,8 @@ public void onResume() {
 
 @Override
 public void onPause() {
+    super.onResume();
     BANNER.pause();
-    AdMost.getInstance().onPause(this);
 }
 
 
