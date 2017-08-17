@@ -2,7 +2,6 @@ package com.kokteyl.amrtest;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Binder;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,24 +10,14 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
-import com.google.android.gms.ads.doubleclick.PublisherAdView;
-import com.google.android.gms.ads.doubleclick.PublisherInterstitialAd;
 
 import admost.sdk.AdMostInterstitial;
 import admost.sdk.AdMostManager;
 import admost.sdk.AdMostView;
 import admost.sdk.AdMostViewBinder;
 import admost.sdk.base.AdMost;
-import admost.sdk.base.AdMostAdNetwork;
 import admost.sdk.base.AdMostConfiguration;
 import admost.sdk.base.AdMostLog;
-import admost.sdk.dfp.AmrDfpCustomEventBanner;
 import admost.sdk.listener.AdMostAdListener;
 import admost.sdk.listener.AdMostViewListener;
 
@@ -99,7 +88,13 @@ public class MainActivity extends Activity {
             }
         });
 
-        AdMost.getInstance().startTestSuite(new String[] {Statics.BANNER_ZONE, Statics.FULLSCREEN_ZONE, Statics.VIDEO_ZONE});
+        findViewById(R.id.test_suite).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AdMost.getInstance().startTestSuite(new String[] {Statics.BANNER_ZONE, Statics.FULLSCREEN_ZONE, Statics.VIDEO_ZONE});
+            }
+        });
+
 
     }
 
@@ -122,49 +117,81 @@ public class MainActivity extends Activity {
         ((TextView)findViewById(R.id.loadedNetwork)).setText("");
         ad = new AdMostView(MainActivity.this, Statics.BANNER_ZONE,AdMostManager.getInstance().AD_MEDIUM_RECTANGLE, new AdMostViewListener() {
             @Override
-            public void onLoad(String network, int position) {
-                if (!network.equals(AdMostAdNetwork.NO_NETWORK)) {
-                    LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
-                    viewAd.removeAllViews();
-                    if (ad.getView().getParent() != null && ad.getView().getParent() instanceof ViewGroup) {
-                        ((ViewGroup) ad.getView().getParent()).removeAllViews();
-                    }
-                    viewAd.addView(ad.getView());
-                } else {
-                    // NoFill
+            public void onReady(String network, View adView) {
+                Log.i("ADMOST","onReady : " + network);
+                LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
+                viewAd.removeAllViews();
+                if (adView.getParent() != null && adView.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) adView.getParent()).removeAllViews();
                 }
+                viewAd.addView(adView);
+
                 ((TextView)findViewById(R.id.loadedNetwork)).setText(network);
+            }
+
+            @Override
+            public void onFail(int errorCode) {
+                ((TextView)findViewById(R.id.loadedNetwork)).setText("errorCode : " + errorCode);
+
             }
         }, binder);
 
-        //ad.testAd(AdMostAdNetwork.FACEBOOK, AdMostAdType.BANNER, "865748010159274_928003970600344");
-
-        ad.getView();
+        ad.load();
     }
 
     private void getVideo() {
         if (video == null) {
 
             AdMostAdListener listener = new AdMostAdListener() {
+
                 @Override
-                public void onAction(int value) {
-                    if (value == AdMostAdListener.LOADED) {
-                        AdMostLog.log(value + " MainActivity LOADED");
-                        ((Button)findViewById(R.id.showVideo)).setText("Show Video");
-                    } else if (value == AdMostAdListener.COMPLETED) {
-                        AdMostLog.log(value + " MainActivity COMPLETED");
-                    } else if (value == AdMostAdListener.FAILED) {
-                        AdMostLog.log(value + " MainActivity FAILED");
-                    } else if (value == AdMostAdListener.CLOSED) {
-                        AdMostLog.log(value + " MainActivity CLOSED");
-                        ((Button)findViewById(R.id.showVideo)).setText("Get Video");
-                    }
+                public void onReady(String network) {
+                    super.onReady(network);
+                    AdMostLog.log("MainActivity LOADED network :" + network);
+                    ((Button)findViewById(R.id.showVideo)).setText("Show Video");
                 }
 
                 @Override
-                public void onShown(String s) {
-                    super.onShown(s);
-                    AdMostLog.log(s + " MainActivity OnShown");
+                public void onFail(int errorCode) {
+                    super.onFail(errorCode);
+                    String message;
+                    switch (errorCode) {
+                        case AdMost.AD_ERROR_NO_FILL :
+                            message = "AD_ERROR_NO_FILL";
+                            break;
+                        case AdMost.AD_ERROR_FREQ_CAP :
+                            message = "AD_ERROR_FREQ_CAP";
+                            break;
+                        case AdMost.AD_ERROR_CONNECTION :
+                            message = "AD_ERROR_CONNECTION";
+                            break;
+                        case AdMost.AD_ERROR_WATERFALL_EMPTY :
+                            message = "AD_ERROR_WATERFALL_EMPTY";
+                            break;
+                        default:
+                            message = "";
+                            break;
+                    }
+                    AdMostLog.log("MainActivity onFail errorCode : " + errorCode + " message : " + message);
+                }
+
+                @Override
+                public void onDismiss(String message) {
+                    super.onDismiss(message);
+                    AdMostLog.log("MainActivity ONDISMISS");
+                    ((Button)findViewById(R.id.showVideo)).setText("Get Video");
+                }
+
+                @Override
+                public void onComplete(String network) {
+                    super.onComplete(network);
+                    AdMostLog.log("MainActivity COMPLETED network : " + network);
+                }
+
+                @Override
+                public void onShown(String network) {
+                    super.onShown(network);
+                    AdMostLog.log("MainActivity OnShown network: " + network);
                 }
             };
 
@@ -180,21 +207,51 @@ public class MainActivity extends Activity {
             AdMostAdListener listener = new AdMostAdListener() {
                 @Override
                 public void onAction(int value) {
-                    if (value == AdMostAdListener.LOADED) {
-                        ((Button)findViewById(R.id.showInterstitial)).setText("Show Interstitial");
-                        AdMostLog.log(value + " MainActivity LOADED");
-                    } else if (value == AdMostAdListener.FAILED) {
-                        AdMostLog.log(value + " MainActivity FAILED");
-                    } else if (value == AdMostAdListener.CLOSED) {
-                        ((Button)findViewById(R.id.showInterstitial)).setText("Get Interstitial");
-                        AdMostLog.log(value + " MainActivity CLOSED");
-                    }
+                    super.onAction(value);
                 }
 
                 @Override
-                public void onShown(String s) {
-                    super.onShown(s);
-                    AdMostLog.log(s + " MainActivity OnShown");
+                public void onDismiss(String message) {
+                    super.onDismiss(message);
+                    ((Button)findViewById(R.id.showInterstitial)).setText("Get Interstitial");
+                    AdMostLog.log("MainActivity ONDISMISS");
+                }
+
+                @Override
+                public void onFail(int errorCode) {
+                    super.onFail(errorCode);
+                    String message;
+                    switch (errorCode) {
+                        case AdMost.AD_ERROR_NO_FILL :
+                            message = "AD_ERROR_NO_FILL";
+                            break;
+                        case AdMost.AD_ERROR_FREQ_CAP :
+                            message = "AD_ERROR_FREQ_CAP";
+                            break;
+                        case AdMost.AD_ERROR_CONNECTION :
+                            message = "AD_ERROR_CONNECTION";
+                            break;
+                        case AdMost.AD_ERROR_WATERFALL_EMPTY :
+                            message = "AD_ERROR_WATERFALL_EMPTY";
+                            break;
+                        default:
+                            message = "";
+                            break;
+                    }
+                    AdMostLog.log("MainActivity onFail errorCode : " + errorCode + " message : " + message);
+                }
+
+                @Override
+                public void onReady(String network) {
+                    super.onReady(network);
+                    ((Button)findViewById(R.id.showInterstitial)).setText("Show Interstitial");
+                    AdMostLog.log("MainActivity LOADED network : " + network);
+                }
+
+                @Override
+                public void onShown(String network) {
+                    super.onShown(network);
+                    AdMostLog.log("MainActivity OnShown network: " + network);
                 }
             };
 
