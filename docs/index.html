@@ -1022,6 +1022,12 @@ You may try using --multi-dex option.
                                 librarires at your project. In that case there may be some duplications. To fix that
                                 problem you have to delete one of those libraries.</p></div>
                         </li>
+
+                        <li>
+                            <h6> I got error message says  <var>leaked IntentReceiver com.facebook.ads.internal.DisplayAdController$c@cf9db8c that was originally registered here. Are you missing a call to unregisterReceiver()? </var> in logcat. What is
+                                this?</h6>
+                            <div><p>You may have missed to call destroy for each AdMostView in your activity onDestroy method.</p></div>
+                        </li>
                     </ul>
                 </div>
             </section>
