@@ -207,9 +207,11 @@ function fillInitMethods() {
 
 
     for (var i = 0; i < obj.ad_networks.length; i++) {
+        /*
         if (obj.ad_networks[i].name == "Fyber" && obj.ad_networks[i].status == true) {
             arrayExtraInitMethods.push("<p>Fyber</p> <pre><code class=\"language-java\">@Override <br>public void onActivityResult(int requestCode, int resultCode, Intent data){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (requestCode == AdMost.FYBER_REQUEST_CODE)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OFFERWALL.setFyberResult(resultCode, data);<br>}<br></code></pre>");
         }
+        */
 
         if ((obj.ad_networks[i].name == "Chartboost" && obj.ad_networks[i].status == true) || (obj.ad_networks[i].name == "Mopub" && obj.ad_networks[i].status == true)) {
             if(isAddedBefore == false){
