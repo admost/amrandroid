@@ -131,6 +131,8 @@
                 <li><a href="#extras">Extras</a>
                     <ul>
                         <li><a href="#dfp">DFP/Admob Mediation Integration</a></li>
+                        <li><a href="#testsuite">Test Suite</a></li>
+
                     </ul>
                 </li>
                 <li><a href="#release-notes">Release Notes</a>
@@ -353,13 +355,13 @@
 -keepclassmembers class * implements android.os.Parcelable { public static final *** CREATOR; }
 -keep @interface android.support.annotation.Keep
 -keep @android.support.annotation.Keep class *
--keepclasseswithmembers class * { @android.support.annotation.Keep &lt;fields&gt;; }
--keepclasseswithmembers class * { @android.support.annotation.Keep &lt;methods&gt;; }
+-keepclasseswithmembers class * { @android.support.annotation.Keep <fields>; }
+-keepclasseswithmembers class * { @android.support.annotation.Keep <methods>; }
 -keep @interface com.google.android.gms.common.annotation.KeepName
 -keepnames @com.google.android.gms.common.annotation.KeepName class *
 -keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
 -keep @interface com.google.android.gms.common.util.DynamiteApi
--keep public @com.google.android.gms.common.util.DynamiteApi class * { public &lt;fields&gt;; public &lt;methods&gt;; }
+-keep public @com.google.android.gms.common.util.DynamiteApi class * { public <fields>; public <methods>; }
 -keep public @com.google.android.gms.common.util.DynamiteApi class * { *; }
 -keep class com.google.android.apps.common.proguard.UsedBy*
 -keep @com.google.android.apps.common.proguard.UsedBy* class *
@@ -415,7 +417,7 @@
 -keep class com.flurry.** { *; }
 -dontwarn com.flurry.**
 -keepattributes *Annotation*,EnclosingMethod,Signature
--keepclasseswithmembers class * { public &lt;init&gt;(android.content.Context, android.util.AttributeSet, int); }
+-keepclasseswithmembers class * { public <init>(android.content.Context, android.util.AttributeSet, int); }
 -keep class * extends java.util.ListResourceBundle { protected Object[][] getContents(); }
 -keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
 -keepnames @com.google.android.gms.common.annotation.KeepName class *
@@ -423,7 +425,7 @@
 -keepnames class * implements android.os.Parcelable { public static final ** CREATOR; }
 
 # FYBER
--keep public class com.fyber.** { *; }
+-keep class com.fyber.** { *; }
 -dontwarn com.fyber.**
 -keep class com.fyber.mediation.MediationConfigProvider { public static *; }
 -keep class com.fyber.mediation.MediationAdapterStarter { public static *; }
@@ -469,7 +471,7 @@
 -dontwarn com.google.android.gms.**
 -keep class com.apptracker.** { *; }
 -dontwarn com.apptracker.**
--keepclassmembers class **.R$* { public static &lt;fields&gt;; }
+-keepclassmembers class **.R$* { public static <fields>; }
 -keep class **.R$*
 
 # LOOPME
@@ -484,7 +486,7 @@
 -dontwarn com.moat.**
 -dontwarn mdos.**
 
-# MILLENNIAL &amp; NEXAGE
+# MILLENNIAL & NEXAGE
 -keep class com.millennialmedia.** { *; }
 -dontwarn com.millennialmedia.**
 
@@ -554,7 +556,7 @@
 
 # TAPPX
 -keepattributes *Annotation*
--keepclassmembers class com.google.**.R$* { public static &lt;fields&gt;; }
+-keepclassmembers class com.google.**.R$* { public static <fields>; }
 -keep public class com.google.ads.** {*;}
 -keep public class com.google.android.gms.** {*;}
 -keep public class com.tappx.** { *; }
@@ -658,20 +660,23 @@ BINDER  : You can use your own layout design for banners, if you leave BINDER va
 
 BANNER = new AdMostView(ACTIVITY, < ZONE_ID >, < TYPE >, new AdMostViewListener() {
     @Override
-    public void onLoad(String network, int position) {
-        if (network.equals(AdMostAdNetwork.NO_NETWORK)) {
-            // No Ad Found
-        } else {
-            // Ad Loaded
-            // You can get adview by calling BANNER.getView()
-            // Attach it to a layout for impression.
-            // Calling BANNER.getView() method multiple times will not cause any side effect.
-        }
+    public void onReady(String network, View adView) {
+        // Ad Loaded
+        Log.i("ADMOST","onReady : " + network);
+        // You can get adview by calling BANNER.getView()
+        // Attach it to a layout for impression.
+        // Calling BANNER.getView() method multiple times will not cause any side effect.
+    }
+
+    @Override
+    public void onFail(int errorCode) {
+        // Failed for some reason
     }
 }, < BINDER >);
-
 // Add the following line to load an ad.
-BANNER.getView();</code></pre>
+BANNER.load();
+
+                </code></pre>
 
                 <p>You have to call destroy(), pause() and resume() methods in the activity.
 
@@ -720,16 +725,23 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
 
                 <pre><code class="language-java">AdMostInterstitial INTERSTITIAL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
     @Override
-    public void onAction(int value) {
-        if (value == AdMostAdListener.LOADED){
-            // if AUTO_SHOW value is TRUE then no need to call show method again.
-            // Otherwise, you have to use show method like below
-            // INTERSTITIAL.show();
-        } else if (value == AdMostAdListener.FAILED) {
-            // No Ad Found
-        } else if (value == AdMostAdListener.CLOSED) {
-            // Ad Closed
-        }
+    public void onDismiss(String message) {
+        // Ad Dismiss
+    }
+
+    @Override
+    public void onFail(int errorCode) {
+        // Ad Failed
+    }
+
+    @Override
+    public void onReady(String network) {
+       // Ad Loaded
+    }
+
+    @Override
+    public void onShown(String network) {
+        //Ad Shown
     }
 });
 
@@ -746,19 +758,27 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
                 <h3 id="rewarded">Rewarded</h3>
 
                 <pre><code class="language-java">AdMostInterstitial VIDEO = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
-    @Override
-    public void onAction(int value) {
-        if (value == AdMostAdListener.LOADED) {
+        @Override
+        public void onReady(String network) {
             // Ad Loaded
-        } else if (value == AdMostAdListener.COMPLETED) {
-            // Video Ad Completed
-        } else if (value == AdMostAdListener.FAILED) {
-            // No Ad Found
-        } else if (value == AdMostAdListener.CLOSED) {
-            // Ad Closed
         }
-    }
-
+        @Override
+        public void onFail(int errorCode) {
+            // Ad Failed
+        }
+        @Override
+        public void onDismiss(String message) {
+            // Ad Dismiss
+        }
+        @Override
+        public void onComplete(String network) {
+            // Video Ad Completed
+        }
+        @Override
+        public void onShown(String network) {
+            //Ad Shown
+        }
+    });
                 </code></pre>
 
                 <h3 id="offerwalls">Offerwalls</h3>
@@ -820,6 +840,31 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
 		
 		<p>You can check DFP banner and interstitial example in demo project; <a href="https://github.com/admost/amrandroid/blob/master/sample/AMRSample/app/src/main/java/com/kokteyl/amrtest/DFPIntegration.java" target="_blank">DFPIntegration</a>.</p>
 
+                    <h3 id="testsuite">Test Suite</h3>
+
+                    <p>
+                        You can use Test Suite to test your ad networks with your zone ids.
+                    </p>
+
+                    <p>
+                        To use Test Suite in your application, you can use following code;
+                    </p>
+
+                    <pre><code class="language-java">
+AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", "DIFFERENT_ZONE_ID"});
+                </code></pre>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="promo left small-icon">
+                                <i class="fa fa-android"></i>
+                                <h3>Screen Shot</h3>
+                                <img class="img-responsive" src="https://raw.githubusercontent.com/admost/amrandroid/master/docs/assets/img/android_testsuite.png" alt="android-test-suite screenshot">
+                            </div>
+
+                        </div>
+                    </div>
+
 
             </section>
 
@@ -831,6 +876,7 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
                         new features, etc.</p>
 
                     <ol class="toc">
+                        <li><a href="#v1.3.8">Version 1.3.8</a></li>
                         <li><a href="#v1.3.7">Version 1.3.7</a></li>
                         <li><a href="#v1.3.6">Version 1.3.6</a></li>
                         <li><a href="#v1.3.5">Version 1.3.5</a></li>
@@ -857,6 +903,24 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
                 </section>
 
                 <section id="versions">
+
+                    <h3 id="v1.3.8">Version 1.3.8
+                        <small class="release-date">August 18, 2017</small>
+                    </h3>
+                    <br>
+                    <ul class="changelog">
+                        <li class="ch-added">Test Suite Added<small>&nbsp;&nbsp;<a href="#testsuite"><i class="fa fa-link"></i></a></small></li>
+                        <li class="ch-updated">Appnext 2.0.6.462</li>
+                        <li class="ch-updated">Chartboost 7.0.0</li>
+                        <li class="ch-updated">Facebook 4.25</li>
+                        <li class="ch-updated">Flurry 7.2.3</li>
+                        <li class="ch-updated">Fyber 8.15.1</li>
+                        <li class="ch-updated">Ironsource 6.6.4.1</li>
+                        <li class="ch-updated">Leadbolt 8.1</li>
+                        <li class="ch-updated">Mobfox 3.2.7b</li>
+                        <li class="ch-moved"><code>onAction</code> callback is deprecated <small>&nbsp;~ You can still use this method. New callbacks are listed below:<br> Banner: <code>onReady</code>, <code>onFail</code></br> Interstitial: <code>onReady</code>, <code>onFail</code> ,<code>onDismiss</code>, <code>onShown</code> <br> Rewarded: <code>onReady</code>, <code>onFail</code> ,<code>onDismiss</code>, <code>onComplete</code>, <code>onShown</code>.</small></li>
+                        <li class="ch-fixed">Various bug fixes</li>
+                    </ul>
 
                     <h3 id="v1.3.7">Version 1.3.7
                         <small class="release-date">August 9, 2017</small>
