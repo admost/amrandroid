@@ -44,7 +44,7 @@ dependencies {
 
     compile 'com.google.android.gms:play-services-basement:10.0.1'
     compile 'com.google.android.gms:play-services-ads:10.0.1'
-    compile 'com.admost.sdk:facebook:4.24'
+    compile 'com.admost.sdk:facebook:4.25'
     compile 'com.admost.sdk:flurry:7.2.0'
     compile 'com.admost.sdk:inmobi:6.2.6'
     compile 'com.squareup.picasso:picasso:2.5.2'
