@@ -15,7 +15,6 @@
     <link href="assets/css/skin/skin-teal.css" rel="stylesheet">
 
 
-
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet'
           type='text/css'>
@@ -131,8 +130,8 @@
                 <li><a href="#extras">Extras</a>
                     <ul>
                         <li><a href="#dfp">DFP/Admob Mediation Integration</a></li>
+                        <li><a href="#iap">In App Purchase Tracking</a></li>
                         <li><a href="#testsuite">Test Suite</a></li>
-
                     </ul>
                 </li>
                 <li><a href="#release-notes">Release Notes</a>
@@ -245,7 +244,9 @@
                                 </tr>
                                 <tr>
                                     <td><code>/app/src/build.gradle</code></td>
-                                    <td>This is your app's build.gradle file. We will just update inside of <strong>dependencies</strong> bracelets.</td>
+                                    <td>This is your app's build.gradle file. We will just update inside of <strong>dependencies</strong>
+                                        bracelets.
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><code>/app/src/proguard-rules.pro</code></td>
@@ -267,7 +268,8 @@
                 <h3 id="app-id-zone-id">App ID & Zone ID</h3>
 
                 <p>Application Id provided in Admost Mediation Dashboard.
-                    Zone Id(s) provided in <a href="http://dashboard.admost.com/" target="_blank">Admost Mediation Dashboard</a>.</p>
+                    Zone Id(s) provided in <a href="http://dashboard.admost.com/" target="_blank">Admost Mediation
+                        Dashboard</a>.</p>
                 <h3 id="permissions">Permissions</h3>
 
                 <p>Some of the Ad networks requires additional permissions. You have to consider this while adding those
@@ -327,7 +329,7 @@
                 </div>
 
                 -->
-                 <pre class="pre-scrollable"><code class="language-typescript"  id="code-proguard">
+                <pre class="pre-scrollable"><code class="language-typescript" id="code-proguard">
                      # ADMOST
 -keepattributes Exceptions, InnerClasses
 -dontwarn admost.sdk.**
@@ -609,9 +611,9 @@ AdMost.getInstance().init(configuration.build());</code></pre>
                 <p>Use the following methods of AMR in your Activities which ads are called</p>
 
                 <div class="row">
-                <div class="col-md-12" id="file-initmethods">
+                    <div class="col-md-12" id="file-initmethods">
 
-                </div>
+                    </div>
                 </div>
 
 
@@ -816,7 +818,8 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
                 <p>The AMR DFP Adapter lets publishers integrate Admost Mediation Router ads into applications with DFP
                     or Admob Mediation set as main ad mediation layer.</p>
 
-		<p>In order to show AMR ads in DFP/Admob Mediation you should first follow Setup and init phases of AMR documentation. Then, you should follow dedicated steps of DFP or
+                <p>In order to show AMR ads in DFP/Admob Mediation you should first follow Setup and init phases of AMR
+                    documentation. Then, you should follow dedicated steps of DFP or
                     Admob Mediation to set AMR as an ad mediation source.</p>
 
                 <p>After adding AMR as an ad mediation source you should define class names for banner and interstitial
@@ -833,33 +836,63 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
 
 
                 <p>Now you can show AMR banner and interstitial ads via DFP or Admob Mediation.</p>
-		
-		<p>You can check DFP banner and interstitial example in demo project; <a href="https://github.com/admost/amrandroid/blob/master/sample/AMRSample/app/src/main/java/com/kokteyl/amrtest/DFPIntegration.java" target="_blank">DFPIntegration</a>.</p>
 
-                    <h3 id="testsuite">Test Suite</h3>
+                <p>You can check DFP banner and interstitial example in demo project; <a
+                        href="https://github.com/admost/amrandroid/blob/master/sample/AMRSample/app/src/main/java/com/kokteyl/amrtest/DFPIntegration.java"
+                        target="_blank">DFPIntegration</a>.</p>
 
-                    <p>
-                        You can use Test Suite to test your ad networks with your zone ids.
-                    </p>
+                <h3 id="iap">In App Purchase Tracking <span class="label label-teal">New</span></h3>
 
-                    <p>
-                        To use Test Suite in your application, you can use following code;
-                    </p>
+                <p>
+                    The following call is used to track purchases with receipt validation:
+                </p>
 
-                    <pre><code class="language-java">
+                <pre><code class="language-java">
+AdMost.getInstance().trackPurchase(purchaseData, signature, jsonSkuDetail);
+                </code></pre>
+
+                <p>Explanation of Parameters:</p>
+                <ul>
+                    <li><b>purchaseData</b> – a String in JSON format that contains details about the purchase order. It
+                        is returned by the operating system after you make the purchase call.
+                    </li>
+                    <li><b>signature</b> – String containing the signature of the purchase data that the developer
+                        signed with their private key. It is returned by the operating system after you make the
+                        purchase call.
+                    </li>
+                    <li><b>jsonSkuDetail</b> – a String in JSON Object format that contains product item details
+                    </li>
+
+                </ul>
+
+
+                <h3 id="testsuite">Test Suite</h3>
+
+                <p>
+                    You can use Test Suite to test your ad networks with your zone ids.
+                </p>
+
+                <p>
+                    To use Test Suite in your application, you can use following code;
+                </p>
+
+                <pre><code class="language-java">
 AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", "DIFFERENT_ZONE_ID"});
                 </code></pre>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="promo left small-icon">
-                                <i class="fa fa-android"></i>
-                                <h3>Screen Shot</h3>
-                                <img class="img-responsive" src="https://raw.githubusercontent.com/admost/amrandroid/master/docs/assets/img/android_testsuite.png" alt="android-test-suite screenshot">
-                            </div>
 
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="promo left small-icon">
+                            <i class="fa fa-android"></i>
+                            <h3>Screen Shot</h3>
+                            <img class="img-responsive"
+                                 src="https://raw.githubusercontent.com/admost/amrandroid/master/docs/assets/img/android_testsuite.png"
+                                 alt="android-test-suite screenshot">
                         </div>
+
                     </div>
+                </div>
 
 
             </section>
@@ -894,7 +927,8 @@ AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", 
                     </p>
 
                     <div class="callout callout-warning" role="alert">
-                        <p>There are no changes in <a href="#usage">usage</a>, only </a> <a href="#setup">setup</a> changed..</p>
+                        <p>There are no changes in <a href="#usage">usage</a>, only </a> <a href="#setup">setup</a>
+                            changed..</p>
                     </div>
 
 
@@ -907,14 +941,23 @@ AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", 
                     </h3>
                     <br>
                     <ul class="changelog">
-                        <li class="ch-fixed">Bug fix<small>&nbsp;~ Google play services existence check added while trying to get Advertising ID from device</small></li>
+                        <li class="ch-added">In App Purchase Tracking
+                            <small>&nbsp;&nbsp;<a href="#iap"><i class="fa fa-link"></i></a></small>
+                        </li>
+                        <li class="ch-fixed">Bug fix
+                            <small>&nbsp;~ Google play services existence check added while trying to get Advertising ID
+                                from device
+                            </small>
+                        </li>
                     </ul>
                     <h3 id="v1.3.9">Version 1.3.9
                         <small class="release-date">August 25, 2017</small>
                     </h3>
                     <br>
                     <ul class="changelog">
-                        <li class="ch-decreased">Appnext 2.0.3.459 <small>&nbsp;~ Bug exists in latest Appnext SDK so we decided to use lower version.</small></li>
+                        <li class="ch-decreased">Appnext 2.0.3.459
+                            <small>&nbsp;~ Bug exists in latest Appnext SDK so we decided to use lower version.</small>
+                        </li>
                         <li class="ch-fixed">Various bug fixes</li>
                     </ul>
 
@@ -923,7 +966,9 @@ AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", 
                     </h3>
                     <br>
                     <ul class="changelog">
-                        <li class="ch-added">Test Suite Added<small>&nbsp;&nbsp;<a href="#testsuite"><i class="fa fa-link"></i></a></small></li>
+                        <li class="ch-added">Test Suite Added
+                            <small>&nbsp;&nbsp;<a href="#testsuite"><i class="fa fa-link"></i></a></small>
+                        </li>
                         <li class="ch-updated">Appnext 2.0.6.462</li>
                         <li class="ch-updated">Chartboost 7.0.0</li>
                         <li class="ch-updated">Facebook 4.25</li>
@@ -932,7 +977,14 @@ AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", 
                         <li class="ch-updated">Ironsource 6.6.4.1</li>
                         <li class="ch-updated">Leadbolt 8.1</li>
                         <li class="ch-updated">Mobfox 3.2.7b</li>
-                        <li class="ch-moved"><code>onAction</code> callback is deprecated <small>&nbsp;~ You can still use this method. New callbacks are listed below:<br> Banner: <code>onReady</code>, <code>onFail</code></br> Interstitial: <code>onReady</code>, <code>onFail</code> ,<code>onDismiss</code>, <code>onShown</code> <br> Rewarded: <code>onReady</code>, <code>onFail</code> ,<code>onDismiss</code>, <code>onComplete</code>, <code>onShown</code>.</small></li>
+                        <li class="ch-moved"><code>onAction</code> callback is deprecated
+                            <small>&nbsp;~ You can still use this method. New callbacks are listed below:<br> Banner:
+                                <code>onReady</code>, <code>onFail</code></br> Interstitial: <code>onReady</code>,
+                                <code>onFail</code> ,<code>onDismiss</code>, <code>onShown</code> <br> Rewarded: <code>onReady</code>,
+                                <code>onFail</code> ,<code>onDismiss</code>, <code>onComplete</code>,
+                                <code>onShown</code>.
+                            </small>
+                        </li>
                         <li class="ch-fixed">Various bug fixes</li>
                     </ul>
 
@@ -942,7 +994,9 @@ AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", 
                     <br>
                     <ul class="changelog">
 
-                        <li class="ch-added">Ad-blocker checker <small>(beta)</small></li>
+                        <li class="ch-added">Ad-blocker checker
+                            <small>(beta)</small>
+                        </li>
 
                         <li class="ch-updated">Appnext 2.0.5.462</li>
                         <li class="ch-updated">Flurry 7.2.1</li>
@@ -984,7 +1038,11 @@ AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", 
                         <li class="ch-updated">Smaato 6.1.1</li>
                         <li class="ch-updated">Tapjoy 11.11.0</li>
                         <li class="ch-updated">Tappx 3.0.5</li>
-                        <li class="ch-updated">Vungle 5.1.0 &nbsp;&nbsp;<small>&nbsp;~ From Admost <a href="http://dashboard.admost.com">dashboard</a> you should enter <code>zone_id</code> from network settings to <strong>Vungle</strong>.</small></li>
+                        <li class="ch-updated">Vungle 5.1.0 &nbsp;&nbsp;<small>&nbsp;~ From Admost <a
+                                href="http://dashboard.admost.com">dashboard</a> you should enter <code>zone_id</code>
+                            from network settings to <strong>Vungle</strong>.
+                        </small>
+                        </li>
                         <li class="ch-fixed">AdTrail Initing</li>
                         <li class="ch-fixed">Various bug fixes</li>
                     </ul>
@@ -1084,7 +1142,8 @@ You may try using --multi-dex option.
                                     significant in that it represents the total number of references that can be invoked
                                     by the code within a single Dalvik Executable (DEX) bytecode file. </p>
                                 <p>You can find more information about this error in the following <a
-                                        href="https://developer.android.com/studio/build/multidex.html" target="_blank">link</a></p>
+                                        href="https://developer.android.com/studio/build/multidex.html" target="_blank">link</a>
+                                </p>
 
                             </div>
                         </li>
@@ -1097,9 +1156,12 @@ You may try using --multi-dex option.
                         </li>
 
                         <li>
-                            <h6> I got error message says  <var>leaked IntentReceiver com.facebook.ads.internal.DisplayAdController$c@cf9db8c that was originally registered here. Are you missing a call to unregisterReceiver()? </var> in logcat. What is
+                            <h6> I got error message says <var>leaked IntentReceiver
+                                com.facebook.ads.internal.DisplayAdController$c@cf9db8c that was originally registered
+                                here. Are you missing a call to unregisterReceiver()? </var> in logcat. What is
                                 this?</h6>
-                            <div><p>You may have missed to call destroy for each AdMostView in your activity onDestroy method.</p></div>
+                            <div><p>You may have missed to call destroy for each AdMostView in your activity onDestroy
+                                method.</p></div>
                         </li>
                     </ul>
                 </div>
