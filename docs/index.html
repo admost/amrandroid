@@ -841,6 +841,22 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
                         href="https://github.com/admost/amrandroid/blob/master/sample/AMRSample/app/src/main/java/com/kokteyl/amrtest/DFPIntegration.java"
                         target="_blank">DFPIntegration</a>.</p>
 
+
+                <h3 id="testsuite">Test Suite</h3>
+
+                <p>
+                    You can use Test Suite to test your ad networks with your zone ids.
+                </p>
+
+                <p>
+                    To use Test Suite in your application, you can use following code;
+                </p>
+
+                <pre><code class="language-java">
+AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", "DIFFERENT_ZONE_ID"});
+                </code></pre>
+
+
                 <h3 id="iap">In App Purchase Tracking <span class="label label-teal">New</span></h3>
 
                 <p>
@@ -865,20 +881,6 @@ AdMost.getInstance().trackPurchase(purchaseData, signature, jsonSkuDetail);
 
                 </ul>
 
-
-                <h3 id="testsuite">Test Suite</h3>
-
-                <p>
-                    You can use Test Suite to test your ad networks with your zone ids.
-                </p>
-
-                <p>
-                    To use Test Suite in your application, you can use following code;
-                </p>
-
-                <pre><code class="language-java">
-AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", "DIFFERENT_ZONE_ID"});
-                </code></pre>
 
 
                 <div class="row">
