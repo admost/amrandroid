@@ -880,24 +880,42 @@ AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", 
 AdMost.getInstance().trackPurchase(purchaseData, signature, jsonSkuDetail);
                 </code></pre>
 
-                <p>Explanation of Parameters:</p>
+                <p>Explanation and code samples of parameters:</p>
                 <ul>
                     <li><b>purchaseData</b> – a String in JSON format that contains details about the purchase order. It
                         is returned by the operating system after you make the purchase call.
+                        <pre><code class="language-java">
+//Handles an activity result that's part of the purchase flow in in-app billing
+public boolean handleActivityResult(int requestCode, int resultCode, Intent data) {
+    ...
+    String purchaseData = data.getStringExtra(RESPONSE_INAPP_PURCHASE_DATA);
+    ...
+}
+
+                </code></pre>
+
                     </li>
                     <li><b>signature</b> – String containing the signature of the purchase data that the developer
                         signed with their private key. It is returned by the operating system after you make the
                         purchase call.
+                        <pre><code class="language-java">
+//Handles an activity result that's part of the purchase flow in in-app billing
+public boolean handleActivityResult(int requestCode, int resultCode, Intent data) {
+    ...
+    String dataSignature = data.getStringExtra(RESPONSE_INAPP_SIGNATURE);
+    ...
+}
+
+                </code></pre>
                     </li>
                     <li><b>jsonSkuDetail</b> – a String in JSON Object format that contains product item details
+                        <pre><code class="language-java">
+//coin is instance of PurchaseItem which is created by Google In App Purchase
+coin.DETAIL.getSku()
+</code></pre>
                     </li>
 
                 </ul>
-
-
-
-
-
 
             </section>
 
