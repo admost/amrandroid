@@ -886,7 +886,7 @@ AdMost.getInstance().trackPurchase(purchaseData, signature, jsonSkuDetail);
                         is returned by the operating system after you make the purchase call.
                         <pre><code class="language-java">
 //Handles an activity result that's part of the purchase flow in in-app billing
-public boolean handleActivityResult(int requestCode, int resultCode, Intent data) {
+void onActivityResult(int requestCode, int resultCode, Intent data) {
     ...
     String purchaseData = data.getStringExtra(RESPONSE_INAPP_PURCHASE_DATA);
     ...
@@ -900,7 +900,7 @@ public boolean handleActivityResult(int requestCode, int resultCode, Intent data
                         purchase call.
                         <pre><code class="language-java">
 //Handles an activity result that's part of the purchase flow in in-app billing
-public boolean handleActivityResult(int requestCode, int resultCode, Intent data) {
+void onActivityResult(int requestCode, int resultCode, Intent data) {
     ...
     String dataSignature = data.getStringExtra(RESPONSE_INAPP_SIGNATURE);
     ...
@@ -909,11 +909,11 @@ public boolean handleActivityResult(int requestCode, int resultCode, Intent data
                 </code></pre>
                     </li>
                     <li><b>jsonSkuDetail</b> – a String in JSON Object format that contains product item details
+
+                        <p><a href="https://developer.android.com/google/play/billing/billing_reference.html#getSkuDetails">https://developer.android.com/google/play/billing/billing_reference.html#getSkuDetails</a></p>
                     </li>
 
                 </ul>
-
-                <p>Example code for in app purchase tracking:</p>
 
 
             </section>
