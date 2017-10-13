@@ -877,41 +877,58 @@ AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", 
                 </p>
 
                 <pre><code class="language-java">
-AdMost.getInstance().trackPurchase(purchaseData, signature, jsonSkuDetail);
+AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail);
                 </code></pre>
 
                 <p>Explanation and code samples of parameters:</p>
                 <ul>
                     <li><b>purchaseData</b> – a String in JSON format that contains details about the purchase order. It
                         is returned by the operating system after you make the purchase call.
-                        <pre><code class="language-java">
-//Handles an activity result that's part of the purchase flow in in-app billing
-void onActivityResult(int requestCode, int resultCode, Intent data) {
-    ...
-    String purchaseData = data.getStringExtra(RESPONSE_INAPP_PURCHASE_DATA);
-    ...
-}
-
-                </code></pre>
-
                     </li>
                     <li><b>signature</b> – String containing the signature of the purchase data that the developer
                         signed with their private key. It is returned by the operating system after you make the
                         purchase call.
+
+                    </li>
+
+                    <li><b>jsonSkuDetail</b> – a String in JSON Object format that contains product item details
+
+                    </li>
+
                         <pre><code class="language-java">
 //Handles an activity result that's part of the purchase flow in in-app billing
 void onActivityResult(int requestCode, int resultCode, Intent data) {
-    ...
+
     String dataSignature = data.getStringExtra(RESPONSE_INAPP_SIGNATURE);
-    ...
+    String purchaseData = data.getStringExtra(RESPONSE_INAPP_PURCHASE_DATA);
+
+    if(resultCode == RESULT_OK){
+        JSONObject purchasedProduct = new JSONObject(purchaseData);
+        String purchasedItemId = purchasedProduct.getString("productId");
+        for (String productData : responseList){
+            JSONObject product = new JSONObject(productData);
+        	String productId = product.getString("productId");
+            if(productId.equals(purchasedItemId){
+        		String jsonSkuDetail = product.toString();
+				AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail);
+        	}
+        }
+    }
 }
-
                 </code></pre>
-                    </li>
-                    <li><b>jsonSkuDetail</b> – a String in JSON Object format that contains product item details
 
+                    <p> This is the way of getting <var>responseList</var> from Google</p>
+                    <pre><code class="language-java">
+Bundle querySkus = new Bundle();
+querySkus.putStringArrayList(GET_SKU_DETAILS_ITEM_LIST, skuList);
+Bundle skuDetails = mService.getSkuDetails(3, mContext.getPackageName(), itemType, querySkus);
+
+ArrayList<String> responseList = skuDetails.getStringArrayList(RESPONSE_GET_SKU_DETAILS_LIST);
+                        </code></pre>
+
+                    <p>For further information;</p>
                         <p><a href="https://developer.android.com/google/play/billing/billing_reference.html#getSkuDetails">https://developer.android.com/google/play/billing/billing_reference.html#getSkuDetails</a></p>
-                    </li>
+
 
                 </ul>
 
