@@ -909,8 +909,7 @@ void onActivityResult(int requestCode, int resultCode, Intent data) {
             JSONObject product = new JSONObject(productData);
         	String productId = product.getString("productId");
             if(productId.equals(purchasedItemId){
-        		String jsonSkuDetail = product.toString();
-				AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail);
+				AdMost.getInstance().trackPurchase(purchaseData, dataSignature, productData);
         	}
         }
     }
