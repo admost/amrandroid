@@ -731,31 +731,31 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
     public void onDismiss(String message) {
         // Ad Dismiss
     }
-
     @Override
     public void onFail(int errorCode) {
         // Ad Failed
     }
-
     @Override
     public void onReady(String network) {
        // Ad Loaded
     }
-
     @Override
     public void onShown(String network) {
         //Ad Shown
     }
-
     @Override
-    public void onShown(String network) {
-        //Ad Shown
+    public void onClicked(String s) {
+        //Ad Clicked
     }
-
+    @Override
+    public void onComplete(String s) {
+        // If you are using interstitial, this callback will not be triggered.
+    }
     @Override
     public void onAction(int i) {
         // This method has been deprecated. Kept because of backward compatibility.
     }
+
 });
 
 INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
@@ -792,6 +792,10 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
             //Ad Shown
         }
         @Override
+        public void onClicked(String s) {
+            //Ad Clicked
+        }
+        @Override
         public void onAction(int i) {
             // This method has been deprecated. Kept because of backward compatibility.
         }
@@ -801,29 +805,47 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
                 <h3 id="offerwalls">Offerwalls</h3>
 
                 <pre><code class="language-java">OFFERWALL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
-    @Override
-    public void onAction(int value) {
-        if (value == AdMostAdListener.LOADED) {
+        @Override
+        public void onReady(String network) {
             // Ad Loaded
-        } else if (value == AdMostAdListener.FAILED) {
-            // No Ad Found
-        } else if (value == AdMostAdListener.CLOSED) {
-            // Ad Closed
         }
-    }
+        @Override
+        public void onFail(int errorCode) {
+            // Ad Failed
+        }
+        @Override
+        public void onDismiss(String message) {
+            // Ad Dismiss
+        }
+        @Override
+        public void onComplete(String network) {
+            // Video Ad Completed
+        }
+        @Override
+        public void onShown(String network) {
+            //Ad Shown
+        }
+        @Override
+        public void onClicked(String s) {
+            //Ad Clicked
+        }
+        @Override
+        public void onAction(int i) {
+            // This method has been deprecated. Kept because of backward compatibility.
+        }
 });</code></pre>
                 <br>
                 <h4 id="spending-virtual-currencies">
                     Spending Virtual Currencies
                 </h4>
-                <pre><code class="language-java">OFFERWALL.spendVirtualCurrency(new AdMostVirtualCurrencyListener() {
+                <pre><code class="language-java">AdMost.getInstance().spendVirtualCurrency(new AdMostVirtualCurrencyListener() {
     @Override
-    public void onSuccess(String network, String currency, double balance) {
+    public void onSuccess(String adNetwork, String currencyName, double value) {
         // User rewarded (This method can be triggered multiple times depends on Offerwall Zone)
     }
 
     @Override
-    public void onError(String network, String error) {
+    public void onError(String adNetwork, String error) {
         // Error
     }
 });
