@@ -345,6 +345,12 @@
 # ADCOLONY
 -dontwarn com.adcolony.**
 -keep class com.adcolony.** { *; }
+-keepclassmembers class * {
+@android.webkit.JavascriptInterface &lt;methods&gt;;
+}
+-keepclassmembers class com.adcolony.sdk.ADCNative** {
+*;
+}
 
 # ADMOB / ADX / GOOGLE
 -keep class com.android.vending.billing.**
@@ -1036,6 +1042,9 @@ ArrayList<String> responseList = skuDetails.getStringArrayList(RESPONSE_GET_SKU_
                         <li class="ch-added">Youappi 3.0.0
                         </li>
                         <li class="ch-updated">Adcolony 3.2.1
+                            <div class="callout callout-warning" role="alert">
+                                <p>Do not forget to update <code>/app/src/proguard-rules.pro</code> file.</p>
+                            </div>
                         </li>
                         <li class="ch-updated">Adtrial 2017-09-27
                         </li>
