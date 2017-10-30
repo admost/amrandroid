@@ -330,7 +330,7 @@
 
                 -->
                 <pre class="pre-scrollable"><code class="language-typescript" id="code-proguard">
-                     # ADMOST
+                    # ADMOST
 -keepattributes Exceptions, InnerClasses
 -dontwarn admost.sdk.**
 -keep class admost.sdk.** {*;}
@@ -357,13 +357,13 @@
 -keepclassmembers class * implements android.os.Parcelable { public static final *** CREATOR; }
 -keep @interface android.support.annotation.Keep
 -keep @android.support.annotation.Keep class *
--keepclasseswithmembers class * { @android.support.annotation.Keep <fields>; }
--keepclasseswithmembers class * { @android.support.annotation.Keep <methods>; }
+-keepclasseswithmembers class * { @android.support.annotation.Keep &lt;fields&gt;; }
+-keepclasseswithmembers class * { @android.support.annotation.Keep &lt;methods&gt;; }
 -keep @interface com.google.android.gms.common.annotation.KeepName
 -keepnames @com.google.android.gms.common.annotation.KeepName class *
 -keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
 -keep @interface com.google.android.gms.common.util.DynamiteApi
--keep public @com.google.android.gms.common.util.DynamiteApi class * { public <fields>; public <methods>; }
+-keep public @com.google.android.gms.common.util.DynamiteApi class * { public &lt;fields&gt;; public &lt;methods&gt;; }
 -keep public @com.google.android.gms.common.util.DynamiteApi class * { *; }
 -keep class com.google.android.apps.common.proguard.UsedBy*
 -keep @com.google.android.apps.common.proguard.UsedBy* class *
@@ -395,10 +395,6 @@
 -keep class com.google.android.exoplayer2.SimpleExoPlayer
 -dontwarn com.google.android.exoplayer2.SimpleExoPlayer
 
-# CACTUSROAD
--keep class com.thecactusroad.sdk.** { *; }
--dontwarn com.thecactusroad.sdk.**
-
 # CHARTBOOST
 -dontwarn org.apache.http.**
 -dontwarn com.chartboost.sdk.impl.**
@@ -419,7 +415,7 @@
 -keep class com.flurry.** { *; }
 -dontwarn com.flurry.**
 -keepattributes *Annotation*,EnclosingMethod,Signature
--keepclasseswithmembers class * { public <init>(android.content.Context, android.util.AttributeSet, int); }
+-keepclasseswithmembers class * { public &lt;init&gt;(android.content.Context, android.util.AttributeSet, int); }
 -keep class * extends java.util.ListResourceBundle { protected Object[][] getContents(); }
 -keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
 -keepnames @com.google.android.gms.common.annotation.KeepName class *
@@ -473,7 +469,7 @@
 -dontwarn com.google.android.gms.**
 -keep class com.apptracker.** { *; }
 -dontwarn com.apptracker.**
--keepclassmembers class **.R$* { public static <fields>; }
+-keepclassmembers class **.R$* { public static &lt;fields&gt;; }
 -keep class **.R$*
 
 # LOOPME
@@ -488,13 +484,15 @@
 -dontwarn com.moat.**
 -dontwarn mdos.**
 
-# MILLENNIAL & NEXAGE
+# MILLENNIAL &amp; NEXAGE
 -keep class com.millennialmedia.** { *; }
 -dontwarn com.millennialmedia.**
 
 # MOBFOX
 -dontwarn com.mobfox.**
 -keep class com.mobfox.** { *; }
+-keep class com.mobfox.adapter.** { *; } 
+-keep class com.mobfox.sdk.** { *; }
 
 # MOPUB
 -keepclassmembers class com.mopub.** { public *; }
@@ -558,7 +556,7 @@
 
 # TAPPX
 -keepattributes *Annotation*
--keepclassmembers class com.google.**.R$* { public static <fields>; }
+-keepclassmembers class com.google.**.R$* { public static &lt;fields&gt;; }
 -keep public class com.google.ads.** {*;}
 -keep public class com.google.android.gms.** {*;}
 -keep public class com.tappx.** { *; }
@@ -582,6 +580,15 @@
 -dontwarn com.moat.**
 -keep class com.moat.** { *; }
 
+# YOUAPPI
+-keep class com.google.gson.**{ *;}
+-keep class com.google.android.gms.**{*;}
+-keep class com.youappi.ai.sdk.**{*;}
+-keep interface com.youappi.ai.sdk.**{*;}
+-keep enum com.youappi.ai.sdk.**{*;}
+-keepclassmembers class * {
+  @android.webkit.JavascriptInterface &lt;methods&gt;;
+}
 
 </code>
                 </pre>
@@ -987,6 +994,7 @@ ArrayList<String> responseList = skuDetails.getStringArrayList(RESPONSE_GET_SKU_
                         new features, etc.</p>
 
                     <ol class="toc">
+                        <li><a href="#v1.5.2">Version 1.5.2</a></li>
                         <li><a href="#v1.5.1">Version 1.5.1</a></li>
                         <li><a href="#v1.5.0">Version 1.5.0</a></li>
                         <li><a href="#v1.4.0">Version 1.4.0</a></li>
@@ -1019,6 +1027,62 @@ ArrayList<String> responseList = skuDetails.getStringArrayList(RESPONSE_GET_SKU_
                 </section>
 
                 <section id="versions">
+
+                    <h3 id="v1.5.2">Version 1.5.2
+                        <small class="release-date">October 30, 2017</small>
+                    </h3>
+                    <br>
+                    <ul class="changelog">
+                        <li class="ch-added">Youappi 3.0.0
+                        </li>
+                        <li class="ch-updated">Adcolony 3.2.1
+                        </li>
+                        <li class="ch-updated">Adtrial 2017-09-27
+                        </li>
+                        <li class="ch-updated">Applovin 7.4.1
+                        </li>
+                        <li class="ch-updated">Fyber 8.16.1
+                        </li>
+                        <li class="ch-updated">Ironsource 6.6.8.1
+                        </li>
+                        <li class="ch-updated">Leadbolt 8.1a
+                        </li>
+                        <li class="ch-updated">Loopme 5.2.4
+                        </li>
+                        <li class="ch-updated">Mediabrix 1.8.2.2
+                        </li>
+                        <li class="ch-updated">Millenial 6.6.1
+                        </li>
+                        <li class="ch-updated">Mobfox 3.2.8c
+                        </li>
+                        <li class="ch-updated">Mopub 4.17.0
+                            <div class="callout callout-warning" role="alert">
+                                <p>Mopub added new repository. Please be sure that you have proper configuration. <a href="#pick-adnetworks"><i class="fa fa-link"></i></a> <b></b></p>
+                            </div>
+                            <div class="callout callout-danger" role="alert">
+                                <p class="text-danger">Error:(29) error: unknown element &lt;library&gt; found.</p>
+                                    If you are using Android Studio 3.0 this error may appear. Please follow the issue from this <a target="_blank" href="https://stackoverflow.com/questions/46249104/android-canary-3-0-beta-5-unknown-element-library-found">link <i class="fa fa-external-link"></i></a> <b></b></p>
+                            </div>
+                        </li>
+                        <li class="ch-updated">Startapp 3.6.7
+                        </li>
+                        <li class="ch-updated">Tappx 3.0.7
+                        </li>
+                        <li class="ch-updated">Unity 2.1.1
+                        </li>
+                        <li class="ch-moved">Appnext integration moved to our maven repository.
+                            <div class="callout callout-warning" role="alert">
+                                <p>Remove <pre><code>maven { url 'http://dl.appnext.com/' }</code></pre> from repositories{} bracelets in <code>/build.gradle</code> file </p>
+                                <p> Replace <pre><code>compile 'com.appnext.sdk:ads:2.1.1.463'
+compile 'com.appnext.sdk:native-ads:2.1.1.463' </code></pre> lines with <pre><code>compile 'com.admost.sdk:appnext:2.1.1.463'</code></pre></p>
+                                <p>in your <code>/app/src/build.gradle</code> file.</p>
+                            </div>
+                        </li>
+                        <li class="ch-updated"><code>/app/src/proguard-rules.pro</code> file updated <a href="#proguard"><i class="fa fa-link"></i></a>.
+                        </li>
+
+
+                    </ul>
 
                     <h3 id="v1.5.1">Version 1.5.1
                         <small class="release-date">October 20, 2017</small>
