@@ -3,16 +3,15 @@ package com.kokteyl.amrtest;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
-import admost.sdk.AdMostInterstitial;
 import admost.sdk.AdMostManager;
 import admost.sdk.AdMostView;
 import admost.sdk.base.AdMost;
@@ -29,12 +28,22 @@ public class ListSampleActivity extends Activity {
 
         for (int i = 0; i < 100; i++) {
 
-            if (i % 10 == 0) {
+            if (i % 10 == 0 && i < 25) {
 
                 AdMostView ad = new AdMostView(this, Statics.BANNER_ZONE, AdMostManager.getInstance().AD_BANNER, new AdMostViewListener() {
                     @Override
                     public void onLoad(String network, int position) {
                         adapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onReady(String s, View view) {
+
+                    }
+
+                    @Override
+                    public void onFail(int i) {
+
                     }
                 }, null);
 
@@ -51,6 +60,23 @@ public class ListSampleActivity extends Activity {
 
         listView.setAdapter(adapter);
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (adapter != null) {
+                    for (int i=0; i<adapter.getCount();i++) {
+                        if (adapter.getItem(i) instanceof AdMostView) {
+                            int[] deneme = new int[2];
+                            ((AdMostView)adapter.getItem(i)).getView().getLocationOnScreen(deneme);
+                            Log.i("ADMOST","Location : " + deneme[0] + " " + deneme[1]);
+                        }
+                    }
+
+                }
+
+
+            }
+        }, 10000);
 
     }
 
@@ -127,6 +153,11 @@ public class ListSampleActivity extends Activity {
             return max + 1;
         }
 
+        public void clear() {
+            DATA.clear();
+            TYPE.clear();
+        }
+
         @Override
         public View getView(int position, View view, ViewGroup viewGroup) {
 
@@ -194,6 +225,7 @@ public class ListSampleActivity extends Activity {
                     ((AdMostView)adapter.getItem(i)).destroy();
                 }
             }
+            adapter.clear();
         }
 
     }

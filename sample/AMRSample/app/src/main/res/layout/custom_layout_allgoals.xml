@@ -21,18 +21,6 @@
         android:layout_marginRight="@dimen/news_card_left_right_margin"
         android:layout_marginTop="0dp">
 
-        <TextView
-            android:id="@+id/cardAttribution"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|right"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="2dp"
-
-            android:text="Ad"
-            android:textColor="#ffacabab"
-            android:textSize="12sp" />
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,11 +52,22 @@
                 android:textSize="14sp" />
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/cardAttribution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:text="Ad"
+            android:textColor="#ffacabab"
+            android:textSize="12sp" />
+
         <LinearLayout
             android:id="@+id/card_mainLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="35dp"
             android:layout_marginLeft="10dp"
             android:orientation="vertical">
 
@@ -92,7 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginBottom="12dp"
-                android:layout_marginTop="-7dp"
+                android:layout_marginTop="-10dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="Go"

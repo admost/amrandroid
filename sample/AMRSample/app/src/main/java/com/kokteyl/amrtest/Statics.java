@@ -1,11 +1,12 @@
 package com.kokteyl.amrtest;
 
-import admost.sdk.AdMostInterstitial;
-
 public class Statics {
-    public final static String AMR_APP_ID = "6cc8e89a-b52a-4e9a-bb8c-579f7ec538fe";
-    public final static String FULLSCREEN_ZONE = "f99e409b-f9ab-4a2e-aa9a-4d143e6809ae";
-    public final static String VIDEO_ZONE = "88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140";
-    public final static String BANNER_ZONE = "86644357-21d0-45a4-906a-37262461df65";
-    public static AdMostInterstitial AD_INTERSTITIAL;
+    //Test Ids
+
+    final static String AMR_APP_ID = "6cc8e89a-b52a-4e9a-bb8c-579f7ec538fe";
+    final static String BANNER_ZONE = "86644357-21d0-45a4-906a-37262461df65";
+    final static String FULLSCREEN_ZONE = "61c4c27b-d3be-4b9a-ab6d-67b062d23347";
+    final static String VIDEO_ZONE =  "6952d334-5041-44a5-9bfe-75abbbfcd1fe";
+    final static String VIDEO_ZONE_2 = "fa1072e4-afcf-49b6-a919-1ab1ab1b0aa9";
+
 }

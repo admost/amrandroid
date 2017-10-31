@@ -1,295 +1,141 @@
--dontobfuscate
--optimizations !class/unboxing/enum
--dontoptimize
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
 
--keepclassmembers enum * {
-    public static **[] values();
-    public static ** valueOf(java.lang.String);
-}
-
--keep public class * extends android.app.Activity
--keep public class * extends android.app.Application
--keep public class * extends android.app.Service
--keep public class * extends android.content.BroadcastReceiver
--keep public class * extends android.content.ContentProvider
-
--keep public class * extends android.view.View {
-    public <init>(android.content.Context);
-    public <init>(android.content.Context, android.util.AttributeSet);
-    public <init>(android.content.Context, android.util.AttributeSet, int);
-    public void set*(...);
-}
-
--keepclasseswithmembers class * {
-    public <init>(android.content.Context, android.util.AttributeSet);
-}
-
--keepclasseswithmembers class * {
-    public <init>(android.content.Context, android.util.AttributeSet, int);
-}
-
--keepclassmembers class * extends android.content.Context {
-   public void *(android.view.View);
-   public void *(android.view.MenuItem);
-}
-
--keepclassmembers class * implements android.os.Parcelable {
-    static ** CREATOR;
-}
-
--keepclassmembers class **.R$* {
-    public static <fields>;
-}
-
--keepclassmembers class * {
-    @android.webkit.JavascriptInterface <methods>;
-}
-
--keep class android.support.v7.** {
-   public protected *;
-}
-
-# Various
--keep class * extends java.util.ListResourceBundle { protected Object[][] getContents(); }
--keepattributes Exceptions, InnerClasses, Signature, Deprecated, SourceFile, LineNumberTable, *Annotation*, EnclosingMethod
--dontwarn android.webkit.JavascriptInterface
--keepattributes InnerClasses, EnclosingMethod
--keepattributes *Annotation*,EnclosingMethod
--keepclasseswithmembers class * { public <init>(android.content.Context, android.util.AttributeSet, int);  }
--keepclassmembers class fqcn.of.javascript.interface.for.webview { public *;  }
--keepclassmembers class * implements android.os.Parcelable { public static final android.os.Parcelable$Creator *; }
--dontwarn android.webkit.**
--keep public class android.support.v4.**
--dontwarn android.support.v4.**
-
-####################################################################################################
-
--keep class com.kokteyl.ApplicationStart { *; }
+# Add any project specific keep options here:
 
 
-# TAPJOY ###########################################################################################
--keep class com.tapjoy.** {*;}
--keepattributes JavascriptInterface
--keep class * extends java.util.ListResourceBundle {protected Object[][] getContents();}
--keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {public static final *** NULL;}
--keepnames @com.google.android.gms.common.annotation.KeepName class *
--keepclassmembernames class * {@com.google.android.gms.common.annotation.KeepName *;}
--keepnames class * implements android.os.Parcelable {public static final ** CREATOR;}
--keep class com.google.android.gms.ads.identifier.** {*;}
--dontwarn com.tapjoy.**
-####################################################################################################
--dontwarn com.google.common.**
--keep class com.google.common.** { public *; }
--keep class com.google.android.gms.common.api.GoogleApiClient { public *; }
--keep class com.google.android.gms.common.api.GoogleApiClient$* {public *;}
--keep class com.google.android.gms.location.LocationServices {public *;}
--keep class com.google.android.gms.location.FusedLocationProviderApi {public *;}
--keep class com.google.android.gms.location.ActivityRecognition {public *;}
--keep class com.google.android.gms.location.ActivityRecognitionApi {public *;}
--keep class com.google.android.gms.location.ActivityRecognitionResult {public *;}
--keep class com.google.android.gms.location.DetectedActivity {public *;}
--keep class com.google.android.gms.ads.identifier.AdvertisingIdClient{public *;}
--keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info{public *;}
-####################################################################################################
+#FOR DEBUGGING
+-keepattributes *Annotation*
+-keepattributes SourceFile
+-keepattributes LineNumberTable
 
-# ADCOLONY #########################################################################################
--optimizationpasses 5
--dontusemixedcaseclassnames
--dontskipnonpubliclibraryclasses
--dontpreverify
--verbose
--optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
--keep public class * extends android.app.Activity
--keep public class * extends android.app.Application
--keep public class * extends android.app.Service
--keep public class * extends android.content.BroadcastReceiver
--keep public class * extends android.content.ContentProvider
--keep public class * extends android.app.backup.BackupAgentHelper
--keep public class * extends android.preference.Preference
--keep public class com.android.vending.licensing.ILicensingService
--keepclasseswithmembernames class * {native <methods>;}
--keepclasseswithmembers class * {public <init>(android.content.Context, android.util.AttributeSet);}
--keepclasseswithmembers class * {public <init>(android.content.Context, android.util.AttributeSet, int);}
--keepclassmembers class * extends android.app.Activity {public void *(android.view.View);}
--keepclassmembers enum * {public static **[] values();public static ** valueOf(java.lang.String);}
--keep class * implements android.os.Parcelable {public static final android.os.Parcelable$Creator *;}
 
--dontwarn android.webkit.**
--dontwarn com.immersion.**
--dontnote com.immersion.**
 
-####################################################################################################
+########### START FACEBOOK SDK ############
+-keep class com.facebook.** { *; }
+########### END FACEBOOK SDK ############
 
--keepattributes *Annotation*,EnclosingMethod,Signature
--keepclasseswithmembers class * {public <init>(android.content.Context, android.util.AttributeSet, int);}
-# Google Play Services library
--keep class * extends java.util.ListResourceBundle {protected Object[][] getContents();}
--keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {public static final *** NULL;}
--keepnames @com.google.android.gms.common.annotation.KeepName class *
--keepclassmembernames class * {@com.google.android.gms.common.annotation.KeepName *;}
--keepnames class * implements android.os.Parcelable {public static final ** CREATOR;}
-#If you are using the Google Mobile Ads SDK, add the following:
-# Preserve GMS ads classes
--keep class com.google.android.gms.ads.** {*;}
--dontwarn com.google.android.gms.ads.**
-#If you are using the Millennial Media SDK, add the following:
-# Preserve Millennial Ads classes
--keep class com.millennialmedia.** {*;}
--dontwarn com.millennialmedia.**
-####################################################################################################
 
-# koushikdutta WEBSOCKET ###########################################################################
--keep class * extends com.koushikdutta.async.TapCallback {
-  public protected private *;
-}
-####################################################################################################
-
--keep class com.google.android.gms.** { *; }
+########### START ANDROID SUPPORT LIBRARY ############
+-keep class android.support.v4.app.** { *; }
+-keep interface android.support.v4.app.** {	*; }
+-keep class android.support.v7.app.** { *; }
+-keep class android.support.v7.widget.** { *; }
+-keep interface android.support.v7.app.** {	*; }
+-keep interface android.support.v7.widget.** {	*; }
+-keep public class com.google.android.gms.**
 -dontwarn com.google.android.gms.**
+########### END ANDROID SUPPORT LIBRARY ############
 
-# APPSEE ###########################################################################################
--keep class com.appsee.** { *; }
--dontwarn com.appsee.**
 
--keep class wordsearch.ApplicationStart { *; }
+########### START GOOGLE PLAY SERVICES ############
+-keep class * extends java.util.ListResourceBundle {
+    protected Object[][] getContents();
+}
+
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+    public static final *** NULL;
+}
+
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+    @com.google.android.gms.common.annotation.KeepName *;
+}
+
+-keepnames class * implements android.os.Parcelable {
+    public static final ** CREATOR;
+}
+########### END GOOGLE PLAY SERVICES ############
+
+
+########## PICASSO ##########################
+-dontwarn okio.**
+-dontwarn com.squareup.okhttp.**
+-keep class com.squareup.okhttp.** { *; }
+-keep interface com.squareup.okhttp.** { *; }
+########## PICASSO ##########################
+
+##---------------Begin: proguard configuration for Gson  ----------
+# Gson uses generic type information stored in a class file when working with fields. Proguard
+# removes such information by default, so configure it to keep all of it.
+-keepattributes Signature
+
+# Gson specific classes
+-keep class sun.misc.Unsafe { *; }
+#-keep class com.google.gson.stream.** { *; }
+
+# Application classes that will be serialized/deserialized over Gson
+# -keep class mypersonalclass.data.model.** { *; }
+
+-keepattributes EnclosingMethod
+
+########## BEGIN ADMOST ##########################
 
 # ADMOST
--keep class admost.sdk.** { *; }
+-keepattributes Exceptions, InnerClasses
 -dontwarn admost.sdk.**
-# ADMOB
--dontwarn com.google.android.gms.ads.**
--keep public class com.google.android.gms.ads.** {public *;}
--keep public class com.google.ads.** {public *;}
--keep class com.google.android.gms.ads.** {*;}
--keep class com.google.android.gms.common.GooglePlayServicesUtil {*;}
-# AMAZON
--dontwarn com.amazon.**
--keep class com.amazon.** {*;}
-# CHARTBOOST
--dontwarn org.apache.http.**
--dontwarn com.chartboost.sdk.impl.**
--keep class com.chartboost.sdk.** { *; }
--keepattributes *Annotation*
-# INMOBI
--keep class com.inmobi.** {*;}
--dontwarn com.inmobi.**
-# FLURRY
--keep class com.flurry.** { *; }
--dontwarn com.flurry.**
-# MOPUB
--dontwarn com.mopub.**
--keepclassmembers class com.mopub.** { public *; }
--keep class com.mopub.**
--keep public class android.webkit.JavascriptInterface {}
--keep class * extends com.mopub.mobileads.CustomEventBanner {}
--keep class * extends com.mopub.mobileads.CustomEventInterstitial {}
--keep class * extends com.mopub.nativeads.CustomEventNative {}
-# FACEBOOK
--dontwarn com.facebook.ads.**
--dontnote com.facebook.ads.**
--keep class com.facebook.** { *; }
--keepattributes Signature
-# MOBFOX
--dontwarn com.mobfox.**
--keep class com.mobfox.** {*;}
-# LOOPME
--dontwarn com.loopme.**
--keep class com.loopme.** {*;}
-# ADFALCON
--dontwarn com.noqoush.**
--keep class com.noqoush.** {*;}
-# MEDIABRIX
--dontwarn com.mediabrix.**
--keep class com.mediabrix.** { *; }
--dontwarn com.moat.analytics.**
--keep class com.moat.analytics.** { *; }
-# SUPERSONICADS
--dontwarn com.supersonicads.**
--keep class com.supersonicads.** { *; }
--dontwarn com.supersonic.**
--keep class com.supersonic.** { *; }
-# VUNGLE
--dontwarn com.vungle.**
--keep class com.vungle.** { public *; }
--keep class javax.inject.*
--keepattributes *Annotation*
--keepattributes Signature
--keep class dagger.*
-# PUBNATIVE
--keep class net.pubnative.** { *; }
--dontwarn net.pubnative.**
-# APPLOVIN
--dontwarn com.applovin.**
--keep class com.applovin.** { *; }
-# UNIVERSAL IMAGE LOADER
--keep class com.nostra13.universalimageloader.core.* { *; }
-# MEDIABRIX
--dontwarn com.mediabrix.**
--keep class com.mediabrix.** { *; }
--dontwarn com.moat.analytics.**
--keep class com.moat.analytics.** { *; }
-
-# FLYMOB
--dontwarn com.flymob.sdk.**
--keep class com.flymob.sdk.common.** { *; }
-
-# UNITY
--dontwarn com.unity3d.**
--keep class com.unity3d.ads.android.** { *; }
+-keep class admost.sdk.** {*;}
 
 # VOLLEY
 -keep class com.android.volley.** { *; }
 -keep interface com.android.volley.** { *; }
 -keep class org.apache.commons.logging.**
-# MILLENNIAL AND NEXAGE
--dontwarn com.millennialmedia**
--keepclassmembers class com.millennialmedia** {
-public *;
-}
--keep class com.millennialmedia**
-# REVMOB
--dontwarn com.revmob.**
--keep class com.revmob.** { public *; }
-# SMAATO
--dontwarn com.smaato.**
--keep class com.smaato.** { public *; }
 
--assumenosideeffects class android.util.Log {
-    public static *** d(...);
-    public static *** v(...);
-    public static *** i(...);
-}
--keep public class com.smaato.soma.internal.connector.OrmmaBridge {
-public *;
-}
--keepattributes *Annotation*
-# PUBNATIVE
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# ADMOB / ADX / GOOGLE
+-keep class com.android.vending.billing.**
+-keep public class com.google.android.gms.ads.** { public *; }
+-keep public class com.google.ads.** { public *; }
+-keep class com.google.android.gms.** { *; }
+-dontwarn com.google.android.gms.**
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
+-keepnames class * implements android.os.Parcelable
+-keepclassmembers class * implements android.os.Parcelable { public static final *** CREATOR; }
+-keep @interface android.support.annotation.Keep
+-keep @android.support.annotation.Keep class *
+-keepclasseswithmembers class * { @android.support.annotation.Keep <fields>; }
+-keepclasseswithmembers class * { @android.support.annotation.Keep <methods>; }
+-keep @interface com.google.android.gms.common.annotation.KeepName
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
+-keep @interface com.google.android.gms.common.util.DynamiteApi
+-keep public @com.google.android.gms.common.util.DynamiteApi class * { public <fields>; public <methods>; }
+-keep public @com.google.android.gms.common.util.DynamiteApi class * { *; }
+-keep class com.google.android.apps.common.proguard.UsedBy*
+-keep @com.google.android.apps.common.proguard.UsedBy* class *
+-keepclassmembers class * { @com.google.android.apps.common.proguard.UsedBy* *; }
+-dontwarn android.security.NetworkSecurityPolicy
+-dontwarn android.app.Notification
+
+# FACEBOOK
+-dontwarn com.facebook.ads.**
+-dontnote com.facebook.ads.**
+-keep class com.facebook.** { *; }
 -keepattributes Signature
--keep class net.pubnative.** { *; }
--dontwarn net.pubnative.**
--keep class com.squareup.picasso.** { *; }
--dontwarn com.squareup.picasso.**
-# ADDICTIVEADS
--dontwarn com.addictiveads.**
--keep class com.addictiveads.** { public *; }
-# NATIVEX
--dontwarn com.nativex.**
--keep class com.nativex.** { public *; }
-# HYPERADS
--dontwarn com.hyperadx.**
--keep class com.hyperadx.** { public *; }
-# APPNEXT
--keep class com.appnext.** { *; }
--dontwarn com.appnext.**
 
-# DISPLAYIO
--keep class io.display.sdk.Controller.** { *; }
--dontwarn io.display.sdk.Controller.**
+# MOBFOX
+-dontwarn com.mobfox.**
+-keep class com.mobfox.** { *; }
 
-# INLOCOMEDIA
--keep class com.inlocomedia.** { *; }
--dontwarn com.inlocomedia.**
+# MOPUB
+-keepclassmembers class com.mopub.** { public *; }
+-dontnote com.mopub.**
+-dontwarn com.mopub.**
+-keep public class com.mopub.**
+-keep public class android.webkit.JavascriptInterface {}
+-keep class * extends com.mopub.mobileads.CustomEventBanner {}
+-keep class * extends com.mopub.mobileads.CustomEventInterstitial {}
+-keep class * extends com.mopub.nativeads.CustomEventNative {}
+-keep class com.mopub.mobileads.** {*;}
 
-# ADCOLONY
--dontwarn com.adcolony.**
--keep class com.adcolony.** { *; }
+########## END ADMOST ##########################

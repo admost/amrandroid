@@ -11,11 +11,9 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherAdView;
 import com.google.android.gms.ads.doubleclick.PublisherInterstitialAd;
+
 import admost.sdk.AdMostViewBinder;
 import admost.sdk.base.AdMost;
-import admost.sdk.dfp.AmrDfpCustomEventBanner;
-
-import static com.kokteyl.amrtest.R.layout.custom_layout_allgoals;
 
 public class DFPIntegration extends Activity {
 
@@ -61,7 +59,7 @@ public class DFPIntegration extends Activity {
         adView.setAdSizes(new AdSize(320,50));
 
         // amr_binder : binder is only needed for your own style, you can leave it null
-        final AdMostViewBinder binder =  new AdMostViewBinder.Builder(custom_layout_allgoals)
+        final AdMostViewBinder binder =  new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
                 .titleId(R.id.cardTitle)
                 .textId(R.id.cardDetailText)
                 .callToActionId(R.id.CallToActionTextView)
@@ -71,11 +69,11 @@ public class DFPIntegration extends Activity {
                 .build();
 
         Bundle bundle = new Bundle();
-        bundle.putParcelable("amr_binder", binder);
+        //bundle.putParcelable("amr_binder", binder);
         // amr_binder : end
 
         PublisherAdRequest adRequest = new PublisherAdRequest.Builder()
-                .addCustomEventExtrasBundle(AmrDfpCustomEventBanner.class, bundle)
+                //.addCustomEventExtrasBundle(AmrDfpCustomEventBanner.class, bundle)
                 .build();
 
         adView.setAdListener(new AdListener() {

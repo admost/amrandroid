@@ -9,19 +9,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-
-import admost.sdk.AdMostInterstitial;
-import admost.sdk.AdMostManager;
-import admost.sdk.AdMostView;
-import admost.sdk.AdMostViewBinder;
+import admost.sdk.*;
 import admost.sdk.base.AdMost;
 import admost.sdk.base.AdMostConfiguration;
 import admost.sdk.base.AdMostLog;
 import admost.sdk.listener.AdMostAdListener;
 import admost.sdk.listener.AdMostViewListener;
-
-import static com.kokteyl.amrtest.R.layout.custom_layout_allgoals;
 
 public class MainActivity extends Activity {
 
@@ -37,10 +30,9 @@ public class MainActivity extends Activity {
 
         AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, Statics.AMR_APP_ID);
         AdMost.getInstance().init(configuration.build());
-
         getBanner();
-        //getInterstitial();
-        //getVideo();
+        getInterstitial();
+
 
         findViewById(R.id.showInterstitial).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +42,6 @@ public class MainActivity extends Activity {
                 } else {
                     getInterstitial();
                 }
-
             }
         });
 
@@ -69,6 +60,7 @@ public class MainActivity extends Activity {
                 } else {
                     getVideo();
                 }
+
             }
         });
 
@@ -91,16 +83,15 @@ public class MainActivity extends Activity {
         findViewById(R.id.test_suite).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AdMost.getInstance().startTestSuite(new String[] {Statics.BANNER_ZONE, Statics.FULLSCREEN_ZONE, Statics.VIDEO_ZONE});
+                AdMost.getInstance().startTestSuite(new String[]{Statics.BANNER_ZONE, Statics.FULLSCREEN_ZONE, Statics.VIDEO_ZONE, Statics.VIDEO_ZONE_2});
             }
         });
 
-
     }
 
-        private void getBanner() {
+    private void getBanner() {
         // This is just for your own style, left null if you want default layout style
-        final AdMostViewBinder binder =  new AdMostViewBinder.Builder(custom_layout_allgoals)
+        final AdMostViewBinder binder =  new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
                 .titleId(R.id.cardTitle)
                 .textId(R.id.cardDetailText)
                 .callToActionId(R.id.CallToActionTextView)
@@ -117,30 +108,32 @@ public class MainActivity extends Activity {
         ((TextView)findViewById(R.id.loadedNetwork)).setText("");
         ad = new AdMostView(MainActivity.this, Statics.BANNER_ZONE,AdMostManager.getInstance().AD_MEDIUM_RECTANGLE, new AdMostViewListener() {
             @Override
+            public void onLoad(String s, int i) {
+
+            }
+
+            @Override
             public void onReady(String network, View adView) {
                 Log.i("ADMOST","onReady : " + network);
-                LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
+                LinearLayout viewAd = findViewById(R.id.adLayout);
                 viewAd.removeAllViews();
                 if (adView.getParent() != null && adView.getParent() instanceof ViewGroup) {
                     ((ViewGroup) adView.getParent()).removeAllViews();
                 }
                 viewAd.addView(adView);
-                findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
+
                 ((TextView)findViewById(R.id.loadedNetwork)).setText(network);
             }
 
             @Override
             public void onFail(int errorCode) {
-                findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
                 ((TextView)findViewById(R.id.loadedNetwork)).setText("errorCode : " + errorCode);
 
             }
         }, binder);
 
         ad.load();
-            findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
-
-        }
+    }
 
     private void getVideo() {
         if (video == null) {
@@ -148,17 +141,18 @@ public class MainActivity extends Activity {
             AdMostAdListener listener = new AdMostAdListener() {
 
                 @Override
+                public void onAction(int i) {
+
+                }
+
+                @Override
                 public void onReady(String network) {
-                    super.onReady(network);
-                    findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
                     AdMostLog.log("MainActivity LOADED network :" + network);
                     ((Button)findViewById(R.id.showVideo)).setText("Show Video");
                 }
 
                 @Override
                 public void onFail(int errorCode) {
-                    super.onFail(errorCode);
-                    findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
                     String message;
                     switch (errorCode) {
                         case AdMost.AD_ERROR_NO_FILL :
@@ -182,33 +176,31 @@ public class MainActivity extends Activity {
 
                 @Override
                 public void onDismiss(String message) {
-                    super.onDismiss(message);
-                    findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
-                    AdMostLog.log("MainActivity onDismiss");
+                    AdMostLog.log("MainActivity ONDISMISS");
                     ((Button)findViewById(R.id.showVideo)).setText("Get Video");
                 }
 
                 @Override
                 public void onComplete(String network) {
-                    super.onComplete(network);
-                    findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
                     AdMostLog.log("MainActivity COMPLETED network : " + network);
                 }
 
+
+
                 @Override
                 public void onShown(String network) {
-                    super.onShown(network);
-                    findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
                     AdMostLog.log("MainActivity OnShown network: " + network);
+                }
+
+                @Override
+                public void onClicked(String s) {
+
                 }
             };
 
             video = new AdMostInterstitial(MainActivity.this, Statics.VIDEO_ZONE, listener);
         }
         video.refreshAd(false);
-        findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
-
-
 
     }
 
@@ -218,21 +210,22 @@ public class MainActivity extends Activity {
             AdMostAdListener listener = new AdMostAdListener() {
                 @Override
                 public void onAction(int value) {
-                    super.onAction(value);
                 }
 
                 @Override
                 public void onDismiss(String message) {
-                    super.onDismiss(message);
-                    findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
                     ((Button)findViewById(R.id.showInterstitial)).setText("Get Interstitial");
                     AdMostLog.log("MainActivity ONDISMISS");
                 }
 
                 @Override
+                public void onComplete(String s) {
+
+                }
+
+
+                @Override
                 public void onFail(int errorCode) {
-                    super.onFail(errorCode);
-                    findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
                     String message;
                     switch (errorCode) {
                         case AdMost.AD_ERROR_NO_FILL :
@@ -256,25 +249,24 @@ public class MainActivity extends Activity {
 
                 @Override
                 public void onReady(String network) {
-                    super.onReady(network);
-                    findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
                     ((Button)findViewById(R.id.showInterstitial)).setText("Show Interstitial");
                     AdMostLog.log("MainActivity LOADED network : " + network);
                 }
 
                 @Override
                 public void onShown(String network) {
-                    super.onShown(network);
-                    findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
                     AdMostLog.log("MainActivity OnShown network: " + network);
+                }
+
+                @Override
+                public void onClicked(String s) {
+
                 }
             };
 
             interstitial = new AdMostInterstitial(MainActivity.this, Statics.FULLSCREEN_ZONE, listener);
         }
         interstitial.refreshAd(false);
-        findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
-
     }
 
     @Override
@@ -313,4 +305,5 @@ public class MainActivity extends Activity {
             video.destroy();
         }
     }
+
 }

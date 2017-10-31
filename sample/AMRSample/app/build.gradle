@@ -1,19 +1,20 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    compileSdkVersion 26
+    buildToolsVersion '26.0.0'
     defaultConfig {
         applicationId 'com.kokteyl.amrtest'
-        minSdkVersion 15
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 101
+        versionName "1.0.1"
         multiDexEnabled true
     }
     buildTypes {
-        release {
-            minifyEnabled true
+        debug {
+            minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -24,12 +25,26 @@ android {
     }
     productFlavors {
     }
+    packagingOptions{
+        exclude 'META-INF/rxjava.properties'
+    }
 }
 repositories {
     flatDir {
         dirs 'libs'
     }
     maven { url 'http://repo.admost.com:8081/artifactory/amr' }
+    maven {
+        name "Fyber's maven repo"
+        url "https://fyber.bintray.com/maven"
+
+    }
+    maven {
+        url 'https://jitpack.io'
+    }
+
+    maven { url "http://dl.appnext.com/" }
+    maven { url "https://s3.amazonaws.com/moat-sdk-builds" }
     jcenter()
 }
 dependencies {
@@ -37,20 +52,12 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
 
     compile 'com.android.volley:volley:1.0.0'
-    compile 'com.admost.sdk:amr:1.3.8'
-    //compile(name:'admost-sdk', ext:'aar')
-
-    compile 'com.admost.sdk:fyber:8.15.1'
-
+    compile 'com.admost.sdk:amr:1.5.2'
     compile 'com.google.android.gms:play-services-basement:10.0.1'
     compile 'com.google.android.gms:play-services-ads:10.0.1'
-    compile 'com.admost.sdk:facebook:4.25'
-    compile 'com.admost.sdk:flurry:7.2.0'
-    compile 'com.admost.sdk:inmobi:6.2.6'
-    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:recyclerview-v7:+'
     compile 'com.android.support:appcompat-v7:+'
-    compile('com.mopub:mopub-sdk:4.15.0@aar') {transitive = true}
-    compile 'com.admost.sdk:vungle:5.1.0'
-
-
+    compile 'com.admost.sdk:avocarrot:3.8.2'
+    compile 'com.google.android.exoplayer:exoplayer:r2.2.0'
+    compile 'com.admost.sdk:facebook:4.25'
 }
