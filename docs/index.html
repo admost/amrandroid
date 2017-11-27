@@ -330,7 +330,7 @@
 
                 -->
                 <pre class="pre-scrollable"><code class="language-typescript" id="code-proguard">
-                    # ADMOST
+# ADMOST
 -keepattributes Exceptions, InnerClasses
 -dontwarn admost.sdk.**
 -keep class admost.sdk.** {*;}
@@ -345,12 +345,6 @@
 # ADCOLONY
 -dontwarn com.adcolony.**
 -keep class com.adcolony.** { *; }
--keepclassmembers class * {
-@android.webkit.JavascriptInterface &lt;methods&gt;;
-}
--keepclassmembers class com.adcolony.sdk.ADCNative** {
-*;
-}
 
 # ADMOB / ADX / GOOGLE
 -keep class com.android.vending.billing.**
@@ -468,6 +462,11 @@
 # IRONSOURCE
 -dontwarn com.ironsource.**
 -keep class com.ironsource.** { *; }
+-keepclassmembers class * implements android.os.Parcelable { public static final android.os.Parcelable$Creator *; }
+-keep public class com.google.android.gms.ads.** { public *; }
+-keep class com.ironsource.adapters.** { *; }
+-dontwarn com.moat.**
+-keep class com.moat.** { public protected private *; }
 
 # LEADBOLT
 -dontwarn android.support.v4.**
@@ -505,11 +504,25 @@
 -dontnote com.mopub.**
 -dontwarn com.mopub.**
 -keep public class com.mopub.**
--keep public class android.webkit.JavascriptInterface {}
+-keep class com.mopub.mobileads.** { *; }
 -keep class * extends com.mopub.mobileads.CustomEventBanner {}
 -keep class * extends com.mopub.mobileads.CustomEventInterstitial {}
 -keep class * extends com.mopub.nativeads.CustomEventNative {}
--keep class com.mopub.mobileads.** {*;}
+-keep class * extends com.mopub.nativeads.CustomEventRewardedAd {}
+-keepclassmembers class ** { @com.mopub.common.util.ReflectionTarget *; }
+-keepclassmembers class com.integralads.avid.library.mopub.** { public *; }
+-keep public class com.integralads.avid.library.mopub.**
+-keepclassmembers class com.moat.analytics.mobile.mpub.** { public *; }
+-keep public class com.moat.analytics.mobile.mpub.**
+-keep class com.google.android.gms.common.GooglePlayServicesUtil { *; }
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient { *; }
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info { *; }
+-keep class * extends java.util.ListResourceBundle { protected Object[][] getContents(); }
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
+-keepnames class * implements android.os.Parcelable { public static final ** CREATOR; }
+-keep public class android.webkit.JavascriptInterface {}
 
 # NATIVEX
 -dontwarn com.nativex.**
@@ -573,18 +586,30 @@
 -keep class com.unity3d.ads.** { *; }
 
 # VUNGLE
--keepattributes *Annotation*
--keepattributes Signature
 -dontwarn com.vungle.**
 -dontnote com.vungle.**
 -keep class com.vungle.** { *; }
--keep class javax.inject.**
--keep class dagger.**
--keep class de.greenbot.**
--keep class rx.**
--dontwarn rx.**
+-keep class javax.inject.*
+-dontwarn de.greenrobot.event.util.**
+-dontwarn rx.internal.util.unsafe.**
+-keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
+   long producerIndex;
+   long consumerIndex;
+}
+-keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
+   rx.internal.util.atomic.LinkedQueueNode producerNode;
+}
+-keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
+   rx.internal.util.atomic.LinkedQueueNode consumerNode;
+}
+-keep class rx.schedulers.Schedulers { public static &lt;methods&gt;; }
+-keep class rx.schedulers.ImmediateScheduler { public &lt;methods&gt;; }
+-keep class rx.schedulers.TestScheduler { public &lt;methods&gt;; }
+-keep class rx.schedulers.Schedulers { public static ** test(); }
 -dontwarn com.moat.**
--keep class com.moat.** { *; }
+-keep class com.moat.** { public protected private *; }
+-dontwarn okio.**
+-dontwarn retrofit2.Platform$Java8
 
 # YOUAPPI
 -keep class com.google.gson.**{ *;}
@@ -1000,6 +1025,7 @@ ArrayList<String> responseList = skuDetails.getStringArrayList(RESPONSE_GET_SKU_
                         new features, etc.</p>
 
                     <ol class="toc">
+                        <li><a href="#v1.5.5">Version 1.5.5</a></li>
                         <li><a href="#v1.5.3">Version 1.5.3</a></li>
                         <li><a href="#v1.5.2">Version 1.5.2</a></li>
                         <li><a href="#v1.5.1">Version 1.5.1</a></li>
@@ -1034,6 +1060,42 @@ ArrayList<String> responseList = skuDetails.getStringArrayList(RESPONSE_GET_SKU_
                 </section>
 
                 <section id="versions">
+
+                    <h3 id="v1.5.5">Version 1.5.5
+                        <small class="release-date">November 27, 2017</small>
+                    </h3>
+                    <br>
+                    <ul class="changelog">
+                        <li class="ch-fixed">Admob and Adx ad network requests are limited to 3 requests per waterfall.
+                        </li>
+                        <li class="ch-fixed">Performance improvements for getting ads as soon as possible
+                        </li>
+                        <li class="ch-fixed">Flurry native banner high memory consumption
+                        </li>
+                        <li class="ch-updated">Applovin 7.5.0
+                        </li>
+                        <li class="ch-updated">Chartboost 7.0.1
+                        </li>
+                        <li class="ch-updated">Flurry 8.0.2
+                        </li>
+                        <li class="ch-updated">InMobi 7.0.1
+                        </li>
+                        <li class="ch-updated">Ironsource 6.7.3
+                        </li>
+                        <li class="ch-updated">LoopMe 5.2.7
+                        </li>
+                        <li class="ch-updated">Mobfox 3.2.8d
+                        </li>
+                        <li class="ch-updated">Tappx 3.0.8
+                        </li>
+                        <li class="ch-updated">Vungle 5.3.0
+                            <div class="callout callout-success" role="alert">
+                                <p>Now available for Fire OS (Amazon) devices. Further information, check this <a target="_blank" href="https://vungle.com/amazon/">link <i class="fa fa-external-link"></i></a></p>
+                            </div>
+                        </li>
+                        <li class="ch-removed">Mobfox sticky service
+                        </li>
+                    </ul>
 
                     <h3 id="v1.5.3">Version 1.5.3
                         <small class="release-date">November 2, 2017</small>
