@@ -132,6 +132,8 @@
                         <li><a href="#dfp">DFP/Admob Mediation Integration</a></li>
                         <li><a href="#testsuite">Test Suite</a></li>
                         <li><a href="#iap">In App Purchase Tracking</a></li>
+						<li><a href="#PreloadBanner">Preloading Banners</a></li>
+						<li><a href="#senduserid">Setting Application User Id</a></li>
                     </ul>
                 </li>
                 <li><a href="#release-notes">Release Notes</a>
@@ -946,7 +948,7 @@ AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", 
                 </div>
 
 
-                <h3 id="iap">In App Purchase Tracking <span class="label label-teal">New</span></h3>
+                <h3 id="iap">In App Purchase Tracking</h3>
 
                 <p>
                     The following call is used to track purchases with receipt validation:
@@ -1032,6 +1034,16 @@ configuration.cacheZones(new AdMostBannerZoneCache[] {cacheZone});
 AdMost.getInstance().init(configuration.build());
                 </code></pre>
 
+				<h3 id="senduserid">Setting Application User Id <span class="label label-teal">New</span></h3>
+
+                <p>
+                    You can use the following method to set application specific user id in AMR Analytics for enhanced tracking of your users. You have to call this method after initialization.
+                </p>
+				
+				<pre><code class="language-java">
+AdMost.getInstance().setUserId(DPUser.getInstance().UserId);
+
+                </code></pre>
 
             </section>
 
@@ -1043,6 +1055,7 @@ AdMost.getInstance().init(configuration.build());
                         new features, etc.</p>
 
                     <ol class="toc">
+						<li><a href="#v1.5.8">Version 1.5.8</a></li>
 						<li><a href="#v1.5.7">Version 1.5.7</a></li>
 						<li><a href="#v1.5.6">Version 1.5.6</a></li>
                         <li><a href="#v1.5.5">Version 1.5.5</a></li>
@@ -1080,6 +1093,50 @@ AdMost.getInstance().init(configuration.build());
                 </section>
 
                 <section id="versions">
+					<h3 id="v1.5.8">Version 1.5.8
+                        <small class="release-date">Feb 15, 2018</small>
+                    </h3>
+                    <br>
+                    <ul class="changelog">
+                        <li class="ch-fixed">Mopub, sending unencrypted advertising id over http problem
+                        </li>
+                        <li class="ch-fixed">AdNetwork initialization and caching bugs
+                        </li>
+                        <li class="ch-fixed">Analytics session duration bug
+                        </li>
+                        <li class="ch-fixed">Other minor bugs
+                        </li>
+						<li class="ch-added">Setting application specific used id for analytics
+						</li>
+						<li class="ch-updated">Vungle moved to its own maven repository
+                        </li>
+						<li class="ch-updated">Appnext moved to its own maven repository
+                        </li>
+                        <li class="ch-updated">Adcolony 3.3.0
+                        </li>
+                        <li class="ch-updated">Aplovin 7.6.2
+                        </li>
+						<li class="ch-updated">AppNext 2.2.1.464
+                        </li>
+						<li class="ch-updated">Facebook 4.27
+                        </li>
+                        <li class="ch-updated">Flurry 8.2.0
+                        </li>
+						<li class="ch-updated">Fyber 8.19.0
+                        </li>
+						<li class="ch-updated">Inmobi 7.0.2
+                        </li>
+						<li class="ch-updated">Mobfox 3.3.0
+                        </li>
+						<li class="ch-updated">Startapp 3.6.9
+                        </li>
+						<li class="ch-updated">Tappx 3.0.9
+                        </li>
+						<li class="ch-updated">UnityAds 2.1.2
+                        </li>
+						<li class="ch-updated">Vungle 5.3.2
+                        </li>
+                    </ul>
 
 					<h3 id="v1.5.7">Version 1.5.7
                         <small class="release-date">December 22, 2017</small>
