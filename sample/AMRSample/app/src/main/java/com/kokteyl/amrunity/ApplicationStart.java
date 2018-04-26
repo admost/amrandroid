@@ -1,4 +1,4 @@
-package com.kokteyl.amrtest;
+package com.kokteyl.amrunity;
 
 import android.content.Context;
 import android.support.multidex.MultiDex;

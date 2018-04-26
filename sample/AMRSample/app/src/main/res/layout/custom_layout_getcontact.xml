@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+        <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+                                                     android:layout_height="wrap_content"
+                                                     android:layout_gravity="center"
+                                                     android:background="@color/white"
+                                                     android:padding="@dimen/dimen_10">
+
+
+            <ImageView
+                android:id="@+id/appinstall_app_icon"
+                android:layout_width="@dimen/dimen_50"
+                android:layout_height="@dimen/dimen_50"
+                />
+
+
+            <TextView
+                android:id="@+id/appinstall_headline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:textStyle="bold"
+                android:text="HGS - Deneme"
+                android:textColor="@color/ad_view_text_color"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/appinstall_app_icon" />
+
+
+            <TextView
+                android:id="@+id/appinstall_body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:layout_marginRight="@dimen/dimen_5"
+                android:textStyle="normal"
+                android:text="Test deneme deneme test deneme deneme test test deneme deneme"
+                android:textColor="@color/ad_view_text_color"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toStartOf="@+id/appinstall_call_to_action"
+                app:layout_constraintStart_toEndOf="@+id/appinstall_app_icon"
+                app:layout_constraintTop_toBottomOf="@+id/appinstall_headline" />
+
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/appinstall_call_to_action"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_25"
+                android:background="@color/blue"
+                android:paddingLeft="@dimen/dimen_5"
+                android:paddingRight="@dimen/dimen_5"
+                android:text="install"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button"
+                app:layout_constraintBottom_toBottomOf="@+id/appinstall_app_icon"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+</RelativeLayout>
+

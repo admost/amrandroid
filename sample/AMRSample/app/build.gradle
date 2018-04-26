@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.0'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
     defaultConfig {
-        applicationId 'com.kokteyl.amrtest'
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 101
-        versionName "1.0.1"
+        applicationId 'com.kokteyl.amrunity'
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 102
+        versionName "1.0.2"
         multiDexEnabled true
     }
     buildTypes {
@@ -20,7 +20,7 @@ android {
     }
     dexOptions {
         incremental true
-        javaMaxHeapSize = "4g"
+        javaMaxHeapSize = "8g"
         jumboMode = true
     }
     productFlavors {
@@ -28,36 +28,52 @@ android {
     packagingOptions{
         exclude 'META-INF/rxjava.properties'
     }
+    lintOptions {
+        abortOnError false
+    }
+
 }
 repositories {
     flatDir {
         dirs 'libs'
     }
     maven { url 'http://repo.admost.com:8081/artifactory/amr' }
-    maven {
-        name "Fyber's maven repo"
-        url "https://fyber.bintray.com/maven"
+    jcenter ()
+    maven { url 'https://s3.amazonaws.com/moat-sdk-builds' }
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://dl.bintray.com/pubnative/maven' }
 
-    }
-    maven {
-        url 'https://jitpack.io'
-    }
-
-    maven { url "http://dl.appnext.com/" }
-    maven { url "https://s3.amazonaws.com/moat-sdk-builds" }
-    jcenter()
+    google()
 }
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:multidex:1.0.3'
+    androidTestCompile 'com.android.support:multidex:1.0.3'
+    androidTestCompile 'com.android.support:multidex-instrumentation:1.0.3'
+    compile 'com.android.installreferrer:installreferrer:1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.1.0'
 
+    compile 'com.android.support:support-v4:27.1.1'
+    compile 'com.android.support:appcompat-v7:27.1.1'
     compile 'com.android.volley:volley:1.0.0'
-    compile 'com.admost.sdk:amr:1.5.2'
-    compile 'com.google.android.gms:play-services-basement:10.0.1'
-    compile 'com.google.android.gms:play-services-ads:10.0.1'
-    compile 'com.android.support:recyclerview-v7:+'
-    compile 'com.android.support:appcompat-v7:+'
-    compile 'com.admost.sdk:avocarrot:3.8.2'
-    compile 'com.google.android.exoplayer:exoplayer:r2.2.0'
-    compile 'com.admost.sdk:facebook:4.25'
+
+    //compile(name: 'admost-sdk', ext: 'aar')
+    compile 'com.admost.sdk:amr:1.6.3'
+    compile 'com.google.android.gms:play-services-base:12.0.1'
+    compile 'com.admost.sdk:adcolony:3.3.2'
+    compile 'com.android.support:support-annotations:+'
+    compile 'com.google.android.gms:play-services-ads:12.0.1'
+
+    compile 'com.admost.sdk:applovin:7.8.6'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+
+    compile('com.mopub:mopub-sdk:4.20.0@aar') {
+        transitive = true
+    }
+    compile 'com.admost.sdk:inmobi:7.0.4'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    compile 'com.google.android.gms:play-services-location:12.0.1'
+    compile 'com.google.android.gms:play-services-basement:12.0.1'
+
 }

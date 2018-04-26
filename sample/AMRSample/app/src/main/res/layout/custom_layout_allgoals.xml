@@ -100,6 +100,14 @@
                 android:textColor="@android:color/black"/>
 
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ad_choices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:orientation="vertical"/>
     </RelativeLayout>
 
 </LinearLayout>

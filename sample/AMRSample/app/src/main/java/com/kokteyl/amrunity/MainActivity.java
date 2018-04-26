@@ -1,22 +1,25 @@
-package com.kokteyl.amrtest;
+package com.kokteyl.amrunity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import admost.sdk.*;
+import admost.sdk.AdMostInterstitial;
+import admost.sdk.AdMostView;
+import admost.sdk.AdMostViewBinder;
 import admost.sdk.base.AdMost;
 import admost.sdk.base.AdMostConfiguration;
 import admost.sdk.base.AdMostLog;
+
 import admost.sdk.listener.AdMostAdListener;
 import admost.sdk.listener.AdMostViewListener;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     AdMostView ad;
     AdMostInterstitial interstitial;
@@ -30,9 +33,6 @@ public class MainActivity extends Activity {
 
         AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, Statics.AMR_APP_ID);
         AdMost.getInstance().init(configuration.build());
-        getBanner();
-        getInterstitial();
-
 
         findViewById(R.id.showInterstitial).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.listPage).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ListSampleActivity.class);
+                Intent intent = new Intent(MainActivity.this, ListViewSampleActivity.class);
                 startActivity(intent);
             }
         });
@@ -75,7 +75,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.dfp_integration).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DFPIntegration.class);
+                Intent intent = new Intent(MainActivity.this, DFPIntegrationSampleActivity.class);
                 startActivity(intent);
             }
         });
@@ -83,7 +83,15 @@ public class MainActivity extends Activity {
         findViewById(R.id.test_suite).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AdMost.getInstance().startTestSuite(new String[]{Statics.BANNER_ZONE, Statics.FULLSCREEN_ZONE, Statics.VIDEO_ZONE, Statics.VIDEO_ZONE_2});
+                AdMost.getInstance().startTestSuite(new String[]{Statics.BANNER_ZONE, Statics.FULLSCREEN_ZONE, Statics.VIDEO_ZONE});
+            }
+        });
+
+        findViewById(R.id.test_recyclerview).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecyclerViewSampleActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -91,6 +99,7 @@ public class MainActivity extends Activity {
 
     private void getBanner() {
         // This is just for your own style, left null if you want default layout style
+        //AdSettings.addTestDevice("f2ac6d6340d01e4ceaa901c94120f6f1");
         final AdMostViewBinder binder =  new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
                 .titleId(R.id.cardTitle)
                 .textId(R.id.cardDetailText)
@@ -106,7 +115,7 @@ public class MainActivity extends Activity {
             ad.destroy();
         }
         ((TextView)findViewById(R.id.loadedNetwork)).setText("");
-        ad = new AdMostView(MainActivity.this, Statics.BANNER_ZONE,AdMostManager.getInstance().AD_MEDIUM_RECTANGLE, new AdMostViewListener() {
+        ad = new AdMostView(MainActivity.this, Statics.BANNER_ZONE, new AdMostViewListener() {
             @Override
             public void onLoad(String s, int i) {
 
@@ -115,7 +124,7 @@ public class MainActivity extends Activity {
             @Override
             public void onReady(String network, View adView) {
                 Log.i("ADMOST","onReady : " + network);
-                LinearLayout viewAd = findViewById(R.id.adLayout);
+                LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
                 viewAd.removeAllViews();
                 if (adView.getParent() != null && adView.getParent() instanceof ViewGroup) {
                     ((ViewGroup) adView.getParent()).removeAllViews();
@@ -133,6 +142,7 @@ public class MainActivity extends Activity {
         }, binder);
 
         ad.load();
+
     }
 
     private void getVideo() {
@@ -182,7 +192,7 @@ public class MainActivity extends Activity {
 
                 @Override
                 public void onComplete(String network) {
-                    AdMostLog.log("MainActivity COMPLETED network : " + network);
+                    Log.i("ADMOST","MainActivity COMPLETED network : " + network);
                 }
 
 
@@ -270,40 +280,15 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        AdMost.getInstance().onStart(this);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        AdMost.getInstance().onResume(this);
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        AdMost.getInstance().onPause(this);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        AdMost.getInstance().onStop(this);
-    }
-
-    @Override
     public void onDestroy() {
         super.onDestroy();
-        AdMost.getInstance().onDestroy(this);
-        AdMost.getInstance().stop();
         if (interstitial != null) {
             interstitial.destroy();
         }
         if (video != null) {
             video.destroy();
         }
-    }
 
+    }
 }
+

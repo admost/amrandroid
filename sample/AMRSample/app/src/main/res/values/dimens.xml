@@ -6,4 +6,13 @@
     <dimen name="news_card_left_right_margin">5dp</dimen>
     <dimen name="news_card_meta_top_margin">5dp</dimen>
     <dimen name="news_card_category_top_margin">5dp</dimen>
+
+
+    <dimen name="dimen_25">25dp</dimen>
+    <dimen name="dimen_5">5dp</dimen>
+    <dimen name="dimen_10">10dp</dimen>
+    <dimen name="dimen_50">50dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="row_padding_vertical">10dp</dimen>
 </resources>

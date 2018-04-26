@@ -76,7 +76,7 @@
                     android:id="@+id/listPage"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
-                    android:text="List Page"/>
+                    android:text="ListView Sample"/>
 
                 <Button
                     android:id="@+id/dfp_integration"
@@ -89,6 +89,12 @@
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="Start Test Suite"/>
+
+                <Button
+                    android:id="@+id/test_recyclerview"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="RecyclerView Sample"/>
 
             </LinearLayout>
         </LinearLayout>

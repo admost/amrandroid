@@ -1,4 +1,4 @@
-package com.kokteyl.amrtest;
+package com.kokteyl.amrunity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,9 +13,9 @@ import com.google.android.gms.ads.doubleclick.PublisherAdView;
 import com.google.android.gms.ads.doubleclick.PublisherInterstitialAd;
 
 import admost.sdk.AdMostViewBinder;
-import admost.sdk.base.AdMost;
+import admost.sdk.dfp.AmrDfpCustomEventBanner;
 
-public class DFPIntegration extends Activity {
+public class DFPIntegrationSampleActivity extends Activity {
 
     PublisherInterstitialAd mPublisherInterstitialAd;
 
@@ -69,11 +69,11 @@ public class DFPIntegration extends Activity {
                 .build();
 
         Bundle bundle = new Bundle();
-        //bundle.putParcelable("amr_binder", binder);
+        bundle.putParcelable("amr_binder", binder);
         // amr_binder : end
 
         PublisherAdRequest adRequest = new PublisherAdRequest.Builder()
-                //.addCustomEventExtrasBundle(AmrDfpCustomEventBanner.class, bundle)
+                .addCustomEventExtrasBundle(AmrDfpCustomEventBanner.class, bundle)
                 .build();
 
         adView.setAdListener(new AdListener() {
@@ -137,33 +137,5 @@ public class DFPIntegration extends Activity {
 
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        AdMost.getInstance().onStart(this);
-    }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        AdMost.getInstance().onResume(this);
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        AdMost.getInstance().onPause(this);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        AdMost.getInstance().onStop(this);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        AdMost.getInstance().onDestroy(this);
-    }
 }

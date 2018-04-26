@@ -9,4 +9,13 @@
 
     <color name="amr_ad_background">#00FFFFFF</color>
 
+
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#0000FF</color>
+
+    <color name="ad_view_text_color">#000000</color>
+
+    <color name="year">#999999</color>
+    <color name="title">#222222</color>
+
 </resources>
