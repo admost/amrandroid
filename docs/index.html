@@ -653,40 +653,6 @@ AdMost.getInstance().init(configuration.build());</code></pre>
                     </div>
                 </div>
 
-
-                <p>if the project minSDKVersion is 13 (Honeycomb) or older.</p>
-
-                <pre><code class="language-java">@Override
-public void onStart() {
-    super.onStart();
-    AdMost.getInstance().onStart(this);
-}
-
-@Override
-public void onResume() {
-    super.onResume();
-    AdMost.getInstance().onResume(this);
-}
-
-@Override
-public void onPause() {
-    super.onPause();
-    AdMost.getInstance().onPause(this);
-}
-
-@Override
-public void onStop() {
-    super.onStop();
-    AdMost.getInstance().onStop(this);
-}
-
-@Override
-public void onDestroy() {
-    super.onDestroy();
-    AdMost.getInstance().onDestroy(this);
-}
-
-</code></pre>
                 <h3 id="banner-ads">Banner Ads</h3>
                 <pre><code class="language-java">/*
 ZONE_ID : Your ZONE_ID defined on admost mediation panels.
