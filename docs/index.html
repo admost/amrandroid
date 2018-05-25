@@ -112,6 +112,9 @@
                     <a href="#usage">Usage</a>
                     <ul>
                         <li><a href="#init">Init</a></li>
+							 <ul style="display: block;">
+                                <li><a href="#initgdpr">GDPR</a></li>
+                            </ul>
                         <li><a href="#banner-ads">Banner Ads</a></li>
                         <li><a href="#native-ads">Native Ads</a></li>
                         <li><a href="#interstitial">Interstitial Ads</a></li>
@@ -123,10 +126,21 @@
                                 <li><a href="#spending-virtual-currencies">Spending Virtual Currencies</a></li>
                             </ul>
                         </li>
+						</ul>
+               </li>
+						
+				 <li>
+                    <a href="#gdpr">GDPR</a>
+					 <ul>
+					 <li><a href="#networkcomplience">Network GDPR Complience</a></li>
+					 <li><a href="#gdprrules">GDPR Rules</a></li>
+					 
+					 </ul>
+                
+               </li>
 
 
-                    </ul>
-                </li>
+                
                 <li><a href="#extras">Extras</a>
                     <ul>
                         <li><a href="#dfp">DFP/Admob Mediation Integration</a></li>
@@ -347,6 +361,12 @@
 # ADCOLONY
 -dontwarn com.adcolony.**
 -keep class com.adcolony.** { *; }
+-keepclassmembers class * { 
+    @android.webkit.JavascriptInterface <methods>; 
+}
+-keepclassmembers class com.adcolony.sdk.ADCNative** {
+    *;
+ }
 
 # ADMOB / ADX / GOOGLE
 -keep class com.android.vending.billing.**
@@ -555,6 +575,9 @@
 }
 -keep public class com.smaato.soma.internal.connector.OrmmaBridge { public *; }
 -keepattributes *Annotation*
+- dontwarn com.smaato.soma.SomaUnityPlugin*
+- dontwarn com.millennialmedia**
+- dontwarn com.facebook.**
 
 # STARTAPP
 -keepattributes Exceptions, InnerClasses, Signature, Deprecated, SourceFile, LineNumberTable, *Annotation*, EnclosingMethod
@@ -588,30 +611,19 @@
 -keep class com.unity3d.ads.** { *; }
 
 # VUNGLE
--dontwarn com.vungle.**
--dontnote com.vungle.**
--keep class com.vungle.** { *; }
--keep class javax.inject.*
--dontwarn de.greenrobot.event.util.**
--dontwarn rx.internal.util.unsafe.**
--keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
-   long producerIndex;
-   long consumerIndex;
-}
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
-   rx.internal.util.atomic.LinkedQueueNode producerNode;
-}
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
-   rx.internal.util.atomic.LinkedQueueNode consumerNode;
-}
--keep class rx.schedulers.Schedulers { public static &lt;methods&gt;; }
--keep class rx.schedulers.ImmediateScheduler { public &lt;methods&gt;; }
--keep class rx.schedulers.TestScheduler { public &lt;methods&gt;; }
--keep class rx.schedulers.Schedulers { public static ** test(); }
+-keep class com.vungle.warren.** { *; }
+-dontwarn com.evernote.android.job.gcm.**
+-dontwarn com.evernote.android.job.GcmAvailableHelper
+-dontwarn com.google.android.gms.ads.identifier.**
+-keep public class com.evernote.android.job.v21.PlatformJobService
+-keep public class com.evernote.android.job.v14.PlatformAlarmService
+-keep public class com.evernote.android.job.v14.PlatformAlarmReceiver
+-keep public class com.evernote.android.job.JobBootReceiver
+-keep public class com.evernote.android.job.JobRescheduleService
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+-keep class com.google.android.gms.internal.** { *; }
+-keep class com.moat.** { *; }
 -dontwarn com.moat.**
--keep class com.moat.** { public protected private *; }
--dontwarn okio.**
--dontwarn retrofit2.Platform$Java8
 
 # YOUAPPI
 -keep class com.google.gson.**{ *;}
@@ -638,6 +650,9 @@
                 <p>Initialize the Admost Mediation SDK in your application’s launcher Activity. This starts pre-caching
                     and prepares the SDK to display ads.</p>
                 <pre><code class="language-java">AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, < ADMOST_APP_ID >);
+//GDPR COMPLIANCE
+configuration.setSubjectToGDPR(true);
+configuration.setUserConsent(false);
 
 // OPTIONAL
 configuration.age(24);
@@ -645,13 +660,15 @@ configuration.gender(AdMost.GENDER_MALE);
 configuration.interests(“Games, Sports, News”);
 
 AdMost.getInstance().init(configuration.build());</code></pre>
-                <p>Use the following methods of AMR in your Activities which ads are called</p>
 
-                <div class="row">
-                    <div class="col-md-12" id="file-initmethods">
+          
 
-                    </div>
-                </div>
+               <h4 id="initgdpr">GDPR</h4>
+			     <p> Once you have collected the user’s consent, you can pass it onto the SDK using the init configuration parameters shown above.  </p> 
+				  <p><code>setUserConsent</code> has a boolean parameter. If you have the user’s consent, set it true. If you do not have the user's consent, set it false.  </p>
+				  <p><code>setSubjectToGDPR</code> has a boolean parameter. If you know the user is subject to GDPR, set it true. If you know the user is not subject to GDPR, set it false. </p> 
+				 <p>If you don’t pass the user’s consent or subjectToGDPR to the SDK, the rules described in  <a href="#gdprrules">GDPR</a>  have been applied.  </p>
+				
 
                 <h3 id="banner-ads">Banner Ads</h3>
                 <pre><code class="language-java">/*
@@ -854,6 +871,141 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
 });
                 </code>
     </pre>
+				 <h2 id="gdpr">GDPR</h2>
+				 
+                <p>We specified your responsibilities for obtaining consent from end-users of your apps in our updated <a href="https://www.admost.com/privacy-policy">Privacy Policy</a>. By updating GDPR compatible SDK you agree that you’re responsible for inform the end-users and take their consent. 
+						Please note that the consent collection applies only to users located in the European Economic Area, the United Kingdom, and Switzerland.
+						As data controller you should take consent of end-users by preparing consent window, you can find samples below. When you take end-user consent, the response will be passed to Admost SDK. 
+						You can find the implementation  <a href="#init">here</a> </p>
+				<img class="img-responsive"
+                                 src="assets/img/consent.png"
+                                 alt="consent">
+				<h3 id="networkcomplience">Network GDPR Complience</h2>				 
+			   
+			   <table class="table table-bordered table-striped table-info" style = "width:300px ">	
+			    <tr>
+				    <th>Ad Network </th>
+				    <th >GDPR Compatibility</th> 
+				  </tr>
+				  <tr>
+				    <td >Adcolony</td>
+				    <td align="center"> <input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				   
+				  </tr>
+				  <tr>
+				    <td>Admob</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Adtrial</td>
+				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Amazon</td>
+				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Applovin</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Appnext</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" ><br></td>
+					<tr>
+				    <td>ChartBoost</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
+					<tr>
+				    <td>Display IO</td>
+				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
+				  </tr> 
+				  <tr>
+				    <td>Facebook</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Flurry</td>
+				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Fyber</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Glispa</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>InMobi</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>InnerActive</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" ><br></td> 
+				  </tr>
+				  <tr>
+				    <td>IronSource</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>LeadBolt</td>
+				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>LoopMe</td>
+				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Mobfox</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Mopub</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Nexage</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" ><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Smaato</td>
+				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Startapp</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Tapjoy</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Unity</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>Vungle</td>
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				  </tr>
+				  <tr>
+				    <td>YouAppi</td>
+				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
+				  </tr>
+				  
+				  </tr> 
+				  </tr>
+				  
+				</table>
+								 
+				<h3 id="gdprrules">GDPR Rules</h3>
+				
+				<p>Admost provides two methods for GDPR compatibility: <code>setSubjectToGDPR()</code> and <code>setUserConsent()</code>.</p> 
+				<p>Publisher have to set <code>setSubjectToGDPR(true)</code> if the user is located in European Union. Otherwise, publisher have to set <code>setSubjectToGDPR(false)</code>  . If publisher does not use this method, SubjectToGDPR status remains as unknown. In this case, Admost SDK automatically determines whether the user is in EU or not which is totally under responsibility of the publisher. If user is in EU, networks are not allowed to show personalized ads. If the user is not located in EU, the ad networks are allowed to show personalized ads. </p> 
+				<p>On condition that, the publisher obtains neither user's SubjectToGDPR status nor any negative legal consequences, SubjectToGDPR must set <code>setSubjectToGDPR(true)</code>  for each user. In this case, Admost considers all users as subject to GDPR and if the consent is not allowed, Admost blocks ad networks to collect data from users. Which may cause a decrease on overall revenue performance apart from Admost. </p> 
+				<p>If the publisher obtains user's consent and sets <code>setUserConsent(true)</code>, personalized ads would be shown to the users. Otherwise, the publisher sets <code>setUserConsent(false)</code> which would block the personalized ads, unless the user is not subject to GDPR.</p> 
+				<p>If the publisher does not use <code>setUserConsent()</code> method , userConsent status remains unknown. In this case, if the publisher provides <code>setSubjectToGDPR(true)</code>, the ad networks do not have ability to serve personalized ads.If the publisher provides <code> setSubjectToGDPR(false)</code>, the ad networks have ability to serve personalized ads.</p> 
+				<p>If the publisher does not provide both <code>setUserConsent()</code>  and <code>setSubjectToGDPR()</code>, Admost decides whether the user is located  in EU or not which is totally under responsibility of the publisher. </p> 
+				<p>If the publisher wants to obtain neither the user's consent nor any negative legal consequences, the publisher must set <code>setUserConsent(false)</code> for every user. In this case, Admost considers the user has no consent,  the ad networks are not allowed to serve personalized ads, except only the publisher does not provide <code>setSubjectToGDPR(false) </code>.</p>
+								
 
                 <h2 id="extras">Extras</h2>
 
@@ -1021,6 +1173,7 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                         new features, etc.</p>
 
                     <ol class="toc">
+						<li><a href="#v1.6.6">Version 1.6.6</a></li>
 						<li><a href="#v1.6.4">Version 1.6.4</a></li>
 						<li><a href="#v1.6.3">Version 1.6.3</a></li>
 						<li><a href="#v1.6.1">Version 1.6.1</a></li>
@@ -1063,6 +1216,18 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                 </section>
 
                 <section id="versions">
+					<h3 id="v1.6.6">Version 1.6.6
+                    <small class="release-date">May 25, 2018</small>
+                    </h3>
+                    <br>
+                    <ul class="changelog"> 
+                        <li class="ch-fixed">Custom designed native ad inconveniences fixed</li>
+						<li class="ch-updated">GDPR Update</li>
+						<li class="ch-updated">Adcolony 3.3.4, Admob & AdX 15.0.1, Applovin 8.0.1, Appnext 2.3.1.471, ChartBoost 7.2.0, Display IO 1.5.2, Facebook 4.28.2, Flurry 10.1.0, Fyber 8.21.0, Glispa 4.10.0, InMobi 7.1.0, InnerActive 7.1.4, IronSource 6.7.9, LoopMe 5.2.9, MobFox 3.5.0, MoPub 5.0.0, Millennial/Nexage 6.8.1, Smaato 8.0.0, Tappx 3.0.12, Unity 2.2.1, Vungle 6.2.5, YouAppi 4.1.1, MediaBrix 1.8.3.1 
+                        </li>
+						
+						
+                    </ul>
 					<h3 id="v1.6.4">Version 1.6.4
                         <small class="release-date">May 02, 2018</small>
                     </h3>
