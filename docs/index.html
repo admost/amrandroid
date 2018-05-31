@@ -299,7 +299,9 @@
 &lt;uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot;/&gt;
 &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;
 &lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;/&gt;
-&lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot;/&gt;  
+// Mandatory for VUNGLE
+&lt;uses-permission android:name=&quot;android.permission.WAKE_LOCK&quot;/&gt;
                 </code></pre>
 
 
@@ -1172,6 +1174,7 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                         new features, etc.</p>
 
                     <ol class="toc">
+						<li><a href="#v1.6.7">Version 1.6.7</a></li>
 						<li><a href="#v1.6.6">Version 1.6.6</a></li>
 						<li><a href="#v1.6.4">Version 1.6.4</a></li>
 						<li><a href="#v1.6.3">Version 1.6.3</a></li>
@@ -1215,6 +1218,16 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                 </section>
 
                 <section id="versions">
+					<h3 id="v1.6.7">Version 1.6.7
+                    <small class="release-date">May 31, 2018</small>
+                    </h3>
+                    <br>
+                    <ul class="changelog"> 
+                        <li class="ch-fixed">First activity memory leak</li>
+						<li class="ch-fixed">Vungle crash due to WAKE_LOCK permission</li>
+						<li class="ch-added">Opening Mopub consent dialog on init</li>
+												
+                    </ul>
 					<h3 id="v1.6.6">Version 1.6.6
                     <small class="release-date">May 25, 2018</small>
                     </h3>
