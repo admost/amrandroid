@@ -375,7 +375,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 storeUserConsentInfo(STATUS_REJECTED); // user rejected
-                mainText.setText("Admost and its partners will not collect any data for personalized advertising through this app. If you consent to Admost and its partners personalizing your advertising experience, we will still collect yours in that app.");
+                mainText.setText("AMR Debug(Your app name) and its partners will not collect any data for personalized advertising through this app. If you consent to AMR Debug(Your app name) and its partners personalizing your advertising experience, we will still collect yours in that app.");
                 no.setVisibility(View.GONE);
                 yes.setText("OK, I understand");
                 yes.setOnClickListener(null);
