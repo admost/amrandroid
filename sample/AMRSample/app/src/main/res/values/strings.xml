@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AMR Debug</string>
+    <string name="gdpr_text">We personalize your advertising experience using Admost and its partners. By giving your consent to this improved ad experience, you\'\'ll see more relevant ads for you. Admost and its partners may collect and process device identifiers, location data, and other demographic and interest data about you to provide advertising experience tailored to you. <a href="https://www.admost.com/privacy-policy">Learn more.</a> \n\nBy agreeing, you are confirming that you are over age 16 and would like a personalized ad experience.</string>
 </resources>

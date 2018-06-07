@@ -2,14 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="com.kokteyl.amrunity">
+    <!--Please look at the docs at https://admost.github.io/amrandroid/ which shows you the required permissions.-->
+    <!-- Some of these permissions are added to your app automatically. Please look at the docs. -->
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:remove="true"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <!-- Location
+     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+     -->
+
+    <!--  Mandatory for VUNGLE Network -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
     <!-- OPTIONAL -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -19,24 +31,16 @@
     <uses-permission android:name="android.permission.NFC"/>
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-
-    <uses-sdk
-        android:minSdkVersion="16"
-        tools:overrideLibrary="net.pubnative.lite.sdk"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>-->
 
     <application
-        android:name="android.support.multidex.MultiDexApplication"
+        android:name=".ApplicationStart"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:largeHeap="true"
         android:theme="@style/AppTheme">
-
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
 
         <receiver
             android:name="admost.sdk.base.InstallReferrerReceiver"
@@ -47,7 +51,7 @@
             <!--<meta-data android:name="admost.install.referrer.1" android:value="com.google.android.gms.analytics.CampaignTrackingReceiver" />-->
         </receiver>
 
-        <activity android:name="com.kokteyl.amrunity.MainActivity"
+        <activity android:name=".MainActivity"
                   android:configChanges="orientation|screenSize|keyboard"
                   android:theme="@style/AppTheme">
             <intent-filter>
@@ -58,17 +62,17 @@
         </activity>
 
         <activity
-            android:name="com.kokteyl.amrunity.ListViewSampleActivity"
+            android:name=".ListViewSampleActivity"
             android:screenOrientation="portrait"
             android:configChanges="orientation|screenSize|keyboard" />
 
         <activity
-            android:name="com.kokteyl.amrunity.RecyclerViewSampleActivity"
+            android:name=".RecyclerViewSampleActivity"
             android:screenOrientation="portrait"
             android:configChanges="orientation|screenSize|keyboard" />
 
         <activity
-            android:name="com.kokteyl.amrunity.DFPIntegrationSampleActivity"
+            android:name=".DFPIntegrationSampleActivity"
             android:screenOrientation="portrait"
             android:configChanges="orientation|screenSize|keyboard" />
 

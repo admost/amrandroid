@@ -1,21 +1,28 @@
 package com.kokteyl.amrunity;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
 import admost.sdk.AdMostInterstitial;
 import admost.sdk.AdMostView;
 import admost.sdk.AdMostViewBinder;
 import admost.sdk.base.AdMost;
 import admost.sdk.base.AdMostConfiguration;
 import admost.sdk.base.AdMostLog;
-
 import admost.sdk.listener.AdMostAdListener;
 import admost.sdk.listener.AdMostViewListener;
 
@@ -30,10 +37,34 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setOnClicks();
 
         AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, Statics.AMR_APP_ID);
+        if (isConsentEnabled().equals("1")) configuration.setUserConsent(true); // You need to send this information while initialization
+        else if (isConsentEnabled().equals("0")) configuration.setUserConsent(false); // // You need to send this information while initialization
         AdMost.getInstance().init(configuration.build());
 
+        // You need to carefully read Admost documents about GDPR to determine whether a similar dialog needs to be shown. Arrange this logic based on your needs, it is your responsibility.
+        if (isConsentEnabled().equals("-1")) { // In this example app, We used -1 for unknown, 1 for accepted, 0 for rejected consent status.
+            showGDPRDialog();
+        }
+    }
+
+    private void storeUserConsentInfo(String consentEnabled) {
+        if (!(consentEnabled.equals("0") || consentEnabled.equals("1") || consentEnabled.equals("-1")))
+            return;
+        SharedPreferences.Editor editor = getSharedPreferences("userInfo", MODE_PRIVATE).edit();
+        editor.putString("consentEnabled", consentEnabled);
+        editor.apply();
+    }
+
+    private String isConsentEnabled() {
+        SharedPreferences prefs = getSharedPreferences("userInfo", MODE_PRIVATE);
+        return prefs.getString("consentEnabled", "-1");
+    }
+
+
+    private void setOnClicks() {
         findViewById(R.id.showInterstitial).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,12 +126,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.disable_personalized_ads).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                storeUserConsentInfo("0");
+            }
+        });
+
+
     }
 
     private void getBanner() {
         // This is just for your own style, left null if you want default layout style
         //AdSettings.addTestDevice("f2ac6d6340d01e4ceaa901c94120f6f1");
-        final AdMostViewBinder binder =  new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
+        final AdMostViewBinder binder = new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
                 .titleId(R.id.cardTitle)
                 .textId(R.id.cardDetailText)
                 .callToActionId(R.id.CallToActionTextView)
@@ -114,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
         if (ad != null) {
             ad.destroy();
         }
-        ((TextView)findViewById(R.id.loadedNetwork)).setText("");
+        ((TextView) findViewById(R.id.loadedNetwork)).setText("");
         ad = new AdMostView(MainActivity.this, Statics.BANNER_ZONE, new AdMostViewListener() {
             @Override
             public void onLoad(String s, int i) {
@@ -123,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onReady(String network, View adView) {
-                Log.i("ADMOST","onReady : " + network);
+                Log.i("ADMOST", "onReady : " + network);
                 LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
                 viewAd.removeAllViews();
                 if (adView.getParent() != null && adView.getParent() instanceof ViewGroup) {
@@ -131,12 +170,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 viewAd.addView(adView);
 
-                ((TextView)findViewById(R.id.loadedNetwork)).setText(network);
+                ((TextView) findViewById(R.id.loadedNetwork)).setText(network);
             }
 
             @Override
             public void onFail(int errorCode) {
-                ((TextView)findViewById(R.id.loadedNetwork)).setText("errorCode : " + errorCode);
+                ((TextView) findViewById(R.id.loadedNetwork)).setText("errorCode : " + errorCode);
 
             }
         }, binder);
@@ -158,23 +197,23 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onReady(String network) {
                     AdMostLog.log("MainActivity LOADED network :" + network);
-                    ((Button)findViewById(R.id.showVideo)).setText("Show Video");
+                    ((Button) findViewById(R.id.showVideo)).setText("Show Video");
                 }
 
                 @Override
                 public void onFail(int errorCode) {
                     String message;
                     switch (errorCode) {
-                        case AdMost.AD_ERROR_NO_FILL :
+                        case AdMost.AD_ERROR_NO_FILL:
                             message = "AD_ERROR_NO_FILL";
                             break;
-                        case AdMost.AD_ERROR_FREQ_CAP :
+                        case AdMost.AD_ERROR_FREQ_CAP:
                             message = "AD_ERROR_FREQ_CAP";
                             break;
-                        case AdMost.AD_ERROR_CONNECTION :
+                        case AdMost.AD_ERROR_CONNECTION:
                             message = "AD_ERROR_CONNECTION";
                             break;
-                        case AdMost.AD_ERROR_WATERFALL_EMPTY :
+                        case AdMost.AD_ERROR_WATERFALL_EMPTY:
                             message = "AD_ERROR_WATERFALL_EMPTY";
                             break;
                         default:
@@ -187,14 +226,13 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onDismiss(String message) {
                     AdMostLog.log("MainActivity ONDISMISS");
-                    ((Button)findViewById(R.id.showVideo)).setText("Get Video");
+                    ((Button) findViewById(R.id.showVideo)).setText("Get Video");
                 }
 
                 @Override
                 public void onComplete(String network) {
-                    Log.i("ADMOST","MainActivity COMPLETED network : " + network);
+                    Log.i("ADMOST", "MainActivity COMPLETED network : " + network);
                 }
-
 
 
                 @Override
@@ -224,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onDismiss(String message) {
-                    ((Button)findViewById(R.id.showInterstitial)).setText("Get Interstitial");
+                    ((Button) findViewById(R.id.showInterstitial)).setText("Get Interstitial");
                     AdMostLog.log("MainActivity ONDISMISS");
                 }
 
@@ -238,16 +276,16 @@ public class MainActivity extends AppCompatActivity {
                 public void onFail(int errorCode) {
                     String message;
                     switch (errorCode) {
-                        case AdMost.AD_ERROR_NO_FILL :
+                        case AdMost.AD_ERROR_NO_FILL:
                             message = "AD_ERROR_NO_FILL";
                             break;
-                        case AdMost.AD_ERROR_FREQ_CAP :
+                        case AdMost.AD_ERROR_FREQ_CAP:
                             message = "AD_ERROR_FREQ_CAP";
                             break;
-                        case AdMost.AD_ERROR_CONNECTION :
+                        case AdMost.AD_ERROR_CONNECTION:
                             message = "AD_ERROR_CONNECTION";
                             break;
-                        case AdMost.AD_ERROR_WATERFALL_EMPTY :
+                        case AdMost.AD_ERROR_WATERFALL_EMPTY:
                             message = "AD_ERROR_WATERFALL_EMPTY";
                             break;
                         default:
@@ -259,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onReady(String network) {
-                    ((Button)findViewById(R.id.showInterstitial)).setText("Show Interstitial");
+                    ((Button) findViewById(R.id.showInterstitial)).setText("Show Interstitial");
                     AdMostLog.log("MainActivity LOADED network : " + network);
                 }
 
@@ -288,6 +326,55 @@ public class MainActivity extends AppCompatActivity {
         if (video != null) {
             video.destroy();
         }
+        if (ad != null) {
+            ad.destroy();
+        }
+
+    }
+
+    private void showGDPRDialog() {
+        final Dialog dialog = new Dialog(MainActivity.this, R.style.NoActionBar);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.setContentView(R.layout.custom_gdpr_dalog);
+        final TextView mainText = dialog.findViewById(R.id.txt_dialog);
+        final TextView yes = dialog.findViewById(R.id.btn_yes);
+        final TextView no = dialog.findViewById(R.id.btn_no);
+        mainText.setMovementMethod(LinkMovementMethod.getInstance()); // for privacy policy link click
+        yes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                storeUserConsentInfo("1"); // user accepted
+                mainText.setText("Great! We hope you enjoy your personalized ad experience. If you ever change your mind, you can withdraw your consent by enabling Opt Out of Interest Based Ads under your mobile settings and then restarting app.");
+                no.setVisibility(View.GONE);
+                yes.setText("OK, I understand");
+                yes.setOnClickListener(null);
+                yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+
+                    }
+                });
+            }
+        });
+        no.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                storeUserConsentInfo("0"); // user rejected
+                mainText.setText("Admost and its partners will not collect any data for personalized advertising through this app. If you consent to Admost and its partners personalizing your advertising experience, we will still collect yours in that app.");
+                no.setVisibility(View.GONE);
+                yes.setText("OK, I understand");
+                yes.setOnClickListener(null);
+                yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+            }
+        });
+        dialog.show();
 
     }
 }

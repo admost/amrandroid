@@ -2,8 +2,6 @@ package com.kokteyl.amrunity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -60,23 +58,6 @@ public class ListViewSampleActivity extends Activity {
 
         listView.setAdapter(adapter);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (adapter != null) {
-                    for (int i=0; i<adapter.getCount();i++) {
-                        if (adapter.getItem(i) instanceof AdMostView) {
-                            int[] deneme = new int[2];
-                            ((AdMostView)adapter.getItem(i)).getView().getLocationOnScreen(deneme);
-                            Log.i("ADMOST","Location : " + deneme[0] + " " + deneme[1]);
-                        }
-                    }
-
-                }
-
-
-            }
-        }, 10000);
 
     }
 

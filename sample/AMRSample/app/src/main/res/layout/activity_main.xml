@@ -62,6 +62,13 @@
                     android:layout_height="wrap_content"
                     android:text="Get Video"/>
 
+                <Button
+                    android:id="@+id/disable_personalized_ads"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="Disable Personalized Ads"/>
+
+
             </LinearLayout>
 
             <LinearLayout

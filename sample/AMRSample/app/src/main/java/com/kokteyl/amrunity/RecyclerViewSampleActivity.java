@@ -53,9 +53,9 @@ public class RecyclerViewSampleActivity extends Activity {
 
             public MyViewHolder(View view) {
                 super(view);
-                title = (TextView) view.findViewById(R.id.title);
-                genre = (TextView) view.findViewById(R.id.genre);
-                year = (TextView) view.findViewById(R.id.year);
+                title = view.findViewById(R.id.title);
+                genre =  view.findViewById(R.id.genre);
+                year = view.findViewById(R.id.year);
             }
         }
 
@@ -64,7 +64,7 @@ public class RecyclerViewSampleActivity extends Activity {
 
             public AdViewHolder(View view) {
                 super(view);
-                viewGroup = (ViewGroup) view.findViewById(R.id.ad_container);
+                viewGroup = view.findViewById(R.id.ad_container);
             }
         }
 
@@ -92,26 +92,26 @@ public class RecyclerViewSampleActivity extends Activity {
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             int viewType = getItemViewType(position);
             if (viewType == 0) {
-                Movie movie = (Movie)rvList.get(position);
+                Movie movie = (Movie) rvList.get(position);
 
-                ((MyViewHolder)holder).title.setText(movie.getTitle());
-                ((MyViewHolder)holder).genre.setText(movie.getGenre());
-                ((MyViewHolder)holder).year.setText(movie.getYear());
+                ((MyViewHolder) holder).title.setText(movie.getTitle());
+                ((MyViewHolder) holder).genre.setText(movie.getGenre());
+                ((MyViewHolder) holder).year.setText(movie.getYear());
 
             } else {
-                AdMostView ad = (AdMostView)rvList.get(position);
+                AdMostView ad = (AdMostView) rvList.get(position);
 
-                if (((AdViewHolder)holder).viewGroup.getChildAt(0) == ad.getView()) {
-                    Log.i("RView","holder already has the view no need to change it");
+                if (((AdViewHolder) holder).viewGroup.getChildAt(0) == ad.getView()) {
+                    Log.i("RView", "holder already has the view no need to change it");
                     return;
                 }
-                Log.i("RView","just reusing holder, changing content");
+                Log.i("RView", "just reusing holder, changing content");
 
-                ((AdViewHolder)holder).viewGroup.removeAllViews();
+                ((AdViewHolder) holder).viewGroup.removeAllViews();
                 if (ad.getView().getParent() != null) {
                     ((ViewGroup) ad.getView().getParent()).removeView(ad.getView());
                 }
-                ((AdViewHolder)holder).viewGroup.addView(ad.getView());
+                ((AdViewHolder) holder).viewGroup.addView(ad.getView());
                 ((RelativeLayout.LayoutParams) ad.getView().getLayoutParams()).addRule(RelativeLayout.CENTER_IN_PARENT);
             }
         }
@@ -266,7 +266,7 @@ public class RecyclerViewSampleActivity extends Activity {
     }
 
     private AdMostView prepareAd() {
-        final AdMostViewBinder binder =  new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
+        final AdMostViewBinder binder = new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
                 .titleId(R.id.cardTitle)
                 .textId(R.id.cardDetailText)
                 .callToActionId(R.id.CallToActionTextView)
@@ -296,9 +296,9 @@ public class RecyclerViewSampleActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         if (mList != null) {
-            for (int i=0; i<mList.size();i++) {
+            for (int i = 0; i < mList.size(); i++) {
                 if (mList.get(i) instanceof AdMostView) {
-                    ((AdMostView)mList.get(i)).destroy();
+                    ((AdMostView) mList.get(i)).destroy();
                 }
             }
             mList.clear();
