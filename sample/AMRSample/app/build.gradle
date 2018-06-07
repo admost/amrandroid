@@ -53,12 +53,12 @@ dependencies {
     implementation 'com.android.volley:volley:1.0.0'
     implementation 'com.admost.sdk:amr:1.6.7'
     implementation 'com.google.android.gms:play-services-base:15.0.1'
+    implementation 'com.google.android.gms:play-services-ads:15.0.1' // Most Ad-Networks require it.
     ///// BASE REQUIRED LIBRARIES FOR ADMOST ////////////////
 
 
     ///// SOME AD NETWORK SDKS ///////
-    //Docs: https://admost.github.io/amrandroid/ Please select some adnetworks from this link. Each Ad-network may require additional code or library.
-
+    //Docs: https://admost.github.io/amrandroid/ Please select some Ad-networks from this link. Each Ad-network may require additional code or library.
     implementation 'com.admost.sdk:adcolony:3.3.4'
     implementation 'com.admost.sdk:applovin:8.0.1' // You need to add a meta tag to AndroidManifest.xml for Applovin. Please look at the docs.
     implementation('com.mopub:mopub-sdk:5.0.0@aar') {
@@ -68,8 +68,6 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.5.2'  // Required for Inmobi network.
     implementation 'com.android.support:appcompat-v7:27.1.1'  // Required for Inmobi network.
     implementation 'com.android.support:recyclerview-v7:27.1.1'  // Required for Inmobi network.
-    implementation 'com.google.android.gms:play-services-ads:15.0.1' // Required for Admob/Adx
-
     ///// SOME AD NETWORK SDKS ///////
 
 

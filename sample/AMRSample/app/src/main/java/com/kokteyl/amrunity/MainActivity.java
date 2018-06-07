@@ -42,21 +42,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setOnClicks();
 
-        /////// ADMOST INIT ////////////////
         AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, Statics.AMR_APP_ID);
 
-        // You need to read Admost documents about GDPR to determine whether a similar dialog needs to be shown.
         // Arrange this GDPR related part based on your needs, it is the responsibility of publisher.
-        if (getConsentStatus().equals(STATUS_UNKNOWN) && AdMost.getInstance().getConfiguration().isGDPRRequired()) {
-            showGDPRDialog();
-        } else if (getConsentStatus().equals(STATUS_ACCEPTED)) { // You can only set status information while initialization
+        if (getConsentStatus().equals(STATUS_ACCEPTED)) { // You can only set status information while initialization
             configuration.setUserConsent(true);
         } else if (getConsentStatus().equals(STATUS_REJECTED)) {
             configuration.setUserConsent(false);
         }
 
-        AdMost.getInstance().init(configuration.build());
-        /////// ADMOST INIT ////////////////
+        AdMost.getInstance().init(configuration.build()); /////// ADMOST INIT ////////////////
+
+        // You need to read Admost documents (https://admost.github.io/amrandroid/) about GDPR to determine when a similar dialog needs to be shown.
+        // This is just an example usage.
+        if (getConsentStatus().equals(STATUS_UNKNOWN) && AdMost.getInstance().getConfiguration().isGDPRRequired()) {
+            showGDPRDialog();
+        }
     }
 
     private void storeUserConsentInfo(String consentEnabled) {
