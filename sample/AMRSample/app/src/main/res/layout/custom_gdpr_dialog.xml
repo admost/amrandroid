@@ -9,12 +9,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#8e44ad"
-            android:scaleType="centerInside"
-            android:src="@drawable/gdpr_logo" />
+            android:textSize="25sp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:text="AMR Debug"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@color/colorPrimary"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/txt_title"
@@ -32,10 +36,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:linksClickable="true"
-            android:padding="16dp"
-            android:autoLink="web"
             android:text="@string/gdpr_text"
+            android:clickable="true"
+            android:padding="16dp"
             android:textSize="15dp"/>
 
 

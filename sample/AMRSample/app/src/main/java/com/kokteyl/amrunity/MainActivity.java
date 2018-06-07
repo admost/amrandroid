@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, Statics.AMR_APP_ID);
 
-        // Arrange this GDPR related part based on your needs, it is the responsibility of publisher.
+        // Arrange GDPR related controls based on your needs, it is the responsibility of publisher.
         if (getConsentStatus().equals(STATUS_ACCEPTED)) { // You can only set status information while initialization
             configuration.setUserConsent(true);
         } else if (getConsentStatus().equals(STATUS_REJECTED)) {
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         AdMost.getInstance().init(configuration.build()); /////// ADMOST INIT ////////////////
 
-        // You need to read Admost documents (https://admost.github.io/amrandroid/) about GDPR to determine when a similar dialog needs to be shown.
+        // You need to read Admost documents (https://admost.github.io/amrandroid/) about GDPR to determine who are required to show this dialog.
         // This is just an example usage.
         if (getConsentStatus().equals(STATUS_UNKNOWN) && AdMost.getInstance().getConfiguration().isGDPRRequired()) {
             showGDPRDialog();
@@ -346,11 +348,12 @@ public class MainActivity extends AppCompatActivity {
         final Dialog dialog = new Dialog(MainActivity.this, R.style.NoActionBar);
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);
-        dialog.setContentView(R.layout.custom_gdpr_dalog);
+        dialog.setContentView(R.layout.custom_gdpr_dialog);
         final TextView mainText = dialog.findViewById(R.id.txt_dialog);
         final TextView yes = dialog.findViewById(R.id.btn_yes);
         final TextView no = dialog.findViewById(R.id.btn_no);
-        mainText.setMovementMethod(LinkMovementMethod.getInstance()); // for privacy policy link click
+        Linkify.addLinks(mainText, Linkify.ALL);
+        mainText.setMovementMethod(LinkMovementMethod.getInstance());
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
