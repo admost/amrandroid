@@ -1,11 +1,9 @@
 package com.kokteyl.amrunity;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
@@ -14,8 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import admost.sdk.AdMostInterstitial;
 import admost.sdk.AdMostView;
@@ -32,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
     AdMostInterstitial interstitial;
     AdMostInterstitial video;
 
+    // GDPR related variables
+    private static final String MY_PREFS = "myAppuserInfo";
+    private static final String PERSONALIZED_ENABLED = "showPersonalizedAds";
+    private static final String STATUS_UNKNOWN = "-1";
+    private static final String STATUS_ACCEPTED = "1";
+    private static final String STATUS_REJECTED = "0";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -39,28 +42,34 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setOnClicks();
 
+        /////// ADMOST INIT ////////////////
         AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, Statics.AMR_APP_ID);
-        if (isConsentEnabled().equals("1")) configuration.setUserConsent(true); // You need to send this information while initialization
-        else if (isConsentEnabled().equals("0")) configuration.setUserConsent(false); // // You need to send this information while initialization
-        AdMost.getInstance().init(configuration.build());
 
-        // You need to carefully read Admost documents about GDPR to determine whether a similar dialog needs to be shown. Arrange this logic based on your needs, it is your responsibility.
-        if (isConsentEnabled().equals("-1")) { // In this example app, We used -1 for unknown, 1 for accepted, 0 for rejected consent status.
+        // You need to read Admost documents about GDPR to determine whether a similar dialog needs to be shown.
+        // Arrange this GDPR related part based on your needs, it is the responsibility of publisher.
+        if (getConsentStatus().equals(STATUS_UNKNOWN) && AdMost.getInstance().getConfiguration().isGDPRRequired()) {
             showGDPRDialog();
+        } else if (getConsentStatus().equals(STATUS_ACCEPTED)) { // You can only set status information while initialization
+            configuration.setUserConsent(true);
+        } else if (getConsentStatus().equals(STATUS_REJECTED)) {
+            configuration.setUserConsent(false);
         }
+
+        AdMost.getInstance().init(configuration.build());
+        /////// ADMOST INIT ////////////////
     }
 
     private void storeUserConsentInfo(String consentEnabled) {
-        if (!(consentEnabled.equals("0") || consentEnabled.equals("1") || consentEnabled.equals("-1")))
+        if (!(consentEnabled.equals(STATUS_ACCEPTED) || consentEnabled.equals(STATUS_REJECTED) || consentEnabled.equals(STATUS_UNKNOWN)))
             return;
-        SharedPreferences.Editor editor = getSharedPreferences("userInfo", MODE_PRIVATE).edit();
-        editor.putString("consentEnabled", consentEnabled);
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS, MODE_PRIVATE).edit();
+        editor.putString(PERSONALIZED_ENABLED, consentEnabled);
         editor.apply();
     }
 
-    private String isConsentEnabled() {
-        SharedPreferences prefs = getSharedPreferences("userInfo", MODE_PRIVATE);
-        return prefs.getString("consentEnabled", "-1");
+    private String getConsentStatus() {
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS, MODE_PRIVATE);
+        return prefs.getString(PERSONALIZED_ENABLED, STATUS_UNKNOWN);
     }
 
 
@@ -129,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.disable_personalized_ads).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                storeUserConsentInfo("0");
+                storeUserConsentInfo(STATUS_REJECTED);
             }
         });
 
@@ -344,7 +353,7 @@ public class MainActivity extends AppCompatActivity {
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                storeUserConsentInfo("1"); // user accepted
+                storeUserConsentInfo(STATUS_ACCEPTED); // user accepted
                 mainText.setText("Great! We hope you enjoy your personalized ad experience. If you ever change your mind, you can withdraw your consent by enabling Opt Out of Interest Based Ads under your mobile settings and then restarting app.");
                 no.setVisibility(View.GONE);
                 yes.setText("OK, I understand");
@@ -361,7 +370,7 @@ public class MainActivity extends AppCompatActivity {
         no.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                storeUserConsentInfo("0"); // user rejected
+                storeUserConsentInfo(STATUS_REJECTED); // user rejected
                 mainText.setText("Admost and its partners will not collect any data for personalized advertising through this app. If you consent to Admost and its partners personalizing your advertising experience, we will still collect yours in that app.");
                 no.setVisibility(View.GONE);
                 yes.setText("OK, I understand");
