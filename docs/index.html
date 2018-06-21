@@ -352,6 +352,9 @@
 -keepattributes Exceptions, InnerClasses
 -dontwarn admost.sdk.**
 -keep class admost.sdk.** {*;}
+-keep class android.support.v4.app.DialogFragment { *; }
+-keep class android.support.v4.util.LruCache { *; }
+
 
 # VOLLEY
 -keep class com.android.volley.** { *; }
@@ -577,9 +580,9 @@
 }
 -keep public class com.smaato.soma.internal.connector.OrmmaBridge { public *; }
 -keepattributes *Annotation*
-- dontwarn com.smaato.soma.SomaUnityPlugin*
-- dontwarn com.millennialmedia**
-- dontwarn com.facebook.**
+-dontwarn com.smaato.soma.SomaUnityPlugin*
+-dontwarn com.millennialmedia**
+-dontwarn com.facebook.**
 
 # STARTAPP
 -keepattributes Exceptions, InnerClasses, Signature, Deprecated, SourceFile, LineNumberTable, *Annotation*, EnclosingMethod
@@ -1174,6 +1177,7 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                         new features, etc.</p>
 
                     <ol class="toc">
+                        <li><a href="#v1.6.8">Version 1.6.8</a></li>
 						<li><a href="#v1.6.7">Version 1.6.7</a></li>
 						<li><a href="#v1.6.6">Version 1.6.6</a></li>
 						<li><a href="#v1.6.4">Version 1.6.4</a></li>
@@ -1216,6 +1220,75 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
 
 
                 </section>
+                
+                <section id="versions">
+                    <h3 id="v1.6.8">Version 1.6.8
+                    <small class="release-date">June 21, 2018</small>
+                    </h3>
+                    <br>
+                    <ul class="changelog"> 
+                        <li class="ch-fixed">Facebook & Admob banner memory leak</li>
+						<li class="ch-added">Floor price optimisation</li>
+                        <li class="ch-updated">Admost sdk proguard definition updated. The following lines added
+                        <p>
+                        <pre><code>-keep class android.support.v4.app.DialogFragment { *; }
+-keep class android.support.v4.util.LruCache { *; }
+                        </code></pre>
+                        </p>
+                        </li>
+                        <li class="ch-updated">ECPM value added to onReady method of AdMostViewListener interface for AdMostView callbacks
+                        <div class="callout callout-warning" role="alert">
+                        <p><pre>
+<code  class="language-java">
+new AdMostView(ACTIVITY.get(), zone, TYPE, new AdMostViewListener() {
+    @Override
+    public void onLoad(String network, int position) {}
+    
+    @Override
+    public void onReady(String network, int ecpm, View view) {}
+
+    @Override
+    public void onFail(int i) {}
+}, null);
+</code>
+                            </pre>
+                            </p>
+                            </div>
+                            </li>
+                       
+                        <li class= "ch-updated">ECPM value added to onReady method of AdMostAdListener interface for AdMostInterstitial callbacks
+                        <div class="callout callout-warning" role="alert">
+                        <p><pre>
+<code  class="language-java">
+new AdMostInterstitial(ACTIVITY.get(), id, new AdMostAdListener() {
+    @Override
+    public void onAction(int value) {}
+
+    @Override
+    public void onReady(String network, int ecpm) {}
+
+    @Override
+    public void onFail(int i) {}
+
+    @Override
+    public void onDismiss(String s) {}
+
+    @Override
+    public void onComplete(String s) {}
+
+    @Override
+    public void onShown(String s) {}
+
+    @Override
+    public void onClicked(String s) {}
+});
+</code>
+                            </pre>
+                            </p>
+                            </div>
+                        
+                        </li>
+                        <li class="ch-updated">Appnext 2.4.0.471, MoPub 5.1.0</li>
 
                 <section id="versions">
 					<h3 id="v1.6.7">Version 1.6.7
