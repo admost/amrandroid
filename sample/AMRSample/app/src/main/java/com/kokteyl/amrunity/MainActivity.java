@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         // You need to read Admost documents (https://admost.github.io/amrandroid/) about GDPR to determine who are required to show this dialog.
         // This is just an example usage.
-        if (getConsentStatus().equals(STATUS_UNKNOWN) && AdMost.getInstance().getConfiguration().isGDPRRequired()) {
+        if (AdMost.getInstance().getConfiguration() != null && getConsentStatus().equals(STATUS_UNKNOWN) && AdMost.getInstance().getConfiguration().isGDPRRequired()) {
             showGDPRDialog();
         }
     }
