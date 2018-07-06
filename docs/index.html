@@ -696,10 +696,6 @@ BANNER = new AdMostView(ACTIVITY, < ZONE_ID >, < TYPE >, new AdMostViewListener(
         // Failed for some reason
     }
 
-    @Override
-    public void onLoad(String s, int i) {
-        // This method has been deprecated. Kept because of backward compatibility.
-    }
 }, < BINDER >);
 // Add the following line to load an ad.
 BANNER.load();
@@ -776,10 +772,6 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
     public void onComplete(String s) {
         // If you are using interstitial, this callback will not be triggered.
     }
-    @Override
-    public void onAction(int i) {
-        // This method has been deprecated. Kept because of backward compatibility.
-    }
 
 });
 
@@ -820,10 +812,6 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
         public void onClicked(String s) {
             //Ad Clicked
         }
-        @Override
-        public void onAction(int i) {
-            // This method has been deprecated. Kept because of backward compatibility.
-        }
     });
                 </code></pre>
 
@@ -853,10 +841,6 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
         @Override
         public void onClicked(String s) {
             //Ad Clicked
-        }
-        @Override
-        public void onAction(int i) {
-            // This method has been deprecated. Kept because of backward compatibility.
         }
 });</code></pre>
                 <br>
@@ -1272,9 +1256,6 @@ compile 'com.admost.sdk:pubnative-adapter:2.3.16'
 <code  class="language-java">
 new AdMostView(ACTIVITY.get(), zone, TYPE, new AdMostViewListener() {
     @Override
-    public void onLoad(String network, int position) {}
-    
-    @Override
     public void onReady(String network, int ecpm, View view) {}
 
     @Override
@@ -1291,9 +1272,6 @@ new AdMostView(ACTIVITY.get(), zone, TYPE, new AdMostViewListener() {
                         <p><pre>
 <code  class="language-java">
 new AdMostInterstitial(ACTIVITY.get(), id, new AdMostAdListener() {
-    @Override
-    public void onAction(int value) {}
-
     @Override
     public void onReady(String network, int ecpm) {}
 
