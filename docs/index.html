@@ -1177,6 +1177,7 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                         new features, etc.</p>
 
                     <ol class="toc">
+						<li><a href="#v1.7.0">Version 1.7.0</a></li>
                         <li><a href="#v1.6.8">Version 1.6.8</a></li>
 						<li><a href="#v1.6.7">Version 1.6.7</a></li>
 						<li><a href="#v1.6.6">Version 1.6.6</a></li>
@@ -1222,6 +1223,35 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                 </section>
                 
                 <section id="versions">
+					<h3 id="v1.7.0">Version 1.7.0
+                    <small class="release-date">July 06, 2018</small>
+                    </h3>
+                    <br>
+                    <ul class="changelog"> 
+                        <li class="ch-fixed">Interstitial memory leak</li>
+						<li class="ch-fixed">Crosspromotion, frequency capping and zone request related minor bugs</li>
+						<li class="ch-updated">Admost repository replaced with admost.
+						<p>
+                        <pre><code>maven { url 'http://repo.admost.com:8081/artifactory/admost' }
+                        </code></pre>
+                        </p>
+						</li>
+						<li class="ch-updated">AdNetwork adapters separated from the core sdk. Now it is necessary to add admost adapters of adnetworks included externally.
+						<p>
+                        <pre><code>compile 'com.admost.sdk:mopub-adapter:5.1.0'
+compile 'com.admost.sdk:appnext-adapter:2.4.0.471'
+compile 'com.admost.sdk:glispa-adapter:4.10.0'
+compile 'com.admost.sdk:vungle-adapter:6.2.5'
+compile 'com.admost.sdk:pubnative-adapter:2.3.16'
+                        </code></pre>
+                        </p>
+						
+						</li>
+						<li class="ch-updated">Applovin 8.0.2, Tapjoy 12.0.0, Startapp 3.9.3</li>				
+                        <li class="ch-removed">AdMostInterstitial callback listener (AdMostAdListener) updated. Deprecated <b>onAction</b> callback removed</li>
+						<li class="ch-removed">AdMostView callback listener (AdMostViewListener) updated. Deprecated <b>onLoad</b> callback removed</li>
+                        
+					</ul>
                     <h3 id="v1.6.8">Version 1.6.8
                     <small class="release-date">June 21, 2018</small>
                     </h3>
@@ -1289,7 +1319,7 @@ new AdMostInterstitial(ACTIVITY.get(), id, new AdMostAdListener() {
                         
                         </li>
                         <li class="ch-updated">Appnext 2.4.0.471, MoPub 5.1.0</li>
-
+					</ul>
                 <section id="versions">
 					<h3 id="v1.6.7">Version 1.6.7
                     <small class="release-date">May 31, 2018</small>
