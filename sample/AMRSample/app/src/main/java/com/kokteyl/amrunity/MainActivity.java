@@ -24,6 +24,7 @@ import admost.sdk.base.AdMostLog;
 import admost.sdk.listener.AdMostAdListener;
 import admost.sdk.listener.AdMostViewListener;
 
+
 public class MainActivity extends AppCompatActivity {
 
     AdMostView ad;
@@ -167,13 +168,10 @@ public class MainActivity extends AppCompatActivity {
         }
         ((TextView) findViewById(R.id.loadedNetwork)).setText("");
         ad = new AdMostView(MainActivity.this, Statics.BANNER_ZONE, new AdMostViewListener() {
-            @Override
-            public void onLoad(String s, int i) {
 
-            }
 
             @Override
-            public void onReady(String network, View adView) {
+            public void onReady(String network,int ecpm, View adView) {
                 Log.i("ADMOST", "onReady : " + network);
                 LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
                 viewAd.removeAllViews();
@@ -201,13 +199,9 @@ public class MainActivity extends AppCompatActivity {
 
             AdMostAdListener listener = new AdMostAdListener() {
 
-                @Override
-                public void onAction(int i) {
-
-                }
 
                 @Override
-                public void onReady(String network) {
+                public void onReady(String network,int ecpm) {
                     AdMostLog.log("MainActivity LOADED network :" + network);
                     ((Button) findViewById(R.id.showVideo)).setText("Show Video");
                 }
@@ -268,9 +262,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (interstitial == null) {
             AdMostAdListener listener = new AdMostAdListener() {
-                @Override
-                public void onAction(int value) {
-                }
+
 
                 @Override
                 public void onDismiss(String message) {
@@ -282,7 +274,6 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(String s) {
 
                 }
-
 
                 @Override
                 public void onFail(int errorCode) {
@@ -308,7 +299,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onReady(String network) {
+                public void onReady(String network,int ecpm) {
                     ((Button) findViewById(R.id.showInterstitial)).setText("Show Interstitial");
                     AdMostLog.log("MainActivity LOADED network : " + network);
                 }
