@@ -687,7 +687,7 @@ BINDER  : You can use your own layout design for banners, if you leave BINDER va
 
 BANNER = new AdMostView(ACTIVITY, < ZONE_ID >, < TYPE >, new AdMostViewListener() {
     @Override
-    public void onReady(String network, View adView) {
+    public void onReady(String network, int ecpm, View adView){
         // Ad Loaded
     }
 
@@ -757,7 +757,7 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
         // Ad Failed
     }
     @Override
-    public void onReady(String network) {
+     public void onReady(String network, int ecpm) {
        // Ad Loaded
     }
     @Override
@@ -789,7 +789,7 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
 
                 <pre><code class="language-java">AdMostInterstitial VIDEO = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
         @Override
-        public void onReady(String network) {
+         public void onReady(String network, int ecpm) {
             // Ad Loaded
         }
         @Override
