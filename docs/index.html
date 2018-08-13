@@ -615,20 +615,26 @@
 -dontwarn com.unity3d.**
 -keep class com.unity3d.ads.** { *; }
 
-# VUNGLE
--keep class com.vungle.warren.** { *; }
--dontwarn com.evernote.android.job.gcm.**
--dontwarn com.evernote.android.job.GcmAvailableHelper
--dontwarn com.google.android.gms.ads.identifier.**
--keep public class com.evernote.android.job.v21.PlatformJobService
--keep public class com.evernote.android.job.v14.PlatformAlarmService
--keep public class com.evernote.android.job.v14.PlatformAlarmReceiver
--keep public class com.evernote.android.job.JobBootReceiver
--keep public class com.evernote.android.job.JobRescheduleService
--dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
--keep class com.google.android.gms.internal.** { *; }
+# Vungle
+-dontwarn com.vungle.**
+-dontnote com.vungle.**
+-keep class com.vungle.** { *; }
+-dontwarn com.vungle.warren.error.VungleError$ErrorCode
 -keep class com.moat.** { *; }
 -dontwarn com.moat.**
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+-dontwarn okio.**
+-dontwarn retrofit2.Platform$Java8
+-keepattributes Signature
+-keepattributes *Annotation*
+-dontwarn sun.misc.**
+-keep class com.google.gson.examples.android.model.** { *; }
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
+-keep class com.google.android.gms.internal.** { *; }
+-dontwarn com.google.android.gms.ads.identifier.**
+
 
 # YOUAPPI
 -keep class com.google.gson.**{ *;}
