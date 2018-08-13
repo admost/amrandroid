@@ -366,12 +366,8 @@
 # ADCOLONY
 -dontwarn com.adcolony.**
 -keep class com.adcolony.** { *; }
--keepclassmembers class * { 
-    @android.webkit.JavascriptInterface <methods>; 
-}
--keepclassmembers class com.adcolony.sdk.ADCNative** {
-    *;
- }
+-keepclassmembers class * { @android.webkit.JavascriptInterface &lt;methods&gt;; }
+-keepclassmembers class com.adcolony.sdk.ADCNative** { *; }
 
 # ADMOB / ADX / GOOGLE
 -keep class com.android.vending.billing.**
