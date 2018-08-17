@@ -188,7 +188,6 @@ public class MainActivity extends Activity {
 
                 }
 
-
                 @Override
                 public void onFail(int errorCode) {
                     String message;
