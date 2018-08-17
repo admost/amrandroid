@@ -30,13 +30,8 @@ public class ListViewSampleActivity extends Activity {
 
                 AdMostView ad = new AdMostView(this, Statics.BANNER_ZONE, AdMostManager.getInstance().AD_BANNER, new AdMostViewListener() {
                     @Override
-                    public void onLoad(String network, int position) {
+                    public void onReady(String s,int ecpm, View view ) {
                         adapter.notifyDataSetChanged();
-                    }
-
-                    @Override
-                    public void onReady(String s, View view) {
-
                     }
 
                     @Override

@@ -1,118 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorwhite">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorwhite">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="com.goal.MainActivity">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/loadedNetwork"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NO_NETWORK"
-            android:textColor="@color/colorblack"
-            />
-
-        <LinearLayout
-            android:id="@+id/adLayout"
+        <ImageView
+            android:id="@+id/actionBar"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_below="@id/loadedNetwork"
-            android:gravity="center"
-            android:orientation="vertical"/>
+            android:layout_height="56dp"
+            android:background="#bdc3c7"
+            android:scaleType="centerInside"
+            android:src="@drawable/action_bar" />
 
-        <LinearLayout
-            android:id="@+id/buttons"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/adLayout"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/actionBar"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/loadedNetwork"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click Refresh Banner to load ads here"
+                android:textColor="@color/colorblack" />
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/refreshBanner"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:text="Refresh Banner"
-                    />
-
-                <Button
-                    android:id="@+id/showInterstitial"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:text="Get Interstitial"/>
-
-                <Button
-                    android:id="@+id/showVideo"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:text="Get Video"/>
-
-                <Button
-                    android:id="@+id/disable_personalized_ads"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:text="Disable Personalized Ads"/>
-
-
-            </LinearLayout>
+                android:id="@+id/adLayout"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="#ecf0f1"
+                android:layout_below="@id/loadedNetwork"
+                android:gravity="center"
+                android:orientation="vertical" />
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:id="@+id/buttons"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:layout_below="@id/adLayout"
+                android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/listPage"
-                    android:layout_width="160dp"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="ListView Sample"/>
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/dfp_integration"
-                    android:layout_width="160dp"
+                    <Button
+                        android:id="@+id/refreshBanner"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="Refresh Banner" />
+
+                    <Button
+                        android:id="@+id/showInterstitial"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="Get Interstitial" />
+
+                    <Button
+                        android:id="@+id/showVideo"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="Get Video" />
+
+                    <Button
+                        android:id="@+id/disable_personalized_ads"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="Disable Personalized Ads" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="DFP Integration"/>
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                <Button
-                    android:id="@+id/test_suite"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:text="Start Test Suite"/>
+                    <Button
+                        android:id="@+id/listPage"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="ListView Sample" />
 
-                <Button
-                    android:id="@+id/test_recyclerview"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:text="RecyclerView Sample"/>
+                    <Button
+                        android:id="@+id/dfp_integration"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="DFP Integration" />
 
+                    <Button
+                        android:id="@+id/test_suite"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="Start Test Suite" />
+
+                    <Button
+                        android:id="@+id/test_recyclerview"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="RecyclerView Sample" />
+
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
-        <TextView
-            android:id="@+id/permutasyon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/buttons">
-
-        </TextView>
+        </RelativeLayout>
 
 
     </RelativeLayout>

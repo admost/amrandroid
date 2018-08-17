@@ -1,8 +1,9 @@
 package com.kokteyl.amrunity;
 
 public class Statics {
-    //Test Ids
 
+
+    //Test Ids
     final static String AMR_APP_ID = "6cc8e89a-b52a-4e9a-bb8c-579f7ec538fe";
     final static String BANNER_ZONE = "86644357-21d0-45a4-906a-37262461df65";
     final static String FULLSCREEN_ZONE = "f99e409b-f9ab-4a2e-aa9a-4d143e6809ae";

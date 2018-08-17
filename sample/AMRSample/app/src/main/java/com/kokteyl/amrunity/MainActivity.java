@@ -1,10 +1,10 @@
 package com.kokteyl.amrunity;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.MobileAds;
+
 import admost.sdk.AdMostInterstitial;
 import admost.sdk.AdMostView;
 import admost.sdk.AdMostViewBinder;
@@ -24,57 +26,213 @@ import admost.sdk.base.AdMostLog;
 import admost.sdk.listener.AdMostAdListener;
 import admost.sdk.listener.AdMostViewListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     AdMostView ad;
     AdMostInterstitial interstitial;
     AdMostInterstitial video;
 
-    // GDPR related variables
+    // GDPR related variables. You can implement your own GDPR logic.
     private static final String MY_PREFS = "myAppuserInfo";
     private static final String PERSONALIZED_ENABLED = "showPersonalizedAds";
     private static final String STATUS_UNKNOWN = "-1";
     private static final String STATUS_ACCEPTED = "1";
     private static final String STATUS_REJECTED = "0";
 
+
+    // IMPORTANT NOTE: If you are using ProGuard, please check the required ProGuard rules on  https://admost.github.io/amrandroid/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setOnClicks();
 
         AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, Statics.AMR_APP_ID);
-
         // Arrange GDPR related controls based on your needs, it is the responsibility of publisher.
+        // If setUserConsent is not used, AdMost SDK uses its internal logic for personalized ads.
         if (getConsentStatus().equals(STATUS_ACCEPTED)) { // You can only set status information while initialization
             configuration.setUserConsent(true);
         } else if (getConsentStatus().equals(STATUS_REJECTED)) {
             configuration.setUserConsent(false);
         }
-
         AdMost.getInstance().init(configuration.build()); /////// ADMOST INIT ////////////////
 
-        // You need to read Admost documents (https://admost.github.io/amrandroid/) about GDPR to determine who are required to show this dialog.
-        // This is just an example usage.
+        // You need to read Admost documents (https://admost.github.io/amrandroid/) about GDPR to determine who are required to show such a dialog.
+        // Note: This is just an example usage. Showing a pop-up is optional.
         if (getConsentStatus().equals(STATUS_UNKNOWN) && AdMost.getInstance().getConfiguration().isGDPRRequired()) {
             showGDPRDialog();
         }
     }
 
-    private void storeUserConsentInfo(String consentEnabled) {
-        if (!(consentEnabled.equals(STATUS_ACCEPTED) || consentEnabled.equals(STATUS_REJECTED) || consentEnabled.equals(STATUS_UNKNOWN)))
-            return;
-        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS, MODE_PRIVATE).edit();
-        editor.putString(PERSONALIZED_ENABLED, consentEnabled);
-        editor.apply();
+    private void getBanner() {
+        // This is just for your own style, left null if you want default layout style
+        //AdSettings.addTestDevice("f2ac6d6340d01e4ceaa901c94120f6f1");
+        final AdMostViewBinder binder = new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
+                .titleId(R.id.cardTitle)
+                .textId(R.id.cardDetailText)
+                .callToActionId(R.id.CallToActionTextView)
+                .iconImageId(R.id.cardIcon)
+                .mainImageId(R.id.cardImage)
+                .attributionId(R.id.cardAttribution)
+                .build();
+        // *******************************
+
+        ((LinearLayout) findViewById(R.id.adLayout)).removeAllViews();
+        if (ad != null) {
+            ad.destroy();
+        }
+        ((TextView) findViewById(R.id.loadedNetwork)).setText("");
+        ad = new AdMostView(MainActivity.this, Statics.BANNER_ZONE, new AdMostViewListener() {
+
+            @Override
+            public void onReady(String network, int ecpm, View adView) {
+                Log.i("ADMOST", "onReady : " + network);
+                LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
+                viewAd.removeAllViews();
+                if (adView.getParent() != null && adView.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) adView.getParent()).removeAllViews();
+                }
+                viewAd.addView(adView);
+
+                ((TextView) findViewById(R.id.loadedNetwork)).setText(network);
+            }
+
+            @Override
+            public void onFail(int errorCode) {
+                ((TextView) findViewById(R.id.loadedNetwork)).setText("errorCode : " + errorCode);
+
+            }
+        }, binder);
+
+        ad.load();
+
     }
 
-    private String getConsentStatus() {
-        SharedPreferences prefs = getSharedPreferences(MY_PREFS, MODE_PRIVATE);
-        return prefs.getString(PERSONALIZED_ENABLED, STATUS_UNKNOWN);
+    private void getVideo() {
+        if (video == null) {
+
+            AdMostAdListener listener = new AdMostAdListener() {
+
+                @Override
+                public void onReady(String network, int ecpm) {
+                    AdMostLog.log("MainActivity LOADED network :" + network);
+                    ((Button) findViewById(R.id.showVideo)).setText("Show Video");
+                }
+
+                @Override
+                public void onFail(int errorCode) {
+                    String message;
+                    switch (errorCode) {
+                        case AdMost.AD_ERROR_NO_FILL:
+                            message = "AD_ERROR_NO_FILL";
+                            break;
+                        case AdMost.AD_ERROR_FREQ_CAP:
+                            message = "AD_ERROR_FREQ_CAP";
+                            break;
+                        case AdMost.AD_ERROR_CONNECTION:
+                            message = "AD_ERROR_CONNECTION";
+                            break;
+                        case AdMost.AD_ERROR_WATERFALL_EMPTY:
+                            message = "AD_ERROR_WATERFALL_EMPTY";
+                            break;
+                        default:
+                            message = "";
+                            break;
+                    }
+                    AdMostLog.log("MainActivity onFail errorCode : " + errorCode + " message : " + message);
+                }
+
+                @Override
+                public void onDismiss(String message) {
+                    AdMostLog.log("MainActivity ONDISMISS");
+                    ((Button) findViewById(R.id.showVideo)).setText("Get Video");
+                }
+
+                @Override
+                public void onComplete(String network) {
+                    Log.i("ADMOST", "MainActivity COMPLETED network : " + network);
+                }
+
+
+                @Override
+                public void onShown(String network) {
+                    AdMostLog.log("MainActivity OnShown network: " + network);
+                }
+
+                @Override
+                public void onClicked(String s) {
+
+                }
+            };
+
+            video = new AdMostInterstitial(MainActivity.this, Statics.VIDEO_ZONE, listener);
+        }
+        video.refreshAd(false);
+
     }
 
+    private void getInterstitial() {
+
+        if (interstitial == null) {
+            AdMostAdListener listener = new AdMostAdListener() {
+
+                @Override
+                public void onDismiss(String message) {
+                    ((Button) findViewById(R.id.showInterstitial)).setText("Get Interstitial");
+                    AdMostLog.log("MainActivity ONDISMISS");
+                }
+
+                @Override
+                public void onComplete(String s) {
+
+                }
+
+
+                @Override
+                public void onFail(int errorCode) {
+                    String message;
+                    switch (errorCode) {
+                        case AdMost.AD_ERROR_NO_FILL:
+                            message = "AD_ERROR_NO_FILL";
+                            break;
+                        case AdMost.AD_ERROR_FREQ_CAP:
+                            message = "AD_ERROR_FREQ_CAP";
+                            break;
+                        case AdMost.AD_ERROR_CONNECTION:
+                            message = "AD_ERROR_CONNECTION";
+                            break;
+                        case AdMost.AD_ERROR_WATERFALL_EMPTY:
+                            message = "AD_ERROR_WATERFALL_EMPTY";
+                            break;
+                        default:
+                            message = "";
+                            break;
+                    }
+                    AdMostLog.log("MainActivity onFail errorCode : " + errorCode + " message : " + message);
+                }
+
+                @Override
+                public void onReady(String network, int ecpm) {
+                    ((Button) findViewById(R.id.showInterstitial)).setText("Show Interstitial");
+                    AdMostLog.log("MainActivity LOADED network : " + network);
+                }
+
+                @Override
+                public void onShown(String network) {
+                    AdMostLog.log("MainActivity OnShown network: " + network);
+                }
+
+                @Override
+                public void onClicked(String s) {
+
+                }
+            };
+
+            interstitial = new AdMostInterstitial(MainActivity.this, Statics.FULLSCREEN_ZONE, listener);
+        }
+        interstitial.refreshAd(false);
+    }
 
     private void setOnClicks() {
         findViewById(R.id.showInterstitial).setOnClickListener(new View.OnClickListener() {
@@ -148,187 +306,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void getBanner() {
-        // This is just for your own style, left null if you want default layout style
-        //AdSettings.addTestDevice("f2ac6d6340d01e4ceaa901c94120f6f1");
-        final AdMostViewBinder binder = new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
-                .titleId(R.id.cardTitle)
-                .textId(R.id.cardDetailText)
-                .callToActionId(R.id.CallToActionTextView)
-                .iconImageId(R.id.cardIcon)
-                .mainImageId(R.id.cardImage)
-                .attributionId(R.id.cardAttribution)
-                .build();
-        // *******************************
-
-        ((LinearLayout) findViewById(R.id.adLayout)).removeAllViews();
-        if (ad != null) {
-            ad.destroy();
-        }
-        ((TextView) findViewById(R.id.loadedNetwork)).setText("");
-        ad = new AdMostView(MainActivity.this, Statics.BANNER_ZONE, new AdMostViewListener() {
-            @Override
-            public void onLoad(String s, int i) {
-
-            }
-
-            @Override
-            public void onReady(String network, View adView) {
-                Log.i("ADMOST", "onReady : " + network);
-                LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
-                viewAd.removeAllViews();
-                if (adView.getParent() != null && adView.getParent() instanceof ViewGroup) {
-                    ((ViewGroup) adView.getParent()).removeAllViews();
-                }
-                viewAd.addView(adView);
-
-                ((TextView) findViewById(R.id.loadedNetwork)).setText(network);
-            }
-
-            @Override
-            public void onFail(int errorCode) {
-                ((TextView) findViewById(R.id.loadedNetwork)).setText("errorCode : " + errorCode);
-
-            }
-        }, binder);
-
-        ad.load();
-
-    }
-
-    private void getVideo() {
-        if (video == null) {
-
-            AdMostAdListener listener = new AdMostAdListener() {
-
-                @Override
-                public void onAction(int i) {
-
-                }
-
-                @Override
-                public void onReady(String network) {
-                    AdMostLog.log("MainActivity LOADED network :" + network);
-                    ((Button) findViewById(R.id.showVideo)).setText("Show Video");
-                }
-
-                @Override
-                public void onFail(int errorCode) {
-                    String message;
-                    switch (errorCode) {
-                        case AdMost.AD_ERROR_NO_FILL:
-                            message = "AD_ERROR_NO_FILL";
-                            break;
-                        case AdMost.AD_ERROR_FREQ_CAP:
-                            message = "AD_ERROR_FREQ_CAP";
-                            break;
-                        case AdMost.AD_ERROR_CONNECTION:
-                            message = "AD_ERROR_CONNECTION";
-                            break;
-                        case AdMost.AD_ERROR_WATERFALL_EMPTY:
-                            message = "AD_ERROR_WATERFALL_EMPTY";
-                            break;
-                        default:
-                            message = "";
-                            break;
-                    }
-                    AdMostLog.log("MainActivity onFail errorCode : " + errorCode + " message : " + message);
-                }
-
-                @Override
-                public void onDismiss(String message) {
-                    AdMostLog.log("MainActivity ONDISMISS");
-                    ((Button) findViewById(R.id.showVideo)).setText("Get Video");
-                }
-
-                @Override
-                public void onComplete(String network) {
-                    Log.i("ADMOST", "MainActivity COMPLETED network : " + network);
-                }
-
-
-                @Override
-                public void onShown(String network) {
-                    AdMostLog.log("MainActivity OnShown network: " + network);
-                }
-
-                @Override
-                public void onClicked(String s) {
-
-                }
-            };
-
-            video = new AdMostInterstitial(MainActivity.this, Statics.VIDEO_ZONE, listener);
-        }
-        video.refreshAd(false);
-
-    }
-
-    private void getInterstitial() {
-
-        if (interstitial == null) {
-            AdMostAdListener listener = new AdMostAdListener() {
-                @Override
-                public void onAction(int value) {
-                }
-
-                @Override
-                public void onDismiss(String message) {
-                    ((Button) findViewById(R.id.showInterstitial)).setText("Get Interstitial");
-                    AdMostLog.log("MainActivity ONDISMISS");
-                }
-
-                @Override
-                public void onComplete(String s) {
-
-                }
-
-
-                @Override
-                public void onFail(int errorCode) {
-                    String message;
-                    switch (errorCode) {
-                        case AdMost.AD_ERROR_NO_FILL:
-                            message = "AD_ERROR_NO_FILL";
-                            break;
-                        case AdMost.AD_ERROR_FREQ_CAP:
-                            message = "AD_ERROR_FREQ_CAP";
-                            break;
-                        case AdMost.AD_ERROR_CONNECTION:
-                            message = "AD_ERROR_CONNECTION";
-                            break;
-                        case AdMost.AD_ERROR_WATERFALL_EMPTY:
-                            message = "AD_ERROR_WATERFALL_EMPTY";
-                            break;
-                        default:
-                            message = "";
-                            break;
-                    }
-                    AdMostLog.log("MainActivity onFail errorCode : " + errorCode + " message : " + message);
-                }
-
-                @Override
-                public void onReady(String network) {
-                    ((Button) findViewById(R.id.showInterstitial)).setText("Show Interstitial");
-                    AdMostLog.log("MainActivity LOADED network : " + network);
-                }
-
-                @Override
-                public void onShown(String network) {
-                    AdMostLog.log("MainActivity OnShown network: " + network);
-                }
-
-                @Override
-                public void onClicked(String s) {
-
-                }
-            };
-
-            interstitial = new AdMostInterstitial(MainActivity.this, Statics.FULLSCREEN_ZONE, listener);
-        }
-        interstitial.refreshAd(false);
-    }
-
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -345,7 +322,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showGDPRDialog() {
-        final Dialog dialog = new Dialog(MainActivity.this, R.style.NoActionBar);
+        final Dialog dialog = new Dialog(MainActivity.this, android.R.style.Theme_DeviceDefault_Dialog_NoActionBar);
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);
         dialog.setContentView(R.layout.custom_gdpr_dialog);
@@ -388,7 +365,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         dialog.show();
+    }
 
+    private void storeUserConsentInfo(String consentEnabled) {
+        if (!(consentEnabled.equals(STATUS_ACCEPTED) || consentEnabled.equals(STATUS_REJECTED) || consentEnabled.equals(STATUS_UNKNOWN)))
+            return;
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS, MODE_PRIVATE).edit();
+        editor.putString(PERSONALIZED_ENABLED, consentEnabled);
+        editor.apply();
+    }
+
+    private String getConsentStatus() {
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS, MODE_PRIVATE);
+        return prefs.getString(PERSONALIZED_ENABLED, STATUS_UNKNOWN);
     }
 }
 

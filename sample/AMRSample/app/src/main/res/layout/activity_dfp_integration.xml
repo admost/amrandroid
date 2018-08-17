@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorblack"
-            android:text="NO_NETWORK"
+            android:text="Click Refresh Banner to load ads here"
             />
 
         <LinearLayout
@@ -26,11 +26,13 @@
             android:id="@+id/adLayout"
             android:layout_width="match_parent"
             android:orientation="vertical"
+            android:background="#ecf0f1"
             android:gravity="center"
             android:layout_below="@id/loadedNetwork"/>
 
         <LinearLayout
             android:id="@+id/buttons"
+            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

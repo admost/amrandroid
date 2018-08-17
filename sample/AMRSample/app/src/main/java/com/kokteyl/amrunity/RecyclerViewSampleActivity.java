@@ -2,7 +2,6 @@ package com.kokteyl.amrunity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -37,7 +36,6 @@ public class RecyclerViewSampleActivity extends Activity {
         mAdapter = new MoviesAdapter(mList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
 
         prepareMovieData();
@@ -54,7 +52,7 @@ public class RecyclerViewSampleActivity extends Activity {
             public MyViewHolder(View view) {
                 super(view);
                 title = view.findViewById(R.id.title);
-                genre =  view.findViewById(R.id.genre);
+                genre = view.findViewById(R.id.genre);
                 year = view.findViewById(R.id.year);
             }
         }
@@ -135,132 +133,17 @@ public class RecyclerViewSampleActivity extends Activity {
     }
 
     private void prepareMovieData() {
-        Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015");
-        mList.add(movie);
 
-        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015");
-        mList.add(movie);
-
-        movie = new Movie("Star Wars: Episode VII - The Force Awakens", "Action", "2015");
-        mList.add(movie);
-
-        movie = new Movie("Shaun the Sheep", "Animation", "2015");
-        mList.add(movie);
-
-        movie = new Movie("The Martian", "Science Fiction & Fantasy", "2015");
-        mList.add(movie);
-
+        for (int i = 0; i < 8; i++) {
+            Movie movie = new Movie("Test Movie " + i, "Action & Adventure", "2015");
+            mList.add(movie);
+        }
         mList.add(prepareAd());
+        for (int i = 8; i < 99; i++) {
+            Movie movie = new Movie("Test Movie " + i, "Action & Adventure", "2015");
+            mList.add(movie);
+        }
 
-        movie = new Movie("Mission: Impossible Rogue Nation", "Action", "2015");
-        mList.add(movie);
-
-        movie = new Movie("Up", "Animation", "2009");
-        mList.add(movie);
-
-        movie = new Movie("Star Trek", "Science Fiction", "2009");
-        mList.add(movie);
-
-        movie = new Movie("The LEGO Movie", "Animation", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Iron Man", "Action & Adventure", "2008");
-        mList.add(movie);
-
-        movie = new Movie("Aliens", "Science Fiction", "1986");
-        mList.add(movie);
-
-        movie = new Movie("Chicken Run", "Animation", "2000");
-        mList.add(movie);
-
-        movie = new Movie("Back to the Future", "Science Fiction", "1985");
-        mList.add(movie);
-
-        movie = new Movie("Raiders of the Lost Ark", "Action & Adventure", "1981");
-        mList.add(movie);
-
-        movie = new Movie("Goldfinger", "Action & Adventure", "1965");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        mList.add(prepareAd());
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        mList.add(movie);
 
         mAdapter.notifyDataSetChanged();
     }
@@ -276,12 +159,9 @@ public class RecyclerViewSampleActivity extends Activity {
                 .build();
 
         AdMostView ad = new AdMostView(this, Statics.BANNER_ZONE, AdMostManager.getInstance().AD_BANNER, new AdMostViewListener() {
-            @Override
-            public void onLoad(String network, int position) {
-            }
 
             @Override
-            public void onReady(String s, View view) {
+            public void onReady(String s, int ecpm, View view) {
             }
 
             @Override
