@@ -743,10 +743,25 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
 	.mainImageId(R.id.ad_image)
 	.backImageId(R.id.ad_back)
 	.attributionId(R.id.ad_attribution)
-    .isRoundedMode(false)
+	.privacyIconId(R.id.ad_mopub) // it is only required for MOPUB native
+	.isRoundedMode(false)
 	.isFixed(false)
 	.isCloseable(false)
 	.build();</code></pre>
+	
+	<p>If you are using <b>MOPUB native placement</b> and custom layout, you have to add the following ImageView to your custom layout with <b>visibility GONE</b>. Don't change ImageView id, it should be <b>ad_mopub</b>. It is suggested to add it to right top corner of your layout;</p>
+
+                <pre><code class="language-java">&lt;ImageView
+        android:id="@+id/ad_mopub"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="2dp"
+        android:src="@drawable/ad_mopub_daa"
+        android:layout_alignParentRight="true"
+        android:visibility="gone" /></code></pre>
                 <h3 id="interstitial">Interstitial</h3>
 
                 <pre><code class="language-java">AdMostInterstitial INTERSTITIAL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
