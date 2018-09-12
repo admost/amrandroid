@@ -6,3 +6,5 @@ build
 local.properties
 gradle.properties
 sample/gen/
+sample/AMRSample/local.properties
+sample/AMRSample/local.properties

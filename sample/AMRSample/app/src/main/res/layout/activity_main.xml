@@ -114,7 +114,15 @@
                         android:text="RecyclerView Sample" />
 
                 </LinearLayout>
+
             </LinearLayout>
+            <Button
+                android:id="@+id/native_ad"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/buttons"
+                android:layout_centerHorizontal="true"
+                android:text="Get Native Ad" />
 
         </RelativeLayout>
 

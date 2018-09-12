@@ -31,6 +31,7 @@ public class MainActivity extends Activity {
     AdMostView ad;
     AdMostInterstitial interstitial;
     AdMostInterstitial video;
+    AdMostView nativeBanner;
 
     // GDPR related variables. You can implement your own GDPR logic.
     private static final String MY_PREFS = "myAppuserInfo";
@@ -66,16 +67,9 @@ public class MainActivity extends Activity {
     }
 
     private void getBanner() {
-        // This is just for your own style, left null if you want default layout style
+
         //AdSettings.addTestDevice("f2ac6d6340d01e4ceaa901c94120f6f1");
-        final AdMostViewBinder binder = new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
-                .titleId(R.id.cardTitle)
-                .textId(R.id.cardDetailText)
-                .callToActionId(R.id.CallToActionTextView)
-                .iconImageId(R.id.cardIcon)
-                .mainImageId(R.id.cardImage)
-                .attributionId(R.id.cardAttribution)
-                .build();
+
         // *******************************
 
         ((LinearLayout) findViewById(R.id.adLayout)).removeAllViews();
@@ -103,7 +97,7 @@ public class MainActivity extends Activity {
                 ((TextView) findViewById(R.id.loadedNetwork)).setText("errorCode : " + errorCode);
 
             }
-        }, binder);
+        },null);
 
         ad.load();
 
@@ -231,8 +225,52 @@ public class MainActivity extends Activity {
             interstitial = new AdMostInterstitial(MainActivity.this, Statics.FULLSCREEN_ZONE, listener);
         }
         interstitial.refreshAd(false);
+
     }
 
+    private  void getNative(){
+        // This is just for your own style, left null if you want default layout style
+        final AdMostViewBinder binder = new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
+                .titleId(R.id.cardTitle)
+                .textId(R.id.cardDetailText)
+                .callToActionId(R.id.CallToActionTextView)
+                .iconImageId(R.id.cardIcon)
+                .mainImageId(R.id.cardImage)
+                .attributionId(R.id.cardAttribution)
+                .privacyIconId(R.id.ad_mopub)
+                .build();
+
+        ((LinearLayout) findViewById(R.id.adLayout)).removeAllViews();
+        if (nativeBanner != null) {
+            nativeBanner.destroy();
+        }
+        ((TextView) findViewById(R.id.loadedNetwork)).setText("");
+        nativeBanner = new AdMostView(MainActivity.this, Statics.NATIVE_ZONE, new AdMostViewListener() {
+
+            @Override
+            public void onReady(String network, int ecpm, View adView) {
+                Log.i("ADMOST", "onReady : " + network);
+                LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
+                viewAd.removeAllViews();
+                if (adView.getParent() != null && adView.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) adView.getParent()).removeAllViews();
+                }
+                viewAd.addView(adView);
+
+                ((TextView) findViewById(R.id.loadedNetwork)).setText(network);
+            }
+
+            @Override
+            public void onFail(int errorCode) {
+                ((TextView) findViewById(R.id.loadedNetwork)).setText("errorCode : " + errorCode);
+
+            }
+        },binder);
+
+        nativeBanner.load();
+
+
+    }
     private void setOnClicks() {
         findViewById(R.id.showInterstitial).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -261,6 +299,12 @@ public class MainActivity extends Activity {
                     getVideo();
                 }
 
+            }
+        });
+        findViewById(R.id.native_ad).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getNative();
             }
         });
 

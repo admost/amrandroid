@@ -5,7 +5,7 @@ android {
     buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId 'com.kokteyl.amrunity'
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 27
         versionCode 103
         versionName "1.1.0"
@@ -51,7 +51,7 @@ dependencies {
     ///// BASE REQUIRED LIBRARIES FOR ADMOST ////////////////
 
     implementation 'com.android.volley:volley:1.1.0'
-    implementation 'com.admost.sdk:amr:1.7.2'
+    implementation 'com.admost.sdk:amr:1.7.4'
     implementation 'com.google.android.gms:play-services-base:15.0.1'
     implementation 'com.google.android.gms:play-services-ads:15.0.1' // Most Ad-Networks require it.
 
@@ -62,13 +62,15 @@ dependencies {
 
     //Docs: https://admost.github.io/amrandroid/ Please select some Ad-networks from this link. Each Ad-network may require additional code or library.
     // PLEASE CHECK THE ADAPTER VERSIONS
-    implementation 'com.admost.sdk:adcolony:3.3.5.a2'
-    implementation 'com.admost.sdk:applovin:8.1.0.a2'
-    // You need to add a meta tag to AndroidManifest.xml for Applovin. Please look at the docs.
+
+    implementation 'com.admost.sdk:adcolony:3.3.5.a3'
+
+    implementation 'com.admost.sdk:applovin:8.1.0.a3'
     implementation('com.mopub:mopub-sdk:5.2.0@aar') {
-         transitive = true
+        transitive = true
     }
-    implementation 'com.admost.sdk:mopub-adapter:5.2.0.a2'
+    implementation 'com.admost.sdk:mopub-adapter:5.2.0.a3'
+
 
    // implementation 'com.admost.sdk:inmobi:7.1.1.a2' // Required for Inmobi network.
     //implementation 'com.squareup.picasso:picasso:2.5.2'  // Required for Inmobi network.
@@ -81,5 +83,6 @@ dependencies {
     //implementation 'com.google.android.gms:play-services-basement:15.0.1'
 
     implementation 'com.android.support:recyclerview-v7:27.1.1'
+
 
 }

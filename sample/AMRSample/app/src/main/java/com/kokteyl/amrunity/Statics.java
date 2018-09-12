@@ -9,5 +9,6 @@ public class Statics {
     final static String FULLSCREEN_ZONE = "f99e409b-f9ab-4a2e-aa9a-4d143e6809ae";
     final static String VIDEO_ZONE =  "88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140";
     final static String OFFERWALL = "fa1072e4-afcf-49b6-a919-1ab1ab1b0aa9";
+    final static String NATIVE_ZONE = "0155f3d0-5de1-4b10-a48e-8d1d069436b9";
 
 }
