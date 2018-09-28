@@ -361,6 +361,9 @@ public class MainActivity extends Activity {
         if (ad != null) {
             ad.destroy();
         }
+        if(nativeBanner != null) {
+            nativeBanner.destroy();
+        }
 
     }
 
