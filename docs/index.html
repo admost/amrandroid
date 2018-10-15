@@ -743,16 +743,16 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
 	.mainImageId(R.id.ad_image)
 	.backImageId(R.id.ad_back)
 	.attributionId(R.id.ad_attribution)
-	.privacyIconId(R.id.ad_mopub) // it is only required for MOPUB native
+	.privacyIconId(R.id.ad_privacy) // it is only required for MOPUB and INMOBI native ads
 	.isRoundedMode(false)
 	.isFixed(false)
 	.isCloseable(false)
 	.build();</code></pre>
 	
-	<p>If you are using <b>MOPUB native placement</b> and custom layout, you have to add the following ImageView to your custom layout with <b>visibility GONE</b>. Don't change ImageView id, it should be <b>ad_mopub</b>. It is suggested to add it to right top corner of your layout;</p>
+	<p>If you are using <b>MOPUB or INMOBI native placement</b> and custom layout, you have to add the following ImageView to your custom layout with <b>visibility GONE</b>. Don't change ImageView id, it should be <b>ad_privacy</b>. It is suggested to add it to right top corner of your layout;</p>
 
                 <pre><code class="language-java">&lt;ImageView
-        android:id="@+id/ad_mopub"
+        android:id="@+id/ad_privacy"
         android:layout_width="26dp"
         android:layout_height="26dp"
         android:paddingTop="2dp"
@@ -1182,6 +1182,7 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                         new features, etc.</p>
 
                     <ol class="toc">
+						<li><a href="#v1.7.6">Version 1.7.6</a></li>
 						<li><a href="#v1.7.5">Version 1.7.5</a></li>
 						<li><a href="#v1.7.4">Version 1.7.4</a></li>
 						<li><a href="#v1.7.3">Version 1.7.3</a></li>
@@ -1233,11 +1234,22 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                 </section>
                 
                 <section id="versions">
-				<h3 id="v1.7.5">Version 1.7.5
-                    <small class="release-date">Sep 24, 2018</small>
+				<h3 id="v1.7.6">Version 1.7.6
+                    <small class="release-date">Nov 15, 2018</small>
                     </h3>
                     <br>
 					<p style="color:red;font-size:18px;"><b>All adapters' versions changed, please check if the correct adnetwork adapter is placed in the gradle file. Otherwise unforeseen errors may occur.</b></p>
+					<br>
+                    <ul class="changelog"> 
+						<li class="ch-updated">Facebook 5.0.0, Inmobi 7.2.1</li>
+						<li class="ch-updated">Default native ad designs updated according to AdNetworks' design guidelines. PrivacyIconId added to design, please check <a href="#native-ads">Native Ads section</a> for required changes.</li>
+						<li class="ch-fixed">Applovin MPU empty banner area bug</li>
+						<li class="ch-fixed">Memory leak on native ads</li>
+						<li class="ch-fixed">Minor bugs</li>
+					</ul>	
+				<h3 id="v1.7.5">Version 1.7.5
+                    <small class="release-date">Sep 24, 2018</small>
+                    </h3>
 					<br>
                     <ul class="changelog"> 
 						<li class="ch-updated">AdTiming 4.4.3</li>
@@ -1298,7 +1310,7 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                         </code></pre>
                         </p>
 						</li>
-						<li class="ch-updated">AdNetwork adapters separated from the core sdk. Now it is necessary to add admost adapters of adnetworks included externally.
+						<li class="ch-updated">AdNetwork adapters separated from the core sdk. Now it is necessary to add admost adapters of AdNetworks included externally.
 						<p>
                         <pre><code>compile 'com.admost.sdk:mopub-adapter:5.1.0'
 compile 'com.admost.sdk:appnext-adapter:2.4.0.471'
