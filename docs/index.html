@@ -491,15 +491,6 @@
 -dontwarn com.moat.**
 -keep class com.moat.** { public protected private *; }
 
-# LEADBOLT
--dontwarn android.support.v4.**
--keep public class com.google.android.gms.* { public *; }
--dontwarn com.google.android.gms.**
--keep class com.apptracker.** { *; }
--dontwarn com.apptracker.**
--keepclassmembers class **.R$* { public static &lt;fields&gt;; }
--keep class **.R$*
-
 # LOOPME
 -dontwarn com.loopme.**
 -keep class com.loopme.** { *; }
@@ -951,10 +942,6 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
 				  <tr>
 				    <td>IronSource</td>
 				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
-				  </tr>
-				  <tr>
-				    <td>LeadBolt</td>
-				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
 				  </tr>
 				  <tr>
 				    <td>LoopMe</td>
