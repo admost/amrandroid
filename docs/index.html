@@ -1169,6 +1169,7 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                         new features, etc.</p>
 
                     <ol class="toc">
+						<li><a href="#v1.7.8">Version 1.7.8</a></li>
 						<li><a href="#v1.7.7">Version 1.7.7</a></li>					
 						<li><a href="#v1.7.6">Version 1.7.6</a></li>
 						<li><a href="#v1.7.5">Version 1.7.5</a></li>
@@ -1222,13 +1223,39 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                 </section>
                 
                 <section id="versions">
+				<h3 id="v1.7.8">Version 1.7.8
+                    <small class="release-date">Nov 10, 2018</small>
+                    </h3>
+                    <br>
+					<p style="color:red;font-size:18px;"><b>Please check if the correct adnetwork adapter is placed in the gradle file. Otherwise unforeseen errors may occur.</b></p>
+					<br>
+                    <ul class="changelog"> 
+						<li class="ch-added">Validation callbacks added for In App Purchase Tracking. Example usage is as follows;
+						<p>
+                        <pre><code>AdMost.getInstance().trackPurchase(purchaseData, signature, skuDetails, new AdMostIAPCallback() {
+	//Successful Purchase
+	@Override
+	public void onValidationSuccess() {}
+
+	//Invalid purchase data..!
+	@Override
+	public void onValidationFail(AdMostServerException e) {}
+
+	//Exception occurred, will be tried again automatically..!
+	@Override
+	public void onException() {}
+});
+                        </code></pre>
+                        </p>
+						</li>
+						<li class="ch-fixed">Max request per waterfall limit bug for banner zones</li>
+						<li class="ch-fixed">Minor bugs</li>
+					</ul>
 				<h3 id="v1.7.7">Version 1.7.7
                     <small class="release-date">Nov 01, 2018</small>
                     </h3>
                     <br>
-					<p style="color:red;font-size:18px;"><b>All adapters' versions changed, please check if the correct adnetwork adapter is placed in the gradle file. Otherwise unforeseen errors may occur.</b></p>
-					<br>
-                    <ul class="changelog"> 
+					<ul class="changelog"> 
 						<li class="ch-updated">AdTiming 4.5.1, Applovin 8.1.3, Chartboost 7.2.1, Ironsource 6.7.11, Mobfox 3.6.2, Smaato 9.0.0, StartApp 3.10.1, Vungle 6.3.17</li>
 						<li class="ch-added">Tag functionality added for interstitial and rewarded videos. Tags will let you monitor the performance of the ads across different dimensions. Example usage is as follows;
 						<p>
