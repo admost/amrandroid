@@ -332,7 +332,25 @@
                 </div>
                 <div class="row" id="file-androidmanifest">
                 </div>
-
+				
+				<div class="row">
+				<div class="col-md-11"> 
+				<p> Starting with Android 9.0 (API level 28), cleartext support is disabled by default. For applications <b>targetSdkVersion higher than 27</b> must use the following manifest config for AdMost <b>cleartext support.</b> </p>
+				</div>
+				<div class="col-md-1"><button class="btn btn-xs btn-primary" onclick="copyToClipboard(\'#code-androidmanifest2\')"><i class="fa fa-copy"></i></if></li> Copy</button> </div><div class="col-md-12" id="file-androidmanifest"> <pre><code id="code-androidmanifest2">
+&lt;manifest ...&gt;
+    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+    &lt;application
+        ...
+        android:networkSecurityConfig="@xml/admost_network_security_config"
+        ...&gt;
+        ...
+    &lt;/application&gt;
+&lt;/manifest&gt;
+				</code></pre>
+				</div>
+				</div>
+				
                 <h3 id="proguard">Proguard</h3>
                 <p>Copy & paste following code snippet in to your <code>/app/src/proguard-rules.pro</code> file</p>
                 <!--
