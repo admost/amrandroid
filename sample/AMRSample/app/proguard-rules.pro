@@ -83,6 +83,8 @@
 -dontnote com.facebook.ads.**
 -keep class com.facebook.** { *; }
 -keepattributes Signature
+-keep class com.google.android.exoplayer2.** {*;}
+-dontwarn com.google.android.exoplayer2.**
 
 # FLURRY
 -keep class com.flurry.** { *; }
@@ -141,15 +143,6 @@
 -dontwarn com.moat.**
 -keep class com.moat.** { public protected private *; }
 
-# LEADBOLT
--dontwarn android.support.v4.**
--keep public class com.google.android.gms.* { public *; }
--dontwarn com.google.android.gms.**
--keep class com.apptracker.** { *; }
--dontwarn com.apptracker.**
--keepclassmembers class **.R$* { public static <fields>; }
--keep class **.R$*
-
 # LOOPME
 -dontwarn com.loopme.**
 -keep class com.loopme.** { *; }
@@ -169,7 +162,7 @@
 # MOBFOX
 -dontwarn com.mobfox.**
 -keep class com.mobfox.** { *; }
--keep class com.mobfox.adapter.** { *; } 
+-keep class com.mobfox.adapter.** { *; }
 -keep class com.mobfox.sdk.** { *; }
 
 # MOPUB
@@ -261,7 +254,7 @@
 -dontwarn com.unity3d.**
 -keep class com.unity3d.ads.** { *; }
 
-# VUNGLE
+# Vungle
 -dontwarn com.vungle.**
 -dontnote com.vungle.**
 -keep class com.vungle.** { *; }
