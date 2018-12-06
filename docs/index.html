@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 
-    <title>AMR - Android Integration</title>
+    <title>Admost - Android Integration</title>
 
     <!-- Styles -->
     <link href="assets/css/theDocs.all.min.css" rel="stylesheet">
@@ -73,7 +73,7 @@
     <div class="banner auto-size" style="background-color: #3aa99e">
         <div class="container text-white">
             <h1><i class="fa fa-android"></i>&nbsp; &nbsp;Android Integration Guide</h1>
-            <h5>This is the easiest way to integrate AMR Android SDK and ad networks to your current Android Mobile
+            <h5>This is the easiest way to integrate Admost Android SDK and ad networks to your current Android Mobile
                 App.</h5>
         </div>
     </div>
@@ -118,10 +118,10 @@
                         <li><a href="#banner-ads">Banner Ads</a></li>
                         <li><a href="#native-ads">Native Ads</a></li>
                         <li><a href="#interstitial">Interstitial Ads</a></li>
-                        <li><a href="#rewarded">Rewarded</a></li>
+                        <li><a href="#rewarded">Rewarded Ads</a></li>
 
                         <li>
-                            <a href="#offerwalls" class="has-child open">Offerwalls</a>
+                            <a href="#offerwalls" class="has-child open">Offerwall Ads</a>
                             <ul style="display: block;">
                                 <li><a href="#spending-virtual-currencies">Spending Virtual Currencies</a></li>
                             </ul>
@@ -148,6 +148,8 @@
                         <li><a href="#iap">In App Purchase Tracking</a></li>
 						<li><a href="#PreloadBanner">Preloading Banners</a></li>
 						<li><a href="#senduserid">Setting Application User Id</a></li>
+						<li><a href="#sendadjustuserid">Setting Adjust User Id</a></li>
+						<li  style="display:none"><a href="#campaigntracking">Campaign Tracking</a></li>
                     </ul>
                 </li>
                 <li><a href="#release-notes">Release Notes</a>
@@ -173,7 +175,7 @@
 
             <section>
                 <h2 id="overview">Overview</h2>
-                <p>The following document detaily shows that how to integrate AMR Android SDK and desired networks via
+                <p>The following document detaily shows that how to integrate Admost Android SDK and desired networks via
                     gradle build setup. There are too many ad networks you may desire to add your current app.
                     Integrating those ad networks to your application can achievable via gradle. Most of the ad networks
                     are can be integrated by 1 line of code addition to your project's
@@ -295,16 +297,10 @@
                 <p>Those permissions are listed below;</p>
 
                 <pre><code class="language-java">
-&lt;uses-permission android:name=&quot;android.permission.ACCESS_COARSE_LOCATION&quot;/&gt;
-&lt;uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;
 &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;
-&lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;/&gt;
-&lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot;/&gt;  
-// Mandatory for VUNGLE
-&lt;uses-permission android:name=&quot;android.permission.WAKE_LOCK&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;  
                 </code></pre>
-
-
             </section>
 
             <section>
@@ -451,6 +447,8 @@
 -dontnote com.facebook.ads.**
 -keep class com.facebook.** { *; }
 -keepattributes Signature
+-keep class com.google.android.exoplayer2.** {*;}
+-dontwarn com.google.android.exoplayer2.**
 
 # FLURRY
 -keep class com.flurry.** { *; }
@@ -801,14 +799,27 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
 
 });
 
-INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
+</code></pre>
+
+				<p>
+                    You can use the following statement to load interstitial.
+                </p>
+				<pre><code class="language-java">INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
 
                 <p>
                     AUTO_SHOW (boolean) : Set true, if you want to show the fullscreen ad as soon as it is ready.
                     Otherwise, you need to call show() method manually.
                 </p>
-
-                <p> You have to call destroy method on onDestroy() method of the activity.
+				<pre><code class="language-java">INTERSTITIAL.show();</code></pre>
+				<p>
+                    You can use tag functionality for interstitial zones. Tags will let you monitor the performance of the ads across different dimensions for the same zone. You can switch ads on and off for any specified tag whenever you want. Example usage is as follows;
+                </p>
+				<pre><code class="language-java">
+// TAG can be any string value meaningful for you. You don't need to define it on AdMost dashboard before using.
+// Just start using, it will be automatically detected 
+INTERSTITIAL.show(TAG); 
+				</code></pre>
+                <p> You have to call destroy method when you are done with the interstitial.
                 </p>
                 <pre><code class="language-java">INTERSTITIAL.destroy();</code></pre>
                 <h3 id="rewarded">Rewarded</h3>
@@ -840,6 +851,28 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
         }
     });
                 </code></pre>
+				
+				<p>
+                    You can use the following statement to load rewarded video.
+                </p>
+				<pre><code class="language-java">VIDEO.refreshAd(AUTO_SHOW);</code></pre>
+
+                <p>
+                    AUTO_SHOW (boolean) : Set true, if you want to show the rewarded video ad as soon as it is ready.
+                    Otherwise, you need to call show() method manually.
+                </p>
+				<pre><code class="language-java">VIDEO.show();</code></pre>
+				<p>
+                    You can use tag functionality for rewarded video zones. Tags will let you monitor the performance of the ads across different dimensions for the same zone. You can switch ads on and off for any specified tag whenever you want. Example usage is as follows;
+                </p>
+				<pre><code class="language-java">
+// TAG can be any string value meaningful for you. You don't need to define it on AdMost dashboard before using.
+// Just start using, it will be automatically detected 
+VIDEO.show(TAG); 
+				</code></pre>
+                <p> You have to call destroy method when you are done with the rewarded video.
+                </p>
+                <pre><code class="language-java">VIDEO.destroy();</code></pre>
 
                 <h3 id="offerwalls">Offerwalls</h3>
 
@@ -869,6 +902,27 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
             //Ad Clicked
         }
 });</code></pre>
+				<p>
+                    You can use the following statement to load offerwall ad.
+                </p>
+				<pre><code class="language-java">OFFERWALL.refreshAd(AUTO_SHOW);</code></pre>
+
+                <p>
+                    AUTO_SHOW (boolean) : Set true, if you want to show the offerwall ad as soon as it is ready.
+                    Otherwise, you need to call show() method manually.
+                </p>
+				<pre><code class="language-java">OFFERWALL.show();</code></pre>
+				<p>
+                    You can use tag functionality for offerwall zones. Tags will let you monitor the performance of the ads across different dimensions for the same zone. You can switch ads on and off for any specified tag whenever you want. Example usage is as follows;
+                </p>
+				<pre><code class="language-java">
+// TAG can be any string value meaningful for you. You don't need to define it on AdMost dashboard before using.
+// Just start using, it will be automatically detected 
+OFFERWALL.show(TAG); 
+				</code></pre>
+                <p> You have to call destroy method when you are done with the offerwall ad.
+                </p>
+                <pre><code class="language-java">OFFERWALL.destroy();</code></pre>
                 <br>
                 <h4 id="spending-virtual-currencies">
                     Spending Virtual Currencies
@@ -1025,17 +1079,17 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
 
                 <h3 id="dfp">DFP/Admob Mediation Integration</h3>
 
-                <p>The AMR DFP Adapter lets publishers integrate Admost Mediation Router ads into applications with DFP
+                <p>The Admost DFP Adapter lets publishers integrate Admost Mediation Router ads into applications with DFP
                     or Admob Mediation set as main ad mediation layer.</p>
 
-                <p>In order to show AMR ads in DFP/Admob Mediation you should first follow Setup and init phases of AMR
+                <p>In order to show Admost ads in DFP/Admob Mediation you should first follow Setup and init phases of Admost
                     documentation. Then, you should follow dedicated steps of DFP or
-                    Admob Mediation to set AMR as an ad mediation source.</p>
+                    Admob Mediation to set Admost as an ad mediation source.</p>
 
-                <p>After adding AMR as an ad mediation source you should define class names for banner and interstitial
+                <p>After adding Admost as an ad mediation source you should define class names for banner and interstitial
                     ad custom events. Enter <code>admost.sdk.dfp.AmrDfpCustomEventBanner</code> and
                     <code>admost.sdk.dfp.AmrDfpCustomEventInt</code> class names for
-                    banner and interstitial class names respectively. You must pass your AMR zone Id to custom event via
+                    banner and interstitial class names respectively. You must pass your Admost zone Id to custom event via
                     Parameter field.</p>
 
                 <img class="img-responsive " src="assets/img/dfp_banner.png" alt="shadowed image">
@@ -1045,7 +1099,7 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
                 <img class="img-responsive " src="assets/img/dfp_interstitial.png" alt="shadowed image">
 
 
-                <p>Now you can show AMR banner and interstitial ads via DFP or Admob Mediation.</p>
+                <p>Now you can show Admost banner and interstitial ads via DFP or Admob Mediation.</p>
 
                 <p>You can check DFP banner and interstitial example in demo project; <a
                         href="https://github.com/admost/amrandroid/blob/master/sample/AMRSample/app/src/main/java/com/kokteyl/amrtest/DFPIntegration.java"
@@ -1055,15 +1109,11 @@ INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
                 <h3 id="testsuite">Test Suite</h3>
 
                 <p>
-                    You can use Test Suite to test your ad networks with your zone ids.
-                </p>
-
-                <p>
-                    To use Test Suite in your application, you can use following code;
+                    You can use Test Suite to test your defined ad networks. To use Test Suite in your application, you can use following code;
                 </p>
 
                 <pre><code class="language-java">
-AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", "DIFFERENT_ZONE_ID"});
+AdMost.getInstance().startTestSuite();
                 </code></pre>
 
                 <div class="row">
@@ -1088,6 +1138,25 @@ AdMost.getInstance().startTestSuite(new String[] {"ZONE_ID", "ANOTHER_ZONE_ID", 
 
                 <pre><code class="language-java">
 AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail);
+                </code></pre>
+                <p>
+                    If you want to be informed about the result of your purchase request, you can add the following callback to your request.
+                </p>
+
+                <pre><code class="language-java">
+AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail, new AdMostIAPCallback() {
+	//Successful Purchase
+	@Override
+	public void onValidationSuccess() {}
+
+	//Invalid purchase data..!
+	@Override
+	public void onValidationFail(AdMostServerException e) {}
+
+	//Exception occurred, will be tried again automatically..!
+	@Override
+	public void onException() {}
+});
                 </code></pre>
 
                 <p>Explanation and code samples of parameters:</p>
@@ -1148,7 +1217,7 @@ ArrayList<String> responseList = skuDetails.getStringArrayList(RESPONSE_GET_SKU_
                     <p> For detailed information follow this <a target="_blank" href="https://developer.android.com/google/play/billing/billing_integrate.html#billing-security">link</a>.</p>
                 </div>
 				
-				<h3 id="PreloadBanner">Preloading Banners <span class="label label-teal">New</span></h3>
+				<h3 id="PreloadBanner">Preloading Banners</h3>
 
                 <p>
                     You can use cacheZones method of AdMostConfiguration to cache your banners during initialization of AdMost sdk. In order to cache banners use following code;
@@ -1166,10 +1235,10 @@ configuration.cacheZones(new AdMostBannerZoneCache[] {cacheZone});
 AdMost.getInstance().init(configuration.build());
                 </code></pre>
 
-				<h3 id="senduserid">Setting Application User Id <span class="label label-teal">New</span></h3>
+				<h3 id="senduserid">Setting Application User Id</h3>
 
                 <p>
-                    You can use the following method to set application specific user id in AMR Analytics for enhanced tracking of your users. You have to call this method after initialization.
+                    You can use the following method to set application specific user id in Admost Analytics for enhanced tracking of your users. You have to call this method after initialization.
                 </p>
 				
 				<pre><code class="language-java">
@@ -1177,6 +1246,49 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
 
                 </code></pre>
 
+				<h3 id="sendadjustuserid">Setting Adjust User Id</h3>
+
+                <p>
+                    You can use the following method to set adjust user id in Admost Analytics for enhanced tracking of your users.
+                </p>
+				
+				<pre><code class="language-java">
+AdMost.getInstance().setAdjustUserId("ADJUST_USER_ID");
+
+                </code></pre>
+				<div style="display:none">
+				<h3 id="campaigntracking">Campaign Tracking</h3>
+
+                <p>
+                    For tracking an ad campaign's performance, it is recommended to add Admost install referrer receiver into application tag of your AndroidManifest.xml for better tracking. If you are using other receiver libraries in your application like Google Analytics campaign tracking receiver, you can use the <b>admost.install.referrer.[1-5]</b> meta-data like below.
+                </p>
+				
+				<pre><code class="language-xml">
+&lt;manifest&gt;
+	&lt;application&gt;
+		&lt;receiver
+			android:name="admost.sdk.base.InstallReferrerReceiver"
+			android:exported="true"&gt;
+			&lt;intent-filter&gt;
+				&lt;action android:name="com.android.vending.INSTALL_REFERRER" /&gt;
+			&lt;/intent-filter&gt;
+			&lt;meta-data android:name="admost.install.referrer.1" android:value="com.google.android.gms.analytics.CampaignTrackingReceiver" /&gt;
+		&lt;/receiver&gt;
+	&lt;/application&gt;
+&lt;/manifest&gt;
+
+                </code></pre>
+
+				<p>
+                    The Install Referrer API is exposed by the Google Play Store app on a device. Devices with a Google Play app version of 8.3.73 or later automatically have access to the API. Admost is using this functionality if available for better tracking. It is required to add the following dependency to your app gradle to enable this functionality.
+                </p>
+				
+				<pre><code class="language-gradle">
+dependencies {
+    implementation 'com.android.installreferrer:installreferrer:1.0'
+}	
+                </code></pre>				
+				</div>
             </section>
 
             <section>
@@ -1187,6 +1299,7 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                         new features, etc.</p>
 
                     <ol class="toc">
+						<li><a href="#v1.8.0">Version 1.8.0</a></li>
 						<li><a href="#v1.7.8">Version 1.7.8</a></li>
 						<li><a href="#v1.7.7">Version 1.7.7</a></li>					
 						<li><a href="#v1.7.6">Version 1.7.6</a></li>
@@ -1241,11 +1354,21 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                 </section>
                 
                 <section id="versions">
-				<h3 id="v1.7.8">Version 1.7.8
-                    <small class="release-date">Nov 10, 2018</small>
+				<h3 id="v1.8.0">Version 1.8.0
+                    <small class="release-date">Dec 04, 2018</small>
                     </h3>
                     <br>
 					<p style="color:red;font-size:18px;"><b>Please check if the correct adnetwork adapter is placed in the gradle file. Otherwise unforeseen errors may occur.</b></p>
+					<br>
+                    <ul class="changelog"> 
+						<li class="ch-added">Passive Tag feature for interstitial and rewarded video zones</li>
+						<li class="ch-added">Facebook native video ad auto infinite play feature</li>
+						<li class="ch-updated">Adcolony 3.3.6, Adtiming 4.5.7, Applovin 8.1.4, Appnext 2.4.4.472, Chartboost 7.3.0, Facebook 5.1.0, Ironsource 6.7.12</li>
+						<li class="ch-fixed">Minor bugs</li>
+					</ul>
+				<h3 id="v1.7.8">Version 1.7.8
+                    <small class="release-date">Nov 10, 2018</small>
+                    </h3>
 					<br>
                     <ul class="changelog"> 
 						<li class="ch-added">Validation callbacks added for In App Purchase Tracking. Example usage is as follows;
