@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId 'com.kokteyl.amrunity'
-        minSdkVersion 16
-        targetSdkVersion 27
-        versionCode 103
-        versionName "1.1.0"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 104
+        versionName "1.8.0"
         multiDexEnabled true
     }
     buildTypes {
@@ -38,55 +38,40 @@ repositories {
     }
     maven { url "https://jitpack.io" }
     maven { url 'http://repo.admost.com:8081/artifactory/admost' } // Required for Admost SDK
-    jcenter() // Required for Mopub SDK
+    jcenter()
     maven { url 'https://s3.amazonaws.com/moat-sdk-builds' } // Required for Mopub SDK
-    maven { url 'http://dl.appnext.com/' }
-    maven { url "https://s3.amazonaws.com/avocarrot-android-builds/dist/" }
     google()
 }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:multidex:1.0.3' // Multidex application requirement
 
-    implementation 'com.android.installreferrer:installreferrer:1.0'
-    // Optional for Admost SDK. It is suggested.
-
     ///// BASE REQUIRED LIBRARIES FOR ADMOST ////////////////
-
-    implementation 'com.android.volley:volley:1.1.0'
-    implementation 'com.admost.sdk:amr:1.7.8'
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.admost.sdk:amr:1.8.0'
     implementation 'com.google.android.gms:play-services-base:15.0.1'
     implementation 'com.google.android.gms:play-services-ads:15.0.1' // Most Ad-Networks require it.
-
-
     ///// BASE REQUIRED LIBRARIES FOR ADMOST ////////////////
 
     ///// SOME AD NETWORK SDKS ///////
-
     //Docs: https://admost.github.io/amrandroid/ Please select some Ad-networks from this link. Each Ad-network may require additional code or library.
     // PLEASE CHECK THE ADAPTER VERSIONS
-
     implementation 'com.admost.sdk:adcolony:3.3.5.a6'
-
     implementation 'com.admost.sdk:applovin:8.1.3.a6'
     implementation('com.mopub:mopub-sdk:5.2.0@aar') {
         transitive = true
     }
     implementation 'com.admost.sdk:mopub-adapter:5.2.0.a6'
-
-
     implementation 'com.admost.sdk:inmobi:7.2.1.a6' // Required for Inmobi network.
     implementation 'com.squareup.picasso:picasso:2.5.2'  // Required for Inmobi network.
-    implementation 'com.android.support:appcompat-v7:27.1.1'  // Required for Inmobi network.
-    implementation 'com.android.support:recyclerview-v7:27.1.1'  // Required for Inmobi network.
+    implementation 'com.android.support:appcompat-v7:28.0.0'  // Required for Inmobi network.
+    implementation 'com.android.support:recyclerview-v7:28.0.0'  // Required for Inmobi network.
     ///// SOME AD NETWORK SDKS ///////
 
     // Optional for getting user location.
     //implementation 'com.google.android.gms:play-services-location:15.0.1'
     //implementation 'com.google.android.gms:play-services-basement:15.0.1'
 
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
-
-
-
+    implementation 'com.android.installreferrer:installreferrer:1.0'
+    // Optional for Admost SDK. It is suggested.
 }

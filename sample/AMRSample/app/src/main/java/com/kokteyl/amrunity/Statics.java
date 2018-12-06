@@ -1,7 +1,7 @@
 package com.kokteyl.amrunity;
 
 public class Statics {
-
+    public static final String TAG = "AdmostSAMPLE";
 
     //Test Ids
     final static String AMR_APP_ID = "6cc8e89a-b52a-4e9a-bb8c-579f7ec538fe";

@@ -4,8 +4,9 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.util.Log;
@@ -14,8 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.google.android.gms.ads.MobileAds;
+import android.widget.Toast;
 
 import admost.sdk.AdMostInterstitial;
 import admost.sdk.AdMostView;
@@ -48,7 +48,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setOnClicks();
-
         AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, Statics.AMR_APP_ID);
         // Arrange GDPR related controls based on your needs, it is the responsibility of publisher.
         // If setUserConsent is not used, AdMost SDK uses its internal logic for personalized ads.
@@ -67,11 +66,6 @@ public class MainActivity extends Activity {
     }
 
     private void getBanner() {
-
-        //AdSettings.addTestDevice("f2ac6d6340d01e4ceaa901c94120f6f1");
-
-        // *******************************
-
         ((LinearLayout) findViewById(R.id.adLayout)).removeAllViews();
         if (ad != null) {
             ad.destroy();
@@ -88,156 +82,30 @@ public class MainActivity extends Activity {
                     ((ViewGroup) adView.getParent()).removeAllViews();
                 }
                 viewAd.addView(adView);
-
                 ((TextView) findViewById(R.id.loadedNetwork)).setText(network);
             }
 
             @Override
             public void onFail(int errorCode) {
-                ((TextView) findViewById(R.id.loadedNetwork)).setText("errorCode : " + errorCode);
+                ((TextView) findViewById(R.id.loadedNetwork)).setText("errorCode : " + logError(errorCode, "banner"));
 
             }
-        },null);
-
+        }, null);
         ad.load();
-
     }
 
-    private void getVideo() {
-        if (video == null) {
-
-            AdMostAdListener listener = new AdMostAdListener() {
-
-                @Override
-                public void onReady(String network, int ecpm) {
-                    AdMostLog.log("MainActivity LOADED network :" + network);
-                    ((Button) findViewById(R.id.showVideo)).setText("Show Video");
-                }
-
-                @Override
-                public void onFail(int errorCode) {
-                    String message;
-                    switch (errorCode) {
-                        case AdMost.AD_ERROR_NO_FILL:
-                            message = "AD_ERROR_NO_FILL";
-                            break;
-                        case AdMost.AD_ERROR_FREQ_CAP:
-                            message = "AD_ERROR_FREQ_CAP";
-                            break;
-                        case AdMost.AD_ERROR_CONNECTION:
-                            message = "AD_ERROR_CONNECTION";
-                            break;
-                        case AdMost.AD_ERROR_WATERFALL_EMPTY:
-                            message = "AD_ERROR_WATERFALL_EMPTY";
-                            break;
-                        default:
-                            message = "";
-                            break;
-                    }
-                    AdMostLog.log("MainActivity onFail errorCode : " + errorCode + " message : " + message);
-                }
-
-                @Override
-                public void onDismiss(String message) {
-                    AdMostLog.log("MainActivity ONDISMISS");
-                    ((Button) findViewById(R.id.showVideo)).setText("Get Video");
-                }
-
-                @Override
-                public void onComplete(String network) {
-                    Log.i("ADMOST", "MainActivity COMPLETED network : " + network);
-                }
-
-
-                @Override
-                public void onShown(String network) {
-                    AdMostLog.log("MainActivity OnShown network: " + network);
-                }
-
-                @Override
-                public void onClicked(String s) {
-
-                }
-            };
-
-            video = new AdMostInterstitial(MainActivity.this, Statics.VIDEO_ZONE, listener);
-        }
-        video.refreshAd(false);
-
-    }
-
-    private void getInterstitial() {
-
-        if (interstitial == null) {
-            AdMostAdListener listener = new AdMostAdListener() {
-
-                @Override
-                public void onDismiss(String message) {
-                    ((Button) findViewById(R.id.showInterstitial)).setText("Get Interstitial");
-                    AdMostLog.log("MainActivity ONDISMISS");
-                }
-
-                @Override
-                public void onComplete(String s) {
-
-                }
-
-                @Override
-                public void onFail(int errorCode) {
-                    String message;
-                    switch (errorCode) {
-                        case AdMost.AD_ERROR_NO_FILL:
-                            message = "AD_ERROR_NO_FILL";
-                            break;
-                        case AdMost.AD_ERROR_FREQ_CAP:
-                            message = "AD_ERROR_FREQ_CAP";
-                            break;
-                        case AdMost.AD_ERROR_CONNECTION:
-                            message = "AD_ERROR_CONNECTION";
-                            break;
-                        case AdMost.AD_ERROR_WATERFALL_EMPTY:
-                            message = "AD_ERROR_WATERFALL_EMPTY";
-                            break;
-                        default:
-                            message = "";
-                            break;
-                    }
-                    AdMostLog.log("MainActivity onFail errorCode : " + errorCode + " message : " + message);
-                }
-
-                @Override
-                public void onReady(String network, int ecpm) {
-                    ((Button) findViewById(R.id.showInterstitial)).setText("Show Interstitial");
-                    AdMostLog.log("MainActivity LOADED network : " + network);
-                }
-
-                @Override
-                public void onShown(String network) {
-                    AdMostLog.log("MainActivity OnShown network: " + network);
-                }
-
-                @Override
-                public void onClicked(String s) {
-
-                }
-            };
-
-            interstitial = new AdMostInterstitial(MainActivity.this, Statics.FULLSCREEN_ZONE, listener);
-        }
-        interstitial.refreshAd(false);
-
-    }
-
-    private  void getNative(){
+    private void getNative() {
         // This is just for your own style, left null if you want default layout style
-        final AdMostViewBinder binder = new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
-                .titleId(R.id.cardTitle)
-                .textId(R.id.cardDetailText)
-                .callToActionId(R.id.CallToActionTextView)
-                .iconImageId(R.id.cardIcon)
-                .mainImageId(R.id.cardImage)
-                .attributionId(R.id.cardAttribution)
-                .privacyIconId(R.id.ad_mopub)
+        final AdMostViewBinder customBinder = new AdMostViewBinder.Builder(R.layout.custom_layout_native_250)
+                .iconImageId(R.id.ad_app_icon)
+                .titleId(R.id.ad_headline)
+                .callToActionId(R.id.ad_call_to_action)
+                .textId(R.id.ad_body)
+                .attributionId(R.id.ad_attribution)
+                .mainImageId(R.id.ad_image)
+                .backImageId(R.id.ad_back)
+                .privacyIconId(R.id.ad_privacy_icon)
+                .isRoundedMode(true)
                 .build();
 
         ((LinearLayout) findViewById(R.id.adLayout)).removeAllViews();
@@ -249,28 +117,111 @@ public class MainActivity extends Activity {
 
             @Override
             public void onReady(String network, int ecpm, View adView) {
-                Log.i("ADMOST", "onReady : " + network);
+                Log.d(Statics.TAG, "MainActivity native onReady network: " + network + " ecpm: " + ecpm);
                 LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
                 viewAd.removeAllViews();
                 if (adView.getParent() != null && adView.getParent() instanceof ViewGroup) {
                     ((ViewGroup) adView.getParent()).removeAllViews();
                 }
                 viewAd.addView(adView);
-
                 ((TextView) findViewById(R.id.loadedNetwork)).setText(network);
             }
 
             @Override
             public void onFail(int errorCode) {
-                ((TextView) findViewById(R.id.loadedNetwork)).setText("errorCode : " + errorCode);
+                ((TextView) findViewById(R.id.loadedNetwork)).setText("errorCode : " + logError(errorCode, "native"));
 
             }
-        },binder);
-
+        }, customBinder);
         nativeBanner.load();
+    }
 
+    private void getVideo() {
+        if (video == null) {
+
+            AdMostAdListener listener = new AdMostAdListener() {
+
+                @Override
+                public void onReady(String network, int ecpm) {
+                    Log.d(Statics.TAG, "MainActivity onReady network :" + network);
+                    ((Button) findViewById(R.id.showVideo)).setText("Show Video");
+                }
+
+                @Override
+                public void onFail(int errorCode) {
+                    logError(errorCode, "video");
+                }
+
+                @Override
+                public void onDismiss(String message) {
+                    Log.d(Statics.TAG, "MainActivity video onDismiss : " + message);
+                    ((Button) findViewById(R.id.showVideo)).setText("Get Video");
+                }
+
+                @Override
+                public void onComplete(String network) {
+                    Log.d(Statics.TAG, "MainActivity video onComplete network : " + network);
+                }
+
+
+                @Override
+                public void onShown(String network) {
+                    Log.d(Statics.TAG, "MainActivity video onShown network: " + network);
+                }
+
+                @Override
+                public void onClicked(String s) {
+                    Log.d(Statics.TAG, "MainActivity video onClicked network: " + s);
+                }
+            };
+            video = new AdMostInterstitial(MainActivity.this, Statics.VIDEO_ZONE, listener);
+        }
+        video.refreshAd(false);
 
     }
+
+    private void getInterstitial() {
+        if (interstitial == null) {
+            AdMostAdListener listener = new AdMostAdListener() {
+
+                @Override
+                public void onDismiss(String message) {
+                    ((Button) findViewById(R.id.showInterstitial)).setText("Get Interstitial");
+                    Log.d(Statics.TAG, "MainActivity interstitial onDismiss network: " + message);
+                }
+
+                @Override
+                public void onComplete(String s) {
+                    Log.d(Statics.TAG, "MainActivity interstitial onComplete network: " + s);
+                }
+
+                @Override
+                public void onFail(int errorCode) {
+                    logError(errorCode, "interstitial");
+                }
+
+                @Override
+                public void onReady(String network, int ecpm) {
+                    ((Button) findViewById(R.id.showInterstitial)).setText("Show Interstitial");
+                    Log.d(Statics.TAG, "MainActivity interstitial onReady network : " + network);
+                }
+
+                @Override
+                public void onShown(String network) {
+                    Log.d(Statics.TAG, "MainActivity interstitial onShown network: " + network);
+                }
+
+                @Override
+                public void onClicked(String s) {
+                    Log.d(Statics.TAG, "MainActivity interstitial onClicked network: " + s);
+                }
+            };
+            interstitial = new AdMostInterstitial(MainActivity.this, Statics.FULLSCREEN_ZONE, listener);
+        }
+        interstitial.refreshAd(false);
+
+    }
+
     private void setOnClicks() {
         findViewById(R.id.showInterstitial).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -278,36 +229,36 @@ public class MainActivity extends Activity {
                 if (interstitial != null && interstitial.isLoaded()) {
                     interstitial.show();
                 } else {
+                    Toast.makeText(MainActivity.this, "Interstitial is loading...", Toast.LENGTH_SHORT).show();
                     getInterstitial();
                 }
             }
         });
-
         findViewById(R.id.refreshBanner).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Banner is refreshing...", Toast.LENGTH_SHORT).show();
                 getBanner();
             }
         });
-
         findViewById(R.id.showVideo).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (video != null && video.isLoaded()) {
                     video.show();
                 } else {
+                    Toast.makeText(MainActivity.this, "Video is loading...", Toast.LENGTH_SHORT).show();
                     getVideo();
                 }
-
             }
         });
         findViewById(R.id.native_ad).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Native is refreshing...", Toast.LENGTH_SHORT).show();
                 getNative();
             }
         });
-
         findViewById(R.id.listPage).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -315,7 +266,6 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-
         findViewById(R.id.dfp_integration).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -323,14 +273,12 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-
         findViewById(R.id.test_suite).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AdMost.getInstance().startTestSuite(new String[]{Statics.BANNER_ZONE, Statics.FULLSCREEN_ZONE, Statics.VIDEO_ZONE});
             }
         });
-
         findViewById(R.id.test_recyclerview).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -338,32 +286,37 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-
         findViewById(R.id.disable_personalized_ads).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Personalized ads disabled", Toast.LENGTH_SHORT).show();
                 storeUserConsentInfo(STATUS_REJECTED);
             }
         });
-
-
+        findViewById(R.id.rotate).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int orientation = MainActivity.this.getResources().getConfiguration().orientation;
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                } else {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                }
+            }
+        });
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (interstitial != null) {
+        if (interstitial != null)
             interstitial.destroy();
-        }
-        if (video != null) {
+        if (video != null)
             video.destroy();
-        }
-        if (ad != null) {
+        if (ad != null)
             ad.destroy();
-        }
-        if(nativeBanner != null) {
+        if (nativeBanner != null)
             nativeBanner.destroy();
-        }
 
     }
 
@@ -424,6 +377,42 @@ public class MainActivity extends Activity {
     private String getConsentStatus() {
         SharedPreferences prefs = getSharedPreferences(MY_PREFS, MODE_PRIVATE);
         return prefs.getString(PERSONALIZED_ENABLED, STATUS_UNKNOWN);
+    }
+
+    private String logError(int errorCode, String type) {
+        String message;
+        switch (errorCode) {
+            case AdMost.AD_ERROR_NO_FILL:
+                message = "AD_ERROR_NO_FILL";
+                break;
+            case AdMost.AD_ERROR_FREQ_CAP:
+                message = "AD_ERROR_FREQ_CAP";
+                break;
+            case AdMost.AD_ERROR_CONNECTION:
+                message = "AD_ERROR_CONNECTION";
+                break;
+            case AdMost.AD_ERROR_WATERFALL_EMPTY:
+                message = "AD_ERROR_WATERFALL_EMPTY";
+                break;
+            case AdMost.AD_ERROR_FREQ_CAP_ON_SHOWN:
+                message = "AD_ERROR_FREQ_CAP_ON_SHOWN";
+                break;
+            case AdMost.AD_ERROR_ZONE_PASSIVE:
+                message = "AD_ERROR_ZONE_PASSIVE";
+                break;
+            case AdMost.AD_ERROR_TAG_PASSIVE:
+                message = "AD_ERROR_TAG_PASSIVE";
+                break;
+            case AdMost.AD_ERROR_TOO_MANY_REQUEST:
+                message = "AD_ERROR_TOO_MANY_REQUEST";
+                break;
+            default:
+                message = "";
+                break;
+        }
+        AdMostLog.log("MainActivity " + type + " onFail errorCode : " + errorCode + " message : " + message);
+        Toast.makeText(MainActivity.this," onFail errorCode : " + errorCode + " message : " + message, Toast.LENGTH_SHORT ).show();
+        return message;
     }
 }
 

@@ -35,47 +35,60 @@
                 android:id="@+id/adLayout"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:background="#ecf0f1"
                 android:layout_below="@id/loadedNetwork"
+                android:background="#ecf0f1"
                 android:gravity="center"
                 android:orientation="vertical" />
 
             <LinearLayout
                 android:id="@+id/buttons"
                 android:layout_width="match_parent"
-                android:layout_marginTop="5dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/adLayout"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="8dp"
                     android:orientation="vertical">
 
                     <Button
                         android:id="@+id/refreshBanner"
-                        android:layout_width="160dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
                         android:text="Refresh Banner" />
 
                     <Button
-                        android:id="@+id/showInterstitial"
-                        android:layout_width="160dp"
+                        android:id="@+id/native_ad"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Refresh Native Ad" />
+
+                    <Button
+                        android:id="@+id/showInterstitial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
                         android:text="Get Interstitial" />
 
                     <Button
                         android:id="@+id/showVideo"
-                        android:layout_width="160dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
                         android:text="Get Video" />
 
                     <Button
                         android:id="@+id/disable_personalized_ads"
-                        android:layout_width="160dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:minLines="2"
                         android:text="Disable Personalized Ads" />
 
 
@@ -86,47 +99,48 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
+                    android:padding="8dp"
                     android:orientation="vertical"
                     android:visibility="visible">
 
                     <Button
-                        android:id="@+id/listPage"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:text="ListView Sample" />
-
-                    <Button
-                        android:id="@+id/dfp_integration"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:text="DFP Integration" />
-
-                    <Button
                         android:id="@+id/test_suite"
-                        android:layout_width="160dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
                         android:text="Start Test Suite" />
 
                     <Button
-                        android:id="@+id/test_recyclerview"
-                        android:layout_width="160dp"
+                        android:id="@+id/listPage"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="ListView Sample" />
+
+                    <Button
+                        android:id="@+id/test_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
                         android:text="RecyclerView Sample" />
 
+                    <Button
+                        android:id="@+id/dfp_integration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="DFP Integration" />
+
+                    <Button
+                        android:id="@+id/rotate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:minLines="2"
+                        android:text="Rotate Screen" />
+
                 </LinearLayout>
-
             </LinearLayout>
-            <Button
-                android:id="@+id/native_ad"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/buttons"
-                android:layout_centerHorizontal="true"
-                android:text="Get Native Ad" />
-
         </RelativeLayout>
-
-
     </RelativeLayout>
-
 </ScrollView>

@@ -60,17 +60,19 @@ public class DFPIntegrationSampleActivity extends Activity {
         adView.setAdSizes(new AdSize(320,50));
 
         // amr_binder : binder is only needed for your own style, you can leave it null
-        final AdMostViewBinder binder =  new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
-                .titleId(R.id.cardTitle)
-                .textId(R.id.cardDetailText)
-                .callToActionId(R.id.CallToActionTextView)
-                .iconImageId(R.id.cardIcon)
-                .mainImageId(R.id.cardImage)
-                .attributionId(R.id.cardAttribution)
+        final AdMostViewBinder customBinder = new AdMostViewBinder.Builder(R.layout.custom_layout_native_250)
+                .iconImageId(R.id.ad_app_icon)
+                .titleId(R.id.ad_headline)
+                .callToActionId(R.id.ad_call_to_action)
+                .textId(R.id.ad_body)
+                .attributionId(R.id.ad_attribution)
+                .mainImageId(R.id.ad_image)
+                .backImageId(R.id.ad_back)
+                .privacyIconId(R.id.ad_privacy_icon)
+                .isRoundedMode(true)
                 .build();
-
         Bundle bundle = new Bundle();
-        bundle.putParcelable("amr_binder", binder);
+        bundle.putParcelable("amr_binder", customBinder);
         // amr_binder : end
 
         PublisherAdRequest adRequest = new PublisherAdRequest.Builder()

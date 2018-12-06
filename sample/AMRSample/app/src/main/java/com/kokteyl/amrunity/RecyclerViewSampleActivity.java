@@ -149,13 +149,16 @@ public class RecyclerViewSampleActivity extends Activity {
     }
 
     private AdMostView prepareAd() {
-        final AdMostViewBinder binder = new AdMostViewBinder.Builder(R.layout.custom_layout_allgoals)
-                .titleId(R.id.cardTitle)
-                .textId(R.id.cardDetailText)
-                .callToActionId(R.id.CallToActionTextView)
-                .iconImageId(R.id.cardIcon)
-                .mainImageId(R.id.cardImage)
-                .attributionId(R.id.cardAttribution)
+        final AdMostViewBinder customBinder = new AdMostViewBinder.Builder(R.layout.custom_layout_native_250)
+                .iconImageId(R.id.ad_app_icon)
+                .titleId(R.id.ad_headline)
+                .callToActionId(R.id.ad_call_to_action)
+                .textId(R.id.ad_body)
+                .attributionId(R.id.ad_attribution)
+                .mainImageId(R.id.ad_image)
+                .backImageId(R.id.ad_back)
+                .privacyIconId(R.id.ad_privacy_icon)
+                .isRoundedMode(true)
                 .build();
 
         AdMostView ad = new AdMostView(this, Statics.BANNER_ZONE, AdMostManager.getInstance().AD_BANNER, new AdMostViewListener() {
@@ -167,7 +170,7 @@ public class RecyclerViewSampleActivity extends Activity {
             @Override
             public void onFail(int i) {
             }
-        }, binder);
+        }, customBinder);
 
         return ad;
     }
