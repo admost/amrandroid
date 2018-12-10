@@ -25,6 +25,9 @@
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="assets/img/favicon.png">
+	<style>
+		h4 {font-size:16px;font-weight:500;text-decoration:underline;}
+	</style>
 </head>
 
 <body data-spy="scroll" data-target=".sidebar" data-offset="200">
@@ -115,8 +118,10 @@
 							 <ul style="display: block;">
                                 <li><a href="#initgdpr">GDPR</a></li>
                             </ul>
-                        <li><a href="#banner-ads">Banner Ads</a></li>
-                        <li><a href="#native-ads">Native Ads</a></li>
+                        <li><a href="#banner-ads">Banner/Native Ads</a></li>
+							<ul style="display: block;">
+                                <li><a href="#native-ads">Custom Native Design</a></li>
+                            </ul>
                         <li><a href="#interstitial">Interstitial Ads</a></li>
                         <li><a href="#rewarded">Rewarded Ads</a></li>
 
@@ -126,7 +131,7 @@
                                 <li><a href="#spending-virtual-currencies">Spending Virtual Currencies</a></li>
                             </ul>
                         </li>
-						</ul>
+					</ul>
                </li>
 						
 				 <li>
@@ -684,7 +689,7 @@ AdMost.getInstance().init(configuration.build());</code></pre>
 				 <p>If you don’t pass the user’s consent or subjectToGDPR to the SDK, the rules described in  <a href="#gdprrules">GDPR</a>  have been applied.  </p>
 				
 
-                <h3 id="banner-ads">Banner Ads</h3>
+                <h3 id="banner-ads">Banner/Native Ads</h3>
                 <pre><code class="language-java">/*
 ZONE_ID : Your ZONE_ID defined on admost mediation panels.
 TYPE    : The height of your banner, it may have 3 values;
@@ -735,7 +740,7 @@ public void onDestroy() {
 }
 </code></pre>
 
-                <h3 id="native-ads">Native Ads</h3>
+                <h4 id="native-ads">Custom Native Design</h4>
 
                 <p>If you want to create your own design for native ads, you have to create a binder object and pass it
                     to AdMostView constructor as BINDER value. Example integration for binder creation is as
@@ -756,7 +761,7 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
 	.isCloseable(false)
 	.build();</code></pre>
 	
-	<p>If you are using <b>MOPUB or INMOBI native placement</b> and custom layout, you have to add the following ImageView to your custom layout with <b>visibility GONE</b>. Don't change ImageView id, it should be <b>ad_privacy</b>. It is suggested to add it to right top corner of your layout;</p>
+	<p>For privacy icon placement, you have to add the following ImageView to your custom layout with <b>visibility GONE</b>. It is suggested to add it to the right top corner of your layout with minimum width of 25dp;</p>
 
                 <pre><code class="language-java">&lt;ImageView
         android:id="@+id/ad_privacy"
@@ -766,7 +771,7 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
         android:paddingBottom="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="2dp"
-        android:src="@drawable/ad_mopub_daa"
+        android:src="@drawable/ad_privacy"
         android:layout_alignParentRight="true"
         android:visibility="gone" /></code></pre>
                 <h3 id="interstitial">Interstitial</h3>
