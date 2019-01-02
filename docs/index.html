@@ -412,6 +412,14 @@
 -dontwarn android.security.NetworkSecurityPolicy
 -dontwarn android.app.Notification
 
+#ADTIMING
+-dontwarn com.aiming.mdt.**.*
+-dontwarn com.adt.**.*
+-keepattributes *Annotation*
+-keep class com.admuing.** { *; }
+-keep class com.aiming.mdt.** { *; }
+-keep class com.adt.** { *; }
+
 # ADTRIAL
 -keep class com.adtrial.** { *; }
 -dontwarn com.adtrial.**
