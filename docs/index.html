@@ -150,6 +150,7 @@
                         <li><a href="#dfp">DFP/Admob Mediation Integration</a></li>
                         <li><a href="#testsuite">Test Suite</a></li>
                         <li><a href="#iap">In App Purchase Tracking</a></li>
+						<li><a href="#amazoniap">Amazon Store In App Purchase Tracking</a></li>
 						<li><a href="#PreloadBanner">Preloading Banners</a></li>
 						<li><a href="#senduserid">Setting Application User Id</a></li>
 						<li><a href="#sendadjustuserid">Setting Adjust User Id</a></li>
@@ -420,10 +421,6 @@
 -keep class com.aiming.mdt.** { *; }
 -keep class com.adt.** { *; }
 
-# ADTRIAL
--keep class com.adtrial.** { *; }
--dontwarn com.adtrial.**
-
 # AMAZON
 -dontwarn com.amazon.**
 -keep class com.amazon.** { *; }
@@ -534,6 +531,14 @@
 # MILLENNIAL &amp; NEXAGE
 -keep class com.millennialmedia.** { *; }
 -dontwarn com.millennialmedia.**
+
+# MINTEGRAL
+-keepattributes Signature -keepattributes *Annotation* -keep class com.mintegral.** {*; }
+-keep interface com.mintegral.** {*; }
+-keep class android.support.v4.** { *; }
+-dontwarn com.mintegral.** -keep class **.R$* { public static final int mintegral*; }
+-keep class com.alphab.** {*; }
+-keep interface com.alphab.** {*; }
 
 # MOBFOX
 -dontwarn com.mobfox.**
@@ -1121,7 +1126,7 @@ OFFERWALL.show(TAG);
                 <h3 id="testsuite">Test Suite</h3>
 
                 <p>
-                    You can use Test Suite to test your defined ad networks. To use Test Suite in your application, you can use following code;
+                    You can use Test Suite to test your defined ad networks, you have to be a tester to use this function. Use the following code to open test suite activity;
                 </p>
 
                 <pre><code class="language-java">
@@ -1134,7 +1139,7 @@ AdMost.getInstance().startTestSuite();
                             <i class="fa fa-android"></i>
                             <h3>Screen Shot</h3>
                             <img class="img-responsive"
-                                 src="https://raw.githubusercontent.com/admost/amrandroid/master/docs/assets/img/android_testsuite.png"
+                                 src="assets/img/android_testsuite.png?v=1"
                                  alt="android-test-suite screenshot">
                         </div>
 
@@ -1149,14 +1154,7 @@ AdMost.getInstance().startTestSuite();
                 </p>
 
                 <pre><code class="language-java">
-AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail);
-                </code></pre>
-                <p>
-                    If you want to be informed about the result of your purchase request, you can add the following callback to your request.
-                </p>
-
-                <pre><code class="language-java">
-AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail, new AdMostIAPCallback() {
+AdMostIAPCallback iabCallback = new AdMostIAPCallback() {
 	//Successful Purchase
 	@Override
 	public void onValidationSuccess() {}
@@ -1168,25 +1166,28 @@ AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail, n
 	//Exception occurred, will be tried again automatically..!
 	@Override
 	public void onException() {}
-});
-                </code></pre>
+};
 
+AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail, iabCallback, isDebug);
+                </code></pre>
                 <p>Explanation and code samples of parameters:</p>
                 <ul>
-                    <li><b>purchaseData</b> – a String in JSON format that contains details about the purchase order. It
+                    <li><b>purchaseData (String)</b> – a String in JSON format that contains details about the purchase order. It
                         is returned by the operating system after you make the purchase call.
                     </li>
-                    <li><b>signature</b> – String containing the signature of the purchase data that the developer
+                    <li><b>signature (String)</b> – String containing the signature of the purchase data that the developer
                         signed with their private key. It is returned by the operating system after you make the
                         purchase call.
-
                     </li>
 
-                    <li><b>jsonSkuDetail</b> – a String in JSON Object format that contains product item details
-
+                    <li><b>jsonSkuDetail (String)</b> – a String in JSON Object format that contains product item details
                     </li>
-
-                        <pre><code class="language-java">
+					<li><b>iabCallback (AdMostIAPCallback)</b> - You can add this callback to be informed about the result of your purchase request. null value is
+                	</li>					
+					<li><b>isDebug (boolean)</b> - Set true for test purchases.
+                    </li>					
+                </ul>
+				<pre><code class="language-java">
 //Handles an activity result that's part of the purchase flow in in-app billing
 void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -1220,14 +1221,71 @@ ArrayList<String> responseList = skuDetails.getStringArrayList(RESPONSE_GET_SKU_
                         <p><a href="https://developer.android.com/google/play/billing/billing_reference.html#getSkuDetails">https://developer.android.com/google/play/billing/billing_reference.html#getSkuDetails</a></p>
 
 
-                </ul>
-
-
                 <div class="callout callout-danger" role="alert">
                     <p>After your integration complete, enter your app's public key on Admost Mediation dashboard. (Mediation > My Apps > Edit App) </p>
                     <p> To find the public key portion of this key pair, open your application's details in the <var>Play Console</var>, click <b>Services & APIs</b>, and review the field titled <b>Your License Key for This Application</b>. </p>
                     <p> For detailed information follow this <a target="_blank" href="https://developer.android.com/google/play/billing/billing_integrate.html#billing-security">link</a>.</p>
                 </div>
+				
+				<h3 id="amazoniap">Amazon Store In App Purchase Tracking</h3>
+
+                <p>
+                    The following call is used to track amazon purchases with receipt validation:
+                </p>
+
+                <pre><code class="language-java">
+AdMostIAPCallback iabCallback = new AdMostIAPCallback() {
+	//Successful Purchase
+	@Override
+	public void onValidationSuccess() {}
+
+	//Invalid purchase data..!
+	@Override
+	public void onValidationFail(AdMostServerException e) {}
+
+	//Exception occurred, will be tried again automatically..!
+	@Override
+	public void onException() {}
+};
+
+AdMost.getInstance().trackPurchaseAmazon(receiptJSON, purchaseResponseJSON, productJSON, iabCallback, isDebug);
+                </code></pre>
+                <p>Explanation and code samples of parameters:</p>
+                <ul>
+                    <li><b>receiptJSON (JSONObject)</b> – a JSON object. Retrieve that value from com.amazon.device.iap.model.PurchaseResponse OR com.amazon.device.iap.model.PurchaseUpdatesResponse like this:<br>
+					<ul>
+					<li>
+					purchaseResponse.getReceipt().toJSON()
+					</li>
+					<li>
+					purchaseUpdatesResponse.getReceipts().get(indexOfRelatedReceipt).toJSON()
+					</li>
+					</ul>
+                    </li>
+                    <li><b>purchaseResponseJSON (JSONObject)</b> – a JSON object. Retrieve that value from com.amazon.device.iap.model.PurchaseResponse OR com.amazon.device.iap.model.PurchaseUpdatesResponse object like this:<br>
+					<ul>
+					<li>
+					purchaseResponse.toJSON()
+					</li>
+					<li>
+					purchaseUpdatesResponse.toJSON()
+					</li>
+					</ul>
+                    </li>
+
+                    <li><b>productJSON (JSONObject)</b> – a JSON object. Retrieve that value from com.amazon.device.iap.model.Product object like this:<br>
+					<ul>
+					<li>
+					product.toJSON()
+					</li>
+					</ul>
+                    </li>
+					<li><b>iabCallback (AdMostIAPCallback)</b> - You can add this callback to be informed about the result of your purchase request. null value is
+                	</li>					
+					<li><b>isDebug (boolean)</b> - Set true for test purchases.
+                    </li>					
+                </ul>				
+				
 				
 				<h3 id="PreloadBanner">Preloading Banners</h3>
 
@@ -1311,6 +1369,7 @@ dependencies {
                         new features, etc.</p>
 
                     <ol class="toc">
+						<li><a href="#v1.8.3">Version 1.8.3</a></li>
 						<li><a href="#v1.8.2">Version 1.8.2</a></li>
 						<li><a href="#v1.8.1">Version 1.8.1</a></li>
 						<li><a href="#v1.8.0">Version 1.8.0</a></li>
@@ -1368,11 +1427,23 @@ dependencies {
                 </section>
                 
                 <section id="versions">
-				<h3 id="v1.8.2">Version 1.8.2
-                    <small class="release-date">Dec 18, 2018</small>
+				<h3 id="v1.8.3">Version 1.8.3
+                    <small class="release-date">Jan 08, 2019</small>
                     </h3>
                     <br>
 					<p style="color:red;font-size:18px;"><b>Please check if the correct adnetwork adapter is placed in the gradle file. Otherwise unforeseen errors may occur.</b></p>
+					<br>
+                    <ul class="changelog"> 
+						<li class="ch-added">Amazon store in app tracking</li>
+						<li class="ch-added">Amazon advertising id used as an alternative for Google Advertising Id in Amazon store </li>
+						<li class="ch-added">AdMob unified native ads support added. (Minimum version of Play Ads Service is 15.0.0 for this feature)</li>
+						<li class="ch-added">Debugging option added for in-app tracking</li>
+						<li class="ch-updated">AdTiming 4.6.3</li>
+						<li class="ch-fixed">Minor bugs</li>
+					</ul>
+				<h3 id="v1.8.2">Version 1.8.2
+                    <small class="release-date">Dec 18, 2018</small>
+                    </h3>
 					<br>
                     <ul class="changelog"> 
 						<li class="ch-fixed">Facebook native banner rendering bug</li>
