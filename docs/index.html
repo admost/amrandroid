@@ -132,19 +132,19 @@
                         </li>
 					</ul>
                </li>
-						
+
 				 <li>
                     <a href="#gdpr">GDPR</a>
 					 <ul>
 					 <li><a href="#networkcomplience">Network GDPR Complience</a></li>
 					 <li><a href="#gdprrules">GDPR Rules</a></li>
-					 
+
 					 </ul>
-                
+
                </li>
 
 
-                
+
                 <li><a href="#extras">Extras</a>
                     <ul>
                         <li><a href="#dfp">DFP/Admob Mediation Integration</a></li>
@@ -304,7 +304,7 @@
                 <pre><code class="language-java">
 &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;
 &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;
-&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;  
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;
                 </code></pre>
             </section>
 
@@ -333,9 +333,9 @@
                 </div>
                 <div class="row" id="file-androidmanifest">
                 </div>
-				
+
 				<div class="row">
-				<div class="col-md-11"> 
+				<div class="col-md-11">
 				<p> Starting with Android 9.0 (API level 28), cleartext support is disabled by default. For applications <b>targetSdkVersion higher than 27</b> must use the following manifest config for AdMost <b>cleartext support.</b> </p>
 				</div>
 				<div class="col-md-1"><button class="btn btn-xs btn-primary" onclick="copyToClipboard(\'#code-androidmanifest2\')"><i class="fa fa-copy"></i></if></li> Copy</button> </div><div class="col-md-12" id="file-androidmanifest"> <pre><code id="code-androidmanifest2">
@@ -351,7 +351,24 @@
 				</code></pre>
 				</div>
 				</div>
-				
+
+        <div class="row">
+				<div class="col-md-11">
+				<p> If you are using Admob SDK (com.google.android.gms:play-services-ads)  with version <b>17.0.0 and higher</b>, you must add your <b>AdMob App ID</b> to your Android Manifest file. </p>
+				</div>
+				<div class="col-md-1"><button class="btn btn-xs btn-primary" onclick="copyToClipboard(\'#code-androidmanifest2\')"><i class="fa fa-copy"></i></if></li> Copy</button> </div><div class="col-md-12" id="file-androidmanifest"> <pre><code id="code-androidmanifest2">
+        &lt;manifest&gt;
+          &lt;application&gt;
+              &lt;!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 --&gt;
+              &lt;meta-data
+                  android:name="com.google.android.gms.ads.APPLICATION_ID"
+                  android:value="[ADMOB_APP_ID]"/&gt;
+          &lt;/application&gt;
+        &lt;/manifest&gt;
+				</code></pre>
+				</div>
+				</div>
+
                 <h3 id="proguard">Proguard</h3>
                 <p>Copy & paste following code snippet in to your <code>/app/src/proguard-rules.pro</code> file</p>
                 <!--
@@ -692,14 +709,14 @@ configuration.interests(“Games, Sports, News”);
 
 AdMost.getInstance().init(configuration.build());</code></pre>
 
-          
+
 
                <h4 id="initgdpr">GDPR</h4>
-			     <p> Once you have collected the user’s consent, you can pass it onto the SDK using the init configuration parameters shown above.  </p> 
+			     <p> Once you have collected the user’s consent, you can pass it onto the SDK using the init configuration parameters shown above.  </p>
 				  <p><code>setUserConsent</code> has a boolean parameter. If you have the user’s consent, set it true. If you do not have the user's consent, set it false.  </p>
-				  <p><code>setSubjectToGDPR</code> has a boolean parameter. If you know the user is subject to GDPR, set it true. If you know the user is not subject to GDPR, set it false. </p> 
+				  <p><code>setSubjectToGDPR</code> has a boolean parameter. If you know the user is subject to GDPR, set it true. If you know the user is not subject to GDPR, set it false. </p>
 				 <p>If you don’t pass the user’s consent or subjectToGDPR to the SDK, the rules described in  <a href="#gdprrules">GDPR</a>  have been applied.  </p>
-				
+
 
                 <h3 id="banner-ads">Banner/Native Ads</h3>
                 <pre><code class="language-java">/*
@@ -772,7 +789,7 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
 	.isFixed(false)
 	.isCloseable(false)
 	.build();</code></pre>
-	
+
 	<p>For privacy icon placement, you have to add the following ImageView to your custom layout with <b>visibility GONE</b>. It is suggested to add it to the right top corner of your layout with minimum width of 25dp;</p>
 
                 <pre><code class="language-java">&lt;ImageView
@@ -833,8 +850,8 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
                 </p>
 				<pre><code class="language-java">
 // TAG can be any string value meaningful for you. You don't need to define it on AdMost dashboard before using.
-// Just start using, it will be automatically detected 
-INTERSTITIAL.show(TAG); 
+// Just start using, it will be automatically detected
+INTERSTITIAL.show(TAG);
 				</code></pre>
                 <p> You have to call destroy method when you are done with the interstitial.
                 </p>
@@ -868,7 +885,7 @@ INTERSTITIAL.show(TAG);
         }
     });
                 </code></pre>
-				
+
 				<p>
                     You can use the following statement to load rewarded video.
                 </p>
@@ -884,8 +901,8 @@ INTERSTITIAL.show(TAG);
                 </p>
 				<pre><code class="language-java">
 // TAG can be any string value meaningful for you. You don't need to define it on AdMost dashboard before using.
-// Just start using, it will be automatically detected 
-VIDEO.show(TAG); 
+// Just start using, it will be automatically detected
+VIDEO.show(TAG);
 				</code></pre>
                 <p> You have to call destroy method when you are done with the rewarded video.
                 </p>
@@ -934,8 +951,8 @@ VIDEO.show(TAG);
                 </p>
 				<pre><code class="language-java">
 // TAG can be any string value meaningful for you. You don't need to define it on AdMost dashboard before using.
-// Just start using, it will be automatically detected 
-OFFERWALL.show(TAG); 
+// Just start using, it will be automatically detected
+OFFERWALL.show(TAG);
 				</code></pre>
                 <p> You have to call destroy method when you are done with the offerwall ad.
                 </p>
@@ -958,41 +975,41 @@ OFFERWALL.show(TAG);
                 </code>
     </pre>
 				 <h2 id="gdpr">GDPR</h2>
-				 
-                <p>We specified your responsibilities for obtaining consent from end-users of your apps in our updated <a href="https://www.admost.com/privacy-policy">Privacy Policy</a>. By updating GDPR compatible SDK you agree that you’re responsible for inform the end-users and take their consent. 
+
+                <p>We specified your responsibilities for obtaining consent from end-users of your apps in our updated <a href="https://www.admost.com/privacy-policy">Privacy Policy</a>. By updating GDPR compatible SDK you agree that you’re responsible for inform the end-users and take their consent.
 						Please note that the consent collection applies only to users located in the European Economic Area, the United Kingdom, and Switzerland.
-						As data controller you should take consent of end-users by preparing consent window, you can find samples below. When you take end-user consent, the response will be passed to Admost SDK. 
+						As data controller you should take consent of end-users by preparing consent window, you can find samples below. When you take end-user consent, the response will be passed to Admost SDK.
 						You can find the implementation  <a href="#init">here</a> </p>
 				<img class="img-responsive"
                                  src="assets/img/consent.png"
                                  alt="consent">
-				<h3 id="networkcomplience">Network GDPR Complience</h2>				 
-			   
-			   <table class="table table-bordered table-striped table-info" style = "width:300px ">	
+				<h3 id="networkcomplience">Network GDPR Complience</h2>
+
+			   <table class="table table-bordered table-striped table-info" style = "width:300px ">
 			    <tr>
 				    <th>Ad Network </th>
-				    <th >GDPR Compatibility</th> 
+				    <th >GDPR Compatibility</th>
 				  </tr>
 				  <tr>
 				    <td >Adcolony</td>
-				    <td align="center"> <input type="checkbox" disabled="disabled" checked="checked"><br></td> 
-				   
+				    <td align="center"> <input type="checkbox" disabled="disabled" checked="checked"><br></td>
+
 				  </tr>
 				  <tr>
 				    <td>Admob</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Adtrial</td>
-				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Amazon</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Applovin</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Appnext</td>
@@ -1002,88 +1019,88 @@ OFFERWALL.show(TAG);
 				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 					<tr>
 				    <td>Display IO</td>
-				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
-				  </tr> 
+				    <td align="center"><input type="checkbox" disabled="disabled"><br></td>
+				  </tr>
 				  <tr>
 				    <td>Facebook</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Flurry</td>
-				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Fyber</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Glispa</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>InMobi</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>InnerActive</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" ><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" ><br></td>
 				  </tr>
 				  <tr>
 				    <td>IronSource</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>LoopMe</td>
-				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Mobfox</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Mopub</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Nexage</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" ><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" ><br></td>
 				  </tr>
 				  <tr>
 				    <td>Ogury</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Smaato</td>
-				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Startapp</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Tapjoy</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Unity</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>Vungle</td>
-				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled" checked="checked"><br></td>
 				  </tr>
 				  <tr>
 				    <td>YouAppi</td>
-				    <td align="center"><input type="checkbox" disabled="disabled"><br></td> 
+				    <td align="center"><input type="checkbox" disabled="disabled"><br></td>
 				  </tr>
-				  
-				  </tr> 
+
 				  </tr>
-				  
+				  </tr>
+
 				</table>
-								 
+
 				<h3 id="gdprrules">GDPR Rules</h3>
-				
+
 					 <p>Admost provides you two methods for GDPR compatibility:  <code>setSubjectToGDPR()</code> and <code>setUserConsent()</code>. </p>
 					 <p>If you can determine whether the user is located in European Union or not, you can use optional <code>setSubjectToGDPR()</code> method to set user's subject to GDPR flag. If you do not use this method, SubjectToGDPR status remains as unknown. In this case, Admost SDK will try to determine whether the user is in EU or not which is totally under the responsibility of you. If the user is in EU, networks are not allowed to show personalized ads. If the user is not located in EU, the ad networks are allowed to show personalized ads. </p>
 					<p>On condition that you want to obtain neither user's SubjectToGDPR status nor any negative legal consequences, SubjectToGDPR must set <code>setSubjectToGDPR(true)</code> for each user. In this case, Admost considers all users as subject to GDPR and if the consent is not allowed, Admost blocks ad networks to collect data from users. Which may cause a decrease in overall revenue performance apart from Admost.  </p>
@@ -1091,7 +1108,7 @@ OFFERWALL.show(TAG);
 					<p>If you do not use<code>setUserConsent()</code>, user consent status remains unknown. In this case, if you provide <code>setSubjectToGDPR(true)</code>, the ad networks do not have the ability to serve personalized ads. If you provide <code>setSubjectToGDPR(false)</code>, the ad networks have the ability to serve personalized ads. </p>
 					<p>If you do not provide both <code>setUserConsent()</code> and <code>setSubjectToGDPR()</code>, Admost decides whether the user is located in EU or not which is totally under the responsibility of you.  </p>
 					<p>If you want to obtain neither the user's consent nor any negative legal consequences, you must set <code>setUserConsent(false)</code> for every user. In this case, Admost considers the user has no consent,  the ad networks are not allowed to serve personalized ads, except only you do not provide  <code>setSubjectToGDPR(false)</code>.</p>
-				
+
                 <h2 id="extras">Extras</h2>
 
                 <h3 id="dfp">DFP/Admob Mediation Integration</h3>
@@ -1183,9 +1200,9 @@ AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail, i
                     <li><b>jsonSkuDetail (String)</b> – a String in JSON Object format that contains product item details
                     </li>
 					<li><b>iabCallback (AdMostIAPCallback)</b> - You can add this callback to be informed about the result of your purchase request. null value is
-                	</li>					
+                	</li>
 					<li><b>isDebug (boolean)</b> - Set true for test purchases.
-                    </li>					
+                    </li>
                 </ul>
 				<pre><code class="language-java">
 //Handles an activity result that's part of the purchase flow in in-app billing
@@ -1226,7 +1243,7 @@ ArrayList<String> responseList = skuDetails.getStringArrayList(RESPONSE_GET_SKU_
                     <p> To find the public key portion of this key pair, open your application's details in the <var>Play Console</var>, click <b>Services & APIs</b>, and review the field titled <b>Your License Key for This Application</b>. </p>
                     <p> For detailed information follow this <a target="_blank" href="https://developer.android.com/google/play/billing/billing_integrate.html#billing-security">link</a>.</p>
                 </div>
-				
+
 				<h3 id="amazoniap">Amazon Store In App Purchase Tracking</h3>
 
                 <p>
@@ -1281,20 +1298,20 @@ AdMost.getInstance().trackPurchaseAmazon(receiptJSON, purchaseResponseJSON, prod
 					</ul>
                     </li>
 					<li><b>iabCallback (AdMostIAPCallback)</b> - You can add this callback to be informed about the result of your purchase request. null value is
-                	</li>					
+                	</li>
 					<li><b>isDebug (boolean)</b> - Set true for test purchases.
-                    </li>					
-                </ul>				
-				
-				
+                    </li>
+                </ul>
+
+
 				<h3 id="PreloadBanner">Preloading Banners</h3>
 
                 <p>
                     You can use cacheZones method of AdMostConfiguration to cache your banners during initialization of AdMost sdk. In order to cache banners use following code;
                 </p>
-				
+
 				<pre><code class="language-java">
-				
+
 AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, < ADMOST_APP_ID >);
 
 AdMostBannerZoneCache cacheZone = new AdMostBannerZoneCache();
@@ -1310,7 +1327,7 @@ AdMost.getInstance().init(configuration.build());
                 <p>
                     You can use the following method to set application specific user id in Admost Analytics for enhanced tracking of your users. You have to call this method after initialization.
                 </p>
-				
+
 				<pre><code class="language-java">
 AdMost.getInstance().setUserId("APPLICATION_USER_ID");
 
@@ -1321,7 +1338,7 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
                 <p>
                     You can use the following method to set adjust user id in Admost Analytics for enhanced tracking of your users.
                 </p>
-				
+
 				<pre><code class="language-java">
 AdMost.getInstance().setAdjustUserId("ADJUST_USER_ID");
 
@@ -1332,7 +1349,7 @@ AdMost.getInstance().setAdjustUserId("ADJUST_USER_ID");
                 <p>
                     For tracking an ad campaign's performance, it is recommended to add Admost install referrer receiver into application tag of your AndroidManifest.xml for better tracking. If you are using other receiver libraries in your application like Google Analytics campaign tracking receiver, you can use the <b>admost.install.referrer.[1-5]</b> meta-data like below.
                 </p>
-				
+
 				<pre><code class="language-xml">
 &lt;manifest&gt;
 	&lt;application&gt;
@@ -1352,12 +1369,12 @@ AdMost.getInstance().setAdjustUserId("ADJUST_USER_ID");
 				<p>
                     The Install Referrer API is exposed by the Google Play Store app on a device. Devices with a Google Play app version of 8.3.73 or later automatically have access to the API. Admost is using this functionality if available for better tracking. It is required to add the following dependency to your app gradle to enable this functionality.
                 </p>
-				
+
 				<pre><code class="language-gradle">
 dependencies {
     implementation 'com.android.installreferrer:installreferrer:1.0'
-}	
-                </code></pre>				
+}
+                </code></pre>
 				</div>
             </section>
 
@@ -1374,7 +1391,7 @@ dependencies {
 						<li><a href="#v1.8.1">Version 1.8.1</a></li>
 						<li><a href="#v1.8.0">Version 1.8.0</a></li>
 						<li><a href="#v1.7.8">Version 1.7.8</a></li>
-						<li><a href="#v1.7.7">Version 1.7.7</a></li>					
+						<li><a href="#v1.7.7">Version 1.7.7</a></li>
 						<li><a href="#v1.7.6">Version 1.7.6</a></li>
 						<li><a href="#v1.7.5">Version 1.7.5</a></li>
 						<li><a href="#v1.7.4">Version 1.7.4</a></li>
@@ -1425,7 +1442,7 @@ dependencies {
 
 
                 </section>
-                
+
                 <section id="versions">
 				<h3 id="v1.8.3">Version 1.8.3
                     <small class="release-date">Jan 08, 2019</small>
@@ -1433,7 +1450,7 @@ dependencies {
                     <br>
 					<p style="color:red;font-size:18px;"><b>Please check if the correct adnetwork adapter is placed in the gradle file. Otherwise unforeseen errors may occur.</b></p>
 					<br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
 						<li class="ch-added">Amazon store in app tracking</li>
 						<li class="ch-added">Amazon advertising id used as an alternative for Google Advertising Id in Amazon store </li>
 						<li class="ch-added">AdMob unified native ads support added. (Minimum version of Play Ads Service is 15.0.0 for this feature)</li>
@@ -1445,7 +1462,7 @@ dependencies {
                     <small class="release-date">Dec 18, 2018</small>
                     </h3>
 					<br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
 						<li class="ch-fixed">Facebook native banner rendering bug</li>
 						<li class="ch-fixed">ANR reports related to Mopub v.5.4.1 update</li>
 						<li class="ch-fixed">Initialization of networks on background thread blocking main thread</li>
@@ -1454,7 +1471,7 @@ dependencies {
                     <small class="release-date">Dec 11, 2018</small>
                     </h3>
 					<br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
 						<li class="ch-added">Facebook native ad custom renderer for video ads</li>
 						<li class="ch-updated">Adcolony 3.3.7, Chartboost 7.3.1, Flurry 11.4.0, Mopub 5.4.1, Ogury 3.0.32, Unity 3.0.0, Vungle 6.3.24</li>
 						<li class="ch-fixed">Inmobi custom native ad CTA button type</li>
@@ -1463,7 +1480,7 @@ dependencies {
                     <small class="release-date">Dec 04, 2018</small>
                     </h3>
 					<br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
 						<li class="ch-added">Passive Tag feature for interstitial and rewarded video zones</li>
 						<li class="ch-added">Facebook native video ad auto infinite play feature</li>
 						<li class="ch-updated">Adcolony 3.3.6, Adtiming 4.5.7, Applovin 8.1.4, Appnext 2.4.4.472, Chartboost 7.3.0, Facebook 5.1.0, Ironsource 6.7.12</li>
@@ -1473,7 +1490,7 @@ dependencies {
                     <small class="release-date">Nov 10, 2018</small>
                     </h3>
 					<br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
 						<li class="ch-added">Validation callbacks added for In App Purchase Tracking. Example usage is as follows;
 						<p>
                         <pre><code>AdMost.getInstance().trackPurchase(purchaseData, signature, skuDetails, new AdMostIAPCallback() {
@@ -1499,7 +1516,7 @@ dependencies {
                     <small class="release-date">Nov 01, 2018</small>
                     </h3>
                     <br>
-					<ul class="changelog"> 
+					<ul class="changelog">
 						<li class="ch-updated">AdTiming 4.5.1, Applovin 8.1.3, Appnext 2.4.2.472, Chartboost 7.2.1, Ironsource 6.7.11, Mobfox 3.6.2, Smaato 9.0.0, StartApp 3.10.1, Vungle 6.3.17</li>
 						<li class="ch-added">Tag functionality added for interstitial and rewarded videos. Tags will let you monitor the performance of the ads across different dimensions. Example usage is as follows;
 						<p>
@@ -1527,33 +1544,33 @@ INTERSTITIAL.show("tag");
 						<li class="ch-fixed">Ironsource callback bug for instance id "0" placements</li>
 						<li class="ch-fixed">CrossPromotion ads display bug</li>
 						<li class="ch-fixed">Minor bugs</li>
-					</ul>	
+					</ul>
 				<h3 id="v1.7.6">Version 1.7.6
                     <small class="release-date">Oct 15, 2018</small>
                     </h3>
                     <br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
 						<li class="ch-updated">Facebook 5.0.0, Inmobi 7.2.1</li>
 						<li class="ch-updated">Default native ad designs updated according to AdNetworks' design guidelines. PrivacyIconId added to design, please check <a href="#native-ads">Native Ads section</a> for required changes.</li>
 						<li class="ch-fixed">Applovin MPU empty banner area bug</li>
 						<li class="ch-fixed">Memory leak on native ads</li>
 						<li class="ch-fixed">Minor bugs</li>
-					</ul>	
+					</ul>
 				<h3 id="v1.7.5">Version 1.7.5
                     <small class="release-date">Sep 24, 2018</small>
                     </h3>
 					<br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
 						<li class="ch-updated">AdTiming 4.4.3</li>
 						<li class="ch-updated">Background thread priorities</li>
 						<li class="ch-fixed">Mopub native placement privacy icon bug</li>
 						<li class="ch-fixed">Minor bugs</li>
-					</ul>				
+					</ul>
 				<h3 id="v1.7.4">Version 1.7.4
                     <small class="release-date">Sep 10, 2018</small>
                     </h3>
 					<br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
 						<li class="ch-updated">AdTiming 4.4.0, Ironsource 6.7.10, Loopme 6.1.6</li>
                         <li class="ch-added">Remote audio control feature for supported video ads</li>
 						<li class="ch-added">SDK support for setting campaign id externally for tracking purposes</li>
@@ -1562,14 +1579,14 @@ INTERSTITIAL.show("tag");
                     <small class="release-date">Aug 20, 2018</small>
                     </h3>
 					<br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
                         <li class="ch-fixed">Floor Price optimisation bug</li>
 					</ul>
 					<h3 id="v1.7.2">Version 1.7.2
                     <small class="release-date">Aug 10, 2018</small>
                     </h3>
 					<br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
                         <li class="ch-fixed">Mopub native ad privacy icon appearance</li>
 						<li class="ch-fixed">Applovin empty banner area bug</li>
 						<li class="ch-fixed">Latency on onFail callback for interstitial</li>
@@ -1581,7 +1598,7 @@ INTERSTITIAL.show("tag");
                     <small class="release-date">July 23, 2018</small>
                     </h3>
 					<br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
                         <li class="ch-fixed">Rare bug on rewarded video complete and dismiss callbacks</li>
 						<li class="ch-fixed">Initialization related OfferWall bugs</li>
 						<li class="ch-updated">Test Suite activity layout</li>
@@ -1593,7 +1610,7 @@ INTERSTITIAL.show("tag");
                     <small class="release-date">July 06, 2018</small>
                     </h3>
                     <br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
                         <li class="ch-fixed">Interstitial memory leak</li>
 						<li class="ch-fixed">Crosspromotion, frequency capping and zone request related minor bugs</li>
 						<li class="ch-updated">Admost repository replaced with admost.
@@ -1611,18 +1628,18 @@ compile 'com.admost.sdk:vungle-adapter:6.2.5'
 compile 'com.admost.sdk:pubnative-adapter:2.3.16'
                         </code></pre>
                         </p>
-						
+
 						</li>
-						<li class="ch-updated">Applovin 8.0.2, Tapjoy 12.0.0, Startapp 3.9.3</li>				
+						<li class="ch-updated">Applovin 8.0.2, Tapjoy 12.0.0, Startapp 3.9.3</li>
                         <li class="ch-removed">AdMostInterstitial callback listener (AdMostAdListener) updated. Deprecated <b>onAction</b> callback removed</li>
 						<li class="ch-removed">AdMostView callback listener (AdMostViewListener) updated. Deprecated <b>onLoad</b> callback removed</li>
-                        
+
 					</ul>
                     <h3 id="v1.6.8">Version 1.6.8
                     <small class="release-date">June 21, 2018</small>
                     </h3>
                     <br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
                         <li class="ch-fixed">Facebook & Admob banner memory leak</li>
 						<li class="ch-added">Floor price optimisation</li>
                         <li class="ch-updated">Admost sdk proguard definition updated. The following lines added
@@ -1648,7 +1665,7 @@ new AdMostView(ACTIVITY.get(), zone, TYPE, new AdMostViewListener() {
                             </p>
                             </div>
                             </li>
-                       
+
                         <li class= "ch-updated">ECPM value added to onReady method of AdMostAdListener interface for AdMostInterstitial callbacks
                         <div class="callout callout-warning" role="alert">
                         <p><pre>
@@ -1676,7 +1693,7 @@ new AdMostInterstitial(ACTIVITY.get(), id, new AdMostAdListener() {
                             </pre>
                             </p>
                             </div>
-                        
+
                         </li>
                         <li class="ch-updated">Appnext 2.4.0.471, MoPub 5.1.0</li>
 					</ul>
@@ -1685,23 +1702,23 @@ new AdMostInterstitial(ACTIVITY.get(), id, new AdMostAdListener() {
                     <small class="release-date">May 31, 2018</small>
                     </h3>
                     <br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
                         <li class="ch-fixed">First activity memory leak</li>
 						<li class="ch-fixed">Vungle crash due to WAKE_LOCK permission</li>
 						<li class="ch-added">Opening Mopub consent dialog on init</li>
-												
+
                     </ul>
 					<h3 id="v1.6.6">Version 1.6.6
                     <small class="release-date">May 25, 2018</small>
                     </h3>
                     <br>
-                    <ul class="changelog"> 
+                    <ul class="changelog">
                         <li class="ch-fixed">Custom designed native ad inconveniences fixed</li>
 						<li class="ch-updated">GDPR Update</li>
-						<li class="ch-updated">Adcolony 3.3.4, Admob & AdX 15.0.1, Applovin 8.0.1, Appnext 2.3.1.471, ChartBoost 7.2.0, Display IO 1.5.8, Facebook 4.28.2, Flurry 10.1.0, Fyber 8.21.0, Glispa 4.10.0, InMobi 7.1.0, InnerActive 7.1.4, IronSource 6.7.9, LoopMe 5.2.9, MobFox 3.5.0, MoPub 5.0.0, Millennial/Nexage 6.8.1, Smaato 8.0.0, StartApp 3.8.4, Tapjoy 11.12.2, Tappx 3.0.12, Unity 2.2.1, Vungle 6.2.5, YouAppi 4.1.1, MediaBrix 1.8.3.1 
+						<li class="ch-updated">Adcolony 3.3.4, Admob & AdX 15.0.1, Applovin 8.0.1, Appnext 2.3.1.471, ChartBoost 7.2.0, Display IO 1.5.8, Facebook 4.28.2, Flurry 10.1.0, Fyber 8.21.0, Glispa 4.10.0, InMobi 7.1.0, InnerActive 7.1.4, IronSource 6.7.9, LoopMe 5.2.9, MobFox 3.5.0, MoPub 5.0.0, Millennial/Nexage 6.8.1, Smaato 8.0.0, StartApp 3.8.4, Tapjoy 11.12.2, Tappx 3.0.12, Unity 2.2.1, Vungle 6.2.5, YouAppi 4.1.1, MediaBrix 1.8.3.1
                         </li>
-						
-						
+
+
                     </ul>
 					<h3 id="v1.6.4">Version 1.6.4
                         <small class="release-date">May 02, 2018</small>
@@ -1716,7 +1733,7 @@ new AdMostInterstitial(ACTIVITY.get(), id, new AdMostAdListener() {
                         </li>
 						<li class="ch-updated">Adcolony 3.3.3, Facebook 4.28.1
                         </li>
-						
+
                     </ul>
 					<h3 id="v1.6.3">Version 1.6.3
                         <small class="release-date">Apr 16, 2018</small>
@@ -1741,9 +1758,9 @@ new AdMostInterstitial(ACTIVITY.get(), id, new AdMostAdListener() {
                         </li>
 						<li class="ch-updated">Inneractive 7.1.3, maven structure changed
                         </li>
-						
+
                     </ul>
-				
+
 					<h3 id="v1.6.1">Version 1.6.1
                         <small class="release-date">Mar 12, 2018</small>
                     </h3>
@@ -1776,7 +1793,7 @@ new AdMostInterstitial(ACTIVITY.get(), id, new AdMostAdListener() {
 						<li class="ch-updated">Smaato 7.2.1
                         </li>
                     </ul>
-				
+
 					<h3 id="v1.5.9">Version 1.5.9
                         <small class="release-date">Feb 20, 2018</small>
                     </h3>
@@ -1784,10 +1801,10 @@ new AdMostInterstitial(ACTIVITY.get(), id, new AdMostAdListener() {
                     <ul class="changelog">
                         <li class="ch-fixed">Vungle rewarded video init problem
                         </li>
-                        <li class="ch-added">setUserId function added to support Tapjoy self managed offerwall 
+                        <li class="ch-added">setUserId function added to support Tapjoy self managed offerwall
                         </li>
                     </ul>
-					
+
 					<h3 id="v1.5.8">Version 1.5.8
                         <small class="release-date">Feb 15, 2018</small>
                     </h3>
