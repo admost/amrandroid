@@ -139,7 +139,7 @@ function fillAppGradleCode() {
             for (var j = 0; j < obj.ad_networks[i].app_gradle.dependencies.length; j++) {
                 var isDuplicate = false;
                 for (var k = 0; k < arrayAppGradlePackages.length; k++) {
-                    if (arrayAppGradlePackages[k].localeCompare("implementation '" + obj.ad_networks[i].app_gradle.dependencies[j].package + "' <br>") == 0) {
+                    if (arrayAppGradlePackages[k].indexOf(obj.ad_networks[i].app_gradle.dependencies[j].package) >= 0) {
                         isDuplicate = true;
                     }
                 }
