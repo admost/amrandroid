@@ -388,6 +388,10 @@
 -keepattributes Exceptions, InnerClasses
 -dontwarn admost.sdk.**
 -keep class admost.sdk.** {*;}
+-dontwarn admost.adserver.**
+-keep class admost.adserver.** { *; }
+-dontwarn com.google.android.exoplayer2.**
+-keep class com.google.android.exoplayer2.**{ *;}
 -keep class android.support.v4.app.DialogFragment { *; }
 -keep class android.support.v4.util.LruCache { *; }
 
@@ -463,6 +467,10 @@
 -dontwarn com.chartboost.sdk.impl.**
 -keep class com.chartboost.sdk.** { *; }
 -keepattributes *Annotation*
+
+# CRITEO
+-dontwarn com.criteo.**
+-keep class com.criteo.** { *; }
 
 # DISPLAYIO
 -keep class io.display.sdk.** { *; }
@@ -1389,6 +1397,7 @@ dependencies {
                         new features, etc.</p>
 
                     <ol class="toc">
+						<li><a href="#v1.8.6">Version 1.8.6</a></li>
 						<li><a href="#v1.8.5">Version 1.8.5</a></li>
 						<li><a href="#v1.8.4">Version 1.8.4</a></li>
 						<li><a href="#v1.8.3">Version 1.8.3</a></li>
@@ -1449,11 +1458,28 @@ dependencies {
                 </section>
 
                 <section id="versions">
-				<h3 id="v1.8.5">Version 1.8.5
-                    <small class="release-date">Feb 05, 2019</small>
+				<h3 id="v1.8.6">Version 1.8.6
+                    <small class="release-date">Feb 26, 2019</small>
                     </h3>
                     <br>
 					<p style="color:red;font-size:18px;"><b>Please check if the correct adnetwork adapter is placed in the gradle file. Otherwise unforeseen errors may occur.</b></p>
+					<br>
+                    <ul class="changelog">
+						<li class="ch-added">Criteo 1.5.3</li>
+						<li class="ch-updated">AdTiming 4.8.1, Applovin 9.2.1, AppSamurai 1.0.6, Criteo 1.5.3, Fyber 8.22.2, Glispa 4.10.3, InnerActive 7.2.1, Ironsource 6.8.1, Millenial 6.8.3, Mobfox 3.6.7, Mopub 5.5.0, Smaato 9.1.3, Tapjoy 12.2.0, UnityAds 3.0.1, YouAppi 4.3.10</li>
+						<li class="ch-updated">CrossPromotion and Premium ad adapters separated from the core sdk. If you are using Proguard, the following lines has to be added;
+<p>
+                        <pre><code>
+-dontwarn admost.adserver.**
+-keep class admost.adserver.** { *; }
+
+                        </code></pre>
+                        </p>						
+						</li>
+					</ul>
+				<h3 id="v1.8.5">Version 1.8.5
+                    <small class="release-date">Feb 05, 2019</small>
+                    </h3>
 					<br>
                     <ul class="changelog">
 						<li class="ch-updated">Adcolony 3.3.8, Inmobi 7.2.2, Loopme 6.1.10</li>
