@@ -154,6 +154,7 @@
 						<li><a href="#PreloadBanner">Preloading Banners</a></li>
 						<li><a href="#senduserid">Setting Application User Id</a></li>
 						<li><a href="#sendadjustuserid">Setting Adjust User Id</a></li>
+						<li><a href="#sscallbacks">Server to Server Callbacks <span class="label label-teal">New</span></a></li>
 						<li  style="display:none"><a href="#campaigntracking">Campaign Tracking</a></li>
                     </ul>
                 </li>
@@ -1336,7 +1337,7 @@ AdMost.getInstance().init(configuration.build());
 				<h3 id="senduserid">Setting Application User Id</h3>
 
                 <p>
-                    You can use the following method to set application specific user id in Admost Analytics for enhanced tracking of your users. You have to call this method after initialization.
+                    You can use the following method to set application specific user id in Admost Analytics for enhanced tracking of your users. This information is also required for server to server callbacks. It is added to the callback URL to distinguish rewarded user.
                 </p>
 
 				<pre><code class="language-java">
@@ -1353,6 +1354,20 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
 				<pre><code class="language-java">
 AdMost.getInstance().setAdjustUserId("ADJUST_USER_ID");
 
+                </code></pre>
+				<h3 id="sscallbacks">Server to Server Callbacks</h3>
+
+                <p>
+                    For rewarded video ads, you can use Server to Server Callbacks for rewarding users after successful completion of video ads. Please consult your business contact person for enabling it and setting required parameters like callback URL, request verification token and method. 
+					<br>
+					To use this feature, only requirement on application side is setting your application user id as described <a href="#senduserid">here</a>. You may also add new custom parameters to the callback URL by setting custom data to the rewarded video object(AdMostInterstitial) as shown in the sample code below. This method has to be called before showing ad.
+                </p>
+
+				<pre><code class="language-java">
+Hashtable<String,Object> customData = new Hashtable<>();
+customData.put("os", Build.VERSION.SDK_INT);
+customData.put("ip", "172.12.1.23");
+REWARDED.setSSVCustomData(customData);
                 </code></pre>
 				<div style="display:none">
 				<h3 id="campaigntracking">Campaign Tracking</h3>
@@ -1397,6 +1412,7 @@ dependencies {
                         new features, etc.</p>
 
                     <ol class="toc">
+						<li><a href="#v1.8.7">Version 1.8.7</a></li>
 						<li><a href="#v1.8.6">Version 1.8.6</a></li>
 						<li><a href="#v1.8.5">Version 1.8.5</a></li>
 						<li><a href="#v1.8.4">Version 1.8.4</a></li>
@@ -1458,11 +1474,19 @@ dependencies {
                 </section>
 
                 <section id="versions">
-				<h3 id="v1.8.6">Version 1.8.6
-                    <small class="release-date">Feb 26, 2019</small>
+				<h3 id="v1.8.7">Version 1.8.7
+                    <small class="release-date">Mar 06, 2019</small>
                     </h3>
                     <br>
 					<p style="color:red;font-size:18px;"><b>Please check if the correct adnetwork adapter is placed in the gradle file. Otherwise unforeseen errors may occur.</b></p>
+					<br>
+                    <ul class="changelog">
+						<li class="ch-added"><a href="#sscallbacks">Server to server callbacks</a> for rewarded video ads</li>
+						<li class="ch-updated">CrossPromotion 0.0.2, AdTiming 4.8.3, AppSamurai 1.1.0, Tappx 3.1.3</li>
+					</ul>
+				<h3 id="v1.8.6">Version 1.8.6
+                    <small class="release-date">Feb 26, 2019</small>
+                    </h3>
 					<br>
                     <ul class="changelog">
 						<li class="ch-added">Criteo 1.5.3</li>
