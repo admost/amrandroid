@@ -1155,12 +1155,19 @@ OFFERWALL.show(TAG);
                 <h3 id="testsuite">Test Suite</h3>
 
                 <p>
-                    You can use Test Suite to test your defined ad networks, you have to be a tester to use this function. Use the following code to open test suite activity;
+                    You can use Test Suite to test your defined ad networks, you have to be a tester to use this function. To be a tester, you should add your GAID to Admost Dashboard Mediation > Manage Testers > New Tester.
+                    Tester activation takes 15 minutes. Use the following code to open test suite activity;
                 </p>
 
                 <pre><code class="language-java">
 AdMost.getInstance().startTestSuite();
                 </code></pre>
+            
+                <p>
+                    If you set user consent false, then you should add Admost generated id. You can find the id from log by searching 'admost'.<br/>
+                Example log:<br /> 
+                    /ADMOST: To enable AMR tester mode use this id : &lt;201903210418A57D7ZBJSRTPY&gt; on AMR dashboard Manage Testers page!
+                </p>
 
                 <div class="row">
                     <div class="col-md-6">
