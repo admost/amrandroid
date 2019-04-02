@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <title>AMR - Android Release Notes</title>
+
+    <!-- Styles -->
+    <link href="assets/css/theDocs.all.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+      <link href="assets/css/skin/skin-teal.css" rel="stylesheet">
+
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet'
+          type='text/css'>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Favicons -->
+    <link rel="icon" href="https://dashboard.admost.com/Assets/img/admostfavicon.png">
+</head>
+
+<body data-spy="scroll" data-target=".sidebar" data-offset="200">
+
+<header class="site-header navbar-transparent sticky">
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+
+            <!-- Toggle buttons and brand -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="true" aria-controls="navbar">
+                    <span class="glyphicon glyphicon-option-vertical"></span>
+                </button>
+
+                <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://admost.github.io"><img src="assets/img/logo-white.svg" alt="logo"></a>
+
+            </div>
+            <!-- END Toggle buttons and brand -->
+
+            <!-- Top navbar -->
+            <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="index.html">Documentation</a></li>
+                  <li><a href="gdpr.html">GDPR</a></li>
+                  <li class="active"><a href="release-notes.html">Release Notes</a></li>
+                  <li><a href="faq.html">FAQ</a></li>
+                  <li><a target="_blank" href="https://github.com/admost/amrandroid/tree/master/">
+                      <i class="fa fa-mobile-phone"></i>&nbsp;&nbsp;Demo Project</a>
+                  </li>
+                </ul>
+            </div>
+            <!-- END Top navbar -->
+        </div>
+    </nav>
+    <!-- END Top navbar & branding -->
+</header>
+
+
+<main class="container">
+    <div class="row">
+        <!-- Sidebar -->
+        <aside class="col-sm-3 sidebar">
+            <ul class="nav sidenav dropable sticky">
+                <li><a href="#release-notes">Version List</a>
+                    <ul>
+                        <li><a href="#v1.8.7">Version 1.8.7</a></li>
+                        <li><a href="#v1.8.6">Version 1.8.6</a></li>
+                        <li><a href="#v1.8.5">Version 1.8.5</a></li>
+                        <li><a href="#v1.8.4">Version 1.8.4</a></li>
+                        <li><a href="#v1.8.3">Version 1.8.3</a></li>
+                        <li><a href="#v1.8.2">Version 1.8.2</a></li>
+                        <li><a href="#v1.8.1">Version 1.8.1</a></li>
+                        <li><a href="#v1.8.0">Version 1.8.0</a></li>
+                        <li><a href="#v1.7.8">Version 1.7.8</a></li>
+                        <li><a href="#v1.7.7">Version 1.7.7</a></li>
+                        <li><a href="#v1.7.6">Version 1.7.6</a></li>
+                        <li><a href="#v1.7.5">Version 1.7.5</a></li>
+                        <li><a href="#v1.7.4">Version 1.7.4</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <!-- END Sidebar -->
+
+        <!-- Main content -->
+        <article class="col-sm-9 main-content" role="main">
+          <section>
+              <h2 id="release-notes">Release Notes</h2>
+
+              <header>
+                  <p>In this page, you can find a record of all the changes made to this project such as bug fixes,
+                      new features, etc.</p>
+              </header>
+
+              <section>
+                  <h3 id="upgrading-prior">Upgrading from 1.3.2 and Prior</h3>
+
+                  <p>From v1.3.3 our integration is completely revised. We deploy all of our SDK's to Maven
+                      repository.</p>
+                  <p>If you are using previous integration type (via .jar/@aar) you are able to achieve same goal
+                      via Maven integration. For instructions to using new methodology is listed <a href="#setup">above</a>.
+                  </p>
+
+                  <div class="callout callout-warning" role="alert">
+                      <p>There are no changes in <a href="#usage">usage</a>, only </a> <a href="#setup">setup</a>
+                          changed..</p>
+                  </div>
+
+
+              </section>
+
+              <section id="versions">
+      <h3 id="v1.8.7">Version 1.8.7
+                  <small class="release-date">Mar 06, 2019</small>
+                  </h3>
+                  <br>
+        <p style="color:red;font-size:18px;"><b>Please check if the correct adnetwork adapter is placed in the gradle file. Otherwise unforeseen errors may occur.</b></p>
+        <br>
+                  <ul class="changelog">
+          <li class="ch-added"><a href="index.html#sscallbacks">Server to server callbacks</a> for rewarded video ads</li>
+          <li class="ch-updated">CrossPromotion 0.0.2, AdTiming 4.8.3, AppSamurai 1.1.0, Tappx 3.1.3</li>
+        </ul>
+      <h3 id="v1.8.6">Version 1.8.6
+                  <small class="release-date">Feb 26, 2019</small>
+                  </h3>
+        <br>
+                  <ul class="changelog">
+          <li class="ch-added">Criteo 1.5.3</li>
+          <li class="ch-updated">AdTiming 4.8.1, Applovin 9.2.1, AppSamurai 1.0.6, Criteo 1.5.3, Fyber 8.22.2, Glispa 4.10.3, InnerActive 7.2.1, Ironsource 6.8.1, Millenial 6.8.3, Mobfox 3.6.7, Mopub 5.5.0, Smaato 9.1.3, Tapjoy 12.2.0, UnityAds 3.0.1, YouAppi 4.3.10</li>
+          <li class="ch-updated">CrossPromotion and Premium ad adapters separated from the core sdk. If you are using Proguard, the following lines has to be added;
+<p>
+                      <pre><code>
+-dontwarn admost.adserver.**
+-keep class admost.adserver.** { *; }
+
+                      </code></pre>
+                      </p>
+          </li>
+        </ul>
+      <h3 id="v1.8.5">Version 1.8.5
+                  <small class="release-date">Feb 05, 2019</small>
+                  </h3>
+        <br>
+                  <ul class="changelog">
+          <li class="ch-updated">Adcolony 3.3.8, Inmobi 7.2.2, Loopme 6.1.10</li>
+          <li class="ch-fixed">Banner refresh bug on NO-FILL</li>
+          <li class="ch-fixed">Mopub banner and native request count bug</li>
+        </ul>
+      <h3 id="v1.8.4">Version 1.8.4
+                  <small class="release-date">Jan 21, 2019</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+          <li class="ch-updated">Mintegral 9.5.0</li>
+          <li class="ch-updated">Adcolony downgraded to 3.3.5 because of an impression problem</li>
+          <li class="ch-fixed">AdMost CrossPromotion ads third party impression bug</li>
+        </ul>
+      <h3 id="v1.8.3">Version 1.8.3
+                  <small class="release-date">Jan 08, 2019</small>
+                  </h3>
+        <br>
+                  <ul class="changelog">
+          <li class="ch-added">Amazon store in app tracking</li>
+          <li class="ch-added">Amazon advertising id used as an alternative for Google Advertising Id in Amazon store </li>
+          <li class="ch-added">AdMob unified native ads support added. (Minimum version of Play Ads Service is 15.0.0 for this feature)</li>
+          <li class="ch-added">Debugging option added for in-app tracking</li>
+          <li class="ch-updated">AdTiming 4.6.3</li>
+          <li class="ch-fixed">Minor bugs</li>
+        </ul>
+      <h3 id="v1.8.2">Version 1.8.2
+                  <small class="release-date">Dec 18, 2018</small>
+                  </h3>
+        <br>
+                  <ul class="changelog">
+          <li class="ch-fixed">Facebook native banner rendering bug</li>
+          <li class="ch-fixed">ANR reports related to Mopub v.5.4.1 update</li>
+          <li class="ch-fixed">Initialization of networks on background thread blocking main thread</li>
+        </ul>
+      <h3 id="v1.8.1">Version 1.8.1
+                  <small class="release-date">Dec 11, 2018</small>
+                  </h3>
+        <br>
+                  <ul class="changelog">
+          <li class="ch-added">Facebook native ad custom renderer for video ads</li>
+          <li class="ch-updated">Adcolony 3.3.7, Chartboost 7.3.1, Flurry 11.4.0, Mopub 5.4.1, Ogury 3.0.32, Unity 3.0.0, Vungle 6.3.24</li>
+          <li class="ch-fixed">Inmobi custom native ad CTA button type</li>
+        </ul>
+      <h3 id="v1.8.0">Version 1.8.0
+                  <small class="release-date">Dec 04, 2018</small>
+                  </h3>
+        <br>
+                  <ul class="changelog">
+          <li class="ch-added">Passive Tag feature for interstitial and rewarded video zones</li>
+          <li class="ch-added">Facebook native video ad auto infinite play feature</li>
+          <li class="ch-updated">Adcolony 3.3.6, Adtiming 4.5.7, Applovin 8.1.4, Appnext 2.4.4.472, Chartboost 7.3.0, Facebook 5.1.0, Ironsource 6.7.12</li>
+          <li class="ch-fixed">Minor bugs</li>
+        </ul>
+      <h3 id="v1.7.8">Version 1.7.8
+                  <small class="release-date">Nov 10, 2018</small>
+                  </h3>
+        <br>
+                  <ul class="changelog">
+          <li class="ch-added">Validation callbacks added for In App Purchase Tracking. Example usage is as follows;
+          <p>
+                      <pre><code>AdMost.getInstance().trackPurchase(purchaseData, signature, skuDetails, new AdMostIAPCallback() {
+//Successful Purchase
+@Override
+public void onValidationSuccess() {}
+
+//Invalid purchase data..!
+@Override
+public void onValidationFail(AdMostServerException e) {}
+
+//Exception occurred, will be tried again automatically..!
+@Override
+public void onException() {}
+});
+                      </code></pre>
+                      </p>
+          </li>
+          <li class="ch-fixed">Max request per waterfall limit bug for banner zones</li>
+          <li class="ch-fixed">Minor bugs</li>
+        </ul>
+      <h3 id="v1.7.7">Version 1.7.7
+                  <small class="release-date">Nov 01, 2018</small>
+                  </h3>
+                  <br>
+        <ul class="changelog">
+          <li class="ch-updated">AdTiming 4.5.1, Applovin 8.1.3, Appnext 2.4.2.472, Chartboost 7.2.1, Ironsource 6.7.11, Mobfox 3.6.2, Smaato 9.0.0, StartApp 3.10.1, Vungle 6.3.17</li>
+          <li class="ch-added">Tag functionality added for interstitial and rewarded videos. Tags will let you monitor the performance of the ads across different dimensions. Example usage is as follows;
+          <p>
+                      <pre><code>AdMostInterstitial INTERSTITIAL = new AdMostInterstitial(...);
+...
+INTERSTITIAL.show("tag");
+                      </code></pre>
+                      </p>
+          </li>
+          <li class="ch-added">Starting with Android 9.0 (API level 28), cleartext support is disabled by default. For applications targeting api level higher than 27 must use the following manifest config for AdMost cleartext support.
+          <p>
+                      <pre><code><?xml version="1.0" encoding="utf-8"?>
+&lt;manifest ...&gt;
+  &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+  &lt;application
+      ...
+      android:networkSecurityConfig="@xml/admost_network_security_config"
+      ...&gt;
+      ...
+  &lt;/application&gt;
+&lt;/manifest&gt;
+                      </code></pre>
+                      </p>
+          </li>
+          <li class="ch-fixed">Ironsource callback bug for instance id "0" placements</li>
+          <li class="ch-fixed">CrossPromotion ads display bug</li>
+          <li class="ch-fixed">Minor bugs</li>
+        </ul>
+      <h3 id="v1.7.6">Version 1.7.6
+                  <small class="release-date">Oct 15, 2018</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+          <li class="ch-updated">Facebook 5.0.0, Inmobi 7.2.1</li>
+          <li class="ch-updated">Default native ad designs updated according to AdNetworks' design guidelines. PrivacyIconId added to design, please check <a href="#native-ads">Native Ads section</a> for required changes.</li>
+          <li class="ch-fixed">Applovin MPU empty banner area bug</li>
+          <li class="ch-fixed">Memory leak on native ads</li>
+          <li class="ch-fixed">Minor bugs</li>
+        </ul>
+      <h3 id="v1.7.5">Version 1.7.5
+                  <small class="release-date">Sep 24, 2018</small>
+                  </h3>
+        <br>
+                  <ul class="changelog">
+          <li class="ch-updated">AdTiming 4.4.3</li>
+          <li class="ch-updated">Background thread priorities</li>
+          <li class="ch-fixed">Mopub native placement privacy icon bug</li>
+          <li class="ch-fixed">Minor bugs</li>
+        </ul>
+      <h3 id="v1.7.4">Version 1.7.4
+                  <small class="release-date">Sep 10, 2018</small>
+                  </h3>
+        <br>
+                  <ul class="changelog">
+          <li class="ch-updated">AdTiming 4.4.0, Ironsource 6.7.10, Loopme 6.1.6</li>
+                      <li class="ch-added">Remote audio control feature for supported video ads</li>
+          <li class="ch-added">SDK support for setting campaign id externally for tracking purposes</li>
+        </ul>
+      <h3 id="v1.7.3">Version 1.7.3
+                  <small class="release-date">Aug 20, 2018</small>
+                  </h3>
+        <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Floor Price optimisation bug</li>
+        </ul>
+        <h3 id="v1.7.2">Version 1.7.2
+                  <small class="release-date">Aug 10, 2018</small>
+                  </h3>
+        <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Mopub native ad privacy icon appearance</li>
+          <li class="ch-fixed">Applovin empty banner area bug</li>
+          <li class="ch-fixed">Latency on onFail callback for interstitial</li>
+          <li class="ch-updated">Admost debug log levels</li>
+          <li class="ch-updated">Optimisation in network requests and http caching</li>
+          <li class="ch-updated">AdTiming 4.3.1, Ogury 3.0.13, Vungle 6.3.12</li>
+        </ul>
+        <h3 id="v1.7.1">Version 1.7.1
+                  <small class="release-date">July 23, 2018</small>
+                  </h3>
+        <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Rare bug on rewarded video complete and dismiss callbacks</li>
+          <li class="ch-fixed">Initialization related OfferWall bugs</li>
+          <li class="ch-updated">Test Suite activity layout</li>
+          <li class="ch-updated">Adcolony 3.3.5, Amazon 5.9.0, Applovin 8.1.0, Appnext 2.4.1.471, Inneractive 7.1.5, Inmobi 7.1.1, Ironsource 6.7.9.1, Mopub 5.2.0, Unity 2.3.0</li>
+          <li class="ch-added">Adtiming 4.1.0</li>
+                      <li class="ch-added">Applovin and Ironsource floor price optimization added. As of this version, instance based placements have to be used for these networks on Admost dashboard. <b>If you already are using these networks, please inform AdMost business contact about the update.</b></li>
+        </ul>
+        <h3 id="v1.7.0">Version 1.7.0
+                  <small class="release-date">July 06, 2018</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Interstitial memory leak</li>
+          <li class="ch-fixed">Crosspromotion, frequency capping and zone request related minor bugs</li>
+          <li class="ch-updated">Admost repository replaced with admost.
+          <p>
+                      <pre><code>maven { url 'http://repo.admost.com:8081/artifactory/admost' }
+                      </code></pre>
+                      </p>
+          </li>
+          <li class="ch-updated">AdNetwork adapters separated from the core sdk. Now it is necessary to add admost adapters of AdNetworks included externally.
+          <p>
+                      <pre><code>compile 'com.admost.sdk:mopub-adapter:5.1.0'
+compile 'com.admost.sdk:appnext-adapter:2.4.0.471'
+compile 'com.admost.sdk:glispa-adapter:4.10.0'
+compile 'com.admost.sdk:vungle-adapter:6.2.5'
+compile 'com.admost.sdk:pubnative-adapter:2.3.16'
+                      </code></pre>
+                      </p>
+
+          </li>
+          <li class="ch-updated">Applovin 8.0.2, Tapjoy 12.0.0, Startapp 3.9.3</li>
+                      <li class="ch-removed">AdMostInterstitial callback listener (AdMostAdListener) updated. Deprecated <b>onAction</b> callback removed</li>
+          <li class="ch-removed">AdMostView callback listener (AdMostViewListener) updated. Deprecated <b>onLoad</b> callback removed</li>
+
+        </ul>
+                  <h3 id="v1.6.8">Version 1.6.8
+                  <small class="release-date">June 21, 2018</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Facebook & Admob banner memory leak</li>
+          <li class="ch-added">Floor price optimisation</li>
+                      <li class="ch-updated">Admost sdk proguard definition updated. The following lines added
+                      <p>
+                      <pre><code>-keep class android.support.v4.app.DialogFragment { *; }
+-keep class android.support.v4.util.LruCache { *; }
+                      </code></pre>
+                      </p>
+                      </li>
+                      <li class="ch-updated">ECPM value added to onReady method of AdMostViewListener interface for AdMostView callbacks
+                      <div class="callout callout-warning" role="alert">
+                      <p><pre>
+<code  class="language-java">
+new AdMostView(ACTIVITY.get(), zone, TYPE, new AdMostViewListener() {
+  @Override
+  public void onReady(String network, int ecpm, View view) {}
+
+  @Override
+  public void onFail(int i) {}
+}, null);
+</code>
+                          </pre>
+                          </p>
+                          </div>
+                          </li>
+
+                      <li class= "ch-updated">ECPM value added to onReady method of AdMostAdListener interface for AdMostInterstitial callbacks
+                      <div class="callout callout-warning" role="alert">
+                      <p><pre>
+<code  class="language-java">
+new AdMostInterstitial(ACTIVITY.get(), id, new AdMostAdListener() {
+  @Override
+  public void onReady(String network, int ecpm) {}
+
+  @Override
+  public void onFail(int i) {}
+
+  @Override
+  public void onDismiss(String s) {}
+
+  @Override
+  public void onComplete(String s) {}
+
+  @Override
+  public void onShown(String s) {}
+
+  @Override
+  public void onClicked(String s) {}
+});
+</code>
+                          </pre>
+                          </p>
+                          </div>
+
+                      </li>
+                      <li class="ch-updated">Appnext 2.4.0.471, MoPub 5.1.0</li>
+        </ul>
+              <section id="versions">
+        <h3 id="v1.6.7">Version 1.6.7
+                  <small class="release-date">May 31, 2018</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">First activity memory leak</li>
+          <li class="ch-fixed">Vungle crash due to WAKE_LOCK permission</li>
+          <li class="ch-added">Opening Mopub consent dialog on init</li>
+
+                  </ul>
+        <h3 id="v1.6.6">Version 1.6.6
+                  <small class="release-date">May 25, 2018</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Custom designed native ad inconveniences fixed</li>
+          <li class="ch-updated">GDPR Update</li>
+          <li class="ch-updated">Adcolony 3.3.4, Admob & AdX 15.0.1, Applovin 8.0.1, Appnext 2.3.1.471, ChartBoost 7.2.0, Display IO 1.5.8, Facebook 4.28.2, Flurry 10.1.0, Fyber 8.21.0, Glispa 4.10.0, InMobi 7.1.0, InnerActive 7.1.4, IronSource 6.7.9, LoopMe 5.2.9, MobFox 3.5.0, MoPub 5.0.0, Millennial/Nexage 6.8.1, Smaato 8.0.0, StartApp 3.8.4, Tapjoy 11.12.2, Tappx 3.0.12, Unity 2.2.1, Vungle 6.2.5, YouAppi 4.1.1, MediaBrix 1.8.3.1
+                      </li>
+
+
+                  </ul>
+        <h3 id="v1.6.4">Version 1.6.4
+                      <small class="release-date">May 02, 2018</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Activity related custom native layout bug
+                      </li>
+          <li class="ch-fixed">Facebook rewarded video callback bug
+                      </li>
+          <li class="ch-fixed">Initialization request executor bug
+                      </li>
+          <li class="ch-updated">Adcolony 3.3.3, Facebook 4.28.1
+                      </li>
+
+                  </ul>
+        <h3 id="v1.6.3">Version 1.6.3
+                      <small class="release-date">Apr 16, 2018</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">A memory leak
+                      </li>
+          <li class="ch-fixed">Initialization related bugs
+                      </li>
+          <li class="ch-fixed">A Test Suite bug
+                      </li>
+          <li class="ch-fixed">Crash when calling interstitial before initialization
+                      </li>
+          <li class="ch-added">Google Mobile Ads 12.0.0 rewarded video support
+                      </li>
+                      <li class="ch-added">Retry for failed interstitial show command
+                      </li>
+          <li class="ch-updated">Minimum SDK Version updated to api level 14
+                      </li>
+          <li class="ch-updated">Adcolony 3.3.2, Applovin 7.8.6, Appnext 2.2.4.467, Chartboost 7.1.0, DisplayIO 1.5.2, Facebook 4.28.0, Flurry 9.0.0, Inmobi 7.0.4, Millenial 6.7.0, Mobfox 3.4.1, Glispa 4.8.0, Ironsource 6.7.8, Startapp 3.8.1, Tapjoy 11.12.0, Unity 2.2.0
+                      </li>
+          <li class="ch-updated">Inneractive 7.1.3, maven structure changed
+                      </li>
+
+                  </ul>
+
+        <h3 id="v1.6.1">Version 1.6.1
+                      <small class="release-date">Mar 12, 2018</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Session time zone bug
+                      </li>
+          <li class="ch-fixed">Tapjoy offerwall single instance problem
+                      </li>
+                      <li class="ch-added">CrossPromotion and Premium ad support
+                      </li>
+          <li class="ch-updated">Applovin 7.8.1
+                      </li>
+          <li class="ch-updated">Fyber 8.20.0
+                      </li>
+          <li class="ch-updated">Ironsource 6.7.5
+                      </li>
+          <li class="ch-updated">Glispa (Avocarrot) 4.7.3, moved to its own repository
+                      </li>
+          <li class="ch-updated">Amazon 5.8.2
+                      </li>
+          <li class="ch-updated">DisplayIO 1.4.4
+                      </li>
+          <li class="ch-updated">Leadbolt 8.3
+                      </li>
+          <li class="ch-updated">Loopme 5.2.8
+                      </li>
+          <li class="ch-updated">Startapp 3.7.1
+                      </li>
+          <li class="ch-updated">Smaato 7.2.1
+                      </li>
+                  </ul>
+
+        <h3 id="v1.5.9">Version 1.5.9
+                      <small class="release-date">Feb 20, 2018</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Vungle rewarded video init problem
+                      </li>
+                      <li class="ch-added">setUserId function added to support Tapjoy self managed offerwall
+                      </li>
+                  </ul>
+
+        <h3 id="v1.5.8">Version 1.5.8
+                      <small class="release-date">Feb 15, 2018</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Mopub, sending unencrypted advertising id over http problem
+                      </li>
+                      <li class="ch-fixed">AdNetwork initialization and caching bugs
+                      </li>
+                      <li class="ch-fixed">Analytics session duration bug
+                      </li>
+                      <li class="ch-fixed">Other minor bugs
+                      </li>
+          <li class="ch-added">Setting application specific used id for analytics
+          </li>
+          <li class="ch-updated">Vungle moved to its own maven repository
+                      </li>
+          <li class="ch-updated">Appnext moved to its own maven repository
+                      </li>
+                      <li class="ch-updated">Adcolony 3.3.0
+                      </li>
+                      <li class="ch-updated">Aplovin 7.6.2
+                      </li>
+          <li class="ch-updated">AppNext 2.2.1.464
+                      </li>
+          <li class="ch-updated">Facebook 4.27
+                      </li>
+                      <li class="ch-updated">Flurry 8.2.0
+                      </li>
+          <li class="ch-updated">Fyber 8.19.0
+                      </li>
+          <li class="ch-updated">Inmobi 7.0.2
+                      </li>
+          <li class="ch-updated">Mobfox 3.3.0
+                      </li>
+          <li class="ch-updated">Startapp 3.6.9
+                      </li>
+          <li class="ch-updated">Tappx 3.0.9
+                      </li>
+          <li class="ch-updated">UnityAds 2.1.2
+                      </li>
+          <li class="ch-updated">Vungle 5.3.2
+                      </li>
+                  </ul>
+
+        <h3 id="v1.5.7">Version 1.5.7
+                      <small class="release-date">December 22, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-removed">AdView AndroidManifest activity definition removed
+                      </li>
+                  </ul>
+        <h3 id="v1.5.6">Version 1.5.6
+                      <small class="release-date">December 19, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Admob and Adx contentUrl problem
+                      </li>
+                      <li class="ch-fixed">Applovin native click count problem
+                      </li>
+                      <li class="ch-fixed">Flurry minimum sdk problem
+                      </li>
+                      <li class="ch-fixed">Other minor bugs
+                      </li>
+                      <li class="ch-updated">Mobfox 3.2.8e
+                      </li>
+                      <li class="ch-updated">Startapp 3.6.8
+                      </li>
+                      <li class="ch-updated">Tapjoy 11.11.1
+                      </li>
+                  </ul>
+
+                  <h3 id="v1.5.5">Version 1.5.5
+                      <small class="release-date">November 27, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Admob and Adx ad network requests are limited to 3 requests per waterfall.
+                      </li>
+                      <li class="ch-fixed">Performance improvements for getting ads as soon as possible
+                      </li>
+                      <li class="ch-fixed">Flurry native banner high memory consumption
+                      </li>
+                      <li class="ch-updated">Applovin 7.5.0
+                      </li>
+                      <li class="ch-updated">Chartboost 7.0.1
+                      </li>
+                      <li class="ch-updated">Flurry 8.0.2
+                      </li>
+                      <li class="ch-updated">InMobi 7.0.1
+                      </li>
+                      <li class="ch-updated">Ironsource 6.7.3
+                      </li>
+                      <li class="ch-updated">LoopMe 5.2.7
+                      </li>
+                      <li class="ch-updated">Mobfox 3.2.8d
+                      </li>
+                      <li class="ch-updated">Tappx 3.0.8
+                      </li>
+                      <li class="ch-updated">Vungle 5.3.0
+                          <div class="callout callout-success" role="alert">
+                              <p>Now available for Fire OS (Amazon) devices. Further information, check this <a target="_blank" href="https://vungle.com/amazon/">link <i class="fa fa-external-link"></i></a></p>
+                          </div>
+                      </li>
+                      <li class="ch-removed">Mobfox sticky service
+                      </li>
+                  </ul>
+
+                  <h3 id="v1.5.3">Version 1.5.3
+                      <small class="release-date">November 2, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Sometime AdMob rewarded video doesn't show up.
+                      </li>
+                  </ul>
+
+                  <h3 id="v1.5.2">Version 1.5.2
+                      <small class="release-date">October 30, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-added">Youappi 3.0.0
+                      </li>
+                      <li class="ch-updated">Adcolony 3.2.1
+                          <div class="callout callout-warning" role="alert">
+                              <p>Do not forget to update <code>/app/src/proguard-rules.pro</code> file.</p>
+                          </div>
+                      </li>
+                      <li class="ch-updated">Adtrial 2017-09-27
+                      </li>
+                      <li class="ch-updated">Applovin 7.4.1
+                      </li>
+                      <li class="ch-updated">Fyber 8.16.1
+                      </li>
+                      <li class="ch-updated">Ironsource 6.6.8.1
+                      </li>
+                      <li class="ch-updated">Leadbolt 8.1a
+                      </li>
+                      <li class="ch-updated">Loopme 5.2.4
+                      </li>
+                      <li class="ch-updated">Mediabrix 1.8.2.2
+                      </li>
+                      <li class="ch-updated">Millenial 6.6.1
+                      </li>
+                      <li class="ch-updated">Mobfox 3.2.8c
+                      </li>
+                      <li class="ch-updated">Mopub 4.17.0
+                          <div class="callout callout-warning" role="alert">
+                              <p>Mopub added new repository. Please be sure that you have proper configuration. <a href="#pick-adnetworks"><i class="fa fa-link"></i></a> <b></b></p>
+                          </div>
+                          <div class="callout callout-danger" role="alert">
+                              <p class="text-danger">Error:(29) error: unknown element &lt;library&gt; found.</p>
+                                  If you are using Android Studio 3.0 this error may appear. Please follow the issue from this <a target="_blank" href="https://stackoverflow.com/questions/46249104/android-canary-3-0-beta-5-unknown-element-library-found">link <i class="fa fa-external-link"></i></a> <b></b></p>
+                          </div>
+                      </li>
+                      <li class="ch-updated">Startapp 3.6.7
+                      </li>
+                      <li class="ch-updated">Tappx 3.0.7
+                      </li>
+                      <li class="ch-updated">Unity 2.1.1
+                      </li>
+                      <li class="ch-moved">Appnext integration moved to our maven repository.
+                          <div class="callout callout-warning" role="alert">
+                              <p>Remove <pre><code>maven { url 'http://dl.appnext.com/' }</code></pre> from repositories{} bracelets in <code>/build.gradle</code> file </p>
+                              <p> Replace <pre><code>compile 'com.appnext.sdk:ads:2.1.1.463'
+compile 'com.appnext.sdk:native-ads:2.1.1.463' </code></pre> lines with <pre><code>compile 'com.admost.sdk:appnext:2.1.1.463'</code></pre></p>
+                              <p>in your <code>/app/src/build.gradle</code> file.</p>
+                          </div>
+                      </li>
+                      <li class="ch-updated"><code>/app/src/proguard-rules.pro</code> file updated <a href="#proguard"><i class="fa fa-link"></i></a>.
+                      </li>
+
+
+                  </ul>
+
+                  <h3 id="v1.5.1">Version 1.5.1
+                      <small class="release-date">October 20, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Session tracking system improvements.
+                      </li>
+                      <li class="ch-fixed">Out of memory exceptions reduced.
+                      </li>
+                      <li class="ch-removed">Cactusroad
+                      </li>
+                      <li class="ch-removed">Youappi
+                      </li>
+                  </ul>
+
+                  <h3 id="v1.5.0">Version 1.5.0
+                      <small class="release-date">October 18, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Significant performance improvements.
+                      </li>
+                      <li class="ch-added">Our core SDK version and build version logged after initialization
+                      </li>
+                      <li class="ch-added">Many of the ad network sdk versions logged after initialization
+                      </li>
+                      <li class="ch-updated">Appnext updated to 2.1.1.463
+                          <div class="callout callout-danger" role="alert">
+                              <p>Appnext repository added. Please be sure that you have proper configuration. <a href="#pick-adnetworks"><i class="fa fa-link"></i></a> <b></b></p>
+                          </div>
+                      </li>
+                      <li class="ch-fixed">Many of the warning logs are removed in the beginning of the app start
+                      </li>
+                      <li class="ch-removed"><code>onReward()</code> callback removed.
+                          <div class="callout callout-warning" role="alert">
+                              <p>May causes compile time error. You have to remove this callback in your code.</p>
+                          </div>
+                      </li>
+
+                  </ul>
+
+                  <h3 id="v1.4.0">Version 1.4.0
+                      <small class="release-date">September 8, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-added">In App Purchase Tracking
+                          <small>&nbsp;&nbsp;<a href="#iap"><i class="fa fa-link"></i></a></small>
+                      </li>
+                      <li class="ch-fixed">Bug fix
+                          <small>&nbsp;~ Google play services existence check added while trying to get Advertising ID
+                              from device
+                          </small>
+                      </li>
+                  </ul>
+                  <h3 id="v1.3.9">Version 1.3.9
+                      <small class="release-date">August 25, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-decreased">Appnext 2.0.3.459
+                          <small>&nbsp;~ Bug exists in latest Appnext SDK so we decided to use lower version.</small>
+                      </li>
+                      <li class="ch-fixed">Various bug fixes</li>
+                  </ul>
+
+                  <h3 id="v1.3.8">Version 1.3.8
+                      <small class="release-date">August 18, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-added">Test Suite Added
+                          <small>&nbsp;&nbsp;<a href="#testsuite"><i class="fa fa-link"></i></a></small>
+                      </li>
+                      <li class="ch-updated">Appnext 2.0.6.462</li>
+                      <li class="ch-updated">Chartboost 7.0.0</li>
+                      <li class="ch-updated">Facebook 4.25</li>
+                      <li class="ch-updated">Flurry 7.2.3</li>
+                      <li class="ch-updated">Fyber 8.15.1</li>
+                      <li class="ch-updated">Ironsource 6.6.4.1</li>
+                      <li class="ch-updated">Leadbolt 8.1</li>
+                      <li class="ch-updated">Mobfox 3.2.7b</li>
+                      <li class="ch-moved"><code>onAction</code> callback is deprecated
+                          <small>&nbsp;~ You can still use this method. New callbacks are listed below:<br> Banner:
+                              <code>onReady</code>, <code>onFail</code></br> Interstitial: <code>onReady</code>,
+                              <code>onFail</code> ,<code>onDismiss</code>, <code>onShown</code> <br> Rewarded: <code>onReady</code>,
+                              <code>onFail</code> ,<code>onDismiss</code>, <code>onComplete</code>,
+                              <code>onShown</code>.
+                          </small>
+                      </li>
+                      <li class="ch-fixed">Various bug fixes</li>
+                  </ul>
+
+                  <h3 id="v1.3.7">Version 1.3.7
+                      <small class="release-date">August 9, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+
+                      <li class="ch-added">Ad-blocker checker
+                          <small>(beta)</small>
+                      </li>
+
+                      <li class="ch-updated">Appnext 2.0.5.462</li>
+                      <li class="ch-updated">Flurry 7.2.1</li>
+                      <li class="ch-updated">Fyber 8.15.0</li>
+                      <li class="ch-updated">Inmobi 6.2.4</li>
+                      <li class="ch-updated">Ironsource 6.6.3</li>
+                      <li class="ch-updated">Outbid 1.4d</li>
+                      <li class="ch-updated">Startapp 3.6.3</li>
+
+                      <li class="ch-removed">Inlocomedia</li>
+                      <li class="ch-removed">Mobusi</li>
+                      <li class="ch-removed">Flymob</li>
+
+                      <li class="ch-fixed">Vungle Initing</li>
+                      <li class="ch-fixed">Appnext CTA-Text</li>
+                      <li class="ch-fixed">AdColony proguard & SO files</li>
+                      <li class="ch-fixed">Various bug fixes</li>
+                  </ul>
+
+                  <h3 id="v1.3.6">Version 1.3.6
+                      <small class="release-date">July 21, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Various bug fixes</li>
+                  </ul>
+
+                  <h3 id="v1.3.5">Version 1.3.5
+                      <small class="release-date">July 19, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-updated">AdTrial 2017-07-17</li>
+                      <li class="ch-updated">Facebook 4.24</li>
+                      <li class="ch-updated">Flurry 7.2.0</li>
+                      <li class="ch-updated">Flymob 2.0.8</li>
+                      <li class="ch-updated">Ironsource 6.6.2.1</li>
+                      <li class="ch-updated">Outbid 1.4</li>
+                      <li class="ch-updated">Smaato 6.1.1</li>
+                      <li class="ch-updated">Tapjoy 11.11.0</li>
+                      <li class="ch-updated">Tappx 3.0.5</li>
+                      <li class="ch-updated">Vungle 5.1.0 &nbsp;&nbsp;<small>&nbsp;~ From Admost <a
+                              href="http://dashboard.admost.com">dashboard</a> you should enter <code>zone_id</code>
+                          from network settings to <strong>Vungle</strong>.
+                      </small>
+                      </li>
+                      <li class="ch-fixed">AdTrail Initing</li>
+                      <li class="ch-fixed">Various bug fixes</li>
+                  </ul>
+
+                  <h3 id="v1.3.4">Version 1.3.4
+                      <small class="release-date">July 7, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-added">Outbid</li>
+                      <li class="ch-added">CactusRoad</li>
+
+                      <li class="ch-updated">LoopMe 5.1.11</li>
+
+                      <li class="ch-fixed">LoopMe Interstitial</li>
+                      <li class="ch-fixed">Various bug fixes</li>
+                  </ul>
+
+                  <h3 id="v1.3.3">Version 1.3.3
+                      <small class="release-date">July 4, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-added">AdTrial</li>
+                      <li class="ch-added">AppLovin Banner & Native Placements</li>
+                      <li class="ch-added">Avocarrot Video Ads</li>
+                      <li class="ch-added">RevMob Native Ads</li>
+
+                      <li class="ch-updated">AppLovin 7.2.0</li>
+                      <li class="ch-updated">AppNext 2.0.3.459</li>
+                      <li class="ch-updated">Avocarrot 3.8.2</li>
+                      <li class="ch-updated">DisplayIO 1.3.12</li>
+                      <li class="ch-updated">Facebook 4.23</li>
+                      <li class="ch-updated">Fyber 8.12.2</li>
+                      <li class="ch-updated">InMobi 6.2.3</li>
+                      <li class="ch-updated">InlocoMedia 3.0.8</li>
+                      <li class="ch-updated">InnerActive 6.5.4</li>
+                      <li class="ch-updated">IronSource 6.6.1</li>
+                      <li class="ch-updated">LoopMe 5.1.7</li>
+                      <li class="ch-updated">MobFox 3.2.7</li>
+                      <li class="ch-updated">Mopub 4.15</li>
+                      <li class="ch-updated">PubNative 2.3.16</li>
+                      <li class="ch-updated">RevMob 10.0.0</li>
+                      <li class="ch-updated">Tapjoy 11.10.2</li>
+                      <li class="ch-updated">Tappx 3.0.4</li>
+                      <li class="ch-updated">Vungle 4.1.0</li>
+                      <li class="ch-updated">YouAppi 2.0.8</li>
+
+                      <li class="ch-removed">AdFalcon</li>
+                      <li class="ch-removed">AppBrain</li>
+                      <li class="ch-removed">Conversant</li>
+                      <li class="ch-removed">Instal</li>
+                      <li class="ch-removed">Rubicon</li>
+                      <li class="ch-removed">Teads</li>
+
+                      <li class="ch-fixed">DisplayIO request counting</li>
+                      <li class="ch-fixed">Leadbolt native banner</li>
+                      <li class="ch-fixed">Various bug fixes</li>
+
+                  </ul>
+
+                  <h3 id="v1.2.9">Version 1.2.9
+                      <small class="release-date">Apr 25, 2017</small>
+                  </h3>
+                  <br>
+                  <ul class="changelog">
+                      <li class="ch-fixed">Leadbolt fixed</li>
+                      <li class="ch-fixed">Various bug fixes</li>
+                  </ul>
+              </section>
+
+          </section>
+
+        </article>
+        <!-- END Main content -->
+    </div>
+</main>
+
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <p>Copyright &copy; 2017. All right reserved</p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <ul class="footer-menu">
+                    <li><a href="http://admost.github.io/amrandroid">Android integration</a></li>
+                    <li><a href="http://admost.github.io/amrunity">Unity integration</a></li>
+                    <li><a href="mailto:amr@admost.com">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END Footer -->
+
+<!-- Scripts -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script>
+    window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
+</script>
+<script>function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+}
+</script>
+
+<script src="adnetworks.js" type="text/javascript"></script>
+<script src="assets/js/theDocs.all.min.js"></script>
+<script src="assets/js/custom.js"></script>
+
+</body>
+</html>
