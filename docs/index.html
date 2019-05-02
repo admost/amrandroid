@@ -727,7 +727,15 @@ BANNER = new AdMostView(ACTIVITY, < ZONE_ID >, < TYPE >, new AdMostViewListener(
 
     @Override
     public void onFail(int errorCode) {
-        //Ad is not loaded and can not be shown.
+        // Ad is not loaded and can not be shown.
+		// Warning: Attempting to load a new ad from the onFail() methods is strongly discouraged. 
+		// If you must load an ad from onFail() ensure to limit ad load retries to avoid continuous 
+		// failed ad requests in situations such as limited network connectivity.
+    }
+
+    @Override
+    public void onClick(String network) {
+        //Ad clicked
     }
 
 }, < BINDER >);
@@ -813,7 +821,11 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
     @Override
     public void onFail(int errorCode) {
         // It indicates that the interstitial ad received no-fill response from all of its placements.
-        // Therefore, the ad can not be shown. You may choose to try loading it again.
+        // Therefore, the ad can not be shown.
+        // Warning: Attempting to load a new ad from the onFail() methods is strongly discouraged. 
+        // If you must load an ad from onFail() ensure to limit ad load retries to avoid continuous 
+        // failed ad requests in situations such as limited network connectivity.
+
     }
     @Override
      public void onReady(String network, int ecpm) {
@@ -867,7 +879,11 @@ INTERSTITIAL.show(TAG);
         @Override
         public void onFail(int errorCode) {
           // It indicates that the rewarded video ad received no-fill response from all of its placements.
-          //Therefore, the ad can not be shown. You may choose to try loading it again.
+          // Therefore, the ad can not be shown.
+          // Warning: Attempting to load a new ad from the onFail() methods is strongly discouraged. 
+          // If you must load an ad from onFail() ensure to limit ad load retries to avoid continuous 
+          // failed ad requests in situations such as limited network connectivity.
+
         }
         @Override
         public void onDismiss(String message) {
