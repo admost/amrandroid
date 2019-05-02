@@ -38,6 +38,11 @@ public class ListViewSampleActivity extends Activity {
                     public void onFail(int i) {
 
                     }
+
+                    @Override
+                    public void onClick(String network) {
+
+                    }
                 }, null);
 
                 adapter.addItem(ad, Adapter.AD);
@@ -157,7 +162,7 @@ public class ListViewSampleActivity extends Activity {
                     view.setTag(new AdViewHolder(view));
                 }
 
-                ((AdViewHolder) view.getTag()).set(((AdMostView) item).getView(position));
+                ((AdViewHolder) view.getTag()).set(((AdMostView) item).getView());
 
             }
 

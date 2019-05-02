@@ -170,6 +170,11 @@ public class RecyclerViewSampleActivity extends Activity {
             @Override
             public void onFail(int i) {
             }
+
+            @Override
+            public void onClick(String network) {
+
+            }
         }, customBinder);
 
         return ad;

@@ -90,6 +90,11 @@ public class MainActivity extends Activity {
                 ((TextView) findViewById(R.id.loadedNetwork)).setText("errorCode : " + logError(errorCode, "banner"));
 
             }
+
+            @Override
+            public void onClick(String network) {
+
+            }
         }, null);
         ad.load();
     }
@@ -130,6 +135,11 @@ public class MainActivity extends Activity {
             @Override
             public void onFail(int errorCode) {
                 ((TextView) findViewById(R.id.loadedNetwork)).setText("errorCode : " + logError(errorCode, "native"));
+
+            }
+
+            @Override
+            public void onClick(String network) {
 
             }
         }, customBinder);
