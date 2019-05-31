@@ -144,6 +144,7 @@
 						<li><a href="#senduserid">Setting Application User Id</a></li>
 						<li><a href="#sendadjustuserid">Setting Adjust User Id</a></li>
 						<li><a href="#sscallbacks">Server to Server Callbacks <span class="label label-teal">New</span></a></li>
+						<li><a href="#gdprcheck">GDPR Applicable Check <span class="label label-teal">New</span></a></li>
 						<li  style="display:none"><a href="#campaigntracking">Campaign Tracking</a></li>
                     </ul>
                 </li>
@@ -435,6 +436,11 @@
 # APPNEXT
 -keep class com.appnext.** { *; }
 -dontwarn com.appnext.**
+
+# APPSAMURAI
+-keepclassmembers,allowobfuscation class * {
+  @com.google.gson.annotations.SerializedName <fields>;
+}
 
 # AVOCARROT - GLISPA
 -keep class com.avocarrot.** { *; }
@@ -1066,21 +1072,21 @@ AdMost.getInstance().startTestSuite();
                 </p>
 
                 <pre><code class="language-java">
-AdMostIAPCallback iabCallback = new AdMostIAPCallback() {
+AdMostIAPListener iabListener = new AdMostIAPListener() {
 	//Successful Purchase
 	@Override
-	public void onValidationSuccess() {}
+	public void onValidationSuccess(String admostIapID) {}
 
 	//Invalid purchase data..!
 	@Override
-	public void onValidationFail(AdMostServerException e) {}
+	public void onValidationFail(String admostIapID, AdMostServerException e) {}
 
 	//Exception occurred, will be tried again automatically..!
 	@Override
-	public void onException() {}
+	public void onException(String admostIapID) {}
 };
 
-AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail, iabCallback, isDebug);
+String admostIapID = AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail, iabListener, isDebug);
                 </code></pre>
                 <p>Explanation and code samples of parameters:</p>
                 <ul>
@@ -1094,7 +1100,7 @@ AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail, i
 
                     <li><b>jsonSkuDetail (String)</b> – a String in JSON Object format that contains product item details
                     </li>
-					<li><b>iabCallback (AdMostIAPCallback)</b> - You can add this callback to be informed about the result of your purchase request. null value is
+					<li><b>iabListener (AdMostIAPListener)</b> - You can add this callback to be informed about the result of your purchase request. null value is
                 	</li>
 					<li><b>isDebug (boolean)</b> - Set true for test purchases.
                     </li>
@@ -1146,21 +1152,21 @@ ArrayList<String> responseList = skuDetails.getStringArrayList(RESPONSE_GET_SKU_
                 </p>
 
                 <pre><code class="language-java">
-AdMostIAPCallback iabCallback = new AdMostIAPCallback() {
+AdMostIAPListener iabListener = new AdMostIAPListener() {
 	//Successful Purchase
 	@Override
-	public void onValidationSuccess() {}
+	public void onValidationSuccess(String admostIapID) {}
 
 	//Invalid purchase data..!
 	@Override
-	public void onValidationFail(AdMostServerException e) {}
+	public void onValidationFail(String admostIapID, AdMostServerException e) {}
 
 	//Exception occurred, will be tried again automatically..!
 	@Override
-	public void onException() {}
+	public void onException(String admostIapID) {}
 };
 
-AdMost.getInstance().trackPurchaseAmazon(receiptJSON, purchaseResponseJSON, productJSON, iabCallback, isDebug);
+String admostIapID = AdMost.getInstance().trackPurchaseAmazon(receiptJSON, purchaseResponseJSON, productJSON, iabListener, isDebug);
                 </code></pre>
                 <p>Explanation and code samples of parameters:</p>
                 <ul>
@@ -1251,6 +1257,20 @@ Hashtable<String,Object> customData = new Hashtable<>();
 customData.put("os", Build.VERSION.SDK_INT);
 customData.put("ip", "172.12.1.23");
 REWARDED.setSSVCustomData(customData);
+                </code></pre>
+				<h3 id="gdprcheck">GDPR Applicable Check</h3>
+
+                <p>
+                    You can use the following method to check if the user is in a country which is subject to GDPR.
+                </p>
+
+				<pre><code class="language-java">
+AdMost.getInstance().setGDPRListener(this, new AdMost.GDPRListener() {
+	@Override
+	public void isGDPRApplicable(boolean isGDPRApplicable) {
+		
+	}
+});				
                 </code></pre>
 				<div style="display:none">
 				<h3 id="campaigntracking">Campaign Tracking</h3>
