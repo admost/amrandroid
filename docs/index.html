@@ -1144,6 +1144,8 @@ ArrayList<String> responseList = skuDetails.getStringArrayList(RESPONSE_GET_SKU_
                     <p> To find the public key portion of this key pair, open your application's details in the <var>Play Console</var>, click <b>Services & APIs</b>, and review the field titled <b>Your License Key for This Application</b>. </p>
                     <p> For detailed information follow this <a target="_blank" href="https://developer.android.com/google/play/billing/billing_integrate.html#billing-security">link</a>.</p>
                 </div>
+				
+				<p>On <span style="color: #FF0000">subscription tracking</span>, there is no difference in terms of client integration. However, for inquiry of application's periodic earnings, you have to create a service account on your Google api console project which is linked to your application and give financial data permission to this account on your google play developer console. While creating service account, you have to choose JSON as key type and send this JSON file to AdMost account manager.</p>
 
 				<h3 id="amazoniap">Amazon Store In App Purchase Tracking</h3>
 
