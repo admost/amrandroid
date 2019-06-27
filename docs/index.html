@@ -544,10 +544,13 @@
 -dontwarn com.millennialmedia.**
 
 # MINTEGRAL
--keepattributes Signature -keepattributes *Annotation* -keep class com.mintegral.** {*; }
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class com.mintegral.** {*; }
 -keep interface com.mintegral.** {*; }
 -keep class android.support.v4.** { *; }
--dontwarn com.mintegral.** -keep class **.R$* { public static final int mintegral*; }
+-dontwarn com.mintegral.**
+-keep class **.R$* { public static final int mintegral*; }
 -keep class com.alphab.** {*; }
 -keep interface com.alphab.** {*; }
 
@@ -701,7 +704,18 @@ configuration.age(24);
 configuration.gender(AdMost.GENDER_MALE);
 configuration.interests("Business, Tech, Travel, Shopping, Entertainment, Fashion, Fitness, Foodie, Gamer, Jobs, Sports");
 
-AdMost.getInstance().init(configuration.build());</code></pre>
+AdMost.getInstance().init(configuration.build(), new AdMostInitListener() {
+	@Override
+	public void onInitCompleted() {
+		
+	}
+
+	@Override
+	public void onInitFailed(int err) {
+
+	}
+});
+</code></pre>
 
 
 
