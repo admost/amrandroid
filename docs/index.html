@@ -417,11 +417,19 @@
 
 #ADTIMING
 -dontwarn com.aiming.mdt.**.*
--dontwarn com.adt.**.*
+-dontoptimize
+-dontskipnonpubliclibraryclasses
 -keepattributes *Annotation*
--keep class com.admuing.** { *; }
--keep class com.aiming.mdt.** { *; }
--keep class com.adt.** { *; }
+#adt
+-keep class com.aiming.mdt.**{ *; }
+-keepattributes *Annotation*,InnerClasses
+-keepnames class * implements android.os.Parcelable {
+public static final ** CREATOR;
+}
+#R
+-keepclassmembers class **.R$* {
+public static &lt;fields&gt;;
+}
 
 # AMAZON
 -dontwarn com.amazon.**
