@@ -47,7 +47,7 @@ function getAndroidNetworks() {
            }
         },
         {
-           "name":"Adcolony",
+           "name":"AdColony",
            "status":false,
            "app_gradle":{
               "dependencies":[
@@ -58,7 +58,7 @@ function getAndroidNetworks() {
            }
         },
         {
-           "name":"Admob & AdX",
+           "name":"AdMob",
            "status":false,
            "app_gradle":{
               "dependencies":[
@@ -145,7 +145,7 @@ function getAndroidNetworks() {
            }
         },
         {
-           "name":"AppSamurai",
+           "name":"Appsamurai",
            "status":false,
            "app_gradle":{
               "dependencies":[
@@ -276,7 +276,7 @@ function getAndroidNetworks() {
            }
         },
         {
-           "name":"Inmobi",
+           "name":"InMobi",
            "status":false,
            "app_gradle":{
               "dependencies":[
@@ -346,7 +346,7 @@ function getAndroidNetworks() {
            }
         },
         {
-           "name":"Ironsource",
+           "name":"IronSource",
            "status":false,
            "app_gradle":{
               "dependencies":[
@@ -368,7 +368,7 @@ function getAndroidNetworks() {
            }
         },
         {
-           "name":"Millenial/Nexage",
+           "name":"Nexage(AOL)",
            "status":false,
            "app_gradle":{
               "dependencies":[
@@ -391,7 +391,7 @@ function getAndroidNetworks() {
            }
         },
         {
-           "name":"MIntegral",
+           "name":"Mintegral",
            "status":false,
            "app_gradle":{
               "dependencies":[
@@ -481,7 +481,7 @@ function getAndroidNetworks() {
            }
         },
         {
-           "name":"PollFish",
+           "name":"Pollfish",
            "status":false,
            "app_gradle":{
               "dependencies":[
@@ -535,7 +535,7 @@ function getAndroidNetworks() {
            }
         },
         {
-           "name":"Startapp",
+           "name":"StartApp",
            "status":false,
            "app_gradle":{
               "dependencies":[
@@ -579,7 +579,7 @@ function getAndroidNetworks() {
            }
         },
         {
-           "name":"Unity",
+           "name":"UnityAds",
            "status":false,
            "app_gradle":{
               "dependencies":[
