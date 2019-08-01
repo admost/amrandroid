@@ -1,4 +1,4 @@
-function getNetworksInfo() {
+function getAndroidNetworks() {
   return JSON.parse(`{
      "ad_networks":[
         {
