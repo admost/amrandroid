@@ -21,6 +21,8 @@
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="adnetworks_data.js" type="text/javascript"></script>
+    <script src="adnetworks.js" type="text/javascript"></script>
 
     <!-- Favicons -->
 	<link rel="icon" href="https://dashboard.admost.com/Assets/img/admostfavicon.png">
@@ -715,7 +717,7 @@ configuration.interests("Business, Tech, Travel, Shopping, Entertainment, Fashio
 AdMost.getInstance().init(configuration.build(), new AdMostInitListener() {
 	@Override
 	public void onInitCompleted() {
-		
+
 	}
 
 	@Override
@@ -756,8 +758,8 @@ BANNER = new AdMostView(ACTIVITY, < ZONE_ID >, < TYPE >, new AdMostViewListener(
     @Override
     public void onFail(int errorCode) {
         // Ad is not loaded and can not be shown.
-		// Warning: Attempting to load a new ad from the onFail() methods is strongly discouraged. 
-		// If you must load an ad from onFail() ensure to limit ad load retries to avoid continuous 
+		// Warning: Attempting to load a new ad from the onFail() methods is strongly discouraged.
+		// If you must load an ad from onFail() ensure to limit ad load retries to avoid continuous
 		// failed ad requests in situations such as limited network connectivity.
     }
 
@@ -779,8 +781,8 @@ BANNER.load();
 // TAG can be any string value meaningful for you. You don't need to define it on AdMost dashboard before using.
 // Just start using, it will be automatically detected
 BANNER.load(TAG);
-				</code></pre>				
-				
+				</code></pre>
+
                 <p>You have to call destroy(), pause() and resume() methods in the activity.
 
                 </p>
@@ -850,8 +852,8 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
     public void onFail(int errorCode) {
         // It indicates that the interstitial ad received no-fill response from all of its placements.
         // Therefore, the ad can not be shown.
-        // Warning: Attempting to load a new ad from the onFail() methods is strongly discouraged. 
-        // If you must load an ad from onFail() ensure to limit ad load retries to avoid continuous 
+        // Warning: Attempting to load a new ad from the onFail() methods is strongly discouraged.
+        // If you must load an ad from onFail() ensure to limit ad load retries to avoid continuous
         // failed ad requests in situations such as limited network connectivity.
 
     }
@@ -908,8 +910,8 @@ INTERSTITIAL.show(TAG);
         public void onFail(int errorCode) {
           // It indicates that the rewarded video ad received no-fill response from all of its placements.
           // Therefore, the ad can not be shown.
-          // Warning: Attempting to load a new ad from the onFail() methods is strongly discouraged. 
-          // If you must load an ad from onFail() ensure to limit ad load retries to avoid continuous 
+          // Warning: Attempting to load a new ad from the onFail() methods is strongly discouraged.
+          // If you must load an ad from onFail() ensure to limit ad load retries to avoid continuous
           // failed ad requests in situations such as limited network connectivity.
 
         }
@@ -1166,7 +1168,7 @@ ArrayList<String> responseList = skuDetails.getStringArrayList(RESPONSE_GET_SKU_
                     <p> To find the public key portion of this key pair, open your application's details in the <var>Play Console</var>, click <b>Services & APIs</b>, and review the field titled <b>Your License Key for This Application</b>. </p>
                     <p> For detailed information follow this <a target="_blank" href="https://developer.android.com/google/play/billing/billing_integrate.html#billing-security">link</a>.</p>
                 </div>
-				
+
 				<p>On <span style="color: #FF0000">subscription tracking</span>, there is no difference in terms of client integration. However, for inquiry of application's periodic earnings, you have to create a service account on your Google api console project which is linked to your application and give financial data permission to this account on your google play developer console. While creating service account, you have to choose JSON as key type and send this JSON file to AdMost account manager.</p>
 
 				<h3 id="amazoniap">Amazon Store In App Purchase Tracking</h3>
@@ -1292,9 +1294,9 @@ REWARDED.setSSVCustomData(customData);
 AdMost.getInstance().setGDPRListener(this, new AdMost.GDPRListener() {
 	@Override
 	public void isGDPRApplicable(boolean isGDPRApplicable) {
-		
+
 	}
-});				
+});
                 </code></pre>
 				<div style="display:none">
 				<h3 id="campaigntracking">Campaign Tracking</h3>
@@ -1375,7 +1377,11 @@ dependencies {
 }
 </script>
 
-<script src="adnetworks.js" type="text/javascript"></script>
+
+<script>
+var data = getNetworksInfo();
+amrInitPage(data);
+</script>
 <script src="assets/js/theDocs.all.min.js"></script>
 <script src="assets/js/custom.js"></script>
 
