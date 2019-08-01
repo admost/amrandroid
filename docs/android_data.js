@@ -18,7 +18,25 @@ function getNetworksInfo() {
                  {
                     "package":"com.google.android.gms:play-services-base:15.0.1"
                  }
+              ],
+              "dependencies_unity":[
+                {
+                   "package":"android.arch.core:common:1.1.0"
+                },
+                {
+                   "package":"android.arch.core:runtime:1.1.0"
+                },
+                {
+                   "package":"android.arch.lifecycle:common:1.1.0"
+                },
+                {
+                   "package":"com.admost.sdk:unity-plugin:1.7.0"
+                },
+                {
+                   "package":"com.google.android.gms:play-services-ads-identifier:15.0.1"
+                }
               ]
+
            },
            "project_gradle":{
               "dependencies":[
