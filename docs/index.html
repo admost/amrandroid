@@ -595,6 +595,10 @@ public static &lt;fields&gt;;
 -keepnames class * implements android.os.Parcelable { public static final ** CREATOR; }
 -keep public class android.webkit.JavascriptInterface {}
 
+# NEND
+-keep class net.nend.android.** { *; }
+-dontwarn net.nend.android.**
+
 # NATIVEX
 -dontwarn com.nativex.**
 -keep class com.nativex.** { *; }
@@ -670,6 +674,7 @@ public static &lt;fields&gt;;
 -dontwarn okio.**
 -dontwarn retrofit2.Platform$Java8
 -keepattributes Signature
+-keepattributes InnerClasses
 -keepattributes *Annotation*
 -dontwarn sun.misc.**
 -keep class com.google.gson.examples.android.model.** { *; }
@@ -678,6 +683,20 @@ public static &lt;fields&gt;;
 -keep class * implements com.google.gson.JsonDeserializer
 -keep class com.google.android.gms.internal.** { *; }
 -dontwarn com.google.android.gms.ads.identifier.**
+
+-keepclassmembers enum com.vungle.warren.** { *; }
+-dontwarn kotlin.Unit
+-dontwarn retrofit2.-KotlinExtensions
+-keepclassmembers,allowshrinking,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+-dontwarn okhttp3.**
+-dontwarn javax.annotation.**
+-dontwarn org.conscrypt.**
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+-keepclassmembers class * extends com.vungle.warren.persistence.Memorable {
+   public <init>(byte[]);
+}
 
 
 # YOUAPPI

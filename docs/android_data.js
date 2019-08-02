@@ -368,6 +368,20 @@ function getAndroidNetworks() {
            }
         },
         {
+           "name":"Nend",
+           "status":false,
+           "app_gradle":{
+              "dependencies":[
+                 {
+                    "package":"com.admost.sdk:nend:5.1.1.a11"
+                 },
+                 {
+                    "package":"com.android.support.constraint:constraint-layout:1.0.2"
+                 }
+              ]
+           }
+        },
+        {
            "name":"Nexage(AOL)",
            "status":false,
            "app_gradle":{
@@ -595,10 +609,10 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.github.vungle:vungle-android-sdk:6.4.8"
+                    "package":"com.github.vungle:vungle-android-sdk:6.4.11"
                  },
                  {
-                    "package":"com.admost.sdk:vungle-adapter:6.4.8.a11"
+                    "package":"com.admost.sdk:vungle-adapter:6.4.11.a11"
                  },
                  {
                     "package":"com.google.android.gms:play-services-gcm:15.0.1"
