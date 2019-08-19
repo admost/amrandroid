@@ -286,7 +286,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.test_suite).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AdMost.getInstance().startTestSuite(new String[]{Statics.BANNER_ZONE, Statics.FULLSCREEN_ZONE, Statics.VIDEO_ZONE});
+                AdMost.getInstance().startTestSuite(new String[]{Statics.BANNER_ZONE,Statics.NATIVE_ZONE, Statics.FULLSCREEN_ZONE, Statics.VIDEO_ZONE});
             }
         });
         findViewById(R.id.test_recyclerview).setOnClickListener(new View.OnClickListener() {

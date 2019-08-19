@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.kokteyl.amrunity">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.kokteyl.amrunity">
     <!--Please look at the docs at https://admost.github.io/amrandroid/ which shows you the required permissions.-->
     <!-- The permissions below are added automatically to your app. Please look at the docs. -->
 
@@ -14,6 +15,7 @@
      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
      -->
+    <uses-sdk tools:overrideLibrary="com.applovin.sdk"/>
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
