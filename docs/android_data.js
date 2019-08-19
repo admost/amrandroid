@@ -628,6 +628,20 @@ function getAndroidNetworks() {
            }
         },
         {
+           "name":"YandexAds",
+           "status":false,
+           "app_gradle":{
+              "dependencies":[
+                 {
+                    "package":"com.admost.sdk:yandex:2.91.a11"
+                 },
+                 {
+                    "package":"com.yandex.android:mobmetricalib:3.6.4"
+                 }
+              ]
+           }
+        },
+        {
            "name":"YouAppi",
            "status":false,
            "app_gradle":{
