@@ -368,43 +368,6 @@ function getAndroidNetworks() {
            }
         },
         {
-           "name":"Nend",
-           "status":false,
-           "app_gradle":{
-              "dependencies":[
-                 {
-                    "package":"com.admost.sdk:nend:5.1.1.a11"
-                 },
-                 {
-                    "package":"com.android.support.constraint:constraint-layout:1.0.2"
-                 }
-              ]
-           }
-        },
-        {
-           "name":"Nexage(AOL)",
-           "status":false,
-           "app_gradle":{
-              "dependencies":[
-                 {
-                    "package":"com.admost.sdk:millenial:6.8.3.a11"
-                 }
-              ]
-           },
-           "android_manifest":{
-              "application":[
-                 {
-                    "provider":{
-                       "name":"com.millennialmedia.internal.utils.MediaContentProvider",
-                       "authorities":"< PACKAGE_NAME >.MediaContentProvider",
-                       "grantUriPermissions":"true",
-                       "exported":"false"
-                    }
-                 }
-              ]
-           }
-        },
-        {
            "name":"Mintegral",
            "status":false,
            "app_gradle":{
@@ -479,6 +442,43 @@ function getAndroidNetworks() {
               "dependencies":[
                  {
                     "package":"com.admost.sdk:nativex:5.5.9.a11"
+                 }
+              ]
+           }
+        },
+        {
+           "name":"Nend",
+           "status":false,
+           "app_gradle":{
+              "dependencies":[
+                 {
+                    "package":"com.admost.sdk:nend:5.1.1.a11"
+                 },
+                 {
+                    "package":"com.android.support.constraint:constraint-layout:1.0.2"
+                 }
+              ]
+           }
+        },
+        {
+           "name":"Nexage(AOL)",
+           "status":false,
+           "app_gradle":{
+              "dependencies":[
+                 {
+                    "package":"com.admost.sdk:millenial:6.8.3.a11"
+                 }
+              ]
+           },
+           "android_manifest":{
+              "application":[
+                 {
+                    "provider":{
+                       "name":"com.millennialmedia.internal.utils.MediaContentProvider",
+                       "authorities":"< PACKAGE_NAME >.MediaContentProvider",
+                       "grantUriPermissions":"true",
+                       "exported":"false"
+                    }
                  }
               ]
            }
