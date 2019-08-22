@@ -174,9 +174,12 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:chartboost:7.3.1.a11",
+                    "package":"com.admost.sdk:chartboost:7.3.1.a11"
+                 },
+                 {
                     "package":"com.google.android.gms:play-services-ads:15.0.1"
                  }
+
               ]
            }
         },
