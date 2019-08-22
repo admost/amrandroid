@@ -725,13 +725,9 @@ public static &lt;fields&gt;;
                     and prepares the SDK to display ads.</p>
                 <pre><code class="language-java">AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, < ADMOST_APP_ID >);
 //GDPR COMPLIANCE
-configuration.setSubjectToGDPR(true);
-configuration.setUserConsent(false);
-
-// OPTIONAL
-configuration.age(24);
-configuration.gender(AdMost.GENDER_MALE);
-configuration.interests("Business, Tech, Travel, Shopping, Entertainment, Fashion, Fitness, Foodie, Gamer, Jobs, Sports");
+// Important: Please read the GDPR section below.
+configuration.setSubjectToGDPR(false);
+configuration.setUserConsent(true);
 
 AdMost.getInstance().init(configuration.build(), new AdMostInitListener() {
 	@Override
