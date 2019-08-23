@@ -613,13 +613,13 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.github.vungle:vungle-android-sdk:6.4.11"
+                    "package":"com.vungle:publisher-sdk-android:6.4.11"
                  },
                  {
                     "package":"com.admost.sdk:vungle-adapter:6.4.11.a11"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-gcm:15.0.1"
+                    "package":"com.android.support:support-v4:+"
                  }
               ]
            },
