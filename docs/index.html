@@ -368,7 +368,7 @@
                 -->
                 <pre class="pre-scrollable">
 			<code class="language-typescript" id="code-proguard">
-			# ADMOST
+# ADMOST
 -keepattributes Exceptions, InnerClasses
 -dontwarn admost.sdk.**
 -keep class admost.sdk.** {*;}
@@ -390,7 +390,7 @@
 # ADCOLONY
 -dontwarn com.adcolony.**
 -keep class com.adcolony.** { *; }
--keepclassmembers class * { @android.webkit.JavascriptInterface <methods>; }
+-keepclassmembers class * { @android.webkit.JavascriptInterface &lt;methods&gt;; }
 -keepclassmembers class com.adcolony.sdk.ADCNative** { *; }
 
 # ADMOB / ADX / GOOGLE
@@ -404,13 +404,13 @@
 -keepclassmembers class * implements android.os.Parcelable { public static final *** CREATOR; }
 -keep @interface android.support.annotation.Keep
 -keep @android.support.annotation.Keep class *
--keepclasseswithmembers class * { @android.support.annotation.Keep <fields>; }
--keepclasseswithmembers class * { @android.support.annotation.Keep <methods>; }
+-keepclasseswithmembers class * { @android.support.annotation.Keep &lt;fields&gt;; }
+-keepclasseswithmembers class * { @android.support.annotation.Keep &lt;methods&gt;; }
 -keep @interface com.google.android.gms.common.annotation.KeepName
 -keepnames @com.google.android.gms.common.annotation.KeepName class *
 -keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
 -keep @interface com.google.android.gms.common.util.DynamiteApi
--keep public @com.google.android.gms.common.util.DynamiteApi class * { public <fields>; public <methods>; }
+-keep public @com.google.android.gms.common.util.DynamiteApi class * { public &lt;fields&gt;; public &lt;methods&gt;; }
 -keep public @com.google.android.gms.common.util.DynamiteApi class * { *; }
 -keep class com.google.android.apps.common.proguard.UsedBy*
 -keep @com.google.android.apps.common.proguard.UsedBy* class *
@@ -431,7 +431,7 @@ public static final ** CREATOR;
 }
 #R
 -keepclassmembers class **.R$* {
-public static <fields>;
+public static &lt;fields&gt;;
 }
 
 # AMAZON
@@ -450,7 +450,7 @@ public static <fields>;
 
 # APPSAMURAI
 -keepclassmembers,allowobfuscation class * {
-  @com.google.gson.annotations.SerializedName <fields>;
+  @com.google.gson.annotations.SerializedName &lt;fields&gt;;
 }
 
 # AVOCARROT - GLISPA
@@ -485,7 +485,7 @@ public static <fields>;
 -keep class com.flurry.** { *; }
 -dontwarn com.flurry.**
 -keepattributes *Annotation*,EnclosingMethod,Signature
--keepclasseswithmembers class * { public <init>(android.content.Context, android.util.AttributeSet, int); }
+-keepclasseswithmembers class * { public &lt;init&gt;(android.content.Context, android.util.AttributeSet, int); }
 -keep class * extends java.util.ListResourceBundle { protected Object[][] getContents(); }
 -keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
 -keepnames @com.google.android.gms.common.annotation.KeepName class *
@@ -655,7 +655,7 @@ public static <fields>;
 
 # TAPPX
 -keepattributes *Annotation*
--keepclassmembers class com.google.**.R$* { public static <fields>; }
+-keepclassmembers class com.google.**.R$* { public static &lt;fields&gt;; }
 -keep public class com.google.ads.** {*;}
 -keep public class com.google.android.gms.** {*;}
 -keep public class com.tappx.** { *; }
@@ -690,14 +690,14 @@ public static <fields>;
 -dontwarn kotlin.Unit
 -dontwarn retrofit2.-KotlinExtensions
 -keepclassmembers,allowshrinking,allowobfuscation interface * {
-    @retrofit2.http.* <methods>;
+    @retrofit2.http.* &lt;methods&gt;;
 }
 -dontwarn okhttp3.**
 -dontwarn javax.annotation.**
 -dontwarn org.conscrypt.**
 -keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
 -keepclassmembers class * extends com.vungle.warren.persistence.Memorable {
-   public <init>(byte[]);
+   public &lt;init&gt;(byte[]);
 }
 
 
@@ -708,7 +708,7 @@ public static <fields>;
 -keep interface com.youappi.ai.sdk.**{*;}
 -keep enum com.youappi.ai.sdk.**{*;}
 -keepclassmembers class * {
-  @android.webkit.JavascriptInterface <methods>;
+  @android.webkit.JavascriptInterface &lt;methods&gt;;
 }
 			</code>
                 </pre>
