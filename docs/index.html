@@ -366,8 +366,9 @@
                 </div>
 
                 -->
-                <pre class="pre-scrollable"><code class="language-typescript" id="code-proguard">
-# ADMOST
+                <pre class="pre-scrollable">
+			<code class="language-typescript" id="code-proguard">
+			# ADMOST
 -keepattributes Exceptions, InnerClasses
 -dontwarn admost.sdk.**
 -keep class admost.sdk.** {*;}
@@ -389,7 +390,7 @@
 # ADCOLONY
 -dontwarn com.adcolony.**
 -keep class com.adcolony.** { *; }
--keepclassmembers class * { @android.webkit.JavascriptInterface &lt;methods&gt;; }
+-keepclassmembers class * { @android.webkit.JavascriptInterface <methods>; }
 -keepclassmembers class com.adcolony.sdk.ADCNative** { *; }
 
 # ADMOB / ADX / GOOGLE
@@ -403,13 +404,13 @@
 -keepclassmembers class * implements android.os.Parcelable { public static final *** CREATOR; }
 -keep @interface android.support.annotation.Keep
 -keep @android.support.annotation.Keep class *
--keepclasseswithmembers class * { @android.support.annotation.Keep &lt;fields&gt;; }
--keepclasseswithmembers class * { @android.support.annotation.Keep &lt;methods&gt;; }
+-keepclasseswithmembers class * { @android.support.annotation.Keep <fields>; }
+-keepclasseswithmembers class * { @android.support.annotation.Keep <methods>; }
 -keep @interface com.google.android.gms.common.annotation.KeepName
 -keepnames @com.google.android.gms.common.annotation.KeepName class *
 -keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
 -keep @interface com.google.android.gms.common.util.DynamiteApi
--keep public @com.google.android.gms.common.util.DynamiteApi class * { public &lt;fields&gt;; public &lt;methods&gt;; }
+-keep public @com.google.android.gms.common.util.DynamiteApi class * { public <fields>; public <methods>; }
 -keep public @com.google.android.gms.common.util.DynamiteApi class * { *; }
 -keep class com.google.android.apps.common.proguard.UsedBy*
 -keep @com.google.android.apps.common.proguard.UsedBy* class *
@@ -430,7 +431,7 @@ public static final ** CREATOR;
 }
 #R
 -keepclassmembers class **.R$* {
-public static &lt;fields&gt;;
+public static <fields>;
 }
 
 # AMAZON
@@ -484,7 +485,7 @@ public static &lt;fields&gt;;
 -keep class com.flurry.** { *; }
 -dontwarn com.flurry.**
 -keepattributes *Annotation*,EnclosingMethod,Signature
--keepclasseswithmembers class * { public &lt;init&gt;(android.content.Context, android.util.AttributeSet, int); }
+-keepclasseswithmembers class * { public <init>(android.content.Context, android.util.AttributeSet, int); }
 -keep class * extends java.util.ListResourceBundle { protected Object[][] getContents(); }
 -keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
 -keepnames @com.google.android.gms.common.annotation.KeepName class *
@@ -513,6 +514,7 @@ public static &lt;fields&gt;;
 -keep class com.moat.** {*;}
 -dontwarn com.moat.**
 -keep class com.integralads.avid.library.* {*;}
+
 
 # INNERACTIVE
 -dontwarn com.inneractive.api.ads.**
@@ -549,7 +551,7 @@ public static &lt;fields&gt;;
 -dontwarn com.moat.**
 -dontwarn mdos.**
 
-# MILLENNIAL &amp; NEXAGE
+# MILLENNIAL & NEXAGE
 -keep class com.millennialmedia.** { *; }
 -dontwarn com.millennialmedia.**
 
@@ -653,7 +655,7 @@ public static &lt;fields&gt;;
 
 # TAPPX
 -keepattributes *Annotation*
--keepclassmembers class com.google.**.R$* { public static &lt;fields&gt;; }
+-keepclassmembers class com.google.**.R$* { public static <fields>; }
 -keep public class com.google.ads.** {*;}
 -keep public class com.google.android.gms.** {*;}
 -keep public class com.tappx.** { *; }
@@ -706,10 +708,9 @@ public static &lt;fields&gt;;
 -keep interface com.youappi.ai.sdk.**{*;}
 -keep enum com.youappi.ai.sdk.**{*;}
 -keepclassmembers class * {
-  @android.webkit.JavascriptInterface &lt;methods&gt;;
+  @android.webkit.JavascriptInterface <methods>;
 }
-
-</code>
+			</code>
                 </pre>
 
 
