@@ -622,6 +622,15 @@ public static &lt;fields&gt;;
 -dontwarn rm.com.android.sdk.**
 -keep class rm.com.android.sdk.** { public *; }
 
+# RETROFIT
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+-keepattributes Signature
+-keepattributes Exceptions
+-keepclasseswithmembers class * {
+    @retrofit2.http.* <methods>;
+}
+
 # SMAATO
 -dontwarn com.smaato.**
 -keep class com.smaato.** { public *; }
