@@ -203,10 +203,10 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:displayio:3.0.0.a11"
                  },
                  {
-                    "package":"com.android.support:appcompat-v7:+"
+                    "package":"com.android.support:appcompat-v7:27.1.1"
                  },
                  {
-                    "package":"com.android.support:support-v4:+"
+                    "package":"com.android.support:support-v4:27.1.1"
                  }
               ]
            }
@@ -291,7 +291,7 @@ function getAndroidNetworks() {
                     "package":"com.squareup.picasso:picasso:2.5.2"
                  },
                  {
-                    "package":"com.android.support:appcompat-v7:+"
+                    "package":"com.android.support:appcompat-v7:27.1.1"
                  },
                  {
                     "package":"com.android.support:recyclerview-v7:27.1.1"
@@ -311,7 +311,7 @@ function getAndroidNetworks() {
                     "package":"com.squareup.picasso:picasso:2.5.2"
                  },
                  {
-                    "package":"com.android.support:appcompat-v7:+"
+                    "package":"com.android.support:appcompat-v7:27.1.1"
                  },
                  {
                     "package":"com.android.support:recyclerview-v7:27.1.1"
@@ -619,7 +619,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:vungle-adapter:6.4.11.a11"
                  },
                  {
-                    "package":"com.android.support:support-v4:+"
+                    "package":"com.android.support:support-v4:27.1.1"
                  }
               ]
            },
