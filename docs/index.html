@@ -721,9 +721,22 @@ public static &lt;fields&gt;;
 -keepclassmembers class * {
    @android.webkit.JavascriptInterface &lt;methods&gt;;
 }
-			</code>
-                </pre>
+</code>
+          </pre>
 
+          <br>
+          <h4 id="shrink_resouces">Shrink Resources Usage Warning for Nend Ad-Network</h4>
+          <p>If you enable shrinkResources in your app, in addition to minifyEnabled (in build gradle file: android > buildTypes > <b>shrinkResources true</b>) and use Nend network ,
+            you should have a file named <b>keep.xml</b> under res > raw folder with the following content:<br>
+<pre>
+<code>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+  &lt;resources xmlns:tools="http://schemas.android.com/tools"
+	tools:keep="@drawable/*_thumb,@drawable/*nend*"
+    tools:shrinkMode="strict" /&gt;
+</code>
+</pre>
+            </p>
 
             </section>
 
