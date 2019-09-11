@@ -142,7 +142,6 @@
                         <li><a href="#testsuite">Test Suite</a></li>
                         <li><a href="#iap">In App Purchase Tracking</a></li>
 						<li><a href="#amazoniap">Amazon Store In App Purchase Tracking</a></li>
-						<li><a href="#PreloadBanner">Preloading Banners</a></li>
 						<li><a href="#senduserid">Setting Application User Id</a></li>
 						<li><a href="#sendadjustuserid">Setting Adjust User Id</a></li>
 						<li><a href="#sscallbacks">Server to Server Callbacks <span class="label label-teal">New</span></a></li>
@@ -1270,24 +1269,6 @@ String admostIapID = AdMost.getInstance().trackPurchaseAmazon(receiptJSON, purch
                     </li>
                 </ul>
 
-
-				<h3 id="PreloadBanner">Preloading Banners</h3>
-
-                <p>
-                    You can use cacheZones method of AdMostConfiguration to preload your banners during initialization of AdMost sdk. In order to do that, you can use the following code;
-                </p>
-
-				<pre><code class="language-java">
-
-AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, < ADMOST_APP_ID >);
-
-AdMostBannerZoneCache cacheZone = new AdMostBannerZoneCache();
-cacheZone.ZoneId = "<ZONE_ID>";
-cacheZone.Binder = null;
-configuration.cacheZones(new AdMostBannerZoneCache[] {cacheZone});
-
-AdMost.getInstance().init(configuration.build());
-                </code></pre>
 
 				<h3 id="senduserid">Setting Application User Id</h3>
 
