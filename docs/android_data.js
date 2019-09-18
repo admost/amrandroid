@@ -436,7 +436,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:nend:5.1.1.a12"
+                    "package":"com.admost.sdk:nend:5.1.1.a13"
                  },
                  {
                     "package":"com.android.support.constraint:constraint-layout:1.0.2"
