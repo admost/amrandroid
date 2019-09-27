@@ -2,6 +2,10 @@
 -keepattributes Exceptions, InnerClasses
 -dontwarn admost.sdk.**
 -keep class admost.sdk.** {*;}
+-dontwarn admost.adserver.**
+-keep class admost.adserver.** { *; }
+-dontwarn com.google.android.exoplayer2.**
+-keep class com.google.android.exoplayer2.**{ *;}
 -keep class android.support.v4.app.DialogFragment { *; }
 -keep class android.support.v4.util.LruCache { *; }
 
@@ -44,9 +48,21 @@
 -dontwarn android.security.NetworkSecurityPolicy
 -dontwarn android.app.Notification
 
-# ADTRIAL
--keep class com.adtrial.** { *; }
--dontwarn com.adtrial.**
+#ADTIMING
+-dontwarn com.aiming.mdt.**.*
+-dontoptimize
+-dontskipnonpubliclibraryclasses
+-keepattributes *Annotation*
+#adt
+-keep class com.aiming.mdt.**{ *; }
+-keepattributes *Annotation*,InnerClasses
+-keepnames class * implements android.os.Parcelable {
+public static final ** CREATOR;
+}
+#R
+-keepclassmembers class **.R$* {
+public static <fields>;
+}
 
 # AMAZON
 -dontwarn com.amazon.**
@@ -62,6 +78,11 @@
 -keep class com.appnext.** { *; }
 -dontwarn com.appnext.**
 
+# APPSAMURAI
+-keepclassmembers,allowobfuscation class * {
+  @com.google.gson.annotations.SerializedName <fields>;
+}
+
 # AVOCARROT - GLISPA
 -keep class com.avocarrot.** { *; }
 -dontwarn com.avocarrot.**
@@ -74,9 +95,15 @@
 -keep class com.chartboost.sdk.** { *; }
 -keepattributes *Annotation*
 
+# CRITEO
+-dontwarn com.criteo.**
+-keep class com.criteo.** { *; }
+
 # DISPLAYIO
 -keep class io.display.sdk.** { *; }
 -dontwarn io.display.sdk.**
+-keep class com.brandio.ads.** { *;}
+-dontwarn com.brandio.ads.**
 
 # FACEBOOK
 -dontwarn com.facebook.ads.**
@@ -120,6 +147,7 @@
 -dontwarn com.moat.**
 -keep class com.integralads.avid.library.* {*;}
 
+
 # INNERACTIVE
 -dontwarn com.inneractive.api.ads.**
 -keep class com.inneractive.api.ads.** {*;}
@@ -159,6 +187,17 @@
 -keep class com.millennialmedia.** { *; }
 -dontwarn com.millennialmedia.**
 
+# MINTEGRAL
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class com.mintegral.** {*; }
+-keep interface com.mintegral.** {*; }
+-keep class android.support.v4.** { *; }
+-dontwarn com.mintegral.**
+-keep class **.R$* { public static final int mintegral*; }
+-keep class com.alphab.** {*; }
+-keep interface com.alphab.** {*; }
+
 # MOBFOX
 -dontwarn com.mobfox.**
 -keep class com.mobfox.** { *; }
@@ -190,6 +229,10 @@
 -keepnames class * implements android.os.Parcelable { public static final ** CREATOR; }
 -keep public class android.webkit.JavascriptInterface {}
 
+# NEND
+-keep class net.nend.android.** { *; }
+-dontwarn net.nend.android.**
+
 # NATIVEX
 -dontwarn com.nativex.**
 -keep class com.nativex.** { *; }
@@ -208,6 +251,15 @@
 # REVMOB
 -dontwarn rm.com.android.sdk.**
 -keep class rm.com.android.sdk.** { public *; }
+
+# RETROFIT
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+-keepattributes Signature
+-keepattributes Exceptions
+-keepclasseswithmembers class * {
+    @retrofit2.http.* <methods>;
+}
 
 # SMAATO
 -dontwarn com.smaato.**
@@ -265,6 +317,7 @@
 -dontwarn okio.**
 -dontwarn retrofit2.Platform$Java8
 -keepattributes Signature
+-keepattributes InnerClasses
 -keepattributes *Annotation*
 -dontwarn sun.misc.**
 -keep class com.google.gson.examples.android.model.** { *; }
@@ -274,13 +327,27 @@
 -keep class com.google.android.gms.internal.** { *; }
 -dontwarn com.google.android.gms.ads.identifier.**
 
+-keepclassmembers enum com.vungle.warren.** { *; }
+-dontwarn kotlin.Unit
+-dontwarn retrofit2.-KotlinExtensions
+-keepclassmembers,allowshrinking,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+-dontwarn okhttp3.**
+-dontwarn javax.annotation.**
+-dontwarn org.conscrypt.**
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+-keepclassmembers class * extends com.vungle.warren.persistence.Memorable {
+   public <init>(byte[]);
+}
+
 
 # YOUAPPI
 -keep class com.google.gson.**{ *;}
 -keep class com.google.android.gms.**{*;}
--keep class com.youappi.ai.sdk.**{*;}
--keep interface com.youappi.ai.sdk.**{*;}
--keep enum com.youappi.ai.sdk.**{*;}
+-keep class com.youappi.sdk.**{*;}
+-keep interface com.youappi.sdk.**{*;}
+-keep enum com.youappi.sdk.**{*;}
 -keepclassmembers class * {
-  @android.webkit.JavascriptInterface <methods>;
+   @android.webkit.JavascriptInterface <methods>;
 }

@@ -100,10 +100,10 @@ public class RecyclerViewSampleActivity extends Activity {
                 AdMostView ad = (AdMostView) rvList.get(position);
 
                 if (((AdViewHolder) holder).viewGroup.getChildAt(0) == ad.getView()) {
-                    Log.i("RView", "holder already has the view no need to change it");
+                    Log.i(Statics.TAG, "recyclerview holder already has the view no need to change it");
                     return;
                 }
-                Log.i("RView", "just reusing holder, changing content");
+                Log.i(Statics.TAG, "recyclerview just reusing holder, changing content");
 
                 ((AdViewHolder) holder).viewGroup.removeAllViews();
                 if (ad.getView().getParent() != null) {

@@ -24,6 +24,7 @@ import admost.sdk.base.AdMost;
 import admost.sdk.base.AdMostConfiguration;
 import admost.sdk.base.AdMostLog;
 import admost.sdk.listener.AdMostAdListener;
+import admost.sdk.listener.AdMostInitListener;
 import admost.sdk.listener.AdMostViewListener;
 
 public class MainActivity extends Activity {
@@ -40,7 +41,6 @@ public class MainActivity extends Activity {
     private static final String STATUS_ACCEPTED = "1";
     private static final String STATUS_REJECTED = "0";
 
-
     // IMPORTANT NOTE: If you are using ProGuard, please check the required ProGuard rules on  https://admost.github.io/amrandroid/
 
     @Override
@@ -51,18 +51,32 @@ public class MainActivity extends Activity {
         AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, Statics.AMR_APP_ID);
         // Arrange GDPR related controls based on your needs, it is the responsibility of publisher.
         // If setUserConsent is not used, AdMost SDK uses its internal logic for personalized ads.
-        if (getConsentStatus().equals(STATUS_ACCEPTED)) { // You can only set status information while initialization
-            configuration.setUserConsent(true);
-        } else if (getConsentStatus().equals(STATUS_REJECTED)) {
-            configuration.setUserConsent(false);
-        }
-        AdMost.getInstance().init(configuration.build()); /////// ADMOST INIT ////////////////
 
-        // You need to read Admost documents (https://admost.github.io/amrandroid/) about GDPR to determine who are required to show such a dialog.
+        configuration.setUserConsent(true); // for testing
+        configuration.setSubjectToGDPR(true); // for testing
+        /* Optional lines
+        if (getConsentStatus().equals(STATUS_ACCEPTED)) // You can only set status information while initialization
+            configuration.setUserConsent(true);
+        else if (getConsentStatus().equals(STATUS_REJECTED))
+            configuration.setUserConsent(false);
+        */
+        AdMost.getInstance().init(configuration.build(), new AdMostInitListener() {
+            @Override
+            public void onInitCompleted() {
+                Log.i(Statics.TAG, "AdMost onInitCompleted");
+            }
+
+            @Override
+            public void onInitFailed(int i) {
+                Log.i(Statics.TAG, "AdMost onInitFailed: status code " + i);
+            }
+        });
+
+        // You need to read AdMost documents (https://admost.github.io/amrandroid/) about GDPR to determine who are required to show such a dialog.
         // Note: This is just an example usage. Showing a pop-up is optional.
-        if (getConsentStatus().equals(STATUS_UNKNOWN) && AdMost.getInstance().getConfiguration().isGDPRRequired()) {
+        /*if (getConsentStatus().equals(STATUS_UNKNOWN) && AdMost.getInstance().getConfiguration().isGDPRRequired()) {
             showGDPRDialog();
-        }
+        }*/
     }
 
     private void getBanner() {
@@ -75,7 +89,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onReady(String network, int ecpm, View adView) {
-                Log.i("ADMOST", "onReady : " + network);
+                Log.i(Statics.TAG, "onReady : " + network);
                 LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
                 viewAd.removeAllViews();
                 if (adView.getParent() != null && adView.getParent() instanceof ViewGroup) {
@@ -420,7 +434,7 @@ public class MainActivity extends Activity {
                 message = "";
                 break;
         }
-        AdMostLog.log("MainActivity " + type + " onFail errorCode : " + errorCode + " message : " + message);
+        Log.i(Statics.TAG, "MainActivity " + type + " onFail errorCode : " + errorCode + " message : " + message);
         Toast.makeText(MainActivity.this," onFail errorCode : " + errorCode + " message : " + message, Toast.LENGTH_SHORT ).show();
         return message;
     }
