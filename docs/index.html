@@ -493,6 +493,10 @@ public static &lt;fields&gt;;
 -keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
 -keepnames class * implements android.os.Parcelable { public static final ** CREATOR; }
 
+# FREECORP
+-keep class com.fly.** { *; }
+-dontwarn com.fly.**
+
 # FYBER
 -keep class com.fyber.** { *; }
 -dontwarn com.fyber.**
