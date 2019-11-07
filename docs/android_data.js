@@ -58,6 +58,20 @@ function getAndroidNetworks() {
            }
         },
         {
+         "name":"AdGem",
+         "status":false,
+         "app_gradle":{
+            "dependencies":[
+               {
+                  "package":"com.adgem:adgem-android:1.6.0"
+               },
+               {
+                  "package":"com.admost.sdk:adgem-adapter:1.6.0"
+               }
+            ]
+         }
+        },
+        {
            "name":"AdMob",
            "status":false,
            "app_gradle":{

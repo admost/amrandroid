@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +18,7 @@
 
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet'
-          type='text/css'>
+        type='text/css'>
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -25,302 +26,329 @@
     <script src="adnetworks.js" type="text/javascript"></script>
 
     <!-- Favicons -->
-	<link rel="icon" href="https://dashboard.admost.com/Assets/img/admostfavicon.png">
-	<style>
-		h4 {font-size:16px;font-weight:500;text-decoration:underline;}
-	</style>
+    <link rel="icon" href="https://dashboard.admost.com/Assets/img/admostfavicon.png">
+    <style>
+        h4 {
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".sidebar" data-offset="200">
 
-<header class="site-header navbar-transparent sticky">
+    <header class="site-header navbar-transparent sticky">
 
-    <!-- Top navbar & branding -->
-    <nav class="navbar navbar-default">
-        <div class="container">
+        <!-- Top navbar & branding -->
+        <nav class="navbar navbar-default">
+            <div class="container">
 
-            <!-- Toggle buttons and brand -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"
+                <!-- Toggle buttons and brand -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"
                         aria-expanded="true" aria-controls="navbar">
-                    <span class="glyphicon glyphicon-option-vertical"></span>
-                </button>
+                        <span class="glyphicon glyphicon-option-vertical"></span>
+                    </button>
 
-                <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://admost.github.io"><img src="assets/img/logo-white.svg" alt="logo"></a>
+                    <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://admost.github.io"><img src="assets/img/logo-white.svg"
+                            alt="logo"></a>
+
+                </div>
+                <!-- END Toggle buttons and brand -->
+
+                <!-- Top navbar -->
+                <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="index.html">Documentation</a></li>
+                        <li><a href="gdpr.html">GDPR</a></li>
+                        <li><a href="release-notes.html">Release Notes</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a target="_blank" href="https://github.com/admost/amrandroid/tree/master/">
+                                <i class="fa fa-mobile-phone"></i>&nbsp;&nbsp;Demo Project</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END Top navbar -->
 
             </div>
-            <!-- END Toggle buttons and brand -->
+        </nav>
+        <!-- END Top navbar & branding -->
 
-            <!-- Top navbar -->
-            <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
-                <ul class="nav navbar-nav navbar-right">
-                  <li class="active"><a href="index.html">Documentation</a></li>
-                  <li><a href="gdpr.html">GDPR</a></li>
-                  <li><a href="release-notes.html">Release Notes</a></li>
-                  <li><a href="faq.html">FAQ</a></li>
-                  <li><a target="_blank" href="https://github.com/admost/amrandroid/tree/master/">
-                      <i class="fa fa-mobile-phone"></i>&nbsp;&nbsp;Demo Project</a>
-                  </li>
-                </ul>
+        <!-- Banner -->
+        <div class="banner auto-size" style="background-color: #3aa99e">
+            <div class="container text-white">
+                <h1><i class="fa fa-android"></i>&nbsp; &nbsp;Android Integration Guide</h1>
+                <h5>This is the easiest way to integrate Admost Android SDK and ad networks to your current Android
+                    Mobile
+                    App.</h5>
             </div>
-            <!-- END Top navbar -->
-
         </div>
-    </nav>
-    <!-- END Top navbar & branding -->
+        <!-- END Banner -->
 
-    <!-- Banner -->
-    <div class="banner auto-size" style="background-color: #3aa99e">
-        <div class="container text-white">
-            <h1><i class="fa fa-android"></i>&nbsp; &nbsp;Android Integration Guide</h1>
-            <h5>This is the easiest way to integrate Admost Android SDK and ad networks to your current Android Mobile
-                App.</h5>
-        </div>
-    </div>
-    <!-- END Banner -->
-
-</header>
+    </header>
 
 
-<main class="container">
-    <div class="row">
+    <main class="container">
+        <div class="row">
 
-        <!-- Sidebar -->
-        <aside class="col-sm-3 sidebar">
+            <!-- Sidebar -->
+            <aside class="col-sm-3 sidebar">
 
-            <ul class="nav sidenav dropable sticky">
-                <li><a href="#overview">Overview</a></li>
-                <li>
-                    <a href="#prerequisites">Prerequisites</a>
-                    <ul>
-                        <li><a href="#android-version">Android Version</a></li>
-                        <li><a href="#ide">IDE</a></li>
-                        <li><a href="#app-id-zone-id">App ID & Zone ID</a></li>
-                        <li><a href="#permissions">Permissions</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#setup">Setup</a>
-                    <ul>
-                        <li><a href="#pick-adnetworks">Ad-Networks</a></li>
-                        <li><a href="#required-files">Required Files</a></li>
-                        <li><a href="#edit-files">Edit Files</a></li>
-                        <li><a href="#proguard">Proguard</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#usage">Usage</a>
-                    <ul>
-                        <li><a href="#init">Init</a></li>
-							 <ul style="display: block;">
+                <ul class="nav sidenav dropable sticky">
+                    <li><a href="#overview">Overview</a></li>
+                    <li>
+                        <a href="#prerequisites">Prerequisites</a>
+                        <ul>
+                            <li><a href="#android-version">Android Version</a></li>
+                            <li><a href="#ide">IDE</a></li>
+                            <li><a href="#app-id-zone-id">App ID & Zone ID</a></li>
+                            <li><a href="#permissions">Permissions</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#setup">Setup</a>
+                        <ul>
+                            <li><a href="#pick-adnetworks">Ad-Networks</a></li>
+                            <li><a href="#required-files">Required Files</a></li>
+                            <li><a href="#edit-files">Edit Files</a></li>
+                            <li><a href="#proguard">Proguard</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#usage">Usage</a>
+                        <ul>
+                            <li><a href="#init">Init</a></li>
+                            <ul style="display: block;">
                                 <li><a href="#initgdpr">GDPR</a></li>
                             </ul>
-                        <li><a href="#banner-ads">Banner/Native Ads</a></li>
-							<ul style="display: block;">
+                            <li><a href="#banner-ads">Banner/Native Ads</a></li>
+                            <ul style="display: block;">
                                 <li><a href="#native-ads">Custom Native Design</a></li>
                             </ul>
-                        <li><a href="#interstitial">Interstitial Ads</a></li>
-                        <li><a href="#rewarded">Rewarded Ads</a></li>
+                            <li><a href="#interstitial">Interstitial Ads</a></li>
+                            <li><a href="#rewarded">Rewarded Ads</a></li>
 
-                        <li>
-                            <a href="#offerwalls" class="has-child open">Offerwall Ads</a>
-                            <ul style="display: block;">
-                                <li><a href="#spending-virtual-currencies">Spending Virtual Currencies</a></li>
-                            </ul>
-                        </li>
-					</ul>
-               </li>
+                            <li>
+                                <a href="#offerwalls" class="has-child open">Offerwall Ads</a>
+                                <ul style="display: block;">
+                                    <li><a href="#spending-virtual-currencies">Spending Virtual Currencies</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
 
-                <li><a href="#extras">Extras</a>
-                    <ul>
-                        <li><a href="#dfp">DFP/Admob Mediation Integration</a></li>
-                        <li><a href="#testsuite">Test Suite</a></li>
-                        <li><a href="#iap">In App Purchase Tracking</a></li>
-						<li><a href="#amazoniap">Amazon Store In App Purchase Tracking</a></li>
-						<li><a href="#senduserid">Setting Application User Id</a></li>
-						<li><a href="#sendadjustuserid">Setting Adjust User Id</a></li>
-						<li><a href="#sscallbacks">Server to Server Callbacks <span class="label label-teal">New</span></a></li>
-						<li><a href="#gdprcheck">GDPR Applicable Check <span class="label label-teal">New</span></a></li>
-						<li  style="display:none"><a href="#campaigntracking">Campaign Tracking</a></li>
-                    </ul>
-                </li>
-
-
-            </ul>
-
-        </aside>
-        <!-- END Sidebar -->
+                    <li><a href="#extras">Extras</a>
+                        <ul>
+                            <li><a href="#dfp">DFP/Admob Mediation Integration</a></li>
+                            <li><a href="#testsuite">Test Suite</a></li>
+                            <li><a href="#iap">In App Purchase Tracking</a></li>
+                            <li><a href="#amazoniap">Amazon Store In App Purchase Tracking</a></li>
+                            <li><a href="#senduserid">Setting Application User Id</a></li>
+                            <li><a href="#sendadjustuserid">Setting Adjust User Id</a></li>
+                            <li><a href="#sscallbacks">Server to Server Callbacks <span
+                                        class="label label-teal">New</span></a></li>
+                            <li><a href="#gdprcheck">GDPR Applicable Check <span class="label label-teal">New</span></a>
+                            </li>
+                            <li style="display:none"><a href="#campaigntracking">Campaign Tracking</a></li>
+                        </ul>
+                    </li>
 
 
-        <!-- Main content -->
-        <article class="col-sm-9 main-content" role="main">
+                </ul>
 
-            <section>
-                <h2 id="overview">Overview</h2>
-                <p>The following document detaily shows that how to integrate Admost Android SDK and desired networks via
-                    gradle build setup. There are too many ad networks you may desire to add your current app.
-                    Integrating those ad networks to your application can achievable via gradle. Most of the ad networks
-                    are can be integrated by 1 line of code addition to your project's
-                    <code>/app/src/build.gradle</code> file and <code>/build.gradle</code> file. However some of them
-                    are requires more
-                    aditions to
-                    <code>/app/src/main/AndroidManifest.xml</code> and
-                    <code>/app/src/proguard-rules.pro</code> file.</p>
-            </section>
+            </aside>
+            <!-- END Sidebar -->
 
-            <section>
-                <h2 id="prerequisites">Prerequisites</h2>
-                <h3 id="android-version">Android Version</h3>
-                <p> Android 4.0 (Ice Cream Sandwich - API Version 14) or later.</p>
-                <h3 id="ide">IDE</h3>
-                <p>
-                    You have to use Latest Android Studio build. You can download the latest Android Studio from <a
-                        href="https://developer.android.com/studio/index.html">here. </a>
-                </p>
-                <p><code>/app/src/main/AndroidManifest.xml</code>, <code>/app/src/build.gradle</code>, <code>/app/src/proguard-rules.pro</code>
-                    and <code>/build.gradle</code> files may be required in the next parts. You can see where to find
-                    those files in project view structure.</p>
 
-                <div class="code-window">
-                    <div class="code-preview">
-                        <p>Android Studio<i> ~ Project view</i></p>
-                        <div class="file-tree">
-                            <ul>
-                                <li class="is-folder">
-                                    .gradle
-                                </li>
-                                <li class="is-folder">
-                                    .idea
-                                </li>
-                                <li class="is-folder open">
-                                    app
-                                    <ul>
-                                        <li class="is-folder">
-                                            build
-                                        </li>
-                                        <li class="is-folder open">
-                                            src
-                                            <ul>
-                                                <li class="is-folder open">
-                                                    main
-                                                    <ul>
-                                                        <li class="is-folder">java</li>
-                                                        <li class="is-folder">res</li>
-                                                        <li class="is-file"><code>AndroidManifest.xml</code></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="is-file"><code>build.gradle</code><i>app's gradle file </i>
-                                                </li>
-                                                <li class="is-file"><code>proguard-rules.pro</code></li>
-                                            </ul>
-                                        </li>
-                                        <li class="is-folder">
-                                            build
-                                        </li>
-                                        <li class="is-folder">
-                                            .gradle
-                                        </li>
-                                        <li class="is-file"><code>build.gradle</code><i>project's gradle file</i></li>
-                                    </ul>
-                                </li>
+            <!-- Main content -->
+            <article class="col-sm-9 main-content" role="main">
 
-                            </ul>
-                        </div>
+                <section>
+                    <h2 id="overview">Overview</h2>
+                    <p>The following document detaily shows that how to integrate Admost Android SDK and desired
+                        networks via
+                        gradle build setup. There are too many ad networks you may desire to add your current app.
+                        Integrating those ad networks to your application can achievable via gradle. Most of the ad
+                        networks
+                        are can be integrated by 1 line of code addition to your project's
+                        <code>/app/src/build.gradle</code> file and <code>/build.gradle</code> file. However some of
+                        them
+                        are requires more
+                        aditions to
+                        <code>/app/src/main/AndroidManifest.xml</code> and
+                        <code>/app/src/proguard-rules.pro</code> file.</p>
+                </section>
 
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                <tr>
-                                    <th>Folder/File</th>
-                                    <th>Purpose</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td><code>/app/src/main/AndroidManifest.xml</code></td>
-                                    <td>This is your app's AndroidManifest.xml. We will just update inside of <strong>application</strong>
-                                        tags.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>/app/src/build.gradle</code></td>
-                                    <td>This is your app's build.gradle file. We will just update inside of <strong>dependencies</strong>
-                                        bracelets.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>/app/src/proguard-rules.pro</code></td>
-                                    <td>The proguard-rules.pro file is where you can add custom ProGuard rules.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>/build.gradle</code></td>
-                                    <td>This is project's build.gradle file. We will just update inside of <strong>repositories</strong>
-                                        bracelets.
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
+                <section>
+                    <h2 id="prerequisites">Prerequisites</h2>
+                    <h3 id="android-version">Android Version</h3>
+                    <p> Android 4.0 (Ice Cream Sandwich - API Version 14) or later.</p>
+                    <h3 id="ide">IDE</h3>
+                    <p>
+                        You have to use Latest Android Studio build. You can download the latest Android Studio from <a
+                            href="https://developer.android.com/studio/index.html">here. </a>
+                    </p>
+                    <p><code>/app/src/main/AndroidManifest.xml</code>, <code>/app/src/build.gradle</code>,
+                        <code>/app/src/proguard-rules.pro</code>
+                        and <code>/build.gradle</code> files may be required in the next parts. You can see where to
+                        find
+                        those files in project view structure.</p>
+
+                    <div class="code-window">
+                        <div class="code-preview">
+                            <p>Android Studio<i> ~ Project view</i></p>
+                            <div class="file-tree">
+                                <ul>
+                                    <li class="is-folder">
+                                        .gradle
+                                    </li>
+                                    <li class="is-folder">
+                                        .idea
+                                    </li>
+                                    <li class="is-folder open">
+                                        app
+                                        <ul>
+                                            <li class="is-folder">
+                                                build
+                                            </li>
+                                            <li class="is-folder open">
+                                                src
+                                                <ul>
+                                                    <li class="is-folder open">
+                                                        main
+                                                        <ul>
+                                                            <li class="is-folder">java</li>
+                                                            <li class="is-folder">res</li>
+                                                            <li class="is-file"><code>AndroidManifest.xml</code></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="is-file"><code>build.gradle</code><i>app's gradle file
+                                                        </i>
+                                                    </li>
+                                                    <li class="is-file"><code>proguard-rules.pro</code></li>
+                                                </ul>
+                                            </li>
+                                            <li class="is-folder">
+                                                build
+                                            </li>
+                                            <li class="is-folder">
+                                                .gradle
+                                            </li>
+                                            <li class="is-file"><code>build.gradle</code><i>project's gradle file</i>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Folder/File</th>
+                                            <th>Purpose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>/app/src/main/AndroidManifest.xml</code></td>
+                                            <td>This is your app's AndroidManifest.xml. We will just update inside of
+                                                <strong>application</strong>
+                                                tags.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>/app/src/build.gradle</code></td>
+                                            <td>This is your app's build.gradle file. We will just update inside of
+                                                <strong>dependencies</strong>
+                                                bracelets.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>/app/src/proguard-rules.pro</code></td>
+                                            <td>The proguard-rules.pro file is where you can add custom ProGuard rules.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>/build.gradle</code></td>
+                                            <td>This is project's build.gradle file. We will just update inside of
+                                                <strong>repositories</strong>
+                                                bracelets.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <h3 id="app-id-zone-id">App ID & Zone ID</h3>
+                    <h3 id="app-id-zone-id">App ID & Zone ID</h3>
 
-                <p>Application Id provided in Admost Mediation Dashboard.
-                    Zone Id(s) provided in <a href="http://dashboard.admost.com/" target="_blank">Admost Mediation
-                        Dashboard</a>.</p>
-                <h3 id="permissions">Permissions</h3>
+                    <p>Application Id provided in Admost Mediation Dashboard.
+                        Zone Id(s) provided in <a href="http://dashboard.admost.com/" target="_blank">Admost Mediation
+                            Dashboard</a>.</p>
+                    <h3 id="permissions">Permissions</h3>
 
-                <p>Some of the Ad networks requires additional permissions. You have to consider this while adding those
-                    ad networks in to your application. We handled those permissions in our SDK, you do not have to do
-                    anything but we are saying this to keep in mind.
-                </p>
-                <p>Those permissions are listed below;</p>
+                    <p>Some of the Ad networks requires additional permissions. You have to consider this while adding
+                        those
+                        ad networks in to your application. We handled those permissions in our SDK, you do not have to
+                        do
+                        anything but we are saying this to keep in mind.
+                    </p>
+                    <p>Those permissions are listed below;</p>
 
-                <pre><code class="language-java">
+                    <pre><code class="language-java">
 &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;
 &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;
 &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;
                 </code></pre>
-            </section>
+                </section>
 
-            <section>
-                <h2 id="setup">Setup</h2>
+                <section>
+                    <h2 id="setup">Setup</h2>
 
-                <h3 id="pick-adnetworks">Ad-Networks</h3>
+                    <h3 id="pick-adnetworks">Ad-Networks</h3>
 
-                <p>Please click <code>+</code> icon to add to list and <code>-</code> to remove from list. After finish
-                    selecting ad networks, continue with next <a href="#edit-files">step</a></p>
-                <div class="row" id="adnetwork-button-list">
-                </div>
-                <h3 id="required-files">Required Files</h3>
-                <p>With your selections you are going to work with following files;</p>
-                <ul id="list-of-files">
-                    <li><code>/build.gradle</code></li>
-                    <li><code>/app/src/build.gradle</code></li>
-                </ul>
-                <p>If you are using proguard you have to edit <code>/app/src/proguard-rules.pro</code> too. </p>
+                    <p>Please click <code>+</code> icon to add to list and <code>-</code> to remove from list. After
+                        finish
+                        selecting ad networks, continue with next <a href="#edit-files">step</a></p>
+                    <div class="row" id="adnetwork-button-list">
+                    </div>
+                    <h3 id="required-files">Required Files</h3>
+                    <p>With your selections you are going to work with following files;</p>
+                    <ul id="list-of-files">
+                        <li><code>/build.gradle</code></li>
+                        <li><code>/app/src/build.gradle</code></li>
+                    </ul>
+                    <p>If you are using proguard you have to edit <code>/app/src/proguard-rules.pro</code> too. </p>
 
-                <h3 id="edit-files">Edit Files</h3>
+                    <h3 id="edit-files">Edit Files</h3>
 
-                <div class="row" id="file-projectgradle">
-                </div>
-                <div class="row" id="file-appgradle">
-                </div>
-                <div class="row" id="file-androidmanifest">
-                </div>
+                    <div class="row" id="file-projectgradle">
+                    </div>
+                    <div class="row" id="file-appgradle">
+                    </div>
+                    <div class="row" id="file-androidmanifest">
+                    </div>
 
-				<div class="row">
-				<div class="col-md-11">
-				<p> Starting with Android 9.0 (API level 28), cleartext support is disabled by default. For applications <b>targetSdkVersion higher than 27</b> must use the following manifest config for AdMost <b>cleartext support.</b> </p>
-				</div>
-				<div class="col-md-1"><button class="btn btn-xs btn-primary" onclick="copyToClipboard(\'#code-androidmanifest2\')"><i class="fa fa-copy"></i></if></li> Copy</button> </div><div class="col-md-12" id="file-androidmanifest"> <pre><code id="code-androidmanifest2">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <p> Starting with Android 9.0 (API level 28), cleartext support is disabled by default. For
+                                applications <b>targetSdkVersion higher than 27</b> must use the following manifest
+                                config for AdMost <b>cleartext support.</b> </p>
+                        </div>
+                        <div class="col-md-1"><button class="btn btn-xs btn-primary"
+                                onclick="copyToClipboard(\'#code-androidmanifest2\')"><i class="fa fa-copy"></i></if>
+                                </li> Copy</button> </div>
+                        <div class="col-md-12" id="file-androidmanifest">
+                            <pre><code id="code-androidmanifest2">
 &lt;manifest ...&gt;
     &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
     &lt;application
@@ -331,14 +359,20 @@
     &lt;/application&gt;
 &lt;/manifest&gt;
 				</code></pre>
-				</div>
-				</div>
+                        </div>
+                    </div>
 
-        <div class="row">
-				<div class="col-md-11">
-				<p> If you are using Admob SDK (com.google.android.gms:play-services-ads)  with version <b>17.0.0 and higher</b>, you must add your <b>AdMob App ID</b> to your Android Manifest file. </p>
-				</div>
-				<div class="col-md-1"><button class="btn btn-xs btn-primary" onclick="copyToClipboard(\'#code-androidmanifest2\')"><i class="fa fa-copy"></i></if></li> Copy</button> </div><div class="col-md-12" id="file-androidmanifest"> <pre><code id="code-androidmanifest2">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <p> If you are using Admob SDK (com.google.android.gms:play-services-ads) with version
+                                <b>17.0.0 and higher</b>, you must add your <b>AdMob App ID</b> to your Android Manifest
+                                file. </p>
+                        </div>
+                        <div class="col-md-1"><button class="btn btn-xs btn-primary"
+                                onclick="copyToClipboard(\'#code-androidmanifest2\')"><i class="fa fa-copy"></i></if>
+                                </li> Copy</button> </div>
+                        <div class="col-md-12" id="file-androidmanifest">
+                            <pre><code id="code-androidmanifest2">
         &lt;manifest&gt;
           &lt;application&gt;
               &lt;!-- Sample AdMob App ID: ca-app-pub-0000000000000000~0000000000 --&gt;
@@ -348,12 +382,75 @@
           &lt;/application&gt;
         &lt;/manifest&gt;
 				</code></pre>
-				</div>
-				</div>
+                        </div>
+                    </div>
 
-                <h3 id="proguard">Proguard</h3>
-                <p>Copy & paste following code snippet in to your <code>/app/src/proguard-rules.pro</code> file</p>
-                <!--
+                    <div class="row" id="appsamurai_warning" style="display: none;">
+                        <div class="col-md-11">
+                            </br>
+                            <h4>Appsamurai Ad-Network Usage Warning </h4>
+                            <p><b>Skip this subsection if you don't use Appsamurai ad-network.</b></p>
+                            <p>You need to enable Kotlin for your project , if you want to use Appsamurai.</p>
+                            <p>Please visit: <a
+                                    href="https://developer.android.com/kotlin/add-kotlin"><b>https://developer.android.com/kotlin/add-kotlin</b></a>
+                            </p> </br>
+                        </div>
+                       
+                    </div>
+
+                    <div class="row"  id="nend_warning" style="display: none;">
+                        <div class="col-md-11">
+                            <h4>Nend Ad-Network Usage Warning </h4>
+                            <p><b>Skip this subsection if you don't use Nend ad-network.</b></p>
+                            <p>If you use Nend network and enable shrinkResources in your app, in addition to
+                                minifyEnabled (in build gradle file: android > buildTypes > <b>shrinkResources
+                                    true</b>),
+                                you should have a file named <b>keep.xml</b> under res > raw folder with the following
+                                content:<br>
+                                <pre>
+<code>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+    &lt;resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@drawable/*_thumb,@drawable/*nend*"
+    tools:shrinkMode="strict" /&gt;
+</code>
+</pre>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row" id="adgem_warning" style="display: none;">
+                        <div class="col-md-11">
+                                <h4>AdGem Ad-Network Usage Warning </h4>
+                                <p><b>Skip this subsection if you don't use AdGem ad-network.</b></p>
+                                <pre>
+<code>
+// Step 1: You must use Java 8 if you want to use AdGem ad-network. 
+// Add the lines inside of app's build.gradle file > 'android' tag.
+compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}
+
+// Step 2: Create a new XML resource file called adgem_config.xml within the res/xml directory.
+// If the xml directory does not exist, please create it.
+&lt;adgem-configuration applicationId="ADGEM_APP_ID" 
+standardVideoAdsEnabled="false" 
+rewardedVideoAdsEnabled="false" 
+offerWallEnabled="true" /&gt; 
+
+// Step 3: Add following lines to AndroidManifest.xml file.
+&lt;meta-data android:name="com.adgem.Config" 
+android:resource="@xml/adgem_config"/&gt; 
+</code>
+        </pre>
+                                </p>
+                        </div>
+                    </div>
+
+                    <h3 id="proguard">Proguard</h3>
+                    <p>Copy & paste following code snippet in to your <code>/app/src/proguard-rules.pro</code> file</p>
+                    <!--
                 <div class="row">
                     <div class="col-md-11">Copy & paste following code snippet in to your <code>/app/src/proguard-rules.pro</code> file</div>
                     <div class="col-md-1">
@@ -365,7 +462,7 @@
                 </div>
 
                 -->
-                <pre class="pre-scrollable">
+                    <pre class="pre-scrollable">
 			<code class="language-typescript" id="code-proguard">
 # ADMOST
 -keepattributes Exceptions, InnerClasses
@@ -391,6 +488,10 @@
 -keep class com.adcolony.** { *; }
 -keepclassmembers class * { @android.webkit.JavascriptInterface &lt;methods&gt;; }
 -keepclassmembers class com.adcolony.sdk.ADCNative** { *; }
+
+# ADGEM
+-keep class com.adgem.** { *; }
+-dontwarn com.adgem.**
 
 # ADMOB / ADX / GOOGLE
 -keep class com.android.vending.billing.**
@@ -727,31 +828,21 @@ public static &lt;fields&gt;;
 </code>
           </pre>
 
-          <br>
-          <h4 id="shrink_resouces">Shrink Resources Usage Warning for Nend Ad-Network</h4>
-          <p>If you enable shrinkResources in your app, in addition to minifyEnabled (in build gradle file: android > buildTypes > <b>shrinkResources true</b>) and use Nend network ,
-            you should have a file named <b>keep.xml</b> under res > raw folder with the following content:<br>
-<pre>
-<code>
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
-  &lt;resources xmlns:tools="http://schemas.android.com/tools"
-	tools:keep="@drawable/*_thumb,@drawable/*nend*"
-    tools:shrinkMode="strict" /&gt;
-</code>
-</pre>
-            </p>
+                    <br>
 
-            </section>
 
-            <section>
-                <h2 id="usage">Usage</h2>
+                </section>
 
-                <p>Admost Mediation library is a lean yet complete library that allows you to request and show ads.
-                    Basic integration steps are:</p>
-                <h3 id="init">Init Ads</h3>
-                <p>Initialize the Admost Mediation SDK in your application’s launcher Activity. This starts pre-caching
-                    and prepares the SDK to display ads.</p>
-                <pre><code class="language-java">AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, < ADMOST_APP_ID >);
+                <section>
+                    <h2 id="usage">Usage</h2>
+
+                    <p>Admost Mediation library is a lean yet complete library that allows you to request and show ads.
+                        Basic integration steps are:</p>
+                    <h3 id="init">Init Ads</h3>
+                    <p>Initialize the Admost Mediation SDK in your application’s launcher Activity. This starts
+                        pre-caching
+                        and prepares the SDK to display ads.</p>
+                    <pre><code class="language-java">AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, < ADMOST_APP_ID >);
 //GDPR COMPLIANCE
 // Important: Please read the GDPR section below.
 configuration.setSubjectToGDPR(false);
@@ -772,16 +863,21 @@ AdMost.getInstance().init(configuration.build(), new AdMostInitListener() {
 
 
 
-               <h4 id="initgdpr">GDPR</h4>
-			    <p> Once you have collected the user’s consent, you can pass it onto the SDK using the init configuration parameters shown above.  </p>
-				  <p><code>setUserConsent</code> has a boolean parameter. If you have the user’s consent, set it true. If you do not have the user's consent, set it false.  </p>
-				  <p><code>setSubjectToGDPR</code> has a boolean parameter. If you know the user is subject to GDPR, set it true. If you know the user is not subject to GDPR, set it false. </p>
-          <p>If you don’t pass the user’s consent or subjectToGDPR to the SDK, the default rules of Admost SDK will be applied.</p>
-          <p><b>IMPORTANT NOTE:</b> We strongly recommend you to read our <b><a target="_blank" href="gdpr.html#gdpr">GDPR section</a></b>. </p>
+                    <h4 id="initgdpr">GDPR</h4>
+                    <p> Once you have collected the user’s consent, you can pass it onto the SDK using the init
+                        configuration parameters shown above. </p>
+                    <p><code>setUserConsent</code> has a boolean parameter. If you have the user’s consent, set it true.
+                        If you do not have the user's consent, set it false. </p>
+                    <p><code>setSubjectToGDPR</code> has a boolean parameter. If you know the user is subject to GDPR,
+                        set it true. If you know the user is not subject to GDPR, set it false. </p>
+                    <p>If you don’t pass the user’s consent or subjectToGDPR to the SDK, the default rules of Admost SDK
+                        will be applied.</p>
+                    <p><b>IMPORTANT NOTE:</b> We strongly recommend you to read our <b><a target="_blank"
+                                href="gdpr.html#gdpr">GDPR section</a></b>. </p>
 
 
-                <h3 id="banner-ads">Banner/Native Ads</h3>
-                <pre><code class="language-java">/*
+                    <h3 id="banner-ads">Banner/Native Ads</h3>
+                    <pre><code class="language-java">/*
 ZONE_ID : Your ZONE_ID defined on admost mediation panels.
 TYPE    : The height of your banner, it may have 3 values;
             1. AdMostManager.getInstance().AD_BANNER (50dp)
@@ -817,20 +913,22 @@ BANNER.load();
 
                 </code></pre>
 
-				<p>
-                    You can use tag functionality for banner zones. Tags will let you monitor the performance of the ads across different dimensions for the same zone. You can switch ads on and off for any specified tag whenever you want. Example usage is as follows;
-                </p>
-				<pre><code class="language-java">
+                    <p>
+                        You can use tag functionality for banner zones. Tags will let you monitor the performance of the
+                        ads across different dimensions for the same zone. You can switch ads on and off for any
+                        specified tag whenever you want. Example usage is as follows;
+                    </p>
+                    <pre><code class="language-java">
 // TAG can be any string value meaningful for you. You don't need to define it on AdMost dashboard before using.
 // Just start using, it will be automatically detected
 BANNER.load(TAG);
 				</code></pre>
 
-                <p>You have to call destroy(), pause() and resume() methods in the activity.
+                    <p>You have to call destroy(), pause() and resume() methods in the activity.
 
-                </p>
+                    </p>
 
-                <pre><code class="language-java">@Override
+                    <pre><code class="language-java">@Override
 public void onResume() {
     super.onResume();
     BANNER.resume();
@@ -850,13 +948,14 @@ public void onDestroy() {
 }
 </code></pre>
 
-                <h4 id="native-ads">Custom Native Design</h4>
+                    <h4 id="native-ads">Custom Native Design</h4>
 
-                <p>If you want to create your own design for native ads, you have to create a binder object and pass it
-                    to AdMostView constructor as BINDER value. Example integration for binder creation is as
-                    follows;</p>
+                    <p>If you want to create your own design for native ads, you have to create a binder object and pass
+                        it
+                        to AdMostView constructor as BINDER value. Example integration for binder creation is as
+                        follows;</p>
 
-                <pre><code class="language-java">int layout = layout.design_for_your_banner;
+                    <pre><code class="language-java">int layout = layout.design_for_your_banner;
 AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
 	.titleId(R.id.ad_headline)
 	.textId(R.id.ad_body)
@@ -871,9 +970,11 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
 	.isCloseable(false)
 	.build();</code></pre>
 
-	<p>For privacy icon placement, you have to add the following ImageView to your custom layout with <b>visibility GONE</b>. It is suggested to add it to the right top corner of your layout with minimum width of 25dp;</p>
+                    <p>For privacy icon placement, you have to add the following ImageView to your custom layout with
+                        <b>visibility GONE</b>. It is suggested to add it to the right top corner of your layout with
+                        minimum width of 25dp;</p>
 
-                <pre><code class="language-java">&lt;ImageView
+                    <pre><code class="language-java">&lt;ImageView
         android:id="@+id/ad_privacy"
         android:layout_width="26dp"
         android:layout_height="26dp"
@@ -884,9 +985,9 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
         android:src="@drawable/ad_privacy"
         android:layout_alignParentRight="true"
         android:visibility="gone" /></code></pre>
-                <h3 id="interstitial">Interstitial</h3>
+                    <h3 id="interstitial">Interstitial</h3>
 
-                <pre><code class="language-java">AdMostInterstitial INTERSTITIAL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
+                    <pre><code class="language-java">AdMostInterstitial INTERSTITIAL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
     @Override
     public void onDismiss(String message) {
         // It indicates that the interstitial ad is closed by clicking cross button/back button
@@ -921,30 +1022,32 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
 
 </code></pre>
 
-				<p>
-                    You can use the following statement to load interstitial.
-                </p>
-				<pre><code class="language-java">INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
+                    <p>
+                        You can use the following statement to load interstitial.
+                    </p>
+                    <pre><code class="language-java">INTERSTITIAL.refreshAd(AUTO_SHOW);</code></pre>
 
-                <p>
-                    AUTO_SHOW (boolean) : Set true, if you want to show the fullscreen ad as soon as it is ready.
-                    Otherwise, you need to call show() method manually.
-                </p>
-				<pre><code class="language-java">INTERSTITIAL.show();</code></pre>
-				<p>
-                    You can use tag functionality for interstitial zones. Tags will let you monitor the performance of the ads across different dimensions for the same zone. You can switch ads on and off for any specified tag whenever you want. Example usage is as follows;
-                </p>
-				<pre><code class="language-java">
+                    <p>
+                        AUTO_SHOW (boolean) : Set true, if you want to show the fullscreen ad as soon as it is ready.
+                        Otherwise, you need to call show() method manually.
+                    </p>
+                    <pre><code class="language-java">INTERSTITIAL.show();</code></pre>
+                    <p>
+                        You can use tag functionality for interstitial zones. Tags will let you monitor the performance
+                        of the ads across different dimensions for the same zone. You can switch ads on and off for any
+                        specified tag whenever you want. Example usage is as follows;
+                    </p>
+                    <pre><code class="language-java">
 // TAG can be any string value meaningful for you. You don't need to define it on AdMost dashboard before using.
 // Just start using, it will be automatically detected
 INTERSTITIAL.show(TAG);
 				</code></pre>
-                <p> You have to call destroy method when you are done with the interstitial.
-                </p>
-                <pre><code class="language-java">INTERSTITIAL.destroy();</code></pre>
-                <h3 id="rewarded">Rewarded</h3>
+                    <p> You have to call destroy method when you are done with the interstitial.
+                    </p>
+                    <pre><code class="language-java">INTERSTITIAL.destroy();</code></pre>
+                    <h3 id="rewarded">Rewarded</h3>
 
-                <pre><code class="language-java">AdMostInterstitial VIDEO = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
+                    <pre><code class="language-java">AdMostInterstitial VIDEO = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
         @Override
          public void onReady(String network, int ecpm) {
             // It indicates that the rewarded video ad is loaded and ready to show.
@@ -981,31 +1084,34 @@ INTERSTITIAL.show(TAG);
     });
                 </code></pre>
 
-				<p>
-                    You can use the following statement to load rewarded video.
-                </p>
-				<pre><code class="language-java">VIDEO.refreshAd(AUTO_SHOW);</code></pre>
+                    <p>
+                        You can use the following statement to load rewarded video.
+                    </p>
+                    <pre><code class="language-java">VIDEO.refreshAd(AUTO_SHOW);</code></pre>
 
-                <p>
-                    AUTO_SHOW (boolean) : Set true, if you want to show the rewarded video ad as soon as it is ready.
-                    Otherwise, you need to call show() method manually.
-                </p>
-				<pre><code class="language-java">VIDEO.show();</code></pre>
-				<p>
-                    You can use tag functionality for rewarded video zones. Tags will let you monitor the performance of the ads across different dimensions for the same zone. You can switch ads on and off for any specified tag whenever you want. Example usage is as follows;
-                </p>
-				<pre><code class="language-java">
+                    <p>
+                        AUTO_SHOW (boolean) : Set true, if you want to show the rewarded video ad as soon as it is
+                        ready.
+                        Otherwise, you need to call show() method manually.
+                    </p>
+                    <pre><code class="language-java">VIDEO.show();</code></pre>
+                    <p>
+                        You can use tag functionality for rewarded video zones. Tags will let you monitor the
+                        performance of the ads across different dimensions for the same zone. You can switch ads on and
+                        off for any specified tag whenever you want. Example usage is as follows;
+                    </p>
+                    <pre><code class="language-java">
 // TAG can be any string value meaningful for you. You don't need to define it on AdMost dashboard before using.
 // Just start using, it will be automatically detected
 VIDEO.show(TAG);
 				</code></pre>
-                <p> You have to call destroy method when you are done with the rewarded video.
-                </p>
-                <pre><code class="language-java">VIDEO.destroy();</code></pre>
+                    <p> You have to call destroy method when you are done with the rewarded video.
+                    </p>
+                    <pre><code class="language-java">VIDEO.destroy();</code></pre>
 
-                <h3 id="offerwalls">Offerwalls</h3>
+                    <h3 id="offerwalls">Offerwalls</h3>
 
-                <pre><code class="language-java">OFFERWALL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
+                    <pre><code class="language-java">OFFERWALL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
         @Override
         public void onReady(String network) {
             // Ad Loaded
@@ -1031,32 +1137,34 @@ VIDEO.show(TAG);
             //Ad Clicked
         }
 });</code></pre>
-				<p>
-                    You can use the following statement to load offerwall ad.
-                </p>
-				<pre><code class="language-java">OFFERWALL.refreshAd(AUTO_SHOW);</code></pre>
+                    <p>
+                        You can use the following statement to load offerwall ad.
+                    </p>
+                    <pre><code class="language-java">OFFERWALL.refreshAd(AUTO_SHOW);</code></pre>
 
-                <p>
-                    AUTO_SHOW (boolean) : Set true, if you want to show the offerwall ad as soon as it is ready.
-                    Otherwise, you need to call show() method manually.
-                </p>
-				<pre><code class="language-java">OFFERWALL.show();</code></pre>
-				<p>
-                    You can use tag functionality for offerwall zones. Tags will let you monitor the performance of the ads across different dimensions for the same zone. You can switch ads on and off for any specified tag whenever you want. Example usage is as follows;
-                </p>
-				<pre><code class="language-java">
+                    <p>
+                        AUTO_SHOW (boolean) : Set true, if you want to show the offerwall ad as soon as it is ready.
+                        Otherwise, you need to call show() method manually.
+                    </p>
+                    <pre><code class="language-java">OFFERWALL.show();</code></pre>
+                    <p>
+                        You can use tag functionality for offerwall zones. Tags will let you monitor the performance of
+                        the ads across different dimensions for the same zone. You can switch ads on and off for any
+                        specified tag whenever you want. Example usage is as follows;
+                    </p>
+                    <pre><code class="language-java">
 // TAG can be any string value meaningful for you. You don't need to define it on AdMost dashboard before using.
 // Just start using, it will be automatically detected
 OFFERWALL.show(TAG);
 				</code></pre>
-                <p> You have to call destroy method when you are done with the offerwall ad.
-                </p>
-                <pre><code class="language-java">OFFERWALL.destroy();</code></pre>
-                <br>
-                <h4 id="spending-virtual-currencies">
-                    Spending Virtual Currencies
-                </h4>
-                <pre><code class="language-java">AdMost.getInstance().spendVirtualCurrency(new AdMostVirtualCurrencyListener() {
+                    <p> You have to call destroy method when you are done with the offerwall ad.
+                    </p>
+                    <pre><code class="language-java">OFFERWALL.destroy();</code></pre>
+                    <br>
+                    <h4 id="spending-virtual-currencies">
+                        Spending Virtual Currencies
+                    </h4>
+                    <pre><code class="language-java">AdMost.getInstance().spendVirtualCurrency(new AdMostVirtualCurrencyListener() {
     @Override
     public void onSuccess(String adNetwork, String currencyName, double value) {
         // User rewarded (This method can be triggered multiple times depends on Offerwall Zone)
@@ -1070,75 +1178,82 @@ OFFERWALL.show(TAG);
                 </code>
     </pre>
 
-                <h2 id="extras">Extras</h2>
+                    <h2 id="extras">Extras</h2>
 
-                <h3 id="dfp">DFP/Admob Mediation Integration</h3>
+                    <h3 id="dfp">DFP/Admob Mediation Integration</h3>
 
-                <p>The Admost DFP Adapter lets publishers integrate Admost Mediation Router ads into applications with DFP
-                    or Admob Mediation set as main ad mediation layer.</p>
+                    <p>The Admost DFP Adapter lets publishers integrate Admost Mediation Router ads into applications
+                        with DFP
+                        or Admob Mediation set as main ad mediation layer.</p>
 
-                <p>In order to show Admost ads in DFP/Admob Mediation you should first follow Setup and init phases of Admost
-                    documentation. Then, you should follow dedicated steps of DFP or
-                    Admob Mediation to set Admost as an ad mediation source.</p>
+                    <p>In order to show Admost ads in DFP/Admob Mediation you should first follow Setup and init phases
+                        of Admost
+                        documentation. Then, you should follow dedicated steps of DFP or
+                        Admob Mediation to set Admost as an ad mediation source.</p>
 
-                <p>After adding Admost as an ad mediation source you should define class names for banner and interstitial
-                    ad custom events. Enter <code>admost.sdk.dfp.AmrDfpCustomEventBanner</code> and
-                    <code>admost.sdk.dfp.AmrDfpCustomEventInt</code> class names for
-                    banner and interstitial class names respectively. You must pass your Admost zone Id to custom event via
-                    Parameter field.</p>
+                    <p>After adding Admost as an ad mediation source you should define class names for banner and
+                        interstitial
+                        ad custom events. Enter <code>admost.sdk.dfp.AmrDfpCustomEventBanner</code> and
+                        <code>admost.sdk.dfp.AmrDfpCustomEventInt</code> class names for
+                        banner and interstitial class names respectively. You must pass your Admost zone Id to custom
+                        event via
+                        Parameter field.</p>
 
-                <img class="img-responsive " src="assets/img/dfp_banner.png" alt="shadowed image">
+                    <img class="img-responsive " src="assets/img/dfp_banner.png" alt="shadowed image">
 
-                <br>
+                    <br>
 
-                <img class="img-responsive " src="assets/img/dfp_interstitial.png" alt="shadowed image">
-
-
-                <p>Now you can show Admost banner and interstitial ads via DFP or Admob Mediation.</p>
-
-                <p>You can check DFP banner and interstitial example in demo project; <a
-                        href="https://github.com/admost/amrandroid/blob/master/sample/AMRSample/app/src/main/java/com/kokteyl/amrunity/DFPIntegrationSampleActivity.java"
-                        target="_blank">DFPIntegration</a>.</p>
+                    <img class="img-responsive " src="assets/img/dfp_interstitial.png" alt="shadowed image">
 
 
-                <h3 id="testsuite">Test Suite</h3>
+                    <p>Now you can show Admost banner and interstitial ads via DFP or Admob Mediation.</p>
 
-                <p>
-                    You can use Test Suite to test your defined ad networks, you have to be a tester to use this function. To be a tester, you should add your GAID to Admost Dashboard Mediation > Manage Testers > New Tester.
-                    Tester activation takes 15 minutes. Use the following code to open test suite activity;
-                </p>
+                    <p>You can check DFP banner and interstitial example in demo project; <a
+                            href="https://github.com/admost/amrandroid/blob/master/sample/AMRSample/app/src/main/java/com/kokteyl/amrunity/DFPIntegrationSampleActivity.java"
+                            target="_blank">DFPIntegration</a>.</p>
 
-                <pre><code class="language-java">
+
+                    <h3 id="testsuite">Test Suite</h3>
+
+                    <p>
+                        You can use Test Suite to test your defined ad networks, you have to be a tester to use this
+                        function. To be a tester, you should add your GAID to Admost Dashboard Mediation > Manage
+                        Testers > New Tester.
+                        Tester activation takes 15 minutes. Use the following code to open test suite activity;
+                    </p>
+
+                    <pre><code class="language-java">
 AdMost.getInstance().startTestSuite();
                 </code></pre>
 
-                <p>
-                    If you set user consent false, then you should add Admost generated id. You can find the id from log by searching 'admost'.<br/>
-                Example log:<br />
-                    /ADMOST: To enable AMR tester mode use this id : &lt;201903210418A57D7ZBJSRTPY&gt; on AMR dashboard Manage Testers page!
-                </p>
+                    <p>
+                        If you set user consent false, then you should add Admost generated id. You can find the id from
+                        log by searching 'admost'.<br />
+                        Example log:<br />
+                        /ADMOST: To enable AMR tester mode use this id : &lt;201903210418A57D7ZBJSRTPY&gt; on AMR
+                        dashboard Manage Testers page!
+                    </p>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="promo left small-icon">
-                            <i class="fa fa-android"></i>
-                            <h3>Screen Shot</h3>
-                            <img class="img-responsive"
-                                 src="assets/img/android_testsuite.png?v=1"
-                                 alt="android-test-suite screenshot">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="promo left small-icon">
+                                <i class="fa fa-android"></i>
+                                <h3>Screen Shot</h3>
+                                <img class="img-responsive" src="assets/img/android_testsuite.png?v=1"
+                                    alt="android-test-suite screenshot">
+                            </div>
+
                         </div>
-
                     </div>
-                </div>
 
 
-                <h3 id="iap">In App Purchase Tracking</h3>
+                    <h3 id="iap">In App Purchase Tracking</h3>
 
-                <p>
-                    The following call is used to track purchases with receipt validation:
-                </p>
+                    <p>
+                        The following call is used to track purchases with receipt validation:
+                    </p>
 
-                <pre><code class="language-java">
+                    <pre><code class="language-java">
 AdMostIAPListener iabListener = new AdMostIAPListener() {
 	//Successful Purchase
 	@Override
@@ -1155,24 +1270,28 @@ AdMostIAPListener iabListener = new AdMostIAPListener() {
 
 String admostIapID = AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail, iabListener, isDebug);
                 </code></pre>
-                <p>Explanation and code samples of parameters:</p>
-                <ul>
-                    <li><b>purchaseData (String)</b> – a String in JSON format that contains details about the purchase order. It
-                        is returned by the operating system after you make the purchase call.
-                    </li>
-                    <li><b>signature (String)</b> – String containing the signature of the purchase data that the developer
-                        signed with their private key. It is returned by the operating system after you make the
-                        purchase call.
-                    </li>
+                    <p>Explanation and code samples of parameters:</p>
+                    <ul>
+                        <li><b>purchaseData (String)</b> – a String in JSON format that contains details about the
+                            purchase order. It
+                            is returned by the operating system after you make the purchase call.
+                        </li>
+                        <li><b>signature (String)</b> – String containing the signature of the purchase data that the
+                            developer
+                            signed with their private key. It is returned by the operating system after you make the
+                            purchase call.
+                        </li>
 
-                    <li><b>jsonSkuDetail (String)</b> – a String in JSON Object format that contains product item details
-                    </li>
-					<li><b>iabListener (AdMostIAPListener)</b> - You can add this callback to be informed about the result of your purchase request. null value is
-                	</li>
-					<li><b>isDebug (boolean)</b> - Set true for test purchases.
-                    </li>
-                </ul>
-				<pre><code class="language-java">
+                        <li><b>jsonSkuDetail (String)</b> – a String in JSON Object format that contains product item
+                            details
+                        </li>
+                        <li><b>iabListener (AdMostIAPListener)</b> - You can add this callback to be informed about the
+                            result of your purchase request. null value is
+                        </li>
+                        <li><b>isDebug (boolean)</b> - Set true for test purchases.
+                        </li>
+                    </ul>
+                    <pre><code class="language-java">
 //Handles an activity result that's part of the purchase flow in in-app billing
 void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -1203,24 +1322,36 @@ ArrayList<String> responseList = skuDetails.getStringArrayList(RESPONSE_GET_SKU_
                         </code></pre>
 
                     <p>For further information;</p>
-                        <p><a href="https://developer.android.com/google/play/billing/billing_reference.html#getSkuDetails">https://developer.android.com/google/play/billing/billing_reference.html#getSkuDetails</a></p>
+                    <p><a
+                            href="https://developer.android.com/google/play/billing/billing_reference.html#getSkuDetails">https://developer.android.com/google/play/billing/billing_reference.html#getSkuDetails</a>
+                    </p>
 
 
-                <div class="callout callout-danger" role="alert">
-                    <p>After your integration complete, enter your app's public key on Admost Mediation dashboard. (Mediation > My Apps > Edit App) </p>
-                    <p> To find the public key portion of this key pair, open your application's details in the <var>Play Console</var>, click <b>Services & APIs</b>, and review the field titled <b>Your License Key for This Application</b>. </p>
-                    <p> For detailed information follow this <a target="_blank" href="https://developer.android.com/google/play/billing/billing_integrate.html#billing-security">link</a>.</p>
-                </div>
+                    <div class="callout callout-danger" role="alert">
+                        <p>After your integration complete, enter your app's public key on Admost Mediation dashboard.
+                            (Mediation > My Apps > Edit App) </p>
+                        <p> To find the public key portion of this key pair, open your application's details in the
+                            <var>Play Console</var>, click <b>Services & APIs</b>, and review the field titled <b>Your
+                                License Key for This Application</b>. </p>
+                        <p> For detailed information follow this <a target="_blank"
+                                href="https://developer.android.com/google/play/billing/billing_integrate.html#billing-security">link</a>.
+                        </p>
+                    </div>
 
-				<p>On <span style="color: #FF0000">subscription tracking</span>, there is no difference in terms of client integration. However, for inquiry of application's periodic earnings, you have to create a service account on your Google api console project which is linked to your application and give financial data permission to this account on your google play developer console. While creating service account, you have to choose JSON as key type and send this JSON file to AdMost account manager.</p>
+                    <p>On <span style="color: #FF0000">subscription tracking</span>, there is no difference in terms of
+                        client integration. However, for inquiry of application's periodic earnings, you have to create
+                        a service account on your Google api console project which is linked to your application and
+                        give financial data permission to this account on your google play developer console. While
+                        creating service account, you have to choose JSON as key type and send this JSON file to AdMost
+                        account manager.</p>
 
-				<h3 id="amazoniap">Amazon Store In App Purchase Tracking</h3>
+                    <h3 id="amazoniap">Amazon Store In App Purchase Tracking</h3>
 
-                <p>
-                    The following call is used to track amazon purchases with receipt validation:
-                </p>
+                    <p>
+                        The following call is used to track amazon purchases with receipt validation:
+                    </p>
 
-                <pre><code class="language-java">
+                    <pre><code class="language-java">
 AdMostIAPListener iabListener = new AdMostIAPListener() {
 	//Successful Purchase
 	@Override
@@ -1237,85 +1368,99 @@ AdMostIAPListener iabListener = new AdMostIAPListener() {
 
 String admostIapID = AdMost.getInstance().trackPurchaseAmazon(receiptJSON, purchaseResponseJSON, productJSON, iabListener, isDebug);
                 </code></pre>
-                <p>Explanation and code samples of parameters:</p>
-                <ul>
-                    <li><b>receiptJSON (JSONObject)</b> – a JSON object. Retrieve that value from com.amazon.device.iap.model.PurchaseResponse OR com.amazon.device.iap.model.PurchaseUpdatesResponse like this:<br>
-					<ul>
-					<li>
-					purchaseResponse.getReceipt().toJSON()
-					</li>
-					<li>
-					purchaseUpdatesResponse.getReceipts().get(indexOfRelatedReceipt).toJSON()
-					</li>
-					</ul>
-                    </li>
-                    <li><b>purchaseResponseJSON (JSONObject)</b> – a JSON object. Retrieve that value from com.amazon.device.iap.model.PurchaseResponse OR com.amazon.device.iap.model.PurchaseUpdatesResponse object like this:<br>
-					<ul>
-					<li>
-					purchaseResponse.toJSON()
-					</li>
-					<li>
-					purchaseUpdatesResponse.toJSON()
-					</li>
-					</ul>
-                    </li>
+                    <p>Explanation and code samples of parameters:</p>
+                    <ul>
+                        <li><b>receiptJSON (JSONObject)</b> – a JSON object. Retrieve that value from
+                            com.amazon.device.iap.model.PurchaseResponse OR
+                            com.amazon.device.iap.model.PurchaseUpdatesResponse like this:<br>
+                            <ul>
+                                <li>
+                                    purchaseResponse.getReceipt().toJSON()
+                                </li>
+                                <li>
+                                    purchaseUpdatesResponse.getReceipts().get(indexOfRelatedReceipt).toJSON()
+                                </li>
+                            </ul>
+                        </li>
+                        <li><b>purchaseResponseJSON (JSONObject)</b> – a JSON object. Retrieve that value from
+                            com.amazon.device.iap.model.PurchaseResponse OR
+                            com.amazon.device.iap.model.PurchaseUpdatesResponse object like this:<br>
+                            <ul>
+                                <li>
+                                    purchaseResponse.toJSON()
+                                </li>
+                                <li>
+                                    purchaseUpdatesResponse.toJSON()
+                                </li>
+                            </ul>
+                        </li>
 
-                    <li><b>productJSON (JSONObject)</b> – a JSON object. Retrieve that value from com.amazon.device.iap.model.Product object like this:<br>
-					<ul>
-					<li>
-					product.toJSON()
-					</li>
-					</ul>
-                    </li>
-					<li><b>iabCallback (AdMostIAPCallback)</b> - You can add this callback to be informed about the result of your purchase request. null value is
-                	</li>
-					<li><b>isDebug (boolean)</b> - Set true for test purchases.
-                    </li>
-                </ul>
+                        <li><b>productJSON (JSONObject)</b> – a JSON object. Retrieve that value from
+                            com.amazon.device.iap.model.Product object like this:<br>
+                            <ul>
+                                <li>
+                                    product.toJSON()
+                                </li>
+                            </ul>
+                        </li>
+                        <li><b>iabCallback (AdMostIAPCallback)</b> - You can add this callback to be informed about the
+                            result of your purchase request. null value is
+                        </li>
+                        <li><b>isDebug (boolean)</b> - Set true for test purchases.
+                        </li>
+                    </ul>
 
 
-				<h3 id="senduserid">Setting Application User Id</h3>
+                    <h3 id="senduserid">Setting Application User Id</h3>
 
-                <p>
-                    You can use the following method to set application specific user id in Admost Analytics for enhanced tracking of your users. This information is also required for server to server callbacks. It is added to the callback URL to distinguish rewarded user.
-                </p>
+                    <p>
+                        You can use the following method to set application specific user id in Admost Analytics for
+                        enhanced tracking of your users. This information is also required for server to server
+                        callbacks. It is added to the callback URL to distinguish rewarded user.
+                    </p>
 
-				<pre><code class="language-java">
+                    <pre><code class="language-java">
 AdMost.getInstance().setUserId("APPLICATION_USER_ID");
 
                 </code></pre>
 
-				<h3 id="sendadjustuserid">Setting Adjust User Id</h3>
+                    <h3 id="sendadjustuserid">Setting Adjust User Id</h3>
 
-                <p>
-                    You can use the following method to set adjust user id in Admost Analytics for enhanced tracking of your users.
-                </p>
+                    <p>
+                        You can use the following method to set adjust user id in Admost Analytics for enhanced tracking
+                        of your users.
+                    </p>
 
-				<pre><code class="language-java">
+                    <pre><code class="language-java">
 AdMost.getInstance().setAdjustUserId("ADJUST_USER_ID");
 
                 </code></pre>
-				<h3 id="sscallbacks">Server to Server Callbacks</h3>
+                    <h3 id="sscallbacks">Server to Server Callbacks</h3>
 
-                <p>
-                    For rewarded video ads, you can use Server to Server Callbacks for rewarding users after successful completion of video ads. Please consult your business contact person for enabling it and setting required parameters like callback URL, request verification token and method.
-					<br>
-					To use this feature, only requirement on application side is setting your application user id as described <a href="#senduserid">here</a>. You may also add new custom parameters to the callback URL by setting custom data to the rewarded video object(AdMostInterstitial) as shown in the sample code below. This method has to be called before showing ad.
-                </p>
+                    <p>
+                        For rewarded video ads, you can use Server to Server Callbacks for rewarding users after
+                        successful completion of video ads. Please consult your business contact person for enabling it
+                        and setting required parameters like callback URL, request verification token and method.
+                        <br>
+                        To use this feature, only requirement on application side is setting your application user id as
+                        described <a href="#senduserid">here</a>. You may also add new custom parameters to the callback
+                        URL by setting custom data to the rewarded video object(AdMostInterstitial) as shown in the
+                        sample code below. This method has to be called before showing ad.
+                    </p>
 
-				<pre><code class="language-java">
+                    <pre><code class="language-java">
 Hashtable<String,Object> customData = new Hashtable<>();
 customData.put("os", Build.VERSION.SDK_INT);
 customData.put("ip", "172.12.1.23");
 REWARDED.setSSVCustomData(customData);
                 </code></pre>
-				<h3 id="gdprcheck">GDPR Applicable Check</h3>
+                    <h3 id="gdprcheck">GDPR Applicable Check</h3>
 
-                <p>
-                    You can use the following method to check if the user is in a country which is subject to GDPR.
-                </p>
+                    <p>
+                        You can use the following method to check if the user is in a country which is subject to GDPR.
+                    </p>
 
-				<pre><code class="language-java">
+                    <pre><code class="language-java">
 AdMost.getInstance().setGDPRListener(this, new AdMost.GDPRListener() {
 	@Override
 	public void isGDPRApplicable(boolean isGDPRApplicable) {
@@ -1323,14 +1468,17 @@ AdMost.getInstance().setGDPRListener(this, new AdMost.GDPRListener() {
 	}
 });
                 </code></pre>
-				<div style="display:none">
-				<h3 id="campaigntracking">Campaign Tracking</h3>
+                    <div style="display:none">
+                        <h3 id="campaigntracking">Campaign Tracking</h3>
 
-                <p>
-                    For tracking an ad campaign's performance, it is recommended to add Admost install referrer receiver into application tag of your AndroidManifest.xml for better tracking. If you are using other receiver libraries in your application like Google Analytics campaign tracking receiver, you can use the <b>admost.install.referrer.[1-5]</b> meta-data like below.
-                </p>
+                        <p>
+                            For tracking an ad campaign's performance, it is recommended to add Admost install referrer
+                            receiver into application tag of your AndroidManifest.xml for better tracking. If you are
+                            using other receiver libraries in your application like Google Analytics campaign tracking
+                            receiver, you can use the <b>admost.install.referrer.[1-5]</b> meta-data like below.
+                        </p>
 
-				<pre><code class="language-xml">
+                        <pre><code class="language-xml">
 &lt;manifest&gt;
 	&lt;application&gt;
 		&lt;receiver
@@ -1346,69 +1494,73 @@ AdMost.getInstance().setGDPRListener(this, new AdMost.GDPRListener() {
 
                 </code></pre>
 
-				<p>
-                    The Install Referrer API is exposed by the Google Play Store app on a device. Devices with a Google Play app version of 8.3.73 or later automatically have access to the API. Admost is using this functionality if available for better tracking. It is required to add the following dependency to your app gradle to enable this functionality.
-                </p>
+                        <p>
+                            The Install Referrer API is exposed by the Google Play Store app on a device. Devices with a
+                            Google Play app version of 8.3.73 or later automatically have access to the API. Admost is
+                            using this functionality if available for better tracking. It is required to add the
+                            following dependency to your app gradle to enable this functionality.
+                        </p>
 
-				<pre><code class="language-gradle">
+                        <pre><code class="language-gradle">
 dependencies {
     implementation 'com.android.installreferrer:installreferrer:1.0'
 }
                 </code></pre>
-				</div>
-            </section>
+                    </div>
+                </section>
 
 
 
 
-        </article>
-        <!-- END Main content -->
-    </div>
-</main>
+            </article>
+            <!-- END Main content -->
+        </div>
+    </main>
 
 
-<!-- Footer -->
-<footer class="site-footer">
-    <div class="container">
-        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
 
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <p>Copyright &copy; 2017. All right reserved</p>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <ul class="footer-menu">
-                    <li><a href="http://admost.github.io/amrios">iOS Integration</a></li>
-                    <li><a href="http://admost.github.io/amrunity">Unity Integration</a></li>
-                    <li><a href="mailto:android@kokteyl.com">Contact us</a></li>
-                </ul>
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <p>Copyright &copy; 2017. All right reserved</p>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <ul class="footer-menu">
+                        <li><a href="http://admost.github.io/amrios">iOS Integration</a></li>
+                        <li><a href="http://admost.github.io/amrunity">Unity Integration</a></li>
+                        <li><a href="mailto:android@kokteyl.com">Contact us</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-<!-- END Footer -->
+    </footer>
+    <!-- END Footer -->
 
-<!-- Scripts -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script>
-    window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
-</script>
-<script>function copyToClipboard(element) {
-    var $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val($(element).text()).select();
-    document.execCommand("copy");
-    $temp.remove();
-}
-</script>
+    <!-- Scripts -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script>
+        window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
+    </script>
+    <script>function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+        }
+    </script>
 
 
-<script>
-var data = getAndroidNetworks();
-amrInitPage(data);
-</script>
-<script src="assets/js/theDocs.all.min.js"></script>
-<script src="assets/js/custom.js"></script>
+    <script>
+        var data = getAndroidNetworks();
+        amrInitPage(data);
+    </script>
+    <script src="assets/js/theDocs.all.min.js"></script>
+    <script src="assets/js/custom.js"></script>
 
 </body>
+
 </html>

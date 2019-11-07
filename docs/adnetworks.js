@@ -26,6 +26,7 @@ function toggleAdNetworkStatus(adNetworkName) {
 function addAdNetworkToCart(i) {
     obj.ad_networks[i].status = true;
     fillAdNetworkList(obj);
+    fillWarningSections(obj.ad_networks[i]);
     //fillAdNetworkCart(obj);
     fillFileList();
     fillProjectGradleCode();
@@ -37,6 +38,7 @@ function addAdNetworkToCart(i) {
 function removeAdNetworkFromCart(i) {
     obj.ad_networks[i].status = false;
     fillAdNetworkList(obj);
+    fillWarningSections(obj.ad_networks[i]);
     //fillAdNetworkCart(obj);
     fillFileList();
     fillProjectGradleCode();
@@ -44,6 +46,28 @@ function removeAdNetworkFromCart(i) {
     fillAndroidManifestCode();
     fillInitMethods();
 
+}
+
+function fillWarningSections(network) {
+    if (network.name == "AdGem") {
+        if(network.status == true) {
+            $("#adgem_warning").css("display", "block");
+        }else {
+            $("#adgem_warning").css("display", "none");
+        }
+    } else if (network.name == "Nend") {
+        if(network.status == true) {
+            $("#nend_warning").css("display", "block");
+        }else {
+            $("#nend_warning").css("display", "none");
+        }
+    } else if (network.name == "Appsamurai") {
+        if(network.status == true) {
+            $("#appsamurai_warning").css("display", "block");
+        }else {
+            $("#appsamurai_warning").css("display", "none");
+        }
+    }
 }
 
 function getPositionOfAdNetworkOnJSONArray(adNetworkName) {

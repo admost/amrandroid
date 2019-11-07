@@ -23,6 +23,10 @@
 -keepclassmembers class * { @android.webkit.JavascriptInterface <methods>; }
 -keepclassmembers class com.adcolony.sdk.ADCNative** { *; }
 
+# ADGEM
+-keep class com.adgem.** { *; }
+-dontwarn com.adgem.**
+
 # ADMOB / ADX / GOOGLE
 -keep class com.android.vending.billing.**
 -keep public class com.google.android.gms.ads.** { public *; }
@@ -123,6 +127,10 @@ public static <fields>;
 -keepnames @com.google.android.gms.common.annotation.KeepName class *
 -keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
 -keepnames class * implements android.os.Parcelable { public static final ** CREATOR; }
+
+# FREECORP
+-keep class com.fly.** { *; }
+-dontwarn com.fly.**
 
 # FYBER
 -keep class com.fyber.** { *; }

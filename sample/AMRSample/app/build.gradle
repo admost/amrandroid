@@ -8,7 +8,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 28
         versionCode 104
-        versionName "1.8.0"
+        versionName "1.9.9"
         multiDexEnabled true
     }
     buildTypes {
@@ -50,18 +50,18 @@ dependencies {
 
     ///// BASE REQUIRED LIBRARIES FOR ADMOST ////////////////
     implementation 'com.android.volley:volley:1.1.1'
-    implementation 'com.admost.sdk:amr:1.9.7'
-    implementation 'com.admost.sdk:admost:0.0.3.a11'
+    implementation 'com.admost.sdk:amr:1.9.9'
+    implementation 'com.admost.sdk:admost:0.0.3.a13'
     implementation 'com.google.android.gms:play-services-base:15.0.1'
     implementation 'com.google.android.gms:play-services-ads:15.0.1' // Most Ad-Networks require it.
 
     ///// SOME AD NETWORK SDKS (PLEASE CHECK THE ADAPTER VERSIONS) ///////
     // Docs: https://admost.github.io/amrandroid/ Please select some Ad-networks from this link. Each Ad-network may require additional code or library.
-    implementation 'com.admost.sdk:adcolony:3.3.11.a12'
-    implementation 'com.admost.sdk:applovin:9.8.4.a12'
-    implementation 'com.admost.sdk:chartboost:7.5.0.a12'
-    implementation 'com.admost.sdk:ironsource:6.9.1.a12'
-    implementation 'com.admost.sdk:unity:3.2.0.a12'
+    implementation 'com.admost.sdk:adcolony:4.1.0.a13' 
+    implementation 'com.admost.sdk:applovin:9.9.2.a13' 
+    implementation 'com.admost.sdk:chartboost:7.5.0.a13' 
+    implementation 'com.admost.sdk:ironsource:6.10.1.a13' 
+    implementation 'com.admost.sdk:unity:3.3.0.a13'
 
     // Optional libraries
     //implementation 'com.google.android.gms:play-services-location:15.0.1'
