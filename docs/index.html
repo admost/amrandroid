@@ -715,6 +715,12 @@ public static &lt;fields&gt;;
 -dontwarn outbid.com.outbidsdk.**
 -keep class outbid.com.outbidsdk.** { *; }
 
+# QUMPARA
+-dontwarn com.qumpara.analytics.**
+-keep class com.qumpara.analytics.** { *; }
+-dontwarn com.qumpara.offerwall.sdk.**
+-keep class com.qumpara.offerwall.sdk.** { *; }
+
 # PUBNATIVE
 -keepattributes Signature
 -keep class net.pubnative.** { *; }
@@ -825,6 +831,12 @@ public static &lt;fields&gt;;
 -keepclassmembers class * {
    @android.webkit.JavascriptInterface &lt;methods&gt;;
 }
+
+# VERIZON
+-keepclassmembers class com.verizon.ads** {
+public *;
+}
+-keep class com.verizon.ads**
 </code>
           </pre>
 

@@ -256,6 +256,12 @@ public static <fields>;
 -keep class com.squareup.picasso.** { *; }
 -dontwarn com.squareup.picasso.**
 
+# QUMPARA
+-dontwarn com.qumpara.analytics.**
+-keep class com.qumpara.analytics.** { *; }
+-dontwarn com.qumpara.offerwall.sdk.**
+-keep class com.qumpara.offerwall.sdk.** { *; }
+
 # REVMOB
 -dontwarn rm.com.android.sdk.**
 -keep class rm.com.android.sdk.** { public *; }
@@ -359,3 +365,9 @@ public static <fields>;
 -keepclassmembers class * {
    @android.webkit.JavascriptInterface <methods>;
 }
+
+# VERIZON
+-keepclassmembers class com.verizon.ads** {
+public *;
+}
+-keep class com.verizon.ads**
