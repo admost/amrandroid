@@ -203,7 +203,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:criteo:1.6.2.a13"
+                    "package":"com.admost.sdk:criteo:3.2.1.a13"
                  }
               ]
            }
@@ -487,7 +487,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:ogury:3.2.3.a13"
+                    "package":"com.admost.sdk:ogury:4.3.5.a13"
                  }
               ]
            }
