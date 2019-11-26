@@ -528,6 +528,17 @@ function getAndroidNetworks() {
            }
         },
         {
+         "name":"Qumpara",
+         "status":false,
+         "app_gradle":{
+            "dependencies":[
+               {
+                  "package":"com.admost.sdk:qumpara:0.2.7.a14"
+               }
+            ]
+         }
+        },
+        {
            "name":"Revmob",
            "status":false,
            "app_gradle":{
