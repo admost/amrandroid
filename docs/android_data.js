@@ -16,7 +16,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:admost:0.0.3.a14"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-base:15.0.1"
+                    "package":"com.google.android.gms:play-services-base:16.1.0"
                  }
               ],
               "dependencies_unity":[
@@ -33,7 +33,7 @@ function getAndroidNetworks() {
                    "package":"com.admost.sdk:unity-plugin:1.7.3"
                 },
                 {
-                   "package":"com.google.android.gms:play-services-ads-identifier:15.0.1"
+                   "package":"com.google.android.gms:play-services-ads-identifier:16.0.0"
                 }
               ]
 
@@ -66,7 +66,7 @@ function getAndroidNetworks() {
                   "package":"com.adgem:adgem-android:1.6.0"
                },
                {
-                  "package":"com.admost.sdk:adgem-adapter:1.6.0"
+                  "package":"com.admost.sdk:adgem-adapter:1.6.0.a14"
                }
             ]
          }
@@ -77,7 +77,10 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.google.android.gms:play-services-ads:15.0.1"
+                    "package":"com.google.android.gms:play-services-ads:17.2.1"
+                 }, 
+                 {
+                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.0.a14" 
                  }
               ]
            }
@@ -143,10 +146,10 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:appnext-adapter:2.4.8.472.a14"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-location:15.0.1"
+                    "package":"com.google.android.gms:play-services-location:16.0.0"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-basement:15.0.1"
+                    "package":"com.google.android.gms:play-services-basement:16.2.0"
                  }
               ]
            },
@@ -191,7 +194,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:chartboost:7.5.0.a14"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-ads:15.0.1"
+                    "package":"com.google.android.gms:play-services-ads:17.2.1"
                  }
 
               ]
@@ -331,10 +334,10 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:inneractive-video:7.3.1.a14"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-ads:15.0.1"
+                    "package":"com.google.android.gms:play-services-ads:17.2.1"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-base:15.0.1"
+                    "package":"com.google.android.gms:play-services-base:16.1.0"
                  },
                  {
                     "package":"com.google.code.gson:gson:2.7",
