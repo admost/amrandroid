@@ -30,7 +30,7 @@ function getAndroidNetworks() {
                    "package":"android.arch.lifecycle:common:1.1.0"
                 },
                 {
-                   "package":"com.admost.sdk:unity-plugin:1.7.2"
+                   "package":"com.admost.sdk:unity-plugin:1.7.3"
                 },
                 {
                    "package":"com.google.android.gms:play-services-ads-identifier:15.0.1"
