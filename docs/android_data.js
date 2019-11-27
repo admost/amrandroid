@@ -385,10 +385,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:mobfox-adapter:3.6.9.a14"
-                 },
-                 {
-                    "package":"com.github.mobfox:mobfox-android-sdk:v3.6.9"
+                    "package":"com.admost.sdk:mobfox:4.0.9.a14"
                  }
               ]
            },
