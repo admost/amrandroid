@@ -530,7 +530,7 @@ function getAndroidNetworks() {
          "app_gradle":{
             "dependencies":[
                {
-                  "package":"com.admost.sdk:qumpara:0.2.7.a14"
+                  "package":"com.admost.sdk:qumpara:0.3.2.a14"
                }
             ]
          }
