@@ -47,6 +47,9 @@
             android:name=".RecyclerViewSampleActivity" />
 
         <activity
+            android:name=".RecyclerViewMultipleAdsActivity" />
+
+        <activity
             android:name=".DFPIntegrationSampleActivity" />
 
 

@@ -22,7 +22,6 @@ import admost.sdk.AdMostView;
 import admost.sdk.AdMostViewBinder;
 import admost.sdk.base.AdMost;
 import admost.sdk.base.AdMostConfiguration;
-import admost.sdk.base.AdMostLog;
 import admost.sdk.listener.AdMostAdListener;
 import admost.sdk.listener.AdMostInitListener;
 import admost.sdk.listener.AdMostViewListener;
@@ -307,6 +306,13 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RecyclerViewSampleActivity.class);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.multiple_recyclerview).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecyclerViewMultipleAdsActivity.class);
                 startActivity(intent);
             }
         });

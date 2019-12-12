@@ -125,6 +125,14 @@
                         android:text="RecyclerView Sample" />
 
                     <Button
+                        android:id="@+id/multiple_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textSize="13sp"
+                        android:text="RecyclerView Multiple Ads" />
+
+                    <Button
                         android:id="@+id/dfp_integration"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

@@ -50,8 +50,8 @@ dependencies {
 
     ///// BASE REQUIRED LIBRARIES FOR ADMOST ////////////////
     implementation 'com.android.volley:volley:1.1.1'
-    implementation 'com.admost.sdk:amr:2.0.0'
-    implementation 'com.admost.sdk:admost:0.0.3.a14'
+    implementation 'com.admost.sdk:amr:2.0.3'
+    implementation 'com.admost.sdk:admost:0.0.4.a14'
     implementation 'com.google.android.gms:play-services-base:16.1.0'
 
 
