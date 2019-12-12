@@ -24,7 +24,12 @@ import admost.sdk.listener.AdMostViewListener;
 /*This is an extended implementation for recyclerView to show multiple items in list*/
 public class RecyclerViewMultipleAdsActivity extends Activity {
 
-    private List mList = new ArrayList<>();
+    private static final int MAX_AD_LOAD = 3;
+    private static final int DISTANCE_BETWEEN_TWO_ADS = 5;
+
+    private List allItems = new ArrayList<>();
+
+
     private MoviesAdapter mAdapter;
 
     @Override
@@ -34,7 +39,7 @@ public class RecyclerViewMultipleAdsActivity extends Activity {
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
 
-        mAdapter = new MoviesAdapter(mList);
+        mAdapter = new MoviesAdapter(allItems);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(mAdapter);
@@ -46,6 +51,35 @@ public class RecyclerViewMultipleAdsActivity extends Activity {
     public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private List rvList;
+        private int totalAdCount;
+        private ArrayList<AdMostView> preparedAds = new ArrayList<AdMostView>();
+
+        public ArrayList<AdMostView> getPreparedAds() {
+            return preparedAds;
+        }
+
+
+        public int getTotalAdCount() {
+            return totalAdCount;
+        }
+
+
+        public void incrementAdCount() {
+            this.totalAdCount++;
+        }
+
+        public void clearData() {
+            if(preparedAds == null)
+                return;
+            for(int i =0; i < preparedAds.size(); i++) {
+                AdMostView admostAd = preparedAds.get(i);
+                if(admostAd == null)
+                    continue;
+                admostAd.destroy();
+            }
+            preparedAds.clear();
+        }
+
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
             public TextView title, year, genre;
@@ -123,7 +157,7 @@ public class RecyclerViewMultipleAdsActivity extends Activity {
         @Override
         public int getItemViewType(int position) {
             int viewType;
-            Object obj = mList.get(position);
+            Object obj = allItems.get(position);
             if (obj instanceof AdMostView) {
                 viewType = 1;
             } else {
@@ -136,11 +170,13 @@ public class RecyclerViewMultipleAdsActivity extends Activity {
     private void prepareMovieData() {
 
         for (int i = 0; i < 100; i++) {
-            Movie movie = new Movie("Test Movie " + i, "Action & Adventure", "2015");
-            mList.add(movie);
-            if(i % 4 == 0 && i <= 12) {
-                mList.add(prepareAd());
+            if(i % DISTANCE_BETWEEN_TWO_ADS == 0) {
+                AdMostView ad = prepareAd();
+                allItems.add(ad);
             }
+
+            Movie movie = new Movie("Test Movie " + i, "Action & Adventure", "2015");
+            allItems.add(movie);
         }
 
 
@@ -148,47 +184,61 @@ public class RecyclerViewMultipleAdsActivity extends Activity {
     }
 
     private AdMostView prepareAd() {
-        final AdMostViewBinder customBinder = new AdMostViewBinder.Builder(R.layout.custom_layout_native_250)
-                .iconImageId(R.id.ad_app_icon)
-                .titleId(R.id.ad_headline)
-                .callToActionId(R.id.ad_call_to_action)
-                .textId(R.id.ad_body)
-                .attributionId(R.id.ad_attribution)
-                .mainImageId(R.id.ad_image)
-                .backImageId(R.id.ad_back)
-                .privacyIconId(R.id.ad_privacy_icon)
-                .isRoundedMode(true)
-                .build();
+        Log.i(Statics.TAG ,"prepareAd() called");
+        AdMostView admostAd;
+        if(mAdapter.getTotalAdCount() < MAX_AD_LOAD) {
 
-        AdMostView ad = new AdMostView(this, Statics.BANNER_ZONE, AdMostManager.getInstance().AD_BANNER, new AdMostViewListener() {
+            final AdMostViewBinder customBinder = new AdMostViewBinder.Builder(R.layout.custom_layout_native_50)
+                    .iconImageId(R.id.ad_app_icon)
+                    .titleId(R.id.ad_headline)
+                    .callToActionId(R.id.ad_call_to_action)
+                    .textId(R.id.ad_body)
+                    .attributionId(R.id.ad_attribution)
+                    .mainImageId(R.id.ad_image)
+                    .backImageId(R.id.ad_back)
+                    .privacyIconId(R.id.ad_privacy_icon)
+                    .isRoundedMode(true)
+                    .build();
+            Log.i(Statics.TAG ,"created a new ad object");
+            admostAd = new AdMostView(this, Statics.BANNER_ZONE, AdMostManager.getInstance().AD_BANNER, new AdMostViewListener() {
 
-            @Override
-            public void onReady(String s, int ecpm, View view) {
-            }
+                @Override
+                public void onReady(String s, int ecpm, View view) {
+                    Log.i(Statics.TAG ,"item load success");
+                }
 
-            @Override
-            public void onFail(int i) {
-            }
+                @Override
+                public void onFail(int i) {
+                    Log.i(Statics.TAG ,"item load failed");
+                }
 
-            @Override
-            public void onClick(String network) {
+                @Override
+                public void onClick(String network) {
 
-            }
-        }, customBinder);
-
-        return ad;
+                }
+            }, customBinder);
+            mAdapter.getPreparedAds().add(admostAd);
+        }else {
+            Log.i(Statics.TAG ,"returned a pre-created ad: " + (mAdapter.getTotalAdCount() % MAX_AD_LOAD));
+            admostAd = mAdapter.getPreparedAds().get(mAdapter.getTotalAdCount() % MAX_AD_LOAD);
+        }
+        mAdapter.incrementAdCount();
+        return admostAd;
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mList != null) {
-            for (int i = 0; i < mList.size(); i++) {
-                if (mList.get(i) instanceof AdMostView) {
-                    ((AdMostView) mList.get(i)).destroy();
+        if (allItems != null) {
+            for (int i = 0; i < allItems.size(); i++) {
+                if (allItems.get(i) instanceof AdMostView) {
+                    ((AdMostView) allItems.get(i)).destroy();
                 }
             }
-            mList.clear();
+            allItems.clear();
+        }
+        if(mAdapter != null) {
+            mAdapter.clearData();
         }
     }
 }
