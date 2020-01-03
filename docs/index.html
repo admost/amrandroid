@@ -866,6 +866,7 @@ configuration.setUserConsent(true);
 <p>According to <a href="https://support.google.com/googleplay/android-developer/answer/9285070" target="_blank">Google Play Services policy</a>, if your app's target age group include children under the age of 18, ads shown to children must be served from a <a href="https://support.google.com/googleplay/android-developer/answer/9283445" rel="noopener" target="_blank">Google Play certified ad network</a>. A neutral age screen must be implemented so that any ads not suitable for children are only shown to older audiences.</p>
 <p>For this purpose, we added the following configuration parameter and it is needed to be set for the users considered as children.</>
 <pre><code class="language-java">
+// User this code only for children
 configuration.setUserChild(true);
 </code></pre>
 
