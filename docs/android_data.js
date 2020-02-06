@@ -220,7 +220,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:criteo:3.2.1.a15"
+                    "package":"com.admost.sdk:criteo:3.3.0.a15"
                  }
               ]
            }
@@ -588,7 +588,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:tapjoy:12.4.1.a15"
+                    "package":"com.admost.sdk:tapjoy:12.4.2.a15"
                  }
               ]
            }
