@@ -621,7 +621,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:unity:3.4.0.a15"
+                    "package":"com.admost.sdk:unity:3.4.0.1.a15"
                  }
               ]
            }
