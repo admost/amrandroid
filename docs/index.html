@@ -145,7 +145,7 @@
 
                     <li><a href="#extras">Extras</a>
                         <ul>
-                            <li><a href="#dfp">DFP/Admob Mediation Integration</a></li>
+                            <li><a href="#dfp">Google AdManager Integration</a></li>
                             <li><a href="#testsuite">Test Suite</a></li>
                             <li><a href="#iap">In App Purchase Tracking</a></li>
                             <li><a href="#amazoniap">Amazon Store In App Purchase Tracking</a></li>
@@ -1206,37 +1206,45 @@ OFFERWALL.show(TAG);
 
                     <h2 id="extras">Extras</h2>
 
-                    <h3 id="dfp">DFP/Admob Mediation Integration</h3>
+                    <h3 id="dfp">Google AdManager Integration</h3>
 
-                    <p>The Admost DFP Adapter lets publishers integrate Admost Mediation Router ads into applications
-                        with DFP
-                        or Admob Mediation set as main ad mediation layer.</p>
+                    <p>The Admost AdManager Adapters lets publishers to integrate Admost ads into applications with minimum development effort. In order to show Admost ads through AdManager, you should only follow setup and init phases of this documentation. You don't need to implement usage section of this documentation. The rest of the integration is about defining Admost adapters and zone id's for all ad types in AdManager dashboard.</p>
+					
+					<h4>AdManager Dashboard</h4>
+                    <p>You sould follow the following steps to target an AdManager ad unit with AdMost ad.
+					<p>
+					1. Create a new Yield Group for the ad format you want and target your ad unit<br>
+					2. Add Yield partner for the created yield group<br>
+					3. Fill the class names and parameter values of Yield partner details with the following values<br>
+					</p>
+					<h5>Class Name</h5>
+					<p>
+					Banner : <code>admost.sdk.dfp.AmrDfpCustomEventBanner</code>
+					</p>
+					<p>
+					Interstitial : <code>admost.sdk.dfp.AmrDfpCustomEventInt</code> 
+					</p>
+					<p>
+					Rewarded : <code>admost.sdk.dfp.AmrDfpCustomEventRewarded</code>  
+					</p>
+					<p><h5>Parameter</h5></p>
+					<p>
+					Zone Id of related zone created on AdMost Dashboard
+					</p>
+					<br>
 
-                    <p>In order to show Admost ads in DFP/Admob Mediation you should first follow Setup and init phases
-                        of Admost
-                        documentation. Then, you should follow dedicated steps of DFP or
-                        Admob Mediation to set Admost as an ad mediation source.</p>
-
-                    <p>After adding Admost as an ad mediation source you should define class names for banner and
-                        interstitial
-                        ad custom events. Enter <code>admost.sdk.dfp.AmrDfpCustomEventBanner</code> and
-                        <code>admost.sdk.dfp.AmrDfpCustomEventInt</code> class names for
-                        banner and interstitial class names respectively. You must pass your Admost zone Id to custom
-                        event via
-                        Parameter field.</p>
-
-                    <img class="img-responsive " src="assets/img/dfp_banner.png" alt="shadowed image">
-
+					<p><b>Yield GROUP</b></p>
+                    <img class="img-responsive " src="assets/img/YieldGroup.png" alt="shadowed image" >
                     <br>
+					<p><b>Yield PARTNER</b></p>
+                    <img class="img-responsive " src="assets/img/YieldPartner.png" alt="shadowed image" width="300px">
 
-                    <img class="img-responsive " src="assets/img/dfp_interstitial.png" alt="shadowed image">
 
+                    <p>Now you can show Admost banner, interstitial and rewarded ads through Google AdManager.</p>
 
-                    <p>Now you can show Admost banner and interstitial ads via DFP or Admob Mediation.</p>
-
-                    <p>You can check DFP banner and interstitial example in demo project; <a
+                    <p>You can check AdManager banner and interstitial example in demo project; <a
                             href="https://github.com/admost/amrandroid/blob/master/sample/AMRSample/app/src/main/java/com/kokteyl/amrunity/DFPIntegrationSampleActivity.java"
-                            target="_blank">DFPIntegration</a>.</p>
+                            target="_blank">AdManagerIntegration</a>.</p>
 
 
                     <h3 id="testsuite">Test Suite</h3>
