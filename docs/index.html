@@ -447,6 +447,25 @@ android:resource="@xml/adgem_config"/&gt;
                                 </p>
                         </div>
                     </div>
+                    <div class="row" id="kidoz_warning" style="display: none;">
+                        <div class="col-md-11">
+                                <h4>Kidoz Ad-Network Usage Warning </h4>
+                                <p><b>Skip this subsection if you don't use Kidoz ad-network.</b></p>
+                                
+
+
+Add following lines to AndroidManifest.xml file under application tag.
+ 
+<pre> &lt;<span class="pl-ent">receiver</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>com.kidoz.sdk.api.receivers.SdkReceiver<span class="pl-pds">"</span></span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">enabled</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span> &gt;
+            &lt;<span class="pl-ent">intent-filter</span>&gt;
+                &lt;<span class="pl-ent">action</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.intent.action.PACKAGE_ADDED<span class="pl-pds">"</span></span>/&gt;
+                &lt;<span class="pl-ent">data</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">scheme</span>=<span class="pl-s"><span class="pl-pds">"</span>package<span class="pl-pds">"</span></span>/&gt;
+            &lt;/<span class="pl-ent">intent-filter</span>&gt;
+        &lt;/<span class="pl-ent">receiver</span>&gt;</pre>
+       
+                                </p>
+                        </div>
+                    </div>
 
                     <h3 id="proguard">Proguard</h3>
                     <p>Copy & paste following code snippet in to your <code>/app/src/proguard-rules.pro</code> file</p>

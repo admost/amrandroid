@@ -309,7 +309,7 @@ function getAndroidNetworks() {
                  }
               ]
            }
-        },
+        },       
         {
            "name":"InMobi",
            "status":false,
@@ -367,6 +367,19 @@ function getAndroidNetworks() {
               "dependencies":[
                  {
                     "package":"com.admost.sdk:ironsource:6.13.0.1.a16"
+                 }
+              ]
+           }
+        },{
+           "name":"Kidoz",
+           "status":false,
+           "app_gradle":{
+              "dependencies":[
+                 {
+                    "package":"com.admost.sdk:kidoz:0.8.8.5.a16"
+                 },
+                 {
+                    "package":"org.greenrobot:eventbus:3.0.0"
                  }
               ]
            }

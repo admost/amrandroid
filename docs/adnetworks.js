@@ -67,7 +67,14 @@ function fillWarningSections(network) {
         }else {
             $("#appsamurai_warning").css("display", "none");
         }
+    } else if(network.name == "Kidoz") {
+        if(network.status == true) {
+            $("#kidoz_warning").css("display", "block");
+        }else {
+            $("#kidoz_warning").css("display", "none");
+        }
     }
+    
 }
 
 function getPositionOfAdNetworkOnJSONArray(adNetworkName) {
