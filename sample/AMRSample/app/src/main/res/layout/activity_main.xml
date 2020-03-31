@@ -91,6 +91,14 @@
                         android:minLines="2"
                         android:text="Disable Personalized Ads" />
 
+                    <Button
+                        android:id="@+id/on_back_press_example"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:minLines="2"
+                        android:text="Back Press Show Interstitial" />
+
 
                 </LinearLayout>
 

@@ -316,6 +316,13 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+        findViewById(R.id.on_back_press_example).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BackPressAdShowExample.class);
+                startActivity(intent);
+            }
+        });
         findViewById(R.id.disable_personalized_ads).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

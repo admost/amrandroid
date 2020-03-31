@@ -52,6 +52,9 @@
         <activity
             android:name=".DFPIntegrationSampleActivity" />
 
+        <activity
+            android:name=".BackPressAdShowExample" />
+
 
         <!-- APPLOVIN -->
         <meta-data android:name="applovin.sdk.key"
