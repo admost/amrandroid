@@ -32,6 +32,7 @@ public class ApplicationStart extends Application {
             return;
         }else if(interstitial != null && interstitial.isLoaded()) {
             Log.i(Statics.TAG, "Interstitial ad is already loaded. You can show it.");
+            return;
         }
 
         if (interstitial == null) {
