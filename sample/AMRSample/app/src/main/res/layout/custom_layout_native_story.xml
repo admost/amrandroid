@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:paddingTop="30dp"
+    android:paddingBottom="30dp"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp">
+
+
+    <TextView
+        android:id="@+id/ad_attribution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:layout_centerHorizontal="true"
+        android:text="@string/AMR_text_sponsored"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/ad_back"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:visibility="gone"
+        android:layout_marginTop="100dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside" />
+
+    <ImageView
+        android:id="@+id/ad_image"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_marginTop="100dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside" />
+
+    <ImageView
+        android:id="@+id/ad_app_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/ad_headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ad_image"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/ad_body"
+        android:layout_width="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ad_headline"
+        android:textColor="#a2a2f3"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/ad_call_to_action"
+        android:layout_above="@+id/swipeUpText"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:textSize="40dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/swipeUpText"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:textSize="12dp"
+        android:layout_alignParentBottom="true"
+        android:text="Swipe Up To Go"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/ad_privacy_icon"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ad_mopub_daa"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

@@ -17,10 +17,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 import admost.sdk.AdMostInterstitial;
 import admost.sdk.AdMostView;
 import admost.sdk.AdMostViewBinder;
 import admost.sdk.base.AdMost;
+import admost.sdk.base.AdMostAdNetwork;
 import admost.sdk.base.AdMostConfiguration;
 import admost.sdk.listener.AdMostAdListener;
 import admost.sdk.listener.AdMostInitListener;
@@ -51,8 +55,7 @@ public class MainActivity extends Activity {
         // Arrange GDPR related controls based on your needs, it is the responsibility of publisher.
         // If setUserConsent is not used, AdMost SDK uses its internal logic for personalized ads.
 
-        configuration.setUserConsent(true); // for testing
-        configuration.setSubjectToGDPR(true); // for testing
+
         /* Optional lines
         if (getConsentStatus().equals(STATUS_ACCEPTED)) // You can only set status information while initialization
             configuration.setUserConsent(true);
@@ -339,6 +342,14 @@ public class MainActivity extends Activity {
                 } else {
                     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                 }
+            }
+        });
+
+        findViewById(R.id.storyLike).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InstagramLikeActivity.class);
+                startActivity(intent);
             }
         });
     }

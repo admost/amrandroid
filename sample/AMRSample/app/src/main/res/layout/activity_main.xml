@@ -148,12 +148,17 @@
                         android:text="DFP Integration" />
 
                     <Button
+                        android:id="@+id/storyLike"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Story Sample" />
+                    <Button
                         android:id="@+id/rotate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:minLines="2"
-                        android:text="Rotate Screen" />
+                        android:text="Rotate" />
 
                 </LinearLayout>
             </LinearLayout>
