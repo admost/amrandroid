@@ -45,25 +45,24 @@ dependencies {
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:multidex:1.0.3'
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
 
-    ///// BASE REQUIRED LIBRARIES FOR ADMOST ////////////////
-    implementation 'com.android.volley:volley:1.1.1'
-    implementation 'com.admost.sdk:amr:2.1.2'
-    implementation 'com.admost.sdk:admost:0.1.0.a17'
+    implementation 'com.android.volley:volley:1.1.0'
+    implementation 'com.admost.sdk:amr:2.1.5'
+    implementation 'com.admost.sdk:admost:0.1.1.a18'
     implementation 'com.google.android.gms:play-services-base:16.1.0'
 
 
-    ///// SOME AD NETWORK SDKS (PLEASE CHECK THE ADAPTER VERSIONS) ///////
-    // Docs: https://admost.github.io/amrandroid/ Please select some Ad-networks from this link. Each Ad-network may require additional code or library.
     implementation 'com.google.android.gms:play-services-ads:17.2.1'
-    implementation 'com.admost.sdk:admob-gt-17.2.0-adapter:1.0.3.a17'
-    implementation 'com.admost.sdk:adcolony:4.1.4.a17'
-    implementation 'com.admost.sdk:applovin:9.11.6.a17'
-    implementation 'com.admost.sdk:chartboost:8.0.2.a17'
-    implementation 'com.admost.sdk:ironsource:6.13.0.1.a17'
-    implementation 'com.admost.sdk:unity:3.4.2.a17'
+    implementation 'com.admost.sdk:admob-gt-17.2.0-adapter:1.0.4.a18'
+    implementation 'com.admost.sdk:adcolony:4.1.4.a18'
+    implementation 'com.admost.sdk:applovin:9.12.8.a18'
+    implementation 'com.admost.sdk:facebook:5.9.1.a18'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.admost.sdk:ironsource:6.17.0.a18'
+    implementation 'com.admost.sdk:unity:3.4.6.a18'
+    implementation 'com.vungle:publisher-sdk-android:6.7.0'
+    implementation 'com.admost.sdk:vungle-adapter:6.7.0.a18'
+    implementation 'com.android.support:support-v4:28.0.0'
 
     // Optional libraries
     //implementation 'com.google.android.gms:play-services-location:15.0.1'

@@ -19,6 +19,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        tools:replace="android:allowBackup"
         android:networkSecurityConfig="@xml/security_config"
         android:largeHeap="true"
         android:theme="@style/AppBaseTheme">
@@ -103,7 +104,9 @@
         net.pubnative.lite.sdk,
         com.tappx.sdk.android,
         com.tapr,
-        com.applovin.sdk
+        com.applovin.sdk,
+        com.chartboost.sdk,
+        com.ironsource.sdk.mediation
         " />
 
 </manifest>

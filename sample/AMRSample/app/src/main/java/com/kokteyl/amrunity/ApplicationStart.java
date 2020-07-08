@@ -3,9 +3,10 @@ package com.kokteyl.amrunity;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.support.multidex.MultiDex;
 import android.util.Log;
 import android.widget.Button;
+
+import androidx.multidex.MultiDex;
 
 import admost.sdk.AdMostInterstitial;
 import admost.sdk.base.AdMost;
