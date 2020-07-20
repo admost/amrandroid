@@ -126,6 +126,7 @@
                             <li><a href="#init">Init</a></li>
                             <ul style="display: block;">
                                 <li><a href="#initgdpr">GDPR</a></li>
+								<li><a href="#initccpa">CCPA</a></li>
                             </ul>
                             <li><a href="#banner-ads">Banner/Native Ads</a></li>
                             <ul style="display: block;">
@@ -881,6 +882,10 @@ public *;
 configuration.setSubjectToGDPR(false);
 configuration.setUserConsent(true);
 </code></pre>
+<p>For CCPA compliance, please read the <a href="#initccpa">CCPA section</a> of this documentation. The following configuration parameter is added for CCPA compliance. You can use the <b>setUserConsent</b> parameter for passing consent to the SDK as in GDPR.</>
+<pre><code class="language-java">
+configuration.setSubjectToCCPA(false);
+</code></pre>
 
 <p>According to <a href="https://support.google.com/googleplay/android-developer/answer/9285070" target="_blank">Google Play Services policy</a>, if your app's target age group include children under the age of 18, ads shown to children must be served from a <a href="https://support.google.com/googleplay/android-developer/answer/9283445" rel="noopener" target="_blank">Google Play certified ad network</a>. A neutral age screen must be implemented so that any ads not suitable for children are only shown to older audiences.</p>
 <p>For this purpose, we added the following configuration parameter and it is needed to be set for the users considered as children.</>
@@ -919,8 +924,17 @@ AdMost.getInstance().init(configuration.build(), new AdMostInitListener() {
                         will be applied.</p>
                     <p><b>IMPORTANT NOTE:</b> We strongly recommend you to read our <b><a target="_blank"
                                 href="gdpr.html#gdpr">GDPR section</a></b>. </p>
-
-
+<br/>
+					<h4 id="initccpa">CCPA</h4>
+                    <p> Once you have collected the user’s consent, you can pass it onto the SDK using the init
+                        configuration parameters shown above. </p>
+					<p><code>setUserConsent</code> has a boolean parameter. If you have the user’s consent, set it true.
+                        If you do not have the user's consent, set it false. </p>
+                    <p><code>setSubjectToCCPA</code> has a boolean parameter. If you know the user is subject to CCPA,
+                        set it true. If you know the user is not subject to CCPA, set it false. </p>
+                    <p>If you don’t pass the user’s consent or subjectToCCPA to the SDK, the default rules of Admost SDK
+                        will be applied.</p>
+                    
                     <h3 id="banner-ads">Banner/Native Ads</h3>
                     <pre><code class="language-java">/*
 ZONE_ID : Your ZONE_ID defined on admost mediation panels.
@@ -1062,6 +1076,12 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
     public void onComplete(String s) {
         // If you are using interstitial, this callback will not be triggered.
     }
+    @Override
+    public void onStatusChanged(int statusCode) {
+        // This callback will be triggered only when frequency cap ended.
+        // status code
+        // 600 - AdMost.AD_STATUS_CHANGE_FREQ_CAP_ENDED
+    }
 
 });
 
@@ -1126,6 +1146,13 @@ INTERSTITIAL.show(TAG);
         public void onClicked(String s) {
             // It indicates that the video ad is clicked.
         }
+        @Override
+        public void onStatusChanged(int statusCode) {
+            // This callback will be triggered only when frequency cap ended.
+            // status code
+            // 600 - AdMost.AD_STATUS_CHANGE_FREQ_CAP_ENDED
+        }
+		
     });
                 </code></pre>
 
@@ -1180,6 +1207,12 @@ VIDEO.show(TAG);
         @Override
         public void onClicked(String s) {
             //Ad Clicked
+        }
+        @Override
+        public void onStatusChanged(int statusCode) {
+            // This callback will be triggered only when frequency cap ended.
+            // status code
+            // 600 - AdMost.AD_STATUS_CHANGE_FREQ_CAP_ENDED
         }
 });</code></pre>
                     <p>
