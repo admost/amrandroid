@@ -326,7 +326,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                 {
-                   "package":"com.admost.sdk:inmobi-unified:9.0.4.a19"
+                   "package":"com.admost.sdk:inmobi-unified:9.0.7.a19"
                 },
                 {
                    "package":"com.squareup.picasso:picasso:2.71828"
