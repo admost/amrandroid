@@ -10,10 +10,10 @@ function getAndroidNetworks() {
                     "package":"com.android.volley:volley:1.1.0"
                  },
                  {
-                    "package":"com.admost.sdk:amr:2.1.6"
+                    "package":"com.admost.sdk:amr:2.1.7"
                  },
                  {
-                    "package":"com.admost.sdk:admost:0.1.1.a19"
+                    "package":"com.admost.sdk:admost:0.1.2.a19"
                  },
                  {
                     "package":"com.google.android.gms:play-services-base:16.1.0"
@@ -66,7 +66,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:adcolony:4.2.0.a19"
+                    "package":"com.admost.sdk:adcolony:4.2.0.1.a19"
                  }
               ]
            }
