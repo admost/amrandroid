@@ -55,7 +55,7 @@ function getAndroidNetworks() {
                     "package":"com.google.android.gms:play-services-ads:17.2.1"
                  }, 
                  {
-                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.4.a19" 
+                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.5.a19" 
                  }
               ]
            }
