@@ -148,6 +148,7 @@
                         <ul>
                             <li><a href="#dfp">Google AdManager Integration</a></li>
                             <li><a href="#testsuite">Test Suite</a></li>
+                            <li><a href="#huaweiappgallery">Huawei AppGallery Applications</a></li>
                             <li><a href="#iap">In App Purchase Tracking</a></li>
                             <li><a href="#amazoniap">Amazon Store In App Purchase Tracking</a></li>
                             <li><a href="#senduserid">Setting Application User Id</a></li>
@@ -1338,6 +1339,17 @@ AdMost.getInstance().startTestSuite();
                         </div>
                     </div>
 
+                    <h3 id="huaweiappgallery">Huawei AppGallery Applications</h3>
+
+                    <p>
+                        For Huawei AppGallery applications, it is recommended to create a new Admost applcation on the dashboard and use new placements from ad networks to track performance separately. For Huawei AppGallery applications, we are using OAID(Open Advertiser ID) instead of GAID(Google Advertising ID) for attribution purposes, so we need to know if the application is Huawei AppGallery application. To set the application as Huawei app, you can use the following method during initialization, otherwise AdMost sdk will try to get GAID and fail.
+                    </p>
+
+                    <pre><code class="language-java">
+AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, [APPLICATION_ID]);
+configuration.setAsHuaweiApp();
+AdMost.getInstance().init(configuration.build());
+                </code></pre>
 
                     <h3 id="iap">In App Purchase Tracking</h3>
 
