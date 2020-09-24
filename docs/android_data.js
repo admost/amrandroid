@@ -16,6 +16,9 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:admost:0.1.3.a20"
                  },
                  {
+                    "package":"com.admost.sdk:s2sbidding-adapter:0.0.1.a20"
+                 },
+                 {
                     "package":"com.google.android.gms:play-services-base:16.1.0"
                  }
               ],
