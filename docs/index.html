@@ -728,6 +728,9 @@ public static &lt;fields&gt;;
 -keepnames class * implements android.os.Parcelable { public static final ** CREATOR; }
 -keep public class android.webkit.JavascriptInterface {}
 
+# MYTARGET
+-keep class com.my.target.** {*;} 
+
 # NEND
 -keep class net.nend.android.** { *; }
 -dontwarn net.nend.android.**
@@ -745,6 +748,10 @@ public static &lt;fields&gt;;
 -keep class com.qumpara.analytics.** { *; }
 -dontwarn com.qumpara.offerwall.sdk.**
 -keep class com.qumpara.offerwall.sdk.** { *; }
+
+#POLLFISH
+-dontwarn com.pollfish.** 
+-keep class com.pollfish.** { *; }
 
 # PUBNATIVE
 -keepattributes Signature
