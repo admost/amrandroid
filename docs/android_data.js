@@ -13,12 +13,6 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:amr:2.1.8"
                  },
                  {
-                    "package":"com.admost.sdk:admost:0.1.3.a20"
-                 },
-                 {
-                    "package":"com.admost.sdk:s2sbidding-adapter:0.0.1.a20"
-                 },
-                 {
                     "package":"com.google.android.gms:play-services-base:16.1.0"
                  }
               ],
@@ -98,6 +92,17 @@ function getAndroidNetworks() {
                  }, 
                  {
                   "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.5.a20" 
+                 }
+              ]
+           }
+        },
+        {
+           "name":"Admost",
+           "status":false,
+           "app_gradle":{
+              "dependencies":[
+                 {
+                    "package":"com.admost.sdk:admost:0.1.3.a20"
                  }
               ]
            }
@@ -265,6 +270,9 @@ function getAndroidNetworks() {
                  },
                  {
                     "package":"com.android.support:recyclerview-v7:28.0.0"
+                 },
+                 {
+                    "package":"com.admost.sdk:s2sbidding-adapter:0.0.1.a20"
                  }
               ]
            }
