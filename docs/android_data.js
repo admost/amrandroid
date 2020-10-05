@@ -308,7 +308,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:huawei-adapter:13.4.29.301.a20"
+                    "package":"com.admost.sdk:huawei-ads-adapter:13.4.29.301.a20"
                  },
                  {
                     "package":"com.huawei.hms:ads-lite:13.4.29.301"
