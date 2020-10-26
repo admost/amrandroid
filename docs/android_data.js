@@ -18,13 +18,13 @@ function getAndroidNetworks() {
               ],
               "dependencies_unity":[
                 {
-                   "package":"android.arch.core:common:1.1.0"
+                   "package":"androidx.arch.core:core-common:2.1.0"
                 },
                 {
-                   "package":"android.arch.core:runtime:1.1.0"
+                   "package":"androidx.arch.core:core-runtime:2.1.0"
                 },
                 {
-                   "package":"android.arch.lifecycle:common:1.1.0"
+                   "package":"androidx.lifecycle:lifecycle-common:2.1.0"
                 },
                 {
                    "package":"com.admost.sdk:unity-plugin:1.7.8"
