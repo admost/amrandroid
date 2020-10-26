@@ -7,13 +7,13 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.android.volley:volley:1.1.0"
+                    "package":"com.android.volley:volley:1.1.1"
                  },
                  {
                     "package":"com.admost.sdk:amr:2.2.0"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-base:16.1.0"
+                    "package":"com.google.android.gms:play-services-base:17.1.0"
                  }
               ],
               "dependencies_unity":[
@@ -30,7 +30,7 @@ function getAndroidNetworks() {
                    "package":"com.admost.sdk:unity-plugin:1.7.8"
                 },
                 {
-                   "package":"com.google.android.gms:play-services-ads-identifier:16.0.0"
+                   "package":"com.google.android.gms:play-services-ads-identifier:17.0.0"
                 }
               ]
 
@@ -60,7 +60,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.google.android.gms:play-services-ads:17.2.1"
+                    "package":"com.google.android.gms:play-services-ads:18.3.0"
                  }, 
                  {
                   "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.5.a21" 
@@ -99,7 +99,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.google.android.gms:play-services-ads:17.2.1"
+                    "package":"com.google.android.gms:play-services-ads:18.3.0"
                  }, 
                  {
                   "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.5.a21" 
@@ -168,10 +168,10 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:appnext-adapter:2.5.3.472.a21"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-location:16.0.0"
+                    "package":"com.google.android.gms:play-services-location:17.0.0"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-basement:16.2.0"
+                    "package":"com.google.android.gms:play-services-basement:17.0.0"
                  }
               ]
            },
@@ -192,7 +192,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:appsamurai:1.3.1.a21"
                  },
                  {
-                    "package":"com.android.support.constraint:constraint-layout:1.0.2"
+                    "package":"androidx.constraintlayout:constraintlayout:1.1.3"
                  },
                  {
                     "package":"com.squareup.retrofit2:retrofit:2.4.0"
@@ -201,7 +201,7 @@ function getAndroidNetworks() {
                     "package":"com.squareup.retrofit2:converter-gson:2.4.0"
                  },
                  {
-                    "package":"com.google.code.gson:gson:2.7",
+                    "package":"com.google.code.gson:gson:2.8.6",
                     "transitive":true
                  }
               ]
@@ -216,7 +216,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:chartboost:8.1.0.a21"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-ads:17.2.1"
+                    "package":"com.google.android.gms:play-services-ads:18.3.0"
                  }
 
               ]
@@ -252,10 +252,10 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:displayio:4.3.6.a21"
                  },
                  {
-                    "package":"com.android.support:appcompat-v7:28.0.0"
+                    "package":"androidx.appcompat:appcompat:1.0.0"
                  },
                  {
-                    "package":"com.android.support:support-v4:28.0.0"
+                    "package":"androidx.legacy:legacy-support-v4:1.0.0"
                  }
               ]
            }
@@ -269,7 +269,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:facebook:5.11.0.a21"
                  },
                  {
-                    "package":"com.android.support:recyclerview-v7:28.0.0"
+                    "package":"androidx.recyclerview:recyclerview:1.0.0"
                  },
                  {
                     "package":"com.admost.sdk:s2sbidding-adapter:0.0.2.a21"
@@ -370,10 +370,10 @@ function getAndroidNetworks() {
                    "package":"com.squareup.picasso:picasso:2.71828"
                 },
                 {
-                   "package":"com.android.support:recyclerview-v7:28.0.0"
+                   "package":"androidx.recyclerview:recyclerview:1.0.0"
                 },
                 {
-                   "package":"com.android.support:customtabs:28.0.0"
+                   "package":"androidx.browser:browser:1.0.0"
                 }
               ]
            }
@@ -393,13 +393,13 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:inneractive-video:7.7.0.a21"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-ads:17.2.1"
+                    "package":"com.google.android.gms:play-services-ads:18.3.0"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-base:16.1.0"
+                    "package":"com.google.android.gms:play-services-base:17.1.0"
                  },
                  {
-                    "package":"com.google.code.gson:gson:2.7",
+                    "package":"com.google.code.gson:gson:2.8.6",
                     "transitive":true
                  }
               ]
@@ -528,7 +528,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:nend:5.1.1.a21"
                  },
                  {
-                    "package":"com.android.support.constraint:constraint-layout:1.0.2"
+                    "package":"androidx.constraintlayout:constraintlayout:1.1.3"
                  }
               ]
            }
@@ -730,7 +730,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:vungle-adapter:6.7.1.a21"
                  },
                  {
-                    "package":"com.android.support:support-v4:28.0.0"
+                    "package":"androidx.legacy:legacy-support-v4:1.0.0"
                  }
               ]
            },
@@ -765,7 +765,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:youappi:5.0.1.a21"
                  },
                  {
-                    "package":"com.google.code.gson:gson:2.7",
+                    "package":"com.google.code.gson:gson:2.8.6",
                     "transitive":true
                  }
               ]

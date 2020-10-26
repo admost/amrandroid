@@ -177,6 +177,7 @@
                         networks via
                         gradle build setup. There are too many ad networks you may desire to add your current app.
                         Integrating those ad networks to your application can achievable via gradle. Most of the ad
+                        Integrating those ad networks to your application can achievable via gradle. Most of the ad
                         networks
                         are can be integrated by 1 line of code addition to your project's
                         <code>/app/src/build.gradle</code> file and <code>/build.gradle</code> file. However some of
@@ -190,7 +191,12 @@
                 <section>
                     <h2 id="prerequisites">Prerequisites</h2>
                     <h3 id="android-version">Android Version</h3>
-                    <p> Android 4.0 (Ice Cream Sandwich - API Version 14) or later.</p>
+                    <p>
+						<ul>
+							<li>Android 4.0 (Ice Cream Sandwich - API Version 14) or later.</li>
+							<li>Enable AndroidX in your project. <a href="https://developer.android.com/jetpack/androidx/migrate">For more information.</a> </li>
+						</ul>
+					</p>
                     <h3 id="ide">IDE</h3>
                     <p>
                         You have to use Latest Android Studio build. You can download the latest Android Studio from <a
@@ -328,6 +334,8 @@
                     <ul id="list-of-files">
                         <li><code>/build.gradle</code></li>
                         <li><code>/app/src/build.gradle</code></li>
+						<li><code>gradle.properties</code></li>
+
                     </ul>
                     <p>If you are using proguard you have to edit <code>/app/src/proguard-rules.pro</code> too. </p>
 
@@ -337,7 +345,27 @@
                     </div>
                     <div class="row" id="file-appgradle">
                     </div>
+					<div class="row" id="file-gradleproperties">
+                    </div>
                     <div class="row" id="file-androidmanifest">
+                    </div>
+					
+					
+                    <div class="row">
+                        <div class="col-md-11">
+                            <p>It is highly recommended to enable AndroidX in your project. Editing <code>gradle.properties</code> file and adding the lines below(if they are not present) is required for most ad-network sdks.</b> </p>
+                        </div>
+                        <div class="col-md-1"><button class="btn btn-xs btn-primary"
+                                onclick="copyToClipboard(\'#code-gradleproperties\')"><i class="fa fa-copy"></i></if>
+                                </li> Copy</button> </div>
+                        <div class="col-md-12" id="file-gradleproperties">
+<pre>
+<code id="code-gradleproperties">
+android.useAndroidX=true
+android.enableJetifier=true
+</code>
+</pre>
+                        </div>
                     </div>
 
                     <div class="row">
