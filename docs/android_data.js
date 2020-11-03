@@ -49,7 +49,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:admost:0.1.3.a21"
+                    "package":"com.admost.sdk:admost:0.1.5.a21"
                  }
               ]
            }
