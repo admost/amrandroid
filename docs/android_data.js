@@ -748,7 +748,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:wortise-adapter:1.0.0.6.a20"
+                    "package":"com.admost.sdk:wortise-adapter:1.0.0.6.a21"
                  },
                  {
                     "package":"com.wortise:androidx-sdk:1.0.0-beta06"
