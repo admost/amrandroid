@@ -660,6 +660,10 @@ public static &lt;fields&gt;;
 -keep class com.fyber.mediation.MediationAdapterStarter { public static *; }
 -keepclassmembers class com.fyber.ads.videos.mediation.** { void setValue(java.lang.String); }
 
+# HUAWEI-ADS
+-keep class com.huawei.openalliance.ad.** { *; }
+-keep class com.huawei.hms.ads.** { *; }
+
 # INMOBI
 -keepattributes SourceFile,LineNumberTable
 -keep class com.inmobi.** {*;}
