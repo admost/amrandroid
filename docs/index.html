@@ -844,6 +844,10 @@ public static &lt;fields&gt;;
 -keep public class com.tappx.** { *; }
 -dontwarn com.tappx.**
 
+# TIKTOK
+-dontwarn com.bytedance.**
+-keep class com.bytedances.** { *; }
+
 # UNITY
 -dontwarn com.unity3d.**
 -keep class com.unity3d.ads.** { *; }
