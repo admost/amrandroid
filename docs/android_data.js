@@ -10,7 +10,7 @@ function getAndroidNetworks() {
                     "package":"com.android.volley:volley:1.1.1"
                  },
                  {
-                    "package":"com.admost.sdk:amr:2.2.1"
+                    "package":"com.admost.sdk:amr:2.2.2"
                  },
                  {
                     "package":"com.google.android.gms:play-services-base:17.1.0"
@@ -49,7 +49,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:admost:0.1.7.a21"
+                    "package":"com.admost.sdk:admost:0.1.8.a21"
                  }
               ]
            }
@@ -609,6 +609,20 @@ function getAndroidNetworks() {
                }
             ]
          }
+        },
+        {
+           "name":"Reklamup",
+           "status":false,
+           "app_gradle":{
+              "dependencies":[
+                 {
+                    "package":"com.google.android.gms:play-services-ads:18.3.0"
+                 }, 
+                 {
+                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.5.a21" 
+                 }
+              ]
+           }
         },
         {
            "name":"Revmob",
