@@ -266,7 +266,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:facebook:6.2.0.a21"
+                    "package":"com.admost.sdk:facebook:6.2.0.1.a21"
                  },
                  {
                     "package":"androidx.recyclerview:recyclerview:1.0.0"
