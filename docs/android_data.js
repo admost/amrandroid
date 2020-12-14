@@ -644,7 +644,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:smaato-adapter:21.5.2.a21"
                  },
                  {
-                    "package":"ccom.smaato.android.sdk:smaato-sdk:21.5.2"
+                    "package":"com.smaato.android.sdk:smaato-sdk:21.5.2"
                  },
                  {
                     "package":"com.smaato.android.sdk:smaato-sdk-native:21.5.2"
