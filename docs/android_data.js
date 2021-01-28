@@ -719,7 +719,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:unity:3.6.0.a21"
+                    "package":"com.admost.sdk:unity:3.6.0.1.a21"
                  }
               ]
            }
