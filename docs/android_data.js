@@ -75,6 +75,9 @@ function getAndroidNetworks() {
               "dependencies":[
                  {
                     "package":"com.admost.sdk:adcolony:4.4.0.a21"
+                 },
+                 {
+                    "package":"com.admost.sdk:s2sbidding-adapter:0.0.4.a21"
                  }
               ]
            }
@@ -272,7 +275,7 @@ function getAndroidNetworks() {
                     "package":"androidx.recyclerview:recyclerview:1.0.0"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:0.0.3.a21"
+                    "package":"com.admost.sdk:s2sbidding-adapter:0.0.4.a21"
                  }
               ]
            }
