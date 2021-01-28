@@ -62,6 +62,11 @@ public class ApplicationStart extends Application {
                 @Override
                 public void onClicked(String s) {
                 }
+
+                @Override
+                public void onStatusChanged(int i) {
+
+                }
             };
             interstitial = new AdMostInterstitial(main, Statics.FULLSCREEN_ZONE, listener);
         }

@@ -196,6 +196,11 @@ public class MainActivity extends Activity {
                 public void onClicked(String s) {
                     Log.d(Statics.TAG, "MainActivity video onClicked network: " + s);
                 }
+
+                @Override
+                public void onStatusChanged(int i) {
+
+                }
             };
             video = new AdMostInterstitial(MainActivity.this, Statics.VIDEO_ZONE, listener);
         }
@@ -237,6 +242,11 @@ public class MainActivity extends Activity {
                 @Override
                 public void onClicked(String s) {
                     Log.d(Statics.TAG, "MainActivity interstitial onClicked network: " + s);
+                }
+
+                @Override
+                public void onStatusChanged(int i) {
+
                 }
             };
             interstitial = new AdMostInterstitial(MainActivity.this, Statics.FULLSCREEN_ZONE, listener);

@@ -2,7 +2,13 @@
 -keepattributes Exceptions, InnerClasses
 -dontwarn admost.sdk.**
 -keep class admost.sdk.** {*;}
+-dontwarn com.amr.unity.**
+-keep class com.amr.unity.** {*;}
 -dontwarn admost.adserver.**
+-keep class com.adjust.sdk.** {*;}
+-dontwarn com.adjust.sdk.**
+-keep class com.appsflyer.** {*;}
+-dontwarn com.appsflyer.**
 -keep class admost.adserver.** { *; }
 -dontwarn com.google.android.exoplayer2.**
 -keep class com.google.android.exoplayer2.**{ *;}
@@ -139,6 +145,10 @@ public static <fields>;
 -keep class com.fyber.mediation.MediationAdapterStarter { public static *; }
 -keepclassmembers class com.fyber.ads.videos.mediation.** { void setValue(java.lang.String); }
 
+# HUAWEI-ADS
+-keep class com.huawei.openalliance.ad.** { *; }
+-keep class com.huawei.hms.ads.** { *; }
+
 # INMOBI
 -keepattributes SourceFile,LineNumberTable
 -keep class com.inmobi.** {*;}
@@ -237,6 +247,9 @@ public static <fields>;
 -keepnames class * implements android.os.Parcelable { public static final ** CREATOR; }
 -keep public class android.webkit.JavascriptInterface {}
 
+# MYTARGET
+-keep class com.my.target.** {*;} 
+
 # NEND
 -keep class net.nend.android.** { *; }
 -dontwarn net.nend.android.**
@@ -249,18 +262,22 @@ public static <fields>;
 -dontwarn outbid.com.outbidsdk.**
 -keep class outbid.com.outbidsdk.** { *; }
 
+# QUMPARA
+-dontwarn com.qumpara.analytics.**
+-keep class com.qumpara.analytics.** { *; }
+-dontwarn com.qumpara.offerwall.sdk.**
+-keep class com.qumpara.offerwall.sdk.** { *; }
+
+#POLLFISH
+-dontwarn com.pollfish.** 
+-keep class com.pollfish.** { *; }
+
 # PUBNATIVE
 -keepattributes Signature
 -keep class net.pubnative.** { *; }
 -dontwarn net.pubnative.**
 -keep class com.squareup.picasso.** { *; }
 -dontwarn com.squareup.picasso.**
-
-# QUMPARA
--dontwarn com.qumpara.analytics.**
--keep class com.qumpara.analytics.** { *; }
--dontwarn com.qumpara.offerwall.sdk.**
--keep class com.qumpara.offerwall.sdk.** { *; }
 
 # REVMOB
 -dontwarn rm.com.android.sdk.**
@@ -289,6 +306,11 @@ public static <fields>;
 -dontwarn com.millennialmedia**
 -dontwarn com.facebook.**
 
+# SMARTAD
+-keep class com.smartadserver.** { *; }
+-dontwarn com.smartadserver.**
+
+
 # STARTAPP
 -keepattributes Exceptions, InnerClasses, Signature, Deprecated, SourceFile, LineNumberTable, *Annotation*, EnclosingMethod
 -dontwarn android.webkit.JavascriptInterface
@@ -315,6 +337,10 @@ public static <fields>;
 -keep public class com.google.android.gms.** {*;}
 -keep public class com.tappx.** { *; }
 -dontwarn com.tappx.**
+
+# TIKTOK
+-dontwarn com.bytedance.**
+-keep class com.bytedances.** { *; }
 
 # UNITY
 -dontwarn com.unity3d.**

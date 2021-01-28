@@ -106,7 +106,8 @@
         com.tapr,
         com.applovin.sdk,
         com.chartboost.sdk,
-        com.ironsource.sdk.mediation
+        com.ironsource.sdk.mediation,
+        com.unity3d.ads
         " />
 
 </manifest>
