@@ -10,7 +10,7 @@ function getAndroidNetworks() {
                     "package":"com.android.volley:volley:1.1.1"
                  },
                  {
-                    "package":"com.admost.sdk:amr:2.2.4"
+                    "package":"com.admost.sdk:amr:2.2.5"
                  },
                  {
                     "package":"com.google.android.gms:play-services-base:17.1.0"
