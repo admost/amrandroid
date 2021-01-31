@@ -48,11 +48,16 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         setOnClicks();
         AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, Statics.AMR_APP_ID);
+
+        // Optional but recommended to see integration errors and warnings for debuggable builds.
+        // IMPORTANT: Use your applications's BuildConfig file not the other third party sdks. It is critical.
+        configuration.showUIWarningsForDebuggableBuild(BuildConfig.DEBUG);
+
         // Arrange GDPR related controls based on your needs, it is the responsibility of publisher.
         // If setUserConsent is not used, AdMost SDK uses its internal logic for personalized ads.
+        //configuration.setUserConsent(true); // if you have user's consent about GDPR, you can set this boolean. If not, it would be better not to call this method
+        //configuration.setSubjectToGDPR(true); // if you know user's country, you can set this boolean. If not, it would be better not to call this method
 
-        configuration.setUserConsent(true); // for testing
-        configuration.setSubjectToGDPR(true); // for testing
         /* Optional lines
         if (getConsentStatus().equals(STATUS_ACCEPTED)) // You can only set status information while initialization
             configuration.setUserConsent(true);

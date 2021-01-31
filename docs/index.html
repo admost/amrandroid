@@ -936,7 +936,7 @@ public *;
 configuration.setSubjectToGDPR(false);
 configuration.setUserConsent(true);
 </code></pre>
-<p>For CCPA compliance, please read the <a href="#initccpa">CCPA section</a> of this documentation. The following configuration parameter is added for CCPA compliance. You can use the <b>setUserConsent</b> parameter for passing consent to the SDK as in GDPR.</>
+<p>For CCPA compliance, please read the <a href="#initccpa">CCPA section</a> of this documentation. The following configuration parameter is added for CCPA compliance. You can use the <b>setUserConsent</b> parameter for passing consent to the SDK as in GDPR.</p>
 <pre><code class="language-java">
 configuration.setSubjectToCCPA(false);
 </code></pre>
@@ -944,8 +944,13 @@ configuration.setSubjectToCCPA(false);
 <p>According to <a href="https://support.google.com/googleplay/android-developer/answer/9285070" target="_blank">Google Play Services policy</a>, if your app's target age group include children under the age of 18, ads shown to children must be served from a <a href="https://support.google.com/googleplay/android-developer/answer/9283445" rel="noopener" target="_blank">Google Play certified ad network</a>. A neutral age screen must be implemented so that any ads not suitable for children are only shown to older audiences.</p>
 <p>For this purpose, we added the following configuration parameter and it is needed to be set for the users considered as children.</>
 <pre><code class="language-java">
-// User this code only for children
+// Only set true if you know the user is child. 
 configuration.setUserChild(true);
+</code></pre>
+
+<p>OPTIONAL: In order to see the logs (TAG: ADMOST) and integration errors/warnings for your debuggable builds, you may optionally enable ADMOST logs + warning Toast messages. <br>Important Note: Use your <strong>applications's own BuildConfig file's DEBUG</strong> field (check BuildConfig package name when importing this java class) as a parameter rather than setting true or false directly. It is critical.</p>
+<pre><code class="language-java">
+configuration.showUIWarningsForDebuggableBuild(BuildConfig.DEBUG);
 </code></pre>
 
 
