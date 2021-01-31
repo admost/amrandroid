@@ -10,7 +10,7 @@ function getAndroidNetworks() {
                     "package":"com.android.volley:volley:1.1.1"
                  },
                  {
-                    "package":"com.admost.sdk:amr:2.2.4"
+                    "package":"com.admost.sdk:amr:2.2.5"
                  },
                  {
                     "package":"com.google.android.gms:play-services-base:17.1.0"
@@ -27,7 +27,7 @@ function getAndroidNetworks() {
                    "package":"androidx.lifecycle:lifecycle-common:2.1.0"
                 },
                 {
-                   "package":"com.admost.sdk:unity-plugin:1.7.8"
+                   "package":"com.admost.sdk:unity-plugin:1.7.9"
                 },
                 {
                    "package":"com.google.android.gms:play-services-ads-identifier:17.0.0"
@@ -309,6 +309,25 @@ function getAndroidNetworks() {
               "dependencies":[
                  {
                     "package":"com.admost.sdk:fyber:9.1.0.a21"
+                 },
+                 {
+                    "package":"com.admost.sdk:inneractive-core:7.8.0.a21"
+                 },
+                 {
+                    "package":"com.admost.sdk:inneractive-mraid:7.8.0.a21"
+                 },
+                 {
+                    "package":"com.admost.sdk:inneractive-video:7.8.0.a21"
+                 },
+                 {
+                    "package":"com.google.android.gms:play-services-ads:18.3.0"
+                 },
+                 {
+                    "package":"com.google.android.gms:play-services-base:17.1.0"
+                 },
+                 {
+                    "package":"com.google.code.gson:gson:2.8.6",
+                    "transitive":true
                  }
               ]
            }
