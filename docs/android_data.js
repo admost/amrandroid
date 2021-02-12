@@ -468,7 +468,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:mintegral:15.4.11.a22"
+                    "package":"com.admost.sdk:mintegral:15.4.11.1.a22"
                  },
                  {
                     "package":"com.mintegral.msdk.oversea:mtgbid:15.4.01"
