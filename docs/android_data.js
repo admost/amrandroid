@@ -10,7 +10,7 @@ function getAndroidNetworks() {
                     "package":"com.android.volley:volley:1.1.1"
                  },
                  {
-                    "package":"com.admost.sdk:amr:2.2.6"
+                    "package":"com.admost.sdk:amr:2.2.7"
                  },
                  {
                     "package":"com.google.android.gms:play-services-base:17.1.0"
@@ -27,7 +27,7 @@ function getAndroidNetworks() {
                    "package":"androidx.lifecycle:lifecycle-common:2.1.0"
                 },
                 {
-                   "package":"com.admost.sdk:unity-plugin:1.7.9"
+                   "package":"com.admost.sdk:unity-plugin:1.8.0"
                 },
                 {
                    "package":"com.google.android.gms:play-services-ads-identifier:17.0.0"
@@ -63,7 +63,7 @@ function getAndroidNetworks() {
                     "package":"com.google.android.gms:play-services-ads:18.3.0"
                  }, 
                  {
-                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.5.a22" 
+                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.6.a22" 
                  }
               ]
            }
@@ -311,13 +311,13 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:fyber:9.1.0.a22"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-core:7.8.0.a22"
+                    "package":"com.admost.sdk:inneractive-core:7.8.1.a22"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-mraid:7.8.0.a22"
+                    "package":"com.admost.sdk:inneractive-mraid:7.8.1.a22"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-video:7.8.0.a22"
+                    "package":"com.admost.sdk:inneractive-video:7.8.1.a22"
                  },
                  {
                     "package":"com.google.android.gms:play-services-ads:18.3.0"
@@ -468,10 +468,10 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:mintegral:15.4.11.1.a22"
+                    "package":"com.admost.sdk:mintegral:15.4.31.a22"
                  },
                  {
-                    "package":"com.mintegral.msdk.oversea:mtgbid:15.4.01"
+                    "package":"com.mintegral.msdk.oversea:mtgbid:15.4.31"
                  },
                  {
                     "package":"com.admost.sdk:s2sbidding-adapter:1.0.0.a22"
@@ -701,7 +701,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:startapp:4.7.5.a22"
+                    "package":"com.admost.sdk:startapp:4.8.2.a22"
                  }
               ]
            }
@@ -723,7 +723,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:tappx:3.1.12.a22"
+                    "package":"com.admost.sdk:tappx:3.1.12.1.a22"
                  },
                  {
                     "package":"com.tappx.sdk.android:omsdk:1.0.0"
@@ -759,7 +759,7 @@ function getAndroidNetworks() {
             "app_gradle":{
                "dependencies":[
                      {
-                        "package":"com.admost.sdk:tiktok:3.1.5.1.a22"
+                        "package":"com.admost.sdk:tiktok:3.4.1.1.a22"
                      }
                ]
             }
@@ -781,10 +781,10 @@ function getAndroidNetworks() {
             "app_gradle":{
                "dependencies":[
                      {
-                        "package":"com.verizon.ads:android-vas-standard-edition:1.7.0"
+                        "package":"com.verizon.ads:android-vas-standard-edition:1.9.0"
                      },
                      {
-                        "package":"com.admost.sdk:verizon-adapter:1.8.2.a22"
+                        "package":"com.admost.sdk:verizon-adapter:1.9.0.a22"
                      }
                ]
             }
