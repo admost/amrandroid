@@ -74,7 +74,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:adcolony:4.4.0.a22"
+                    "package":"com.admost.sdk:adcolony:4.4.0.1.a22"
                  },
                  {
                     "package":"com.admost.sdk:s2sbidding-adapter:1.0.0.a22"
@@ -269,7 +269,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:facebook:6.2.0.1.a22"
+                    "package":"com.admost.sdk:facebook:6.2.0.2.a22"
                  },
                  {
                     "package":"androidx.recyclerview:recyclerview:1.0.0"
