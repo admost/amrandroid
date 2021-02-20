@@ -406,13 +406,13 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:inneractive-core:7.8.0.a22"
+                    "package":"com.admost.sdk:inneractive-core:7.8.1.a22"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-mraid:7.8.0.a22"
+                    "package":"com.admost.sdk:inneractive-mraid:7.8.1.a22"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-video:7.8.0.a22"
+                    "package":"com.admost.sdk:inneractive-video:7.8.1.a22"
                  },
                  {
                     "package":"com.google.android.gms:play-services-ads:18.3.0"
