@@ -10,7 +10,7 @@ function getAndroidNetworks() {
                     "package":"com.android.volley:volley:1.1.1"
                  },
                  {
-                    "package":"com.admost.sdk:amr:2.2.7"
+                    "package":"com.admost.sdk:amr:2.2.8"
                  },
                  {
                     "package":"com.google.android.gms:play-services-base:17.1.0"
@@ -49,7 +49,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:admost:0.2.2.a22"
+                    "package":"com.admost.sdk:admost:0.2.2.a23"
                  }
               ]
            }
@@ -63,7 +63,7 @@ function getAndroidNetworks() {
                     "package":"com.google.android.gms:play-services-ads:18.3.0"
                  }, 
                  {
-                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.6.a22" 
+                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.6.a23" 
                  }
               ]
            }
@@ -74,10 +74,10 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:adcolony:4.4.0.1.a22"
+                    "package":"com.admost.sdk:adcolony:4.4.0.1.a23"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.0.a22"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.1.a23"
                  }
               ]
            }
@@ -91,7 +91,7 @@ function getAndroidNetworks() {
                   "package":"com.adgem:adgem-android:2.4.0"
                },
                {
-                  "package":"com.admost.sdk:adgem-adapter:2.4.0.a22"
+                  "package":"com.admost.sdk:adgem-adapter:2.4.0.a23"
                }
             ]
          }
@@ -105,7 +105,7 @@ function getAndroidNetworks() {
                     "package":"com.google.android.gms:play-services-ads:18.3.0"
                  }, 
                  {
-                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.6.a22" 
+                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.6.a23" 
                  }
               ]
            }
@@ -116,7 +116,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:adtiming:6.6.1.a22"
+                    "package":"com.admost.sdk:adtiming:6.6.1.a23"
                  }
               ]
            }
@@ -127,7 +127,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:amazon:6.0.0.a22"
+                    "package":"com.admost.sdk:amazon:6.0.0.a23"
                  }
               ]
            }
@@ -138,7 +138,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:applovin:9.15.0.a22"
+                    "package":"com.admost.sdk:applovin:9.15.0.a23"
                  }
               ]
            },
@@ -168,7 +168,7 @@ function getAndroidNetworks() {
                     "package":"com.appnext.sdk:native-ads2:2.5.4.472"
                  },
                  {
-                    "package":"com.admost.sdk:appnext-adapter:2.5.4.472.a22"
+                    "package":"com.admost.sdk:appnext-adapter:2.5.4.472.a23"
                  },
                  {
                     "package":"com.google.android.gms:play-services-location:17.0.0"
@@ -192,7 +192,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:appsamurai:1.3.1.a22"
+                    "package":"com.admost.sdk:appsamurai:1.3.1.a23"
                  },
                  {
                     "package":"androidx.constraintlayout:constraintlayout:1.1.3"
@@ -216,7 +216,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:chartboost:8.2.0.a22"
+                    "package":"com.admost.sdk:chartboost:8.2.0.a23"
                  },
                  {
                     "package":"com.google.android.gms:play-services-ads:18.3.0"
@@ -231,7 +231,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:criteo-adapter:4.2.1.a22"
+                    "package":"com.admost.sdk:criteo-adapter:4.2.1.a23"
                  },
 				 {
 					"package":"com.criteo.publisher:criteo-publisher-sdk:4.2.1"					 
@@ -252,7 +252,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:displayio:4.5.0.a22"
+                    "package":"com.admost.sdk:displayio:4.5.0.a23"
                  },
                  {
                     "package":"androidx.appcompat:appcompat:1.0.0"
@@ -269,13 +269,13 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:facebook:6.2.0.2.a22"
+                    "package":"com.admost.sdk:facebook:6.2.0.3.a23"
                  },
                  {
                     "package":"androidx.recyclerview:recyclerview:1.0.0"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.0.a22"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.1.a23"
                  }
               ]
            }
@@ -286,7 +286,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:flurry:12.5.0.a22"
+                    "package":"com.admost.sdk:flurry:12.5.0.a23"
                  }
               ]
            }
@@ -297,7 +297,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:frecorp:4.2.8.a22"
+                    "package":"com.admost.sdk:frecorp:4.2.8.a23"
                  }
               ]
            }
@@ -308,16 +308,16 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:fyber:9.1.0.a22"
+                    "package":"com.admost.sdk:fyber:9.1.0.a23"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-core:7.8.1.a22"
+                    "package":"com.admost.sdk:inneractive-core:7.8.1.a23"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-mraid:7.8.1.a22"
+                    "package":"com.admost.sdk:inneractive-mraid:7.8.1.a23"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-video:7.8.1.a22"
+                    "package":"com.admost.sdk:inneractive-video:7.8.1.a23"
                  },
                  {
                     "package":"com.google.android.gms:play-services-ads:18.3.0"
@@ -338,7 +338,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:huawei-ads-adapter:13.4.34.301.a22"
+                    "package":"com.admost.sdk:huawei-ads-adapter:13.4.34.301.a23"
                  },
                  {
                     "package":"com.huawei.hms:ads-lite:13.4.34.301"
@@ -365,7 +365,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:hyprmx-adapter:5.1.2.a22"
+                    "package":"com.admost.sdk:hyprmx-adapter:5.1.2.a23"
                  },
                  {
                     "package":"com.hyprmx.android:HyprMX-SDK:5.1.2"
@@ -386,7 +386,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                 {
-                   "package":"com.admost.sdk:inmobi-unified:9.1.1.a22"
+                   "package":"com.admost.sdk:inmobi-unified:9.1.1.a23"
                 },
                 {
                    "package":"com.squareup.picasso:picasso:2.71828"
@@ -406,13 +406,13 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:inneractive-core:7.8.1.a22"
+                    "package":"com.admost.sdk:inneractive-core:7.8.1.a23"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-mraid:7.8.1.a22"
+                    "package":"com.admost.sdk:inneractive-mraid:7.8.1.a23"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-video:7.8.1.a22"
+                    "package":"com.admost.sdk:inneractive-video:7.8.1.a23"
                  },
                  {
                     "package":"com.google.android.gms:play-services-ads:18.3.0"
@@ -433,7 +433,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:ironsource:7.1.0.1.a22"
+                    "package":"com.admost.sdk:ironsource:7.1.0.1.a23"
                  }
               ]
            }
@@ -443,7 +443,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:kidoz:8.9.0.a22"
+                    "package":"com.admost.sdk:kidoz:8.9.0.a23"
                  },
                  {
                     "package":"org.greenrobot:eventbus:3.0.0"
@@ -457,7 +457,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:loopme:8.0.1.a22"
+                    "package":"com.admost.sdk:loopme:8.0.1.a23"
                  }
               ]
            }
@@ -468,13 +468,13 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:mintegral:15.4.31.a22"
+                    "package":"com.admost.sdk:mintegral:15.4.31.a23"
                  },
                  {
                     "package":"com.mintegral.msdk.oversea:mtgbid:15.4.31"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.0.a22"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.1.a23"
                  }
               ]
            },
@@ -492,7 +492,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:mobfox:4.3.2.a22"
+                    "package":"com.admost.sdk:mobfox:4.3.2.a23"
                  }
               ]
            },
@@ -514,7 +514,7 @@ function getAndroidNetworks() {
                     "transitive":true
                  },
                  {
-                    "package":"com.admost.sdk:mopub-adapter:5.10.0.a22"
+                    "package":"com.admost.sdk:mopub-adapter:5.10.0.a23"
                  }
               ]
            },
@@ -535,7 +535,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:mytarget:5.11.10.a22"
+                    "package":"com.admost.sdk:mytarget:5.11.10.a23"
                  }
               ]
            }
@@ -546,7 +546,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:nativex:5.5.9.a22"
+                    "package":"com.admost.sdk:nativex:5.5.9.a23"
                  }
               ]
            }
@@ -557,7 +557,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:nend:5.1.1.a22"
+                    "package":"com.admost.sdk:nend:5.1.1.a23"
                  },
                  {
                     "package":"androidx.constraintlayout:constraintlayout:1.1.3"
@@ -571,7 +571,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:millenial:6.8.3.a22"
+                    "package":"com.admost.sdk:millenial:6.8.3.a23"
                  }
               ]
            },
@@ -594,7 +594,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:ogury:5.0.5.a22"
+                    "package":"com.admost.sdk:ogury:5.0.5.a23"
                  }
               ]
            }
@@ -605,7 +605,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:pollfish:5.6.0.a22"
+                    "package":"com.admost.sdk:pollfish:5.6.0.a23"
                  }
               ]
            }
@@ -619,7 +619,7 @@ function getAndroidNetworks() {
                     "package":"net.pubnative:hybid.sdk:2.3.3"
                  },
                  {
-                    "package":"com.admost.sdk:pubnative-adapter:2.3.3.a22"
+                    "package":"com.admost.sdk:pubnative-adapter:2.3.3.a23"
                  }
               ]
            },
@@ -637,7 +637,7 @@ function getAndroidNetworks() {
          "app_gradle":{
             "dependencies":[
                {
-                  "package":"com.admost.sdk:qumpara:0.3.3.a22"
+                  "package":"com.admost.sdk:qumpara:0.3.3.a23"
                }
             ]
          }
@@ -651,7 +651,7 @@ function getAndroidNetworks() {
                     "package":"com.google.android.gms:play-services-ads:18.3.0"
                  }, 
                  {
-                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.6.a22" 
+                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.6.a23" 
                  }
               ]
            }
@@ -662,7 +662,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:revmob:10.0.0.a22"
+                    "package":"com.admost.sdk:revmob:10.0.0.a23"
                  }
               ]
            }
@@ -673,7 +673,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:smaato-adapter:21.5.7.a22"
+                    "package":"com.admost.sdk:smaato-adapter:21.5.7.a23"
                  },
                  {
                     "package":"com.smaato.android.sdk:smaato-sdk:21.5.7"
@@ -701,7 +701,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:startapp:4.8.2.a22"
+                    "package":"com.admost.sdk:startapp:4.8.2.a23"
                  }
               ]
            }
@@ -712,7 +712,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:tapjoy:12.7.1.a22"
+                    "package":"com.admost.sdk:tapjoy:12.7.1.a23"
                  }
               ]
            }
@@ -723,7 +723,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:tappx:3.1.12.1.a22"
+                    "package":"com.admost.sdk:tappx:3.1.12.1.a23"
                  },
                  {
                     "package":"com.tappx.sdk.android:omsdk:1.0.0"
@@ -737,7 +737,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:tapresearch:2.0.15.a22"
+                    "package":"com.admost.sdk:tapresearch:2.0.15.a23"
                  }
               ]
            }
@@ -748,7 +748,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:unity:3.6.0.1.a22"
+                    "package":"com.admost.sdk:unity:3.6.0.1.a23"
                  }
               ]
            }
@@ -759,7 +759,7 @@ function getAndroidNetworks() {
             "app_gradle":{
                "dependencies":[
                      {
-                        "package":"com.admost.sdk:tiktok:3.4.1.1.a22"
+                        "package":"com.admost.sdk:tiktok:3.4.1.1.a23"
                      }
                ]
             }
@@ -770,7 +770,7 @@ function getAndroidNetworks() {
             "app_gradle":{
                "dependencies":[
                      {
-                        "package":"com.admost.sdk:tiktokchina:3.2.5.1.a22"
+                        "package":"com.admost.sdk:tiktokchina:3.2.5.1.a23"
                      }
                ]
             }
@@ -784,7 +784,7 @@ function getAndroidNetworks() {
                         "package":"com.verizon.ads:android-vas-standard-edition:1.9.0"
                      },
                      {
-                        "package":"com.admost.sdk:verizon-adapter:1.9.0.a22"
+                        "package":"com.admost.sdk:verizon-adapter:1.9.0.a23"
                      }
                ]
             }
@@ -798,7 +798,7 @@ function getAndroidNetworks() {
                     "package":"com.vungle:publisher-sdk-android:6.8.1"
                  },
                  {
-                    "package":"com.admost.sdk:vungle-adapter:6.8.1.a22"
+                    "package":"com.admost.sdk:vungle-adapter:6.8.1.a23"
                  },
                  {
                     "package":"androidx.legacy:legacy-support-v4:1.0.0"
@@ -819,7 +819,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:wortise-adapter:1.0.0.6.a22"
+                    "package":"com.admost.sdk:wortise-adapter:1.0.0.6.a23"
                  },
                  {
                     "package":"com.wortise:androidx-sdk:1.0.0-beta06"
@@ -841,7 +841,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:yandex:3.2.0.a22"
+                    "package":"com.admost.sdk:yandex:3.2.0.a23"
                  },
                  {
                     "package":"com.yandex.android:mobmetricalib:3.14.3"
@@ -855,7 +855,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:youappi:5.0.1.a22"
+                    "package":"com.admost.sdk:youappi:5.0.1.a23"
                  },
                  {
                     "package":"com.google.code.gson:gson:2.8.6",
