@@ -311,6 +311,9 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:fyber:9.1.0.a23"
                  },
                  {
+                    "package":"com.admost.sdk:inneractive-adapter:7.8.1.a23"
+                 },
+                 {
                     "package":"com.admost.sdk:inneractive-core:7.8.1.a23"
                  },
                  {
@@ -405,6 +408,9 @@ function getAndroidNetworks() {
            "status":false,
            "app_gradle":{
               "dependencies":[
+                 {
+                    "package":"com.admost.sdk:inneractive-adapter:7.8.1.a23"
+                 },
                  {
                     "package":"com.admost.sdk:inneractive-core:7.8.1.a23"
                  },
