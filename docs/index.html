@@ -732,13 +732,13 @@ public static &lt;fields&gt;;
 # MINTEGRAL
 -keepattributes Signature
 -keepattributes *Annotation*
--keep class com.mintegral.** {*; }
--keep interface com.mintegral.** {*; }
--keep class android.support.v4.** { *; }
--dontwarn com.mintegral.**
--keep class **.R$* { public static final int mintegral*; }
--keep class com.alphab.** {*; }
--keep interface com.alphab.** {*; }
+-keep class com.mbridge.** {*; }
+-keep interface com.mbridge.** {*; }
+-keep interface androidx.** { *; }
+-keep class androidx.** { *; }
+-keep public class * extends androidx.** { *; }
+-dontwarn com.mbridge.**
+-keep class **.R$* { public static final int mbridge*; }
 
 # MOBFOX
 -dontwarn com.mobfox.**
@@ -783,8 +783,8 @@ public static &lt;fields&gt;;
 -keep class com.nativex.** { *; }
 
 # OGURY
--dontwarn io.presage.**
--keep class io.presage.** { *; }
+-dontwarn com.ogury.**
+-keep class com.ogury.** { *; }
 
 # OUTBID
 -dontwarn outbid.com.outbidsdk.**
@@ -866,9 +866,12 @@ public static &lt;fields&gt;;
 -keep public class com.tappx.** { *; }
 -dontwarn com.tappx.**
 
-# TIKTOK
--dontwarn com.bytedance.**
--keep class com.bytedances.** { *; }
+#TIKTOK
+-keep class com.bytedance.sdk.openadsdk.** { *; }
+-keep public interface com.bytedance.sdk.openadsdk.downloadnew.** {*;}
+-keep class com.pgl.sys.ces.** {*;}
+-keep class com.bytedance.embed_dr.** {*;}
+-keep class com.bytedance.embedapplog.** {*;}
 
 # UNITY
 -dontwarn com.unity3d.**
@@ -909,6 +912,9 @@ public static &lt;fields&gt;;
    public &lt;init&gt;(byte[]);
 }
 
+#YANDEX
+-dontwarn com.yandex.**
+-keep class com.yandex.** { *; }                        
 
 # YOUAPPI
 -keep class com.google.gson.**{ *;}
