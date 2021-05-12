@@ -77,7 +77,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:adcolony:4.5.0.a25"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.1.a25"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.2.a25"
                  }
               ]
            }
@@ -257,7 +257,7 @@ function getAndroidNetworks() {
                     "package":"androidx.recyclerview:recyclerview:1.0.0"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.1.a25"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.2.a25"
                  },
                  {
                     "package":"androidx.annotation:annotation:1.2.0"
@@ -495,7 +495,7 @@ function getAndroidNetworks() {
                     "package":"com.mbridge.msdk.oversea:mbbanner:15.5.11"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.1.a25"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.2.a25"
                  }
               ]
            },
