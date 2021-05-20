@@ -425,6 +425,9 @@ function getAndroidNetworks() {
               "dependencies":[
                  {
                     "package":"com.admost.sdk:ironsource:7.1.5.1.a25"
+                 },
+                 {
+                    "package":"org.jetbrains.kotlin:kotlin-stdlib:1.4.32"
                  }
               ]
            }
