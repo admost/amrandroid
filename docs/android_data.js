@@ -38,7 +38,7 @@ function getAndroidNetworks() {
            "project_gradle":{
               "dependencies":[
                  {
-                    "maven":"http://repo.admost.com:8081/artifactory/admost"
+                    "maven":"http://repo.admost.com:8081/artifactory/amr"
                  }
               ]
            }
