@@ -160,9 +160,9 @@ function fillProjectGradleCode() {
             for (var j = 0; j < obj.ad_networks[i].project_gradle.dependencies.length; j++) {
 				if (obj.ad_networks[i].project_gradle.dependencies[j].maven) {
 					$('#code-projectgradle').append("maven { url '" + obj.ad_networks[i].project_gradle.dependencies[j].maven + "' }<br>");
-				} else if (obj.ad_networks[i].project_gradle.dependencies[j].jcenter != null) {
-					$('#code-projectgradle').append("jcenter (" + obj.ad_networks[i].project_gradle.dependencies[j].jcenter + ")<br>");
-				}
+				} else if (obj.ad_networks[i].project_gradle.dependencies[j].google != null) {
+                    $('#code-projectgradle').append("google (" + obj.ad_networks[i].project_gradle.dependencies[j].google + ")<br>");
+                }
             }
         }
     }

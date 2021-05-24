@@ -559,7 +559,7 @@ function getAndroidNetworks() {
            "project_gradle":{
               "dependencies":[
                  {
-                    "jcenter":""
+                    "google":""
                  },
                  {
                     "maven":"https://s3.amazonaws.com/moat-sdk-builds"
