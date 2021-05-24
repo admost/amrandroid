@@ -60,7 +60,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.google.android.gms:play-services-ads:18.3.0"
+                  "package":"com.google.android.gms:play-services-ads:19.7.0"
                  }, 
                  {
                   "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.6.a25" 
@@ -103,15 +103,29 @@ function getAndroidNetworks() {
          }
         },
         {
-           "name":"AdMob",
+           "name":"AdMob 17.2.0",
            "status":false,
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.google.android.gms:play-services-ads:18.3.0"
+                  "package":"com.google.android.gms:play-services-ads:19.7.0"
                  }, 
                  {
                   "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.6.a25" 
+                 }
+              ]
+           }
+        },
+        {
+           "name":"AdMob 19.7.0",
+           "status":false,
+           "app_gradle":{
+              "dependencies":[
+                 {
+                    "package":"com.google.android.gms:play-services-ads:19.7.0"
+                 }, 
+                 {
+                  "package":"com.admost.sdk:admob-gt-19.7.0-adapter:1.0.1.a25" 
                  }
               ]
            }
@@ -201,7 +215,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:chartboost:8.2.0.1.a25"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-ads:18.3.0"
+                  "package":"com.google.android.gms:play-services-ads:19.7.0"
                  }
 
               ]
@@ -308,7 +322,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:inneractive-video:7.8.1.a25"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-ads:18.3.0"
+                  "package":"com.google.android.gms:play-services-ads:19.7.0"
                  },
                  {
                     "package":"com.google.android.gms:play-services-base:17.1.0"
@@ -406,7 +420,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:inneractive-video:7.8.2.a25"
                  },
                  {
-                    "package":"com.google.android.gms:play-services-ads:18.3.0"
+                    "package":"com.google.android.gms:play-services-ads:19.7.0"
                  },
                  {
                     "package":"com.google.android.gms:play-services-base:17.1.0"
@@ -685,7 +699,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.google.android.gms:play-services-ads:18.3.0"
+                  "package":"com.google.android.gms:play-services-ads:19.7.0"
                  }, 
                  {
                   "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.6.a25" 
