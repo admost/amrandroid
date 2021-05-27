@@ -103,7 +103,7 @@ function getAndroidNetworks() {
          }
         },
         {
-           "name":"AdMob 17.2.0",
+           "name":"AdMob-17.2.0",
            "status":false,
            "app_gradle":{
               "dependencies":[
@@ -117,7 +117,7 @@ function getAndroidNetworks() {
            }
         },
         {
-           "name":"AdMob 19.7.0",
+           "name":"AdMob-19.7.0",
            "status":false,
            "app_gradle":{
               "dependencies":[

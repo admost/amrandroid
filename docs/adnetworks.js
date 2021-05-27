@@ -18,11 +18,11 @@ function toggleAdNetworkStatus(adNetworkName) {
     
     var i = getPositionOfAdNetworkOnJSONArray(adNetworkName);
     //console.log(obj.ad_networks);
-    if((adNetworkName == 'AdMob 17.2.0' && obj.ad_networks.some(e => e.name == 'AdMob 19.7.0' && e.status == true)) || (adNetworkName == 'AdMob 19.7.0' && obj.ad_networks.some(e => e.name == 'AdMob 17.2.0' && e.status == true))) {
+    if((adNetworkName == 'AdMob-17.2.0' && obj.ad_networks.some(e => e.name == 'AdMob-19.7.0' && e.status == true)) || (adNetworkName == 'AdMob-19.7.0' && obj.ad_networks.some(e => e.name == 'AdMob-17.2.0' && e.status == true))) {
         
-        var j =  getPositionOfAdNetworkOnJSONArray('AdMob 17.2.0')
+        var j =  getPositionOfAdNetworkOnJSONArray('AdMob-17.2.0')
         removeAdNetworkFromCart(j)
-        var k =  getPositionOfAdNetworkOnJSONArray('AdMob 19.7.0')
+        var k =  getPositionOfAdNetworkOnJSONArray('AdMob-19.7.0')
         addAdNetworkToCart(k)
     }
     else if (obj.ad_networks[i].status === true) {
