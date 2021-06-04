@@ -10,7 +10,7 @@ function getAndroidNetworks() {
                     "package":"com.android.volley:volley:1.1.1"
                  },
                  {
-                    "package":"com.admost.sdk:amr:2.3.2"
+                    "package":"com.admost.sdk:amr:2.3.3"
                  },
                  {
                     "package":"com.google.android.gms:play-services-base:17.1.0"
@@ -27,7 +27,7 @@ function getAndroidNetworks() {
                    "package":"androidx.lifecycle:lifecycle-common:2.1.0"
                 },
                 {
-                   "package":"com.admost.sdk:unity-plugin:1.8.2"
+                   "package":"com.admost.sdk:unity-plugin:1.8.3"
                 },
                 {
                    "package":"com.google.android.gms:play-services-ads-identifier:17.0.0"
@@ -49,7 +49,7 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:admost:0.2.4.a25"
+                    "package":"com.admost.sdk:admost:1.0.0.a25"
                  }
               ]
            }
@@ -63,7 +63,7 @@ function getAndroidNetworks() {
                   "package":"com.google.android.gms:play-services-ads:19.7.0"
                  }, 
                  {
-                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.6.a25" 
+                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.7.a25" 
                  }
               ]
            }
@@ -77,7 +77,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:adcolony:4.5.0.a25"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.2.a25"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.3.a25"
                  }
               ]
            }
@@ -111,7 +111,7 @@ function getAndroidNetworks() {
                   "package":"com.google.android.gms:play-services-ads:19.7.0"
                  }, 
                  {
-                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.6.a25" 
+                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.7.a25" 
                  }
               ]
            }
@@ -125,7 +125,7 @@ function getAndroidNetworks() {
                     "package":"com.google.android.gms:play-services-ads:19.7.0"
                  }, 
                  {
-                  "package":"com.admost.sdk:admob-gt-19.7.0-adapter:1.0.1.a25" 
+                  "package":"com.admost.sdk:admob-gt-19.7.0-adapter:1.0.2.a25" 
                  }
               ]
            }
@@ -265,13 +265,13 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:facebook:6.4.0.a25"
+                    "package":"com.admost.sdk:facebook:6.5.0.a25"
                  },
                  {
                     "package":"androidx.recyclerview:recyclerview:1.0.0"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.2.a25"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.3.a25"
                  },
                  {
                     "package":"androidx.annotation:annotation:1.2.0"
@@ -310,16 +310,16 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:fyber:9.1.0.a25"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-adapter:7.8.1.a25"
+                    "package":"com.admost.sdk:inneractive-adapter:7.8.2.1.a25"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-core:7.8.1.a25"
+                    "package":"com.admost.sdk:inneractive-core:7.8.2.1.a25"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-mraid:7.8.1.a25"
+                    "package":"com.admost.sdk:inneractive-mraid:7.8.2.1.a25"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-video:7.8.1.a25"
+                    "package":"com.admost.sdk:inneractive-video:7.8.2.1.a25"
                  },
                  {
                   "package":"com.google.android.gms:play-services-ads:19.7.0"
@@ -408,16 +408,16 @@ function getAndroidNetworks() {
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:inneractive-adapter:7.8.2.a25"
+                    "package":"com.admost.sdk:inneractive-adapter:7.8.2.1.a25"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-core:7.8.2.a25"
+                    "package":"com.admost.sdk:inneractive-core:7.8.2.1.a25"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-mraid:7.8.2.a25"
+                    "package":"com.admost.sdk:inneractive-mraid:7.8.2.1.a25"
                  },
                  {
-                    "package":"com.admost.sdk:inneractive-video:7.8.2.a25"
+                    "package":"com.admost.sdk:inneractive-video:7.8.2.1.a25"
                  },
                  {
                     "package":"com.google.android.gms:play-services-ads:19.7.0"
@@ -512,7 +512,7 @@ function getAndroidNetworks() {
                     "package":"com.mbridge.msdk.oversea:mbbanner:15.5.11"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.2.a25"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.3.a25"
                  }
               ]
            },
@@ -702,7 +702,7 @@ function getAndroidNetworks() {
                   "package":"com.google.android.gms:play-services-ads:19.7.0"
                  }, 
                  {
-                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.6.a25" 
+                  "package":"com.admost.sdk:admob-gt-17.2.0-adapter:1.0.7.a25" 
                  }
               ]
            }
@@ -852,7 +852,7 @@ function getAndroidNetworks() {
                     "package":"com.vungle:publisher-sdk-android:6.9.1"
                  },
                  {
-                    "package":"com.admost.sdk:vungle-adapter:6.9.1.a25"
+                    "package":"com.admost.sdk:vungle-adapter:6.9.1.1.a25"
                  },
                  {
                     "package":"androidx.legacy:legacy-support-v4:1.0.0"
