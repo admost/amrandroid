@@ -27,7 +27,7 @@ function getAndroidNetworks() {
                    "package":"androidx.lifecycle:lifecycle-common:2.1.0"
                 },
                 {
-                   "package":"com.admost.sdk:unity-plugin:1.8.4"
+                   "package":"com.admost.sdk:unity-plugin:1.8.5"
                 },
                 {
                    "package":"com.google.android.gms:play-services-ads-identifier:17.0.0"
