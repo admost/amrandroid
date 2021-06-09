@@ -150,6 +150,18 @@ function getAndroidNetworks() {
            }
         },
         {
+           "name":"AFA",
+           "status":false,
+           "adapterVersion":"0.1.1.a25",
+           "app_gradle":{
+              "dependencies":[
+                 {
+                    "package":"com.admost.sdk:afa:0.1.1.a25"
+                 }
+              ]
+           }
+        },
+        {
            "name":"Amazon",
            "status":false,
            "adapterVersion":"6.0.0.a25",
