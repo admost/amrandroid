@@ -4,6 +4,7 @@ function getAndroidNetworks() {
         {
            "name":"AMR",
            "status":true,
+           "adapterVersion":"2.3.3",
            "app_gradle":{
               "dependencies":[
                  {
@@ -46,6 +47,7 @@ function getAndroidNetworks() {
         {
            "name":"Admost",
            "status":false,
+           "adapterVersion":"1.0.0.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -57,6 +59,7 @@ function getAndroidNetworks() {
         {
            "name":"A4G",
            "status":false,
+           "adapterVersion":"1.0.7.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -71,6 +74,7 @@ function getAndroidNetworks() {
         {
            "name":"AdColony",
            "status":false,
+           "adapterVersion":"4.5.0.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -85,6 +89,7 @@ function getAndroidNetworks() {
         {
          "name":"AdGem",
          "status":false,
+         "adapterVersion":"2.5.0.a25",
          "app_gradle":{
             "dependencies":[
                {
@@ -105,6 +110,7 @@ function getAndroidNetworks() {
         {
            "name":"AdMob-17.2.0",
            "status":false,
+           "adapterVersion":"1.0.7.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -119,6 +125,7 @@ function getAndroidNetworks() {
         {
            "name":"AdMob-19.7.0",
            "status":false,
+           "adapterVersion":"1.0.2.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -133,6 +140,7 @@ function getAndroidNetworks() {
         {
            "name":"Adtiming",
            "status":false,
+           "adapterVersion":"6.6.1.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -144,6 +152,7 @@ function getAndroidNetworks() {
         {
            "name":"Amazon",
            "status":false,
+           "adapterVersion":"6.0.0.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -155,6 +164,7 @@ function getAndroidNetworks() {
         {
            "name":"Applovin",
            "status":false,
+           "adapterVersion":"10.2.0.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -176,6 +186,7 @@ function getAndroidNetworks() {
         {
            "name":"Appnext",
            "status":false,
+           "adapterVersion":"2.5.4.472.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -209,6 +220,7 @@ function getAndroidNetworks() {
         {
            "name":"Chartboost",
            "status":false,
+           "adapterVersion":"8.2.0.1.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -224,6 +236,7 @@ function getAndroidNetworks() {
         {
            "name":"Criteo",
            "status":false,
+           "adapterVersion":"4.3.0.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -245,6 +258,7 @@ function getAndroidNetworks() {
         {
            "name":"Display IO",
            "status":false,
+           "adapterVersion":"4.5.0.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -262,6 +276,7 @@ function getAndroidNetworks() {
         {
            "name":"Facebook",
            "status":false,
+           "adapterVersion":"6.5.0.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -282,6 +297,7 @@ function getAndroidNetworks() {
         {
            "name":"Flurry",
            "status":false,
+           "adapterVersion":"12.11.0.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -293,6 +309,7 @@ function getAndroidNetworks() {
         {
            "name":"Frecorp",
            "status":false,
+           "adapterVersion":"4.2.8.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -304,6 +321,7 @@ function getAndroidNetworks() {
         {
            "name":"Fyber",
            "status":false,
+           "adapterVersion":"9.1.0.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -337,6 +355,7 @@ function getAndroidNetworks() {
         {
            "name":"Huawei",
            "status":false,
+           "adapterVersion":"13.4.34.301.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -364,6 +383,7 @@ function getAndroidNetworks() {
         {
            "name":"HyprMX",
            "status":false,
+           "adapterVersion":"5.1.2.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -385,6 +405,7 @@ function getAndroidNetworks() {
         {
            "name":"InMobi",
            "status":false,
+           "adapterVersion":"9.1.7.a25",
            "app_gradle":{
               "dependencies":[
                 {
@@ -405,6 +426,7 @@ function getAndroidNetworks() {
         {
            "name":"Inneractive",
            "status":false,
+           "adapterVersion":"7.8.2.1.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -435,6 +457,7 @@ function getAndroidNetworks() {
         {
            "name":"IronSource",
            "status":false,
+           "adapterVersion":"7.1.5.1.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -448,6 +471,7 @@ function getAndroidNetworks() {
         },{
            "name":"Kidoz",
            "status":false,
+           "adapterVersion":"8.9.1.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -462,6 +486,7 @@ function getAndroidNetworks() {
         {
            "name":"Loopme",
            "status":false,
+           "adapterVersion":"8.0.1.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -473,6 +498,7 @@ function getAndroidNetworks() {
         {
            "name":"Mintegral",
            "status":false,
+           "adapterVersion":"15.5.11.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -527,6 +553,7 @@ function getAndroidNetworks() {
         {
            "name":"Mobfox",
            "status":false,
+           "adapterVersion":"4.3.2.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -545,6 +572,7 @@ function getAndroidNetworks() {
         {
            "name":"Mopub",
            "status":false,
+           "adapterVersion":"5.10.0.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -570,6 +598,7 @@ function getAndroidNetworks() {
         {
            "name":"MyTarget",
            "status":false,
+           "adapterVersion":"5.11.12.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -581,6 +610,7 @@ function getAndroidNetworks() {
         {
            "name":"Nativex",
            "status":false,
+           "adapterVersion":"5.5.9.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -592,6 +622,7 @@ function getAndroidNetworks() {
         {
            "name":"Nend",
            "status":false,
+           "adapterVersion":"5.1.1.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -606,6 +637,7 @@ function getAndroidNetworks() {
         {
            "name":"Nexage(AOL)",
            "status":false,
+           "adapterVersion":"6.8.3.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -629,6 +661,7 @@ function getAndroidNetworks() {
         {
            "name":"Ogury",
            "status":false,
+           "adapterVersion":"5.0.9.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -650,6 +683,7 @@ function getAndroidNetworks() {
         {
            "name":"Pollfish",
            "status":false,
+           "adapterVersion":"6.0.3.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -664,6 +698,7 @@ function getAndroidNetworks() {
         {
            "name":"Pubnative",
            "status":false,
+           "adapterVersion":"2.4.6.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -685,6 +720,7 @@ function getAndroidNetworks() {
         {
          "name":"Qumpara",
          "status":false,
+         "adapterVersion":"0.3.3.a25",
          "app_gradle":{
             "dependencies":[
                {
@@ -696,6 +732,7 @@ function getAndroidNetworks() {
         {
            "name":"Reklamup",
            "status":false,
+           "adapterVersion":"1.0.7.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -710,6 +747,7 @@ function getAndroidNetworks() {
         {
            "name":"Revmob",
            "status":false,
+           "adapterVersion":"10.0.0.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -721,6 +759,7 @@ function getAndroidNetworks() {
         {
            "name":"Smaato",
            "status":false,
+           "adapterVersion":"21.5.8.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -749,6 +788,7 @@ function getAndroidNetworks() {
         {
            "name":"StartApp",
            "status":false,
+           "adapterVersion":"4.8.6.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -763,6 +803,7 @@ function getAndroidNetworks() {
         {
            "name":"Tapjoy",
            "status":false,
+           "adapterVersion":"12.8.0.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -774,6 +815,7 @@ function getAndroidNetworks() {
         {
            "name":"Tappx",
            "status":false,
+           "adapterVersion":"3.1.12.1.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -788,6 +830,7 @@ function getAndroidNetworks() {
         {
            "name":"TapResearch",
            "status":false,
+           "adapterVersion":"2.0.15.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -799,6 +842,7 @@ function getAndroidNetworks() {
         {
            "name":"UnityAds",
            "status":false,
+           "adapterVersion":"3.7.1.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -810,6 +854,7 @@ function getAndroidNetworks() {
         {
             "name":"Tiktok",
             "status":false,
+            "adapterVersion":"3.6.0.1.a25",
             "app_gradle":{
                "dependencies":[
                      {
@@ -821,6 +866,7 @@ function getAndroidNetworks() {
         {
             "name":"Tiktok-China",
             "status":false,
+            "adapterVersion":"3.6.1.0.a25",
             "app_gradle":{
                "dependencies":[
                      {
@@ -832,6 +878,7 @@ function getAndroidNetworks() {
         {
             "name":"Verizon",
             "status":false,
+            "adapterVersion":"1.9.0.a25",
             "app_gradle":{
                "dependencies":[
                      {
@@ -846,6 +893,7 @@ function getAndroidNetworks() {
         {
            "name":"Vungle",
            "status":false,
+           "adapterVersion":"6.9.1.1.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -870,6 +918,7 @@ function getAndroidNetworks() {
         {
            "name":"Wortise",
            "status":false,
+           "adapterVersion":"1.0.0.6.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -892,6 +941,7 @@ function getAndroidNetworks() {
         {
            "name":"YandexAds",
            "status":false,
+           "adapterVersion":"4.1.0.a25",
            "app_gradle":{
               "dependencies":[
                  {
@@ -906,6 +956,7 @@ function getAndroidNetworks() {
         {
            "name":"YouAppi",
            "status":false,
+           "adapterVersion":"5.0.1.a25",
            "app_gradle":{
               "dependencies":[
                  {
