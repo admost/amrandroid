@@ -157,6 +157,7 @@
                             <li><a href="#privacycheck">Privacy Consent Check</a>
                             <li style="display:none"><a href="#campaigntracking">Campaign Tracking</a></li>
                             <li><a href="#remoteconfig">Remote Config <span class="label label-teal">New</span></a>
+                            <li><a href="#abtest">A/B Test <span class="label label-teal">New</span></a>
                             </li>
                         </ul>
                     </li>
@@ -1648,22 +1649,39 @@ AdMost.getInstance().setPrivacyConsentListener(this, new AdMost.PrivacyConsentLi
 
 
                 <h3 id="remoteconfig">Remote Config</h3>
+                    <p>
+                        Admost Remote config is a feature for defining and updating server side parameters from the Admost dashboard. You can define the parameters in long, double, boolean and string types. To define parameters on Admost dashboard, click on settings icon on My Apps page and select Remote Config item from the list. The following page will pop up. You can define your parameters in this page in JSON format.
+                    </p>
+                    <br/>
+
+                    <img class="img-responsive" src="assets/img/remote_config.png?v=1"
+                                    alt="android-test-suite screenshot">
+                    <br/>
 
                     <p>
-                        Admost Remote config is a feature for defining and updating server side parameters from the Admost dashboard. You can define the parameters in long, double, boolean and string types. Example usage is as follows; 
+                        To read the parameter values in your app, you can use the following methods of the sdk. It is suggested to use these methods after admost initialization completed, otherwise default values you set will be returned for new users. For existing users, the data stored in shared preferences will be used before initialization.
                     </p>
 
                     <pre><code class="language-java">
-                        // it is required to call value functions after Admost initialization otherwise default value will be used.
-AdMostRemoteConfig.getInstance().getLong("version",0L);
-AdMostRemoteConfig.getInstance().getString("mediation","admost");
+AdMostRemoteConfig.getInstance().getLong("closePopupInSeconds",0L);
+AdMostRemoteConfig.getInstance().getString("version","1.0.0");
 AdMostRemoteConfig.getInstance().getDouble("price",3.1);
-AdMostRemoteConfig.getInstance().getBoolean("consent_required",false);
+AdMostRemoteConfig.getInstance().getBoolean("isDebug",false);
                 </code></pre>
 
                     <p>
-                        You can also run A/B tests for remote config parameters bundling with other test parameters. You do not have to do anything to run or join these tests on client side, random percentile targeting feature of the sdk will handle it itself. You can define these tests and target your audiences from the dashboard's A/B test menu.  
+                        You can also run A/B tests for remote config parameters bundling with other mediation related test parameters. You do not have to do anything to run or join these tests on client side, random percentile targeting feature of the sdk will handle it itself. You can define these tests and target your audiences from the dashboard's A/B test menu.  
                     </p>
+
+                    <h3 id="abtest">A/B Test</h3>
+                    <p>
+                        AdMost A/B test feature is available on the sdk since version 2.0.0 have been released, but until the relase of remote config feature it was only used for the monetisation parameters tests. Now it is capable of doing in-game feature tests with remote config parameters as well.
+                    </p>
+                    <p>
+                    For using A/B test feature, you don't need to do anything on client side. All settings can be done over the Dashboard. </p>
+                    <p style="display:none">
+                    <a href="#">Click here</a> to see the documentation about the capabilities of Admost A/B test.  
+                    </p>                    
 
                     <div style="display:none">
                         <h3 id="campaigntracking">Campaign Tracking</h3>
