@@ -11,7 +11,7 @@ function getAndroidNetworks() {
                     "package":"com.android.volley:volley:1.1.1"
                  },
                  {
-                    "package":"com.admost.sdk:amr:2.3.3"
+                    "package":"com.admost.sdk:amr:2.3.4"
                  },
                  {
                     "package":"com.google.android.gms:play-services-base:17.1.0"
@@ -47,11 +47,11 @@ function getAndroidNetworks() {
         {
            "name":"Admost",
            "status":false,
-           "adapterVersion":"1.0.0.a25",
+           "adapterVersion":"1.0.2.a25",
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:admost:1.0.0.a25"
+                    "package":"com.admost.sdk:admost:1.0.2.a25"
                  }
               ]
            }
@@ -81,7 +81,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:adcolony:4.5.0.a25"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.3.a25"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.4.a25"
                  }
               ]
            }
@@ -232,11 +232,11 @@ function getAndroidNetworks() {
         {
            "name":"Chartboost",
            "status":false,
-           "adapterVersion":"8.2.0.1.a25",
+           "adapterVersion":"8.2.1.a25",
            "app_gradle":{
               "dependencies":[
                  {
-                    "package":"com.admost.sdk:chartboost:8.2.0.1.a25"
+                    "package":"com.admost.sdk:chartboost:8.2.1.a25"
                  },
                  {
                   "package":"com.google.android.gms:play-services-ads:19.7.0"
@@ -298,7 +298,7 @@ function getAndroidNetworks() {
                     "package":"androidx.recyclerview:recyclerview:1.0.0"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.3.a25"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.4.a25"
                  },
                  {
                     "package":"androidx.annotation:annotation:1.2.0"
@@ -550,7 +550,7 @@ function getAndroidNetworks() {
                     "package":"com.mbridge.msdk.oversea:mbbanner:15.5.11"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.3.a25"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.4.a25"
                  }
               ]
            },
@@ -673,14 +673,14 @@ function getAndroidNetworks() {
         {
            "name":"Ogury",
            "status":false,
-           "adapterVersion":"5.0.9.a25",
+           "adapterVersion":"5.0.9.1.a25",
            "app_gradle":{
               "dependencies":[
                  {
                     "package":"co.ogury:ogury-sdk:5.0.9"
                  },
                  {
-                    "package":"com.admost.sdk:ogury-adapter:5.0.9.a25"
+                    "package":"com.admost.sdk:ogury-adapter:5.0.9.1.a25"
                  }
               ]
            },
@@ -866,12 +866,15 @@ function getAndroidNetworks() {
         {
             "name":"Tiktok",
             "status":false,
-            "adapterVersion":"3.6.0.1.a25",
+            "adapterVersion":"3.7.1.1.a25",
             "app_gradle":{
                "dependencies":[
                      {
-                        "package":"com.admost.sdk:tiktok:3.6.0.1.a25"
-                     }
+                        "package":"com.admost.sdk:tiktok:3.7.1.1.a25"
+                     },
+                    {
+                       "package":"com.admost.sdk:s2sbidding-adapter:1.0.4.a25"
+                    }
                ]
             }
         },
