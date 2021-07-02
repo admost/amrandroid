@@ -919,6 +919,9 @@ function getAndroidNetworks() {
                  },
                  {
                     "package":"androidx.legacy:legacy-support-v4:1.0.0"
+                 },
+                 {
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.4.a25"
                  }
               ]
            },
