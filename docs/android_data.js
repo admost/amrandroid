@@ -11,7 +11,7 @@ function getAndroidNetworks() {
                     "package":"com.android.volley:volley:1.1.1"
                  },
                  {
-                    "package":"com.admost.sdk:amr:2.3.4"
+                    "package":"com.admost.sdk:amr:2.3.5"
                  },
                  {
                     "package":"com.google.android.gms:play-services-base:17.1.0"
@@ -81,7 +81,7 @@ function getAndroidNetworks() {
                     "package":"com.admost.sdk:adcolony:4.5.0.a25"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.4.a25"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.5.a25"
                  }
               ]
            }
@@ -298,7 +298,7 @@ function getAndroidNetworks() {
                     "package":"androidx.recyclerview:recyclerview:1.0.0"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.4.a25"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.5.a25"
                  },
                  {
                     "package":"androidx.annotation:annotation:1.2.0"
@@ -550,7 +550,7 @@ function getAndroidNetworks() {
                     "package":"com.mbridge.msdk.oversea:mbbanner:15.5.11"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.4.a25"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.5.a25"
                  }
               ]
            },
@@ -873,7 +873,7 @@ function getAndroidNetworks() {
                         "package":"com.admost.sdk:tiktok:3.7.1.1.a25"
                      },
                     {
-                       "package":"com.admost.sdk:s2sbidding-adapter:1.0.4.a25"
+                       "package":"com.admost.sdk:s2sbidding-adapter:1.0.5.a25"
                     }
                ]
             }
@@ -921,7 +921,7 @@ function getAndroidNetworks() {
                     "package":"androidx.legacy:legacy-support-v4:1.0.0"
                  },
                  {
-                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.4.a25"
+                    "package":"com.admost.sdk:s2sbidding-adapter:1.0.5.a25"
                  }
               ]
            },
