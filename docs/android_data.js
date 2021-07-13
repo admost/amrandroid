@@ -208,21 +208,21 @@ function getAndroidNetworks() {
        {
            "name": "Appnext",
            "status": false,
-           "adapterVersion": "2.5.4.472.a25",
+           "adapterVersion": "2.6.0.473.a25",
            "unitySupport": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.appnext.sdk:ads:2.5.4.472"
+                       "package": "com.appnext.sdk:ads:2.6.0.473"
                    },
                    {
-                       "package": "com.appnext.sdk:banners:2.5.4.472"
+                       "package": "com.appnext.sdk:banners:2.6.0.473"
                    },
                    {
-                       "package": "com.appnext.sdk:native-ads2:2.5.4.472"
+                       "package": "com.appnext.sdk:native-ads2:2.6.0.473"
                    },
                    {
-                       "package": "com.admost.sdk:appnext-adapter:2.5.4.472.a25"
+                       "package": "com.admost.sdk:appnext-adapter:2.6.0.473.a25"
                    },
                    {
                        "package": "com.google.android.gms:play-services-location:17.0.0"
