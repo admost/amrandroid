@@ -1,8 +1,9 @@
-{"ad_networks": [
+{
+    "ad_networks": [
        {
            "name": "AMR",
            "status": true,
-           "adapterVersion": "2.3.3",
+           "adapterVersion": "2.3.5",
            "unitySupport": true,
            "app_gradle": {
                "dependencies": [
@@ -1035,5 +1036,4 @@
            }
        }
    ]
-}
 }
