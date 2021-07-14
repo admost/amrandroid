@@ -1,4 +1,4 @@
-"ad_networks": [
+{"ad_networks": [
        {
            "name": "AMR",
            "status": true,
@@ -1035,4 +1035,5 @@
            }
        }
    ]
+}
 }
