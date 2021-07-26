@@ -3,8 +3,8 @@
        {
            "name": "AMR",
            "status": true,
-           "adapterVersion": "2.3.6",
-           "unitySupport": true,
+           "adapter_version": "2.3.6",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -46,8 +46,8 @@
        {
            "name": "Admost",
            "status": false,
-           "adapterVersion": "1.0.2.a25",
-           "unitySupport": true,
+           "adapter_version": "1.0.2.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -59,8 +59,8 @@
        {
            "name": "A4G",
            "status": false,
-           "adapterVersion": "1.0.7.a25",
-           "unitySupport": true,
+           "adapter_version": "1.0.7.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -75,8 +75,8 @@
        {
            "name": "AdColony",
            "status": false,
-           "adapterVersion": "4.5.0.a25",
-           "unitySupport": true,
+           "adapter_version": "4.5.0.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -88,8 +88,8 @@
        {
            "name": "AdGem",
            "status": false,
-           "adapterVersion": "2.5.0.a25",
-           "unitySupport": true,
+           "adapter_version": "2.5.0.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -110,8 +110,8 @@
        {
            "name": "AdMob-17.2.0",
            "status": false,
-           "adapterVersion": "1.0.7.a25",
-           "unitySupport": false,
+           "adapter_version": "1.0.7.a25",
+           "unity_support": false,
            "app_gradle": {
                "dependencies": [
                    {
@@ -126,8 +126,8 @@
        {
            "name": "AdMob-19.7.0",
            "status": false,
-           "adapterVersion": "1.0.2.a25",
-           "unitySupport": true,
+           "adapter_version": "1.0.2.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -142,8 +142,8 @@
        {
            "name": "Adtiming",
            "status": false,
-           "adapterVersion": "6.6.1.a25",
-           "unitySupport": true,
+           "adapter_version": "6.6.1.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -155,8 +155,8 @@
        {
            "name": "AFA",
            "status": false,
-           "adapterVersion": "0.1.1.a25",
-           "unitySupport": true,
+           "adapter_version": "0.1.1.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -168,8 +168,8 @@
        {
            "name": "Amazon",
            "status": false,
-           "adapterVersion": "6.0.0.a25",
-           "unitySupport": true,
+           "adapter_version": "6.0.0.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -181,8 +181,8 @@
        {
            "name": "Applovin",
            "status": false,
-           "adapterVersion": "10.2.0.a25",
-           "unitySupport": true,
+           "adapter_version": "10.2.0.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -204,8 +204,8 @@
        {
            "name": "Appnext",
            "status": false,
-           "adapterVersion": "2.6.0.473.a25",
-           "unitySupport": true,
+           "adapter_version": "2.6.0.473.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -239,8 +239,8 @@
        {
            "name": "Chartboost",
            "status": false,
-           "adapterVersion": "8.2.1.a25",
-           "unitySupport": true,
+           "adapter_version": "8.2.1.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -255,8 +255,8 @@
        {
            "name": "Criteo",
            "status": false,
-           "adapterVersion": "4.3.0.a25",
-           "unitySupport": true,
+           "adapter_version": "4.3.0.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -278,8 +278,8 @@
        {
            "name": "Display IO",
            "status": false,
-           "adapterVersion": "4.5.0.a25",
-           "unitySupport": false,
+           "adapter_version": "4.5.0.a25",
+           "unity_support": false,
            "app_gradle": {
                "dependencies": [
                    {
@@ -297,8 +297,8 @@
        {
            "name": "Facebook",
            "status": false,
-           "adapterVersion": "6.5.0.a25",
-           "unitySupport": true,
+           "adapter_version": "6.5.0.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -316,8 +316,8 @@
        {
            "name": "Flurry",
            "status": false,
-           "adapterVersion": "12.11.0.a25",
-           "unitySupport": false,
+           "adapter_version": "12.11.0.a25",
+           "unity_support": false,
            "app_gradle": {
                "dependencies": [
                    {
@@ -329,8 +329,8 @@
        {
            "name": "Frecorp",
            "status": false,
-           "adapterVersion": "4.2.8.a25",
-           "unitySupport": false,
+           "adapter_version": "4.2.8.a25",
+           "unity_support": false,
            "app_gradle": {
                "dependencies": [
                    {
@@ -342,8 +342,8 @@
        {
            "name": "Fyber",
            "status": false,
-           "adapterVersion": "9.1.0.a25",
-           "unitySupport": true,
+           "adapter_version": "9.1.0.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -377,8 +377,8 @@
        {
            "name": "Huawei",
            "status": false,
-           "adapterVersion": "13.4.34.301.a25",
-           "unitySupport": true,
+           "adapter_version": "13.4.34.301.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -406,8 +406,8 @@
        {
            "name": "HyprMX",
            "status": false,
-           "adapterVersion": "5.1.2.a25",
-           "unitySupport": true,
+           "adapter_version": "5.1.2.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -429,8 +429,8 @@
        {
            "name": "InMobi",
            "status": false,
-           "adapterVersion": "9.1.7.a25",
-           "unitySupport": true,
+           "adapter_version": "9.1.7.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -451,8 +451,8 @@
        {
            "name": "Inneractive",
            "status": false,
-           "adapterVersion": "7.8.2.1.a25",
-           "unitySupport": true,
+           "adapter_version": "7.8.2.1.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -483,8 +483,8 @@
        {
            "name": "IronSource",
            "status": false,
-           "adapterVersion": "7.1.5.1.a25",
-           "unitySupport": true,
+           "adapter_version": "7.1.5.1.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -499,8 +499,8 @@
        {
            "name": "Kidoz",
            "status": false,
-           "adapterVersion": "8.9.1.a25",
-           "unitySupport": true,
+           "adapter_version": "8.9.1.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -515,8 +515,8 @@
        {
            "name": "Loopme",
            "status": false,
-           "adapterVersion": "8.0.1.a25",
-           "unitySupport": false,
+           "adapter_version": "8.0.1.a25",
+           "unity_support": false,
            "app_gradle": {
                "dependencies": [
                    {
@@ -528,8 +528,8 @@
        {
            "name": "Mintegral",
            "status": false,
-           "adapterVersion": "15.5.11.a25",
-           "unitySupport": true,
+           "adapter_version": "15.5.11.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -581,8 +581,8 @@
        {
            "name": "Mobfox",
            "status": false,
-           "adapterVersion": "4.3.2.a25",
-           "unitySupport": true,
+           "adapter_version": "4.3.2.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -601,8 +601,8 @@
        {
            "name": "Mopub",
            "status": false,
-           "adapterVersion": "5.10.0.a25",
-           "unitySupport": true,
+           "adapter_version": "5.10.0.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -628,8 +628,8 @@
        {
            "name": "MyTarget",
            "status": false,
-           "adapterVersion": "5.11.12.a25",
-           "unitySupport": true,
+           "adapter_version": "5.11.12.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -641,8 +641,8 @@
        {
            "name": "Nativex",
            "status": false,
-           "adapterVersion": "5.5.9.a25",
-           "unitySupport": false,
+           "adapter_version": "5.5.9.a25",
+           "unity_support": false,
            "app_gradle": {
                "dependencies": [
                    {
@@ -654,8 +654,8 @@
        {
            "name": "Nend",
            "status": false,
-           "adapterVersion": "5.1.1.a25",
-           "unitySupport": false,
+           "adapter_version": "5.1.1.a25",
+           "unity_support": false,
            "app_gradle": {
                "dependencies": [
                    {
@@ -670,8 +670,8 @@
        {
            "name": "Nexage(AOL)",
            "status": false,
-           "adapterVersion": "6.8.3.a25",
-           "unitySupport": true,
+           "adapter_version": "6.8.3.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -695,8 +695,8 @@
        {
            "name": "Ogury",
            "status": false,
-           "adapterVersion": "5.0.9.1.a25",
-           "unitySupport": true,
+           "adapter_version": "5.0.9.1.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -718,8 +718,8 @@
        {
            "name": "Pollfish",
            "status": false,
-           "adapterVersion": "6.0.3.a25",
-           "unitySupport": true,
+           "adapter_version": "6.0.3.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -734,8 +734,8 @@
        {
            "name": "Pubnative",
            "status": false,
-           "adapterVersion": "2.4.6.a25",
-           "unitySupport": true,
+           "adapter_version": "2.4.6.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -757,8 +757,8 @@
        {
            "name": "Qumpara",
            "status": false,
-           "adapterVersion": "0.3.3.a25",
-           "unitySupport": true,
+           "adapter_version": "0.3.3.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -770,8 +770,8 @@
        {
            "name": "Reklamup",
            "status": false,
-           "adapterVersion": "1.0.7.a25",
-           "unitySupport": true,
+           "adapter_version": "1.0.7.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -786,8 +786,8 @@
        {
            "name": "Revmob",
            "status": false,
-           "adapterVersion": "10.0.0.a25",
-           "unitySupport": false,
+           "adapter_version": "10.0.0.a25",
+           "unity_support": false,
            "app_gradle": {
                "dependencies": [
                    {
@@ -799,8 +799,8 @@
        {
            "name": "Smaato",
            "status": false,
-           "adapterVersion": "21.5.8.a25",
-           "unitySupport": true,
+           "adapter_version": "21.5.8.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -828,8 +828,8 @@
        {
            "name": "StartApp",
            "status": false,
-           "adapterVersion": "4.8.6.a25",
-           "unitySupport": true,
+           "adapter_version": "4.8.6.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -844,8 +844,8 @@
        {
            "name": "Tapjoy",
            "status": false,
-           "adapterVersion": "12.8.0.a25",
-           "unitySupport": true,
+           "adapter_version": "12.8.0.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -857,8 +857,8 @@
        {
            "name": "Tappx",
            "status": false,
-           "adapterVersion": "3.1.12.1.a25",
-           "unitySupport": true,
+           "adapter_version": "3.1.12.1.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -873,8 +873,8 @@
        {
            "name": "TapResearch",
            "status": false,
-           "adapterVersion": "2.0.15.a25",
-           "unitySupport": true,
+           "adapter_version": "2.0.15.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -886,8 +886,8 @@
        {
            "name": "UnityAds",
            "status": false,
-           "adapterVersion": "3.7.1.a25",
-           "unitySupport": true,
+           "adapter_version": "3.7.1.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -899,8 +899,8 @@
        {
            "name": "Tiktok",
            "status": false,
-           "adapterVersion": "3.7.1.1.a25",
-           "unitySupport": true,
+           "adapter_version": "3.7.1.1.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -912,8 +912,8 @@
        {
            "name": "Tiktok-China",
            "status": false,
-           "adapterVersion": "3.6.1.0.a25",
-           "unitySupport": false,
+           "adapter_version": "3.6.1.0.a25",
+           "unity_support": false,
            "app_gradle": {
                "dependencies": [
                    {
@@ -925,8 +925,8 @@
        {
            "name": "Verizon",
            "status": false,
-           "adapterVersion": "1.9.0.a25",
-           "unitySupport": false,
+           "adapter_version": "1.9.0.a25",
+           "unity_support": false,
            "app_gradle": {
                "dependencies": [
                    {
@@ -941,8 +941,8 @@
        {
            "name": "Vungle",
            "status": false,
-           "adapterVersion": "6.9.1.1.a25",
-           "unitySupport": true,
+           "adapter_version": "6.9.1.1.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -967,8 +967,8 @@
        {
            "name": "Wortise",
            "status": false,
-           "adapterVersion": "1.0.0.6.a25",
-           "unitySupport": false,
+           "adapter_version": "1.0.0.6.a25",
+           "unity_support": false,
            "app_gradle": {
                "dependencies": [
                    {
@@ -990,8 +990,8 @@
        {
            "name": "YandexAds",
            "status": false,
-           "adapterVersion": "4.1.0.a25",
-           "unitySupport": true,
+           "adapter_version": "4.1.0.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
@@ -1006,8 +1006,8 @@
        {
            "name": "YouAppi",
            "status": false,
-           "adapterVersion": "5.0.1.a25",
-           "unitySupport": true,
+           "adapter_version": "5.0.1.a25",
+           "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
