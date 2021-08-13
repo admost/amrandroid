@@ -11,7 +11,7 @@
                        "package": "com.android.volley:volley:1.1.1"
                    },
                    {
-                       "package": "com.admost.sdk:amr:2.3.7"
+                       "package": "com.admost.sdk:amr:2.3.8"
                    },
                    {
                        "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -155,12 +155,12 @@
        {
            "name": "AFA",
            "status": false,
-           "adapter_version": "0.1.1.a25",
+           "adapter_version": "0.1.2.a25",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:afa:0.1.1.a25"
+                       "package": "com.admost.sdk:afa:0.1.2.a25"
                    }
                ]
            }
@@ -181,12 +181,12 @@
        {
            "name": "Applovin",
            "status": false,
-           "adapter_version": "10.3.1.a25",
+           "adapter_version": "10.3.2.a25",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:applovin:10.3.1.a25"
+                       "package": "com.admost.sdk:applovin:10.3.2.a25"
                    }
                ]
            },
