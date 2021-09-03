@@ -12,7 +12,7 @@
                    },
                    {
                        "package": "com.admost.sdk:amr:2.4.1"
-                   }
+                   },
                    {
                        "package": "com.google.android.gms:play-services-base:17.1.0"
                    }
