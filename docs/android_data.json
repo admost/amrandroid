@@ -915,12 +915,12 @@
        {
            "name": "UnityAds",
            "status": false,
-           "adapter_version": "3.7.5.a25",
+           "adapter_version": "3.7.2.1.a25",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:unity:3.7.5.a25"
+                       "package": "com.admost.sdk:unity:3.7.2.1.a25"
                    }
                ]
            }
