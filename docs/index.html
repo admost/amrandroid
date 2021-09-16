@@ -118,6 +118,7 @@
                             <li><a href="#required-files">Required Files</a></li>
                             <li><a href="#edit-files">Edit Files</a></li>
                             <li><a href="#proguard">Proguard</a></li>
+                            <li><a href="#shrink">Shrink Resources</a></li>
                         </ul>
                     </li>
                     <li>
@@ -940,6 +941,13 @@ public *;
 -keep class com.verizon.ads**
 </code>
           </pre>
+                    <h3 id="shrink">Shrink Resources</h3>
+                    <p>If you are using <code>shrinkResources true</code>, please add the lines below to your <code>/app/src/res/raw/keep.xml</code> file</p>
+
+                    <pre><code>
+                    &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; &lt;resources xmlns:tools=&quot;http://schemas.android.com/tools&quot;     tools:keep=&quot;@layout/tt_activity_full_video,@layout/tt_*,@drawable/mbridge*,@drawable-hdpi-v4/mbridge*,@drawable-hdpi/mbridge*,@layout/mbridge*,@values/mbridge*,@anim/mbridge*&quot; /&gt;
+                    </code>
+                    </pre>
 
                     <br>
 
@@ -1775,6 +1783,7 @@ dependencies {
 
     <script>
         var jsonpath_android = 'https://admost.github.io/amrandroid/android_data.json?' + Date.now();
+        //var jsonpath_android = 'https://admost.github.io/amrandroid/android_data_test.json?' + Date.now();
         //var jsonpath_android = 'https://www.kokteyl.com/paket/android_data.json?' + Date.now();
 
         $.getJSON(jsonpath_android, function( data ) {

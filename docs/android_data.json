@@ -985,7 +985,10 @@
                        "package": "com.admost.sdk:wortise-adapter:1.2.1.a25"
                    },
                    {
-                       "package": "com.wortise:android-sdk:1.2.1"
+                       "package": "com.wortise:android-sdk:1.2.1",
+                       "exclude": true,
+                       "group": "com.google.ads.mediation",
+                       "module": "facebook"
                    }
                ]
            },
