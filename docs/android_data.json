@@ -373,9 +373,6 @@
                    },
                    {
                        "package": "com.huawei.hms:ads-identifier:3.4.46.300"
-                   },
-                   {
-                       "package": "com.huawei.hms:base:5.0.0.302"
                    }
                ]
            },
