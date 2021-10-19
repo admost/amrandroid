@@ -7,37 +7,53 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
-import com.google.android.gms.ads.doubleclick.PublisherAdView;
-import com.google.android.gms.ads.doubleclick.PublisherInterstitialAd;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.admanager.AdManagerAdRequest;
+import com.google.android.gms.ads.admanager.AdManagerAdView;
+import com.google.android.gms.ads.admanager.AdManagerInterstitialAd;
+import com.google.android.gms.ads.admanager.AdManagerInterstitialAdLoadCallback;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import admost.sdk.AdMostViewBinder;
 import admost.sdk.dfp.AmrDfpCustomEventBanner;
 
 public class DFPIntegrationSampleActivity extends Activity {
 
-    PublisherInterstitialAd mPublisherInterstitialAd;
-
+    AdManagerInterstitialAd mPublisherInterstitialAd;
+    Boolean isInterstitialReady;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dfp_integration);
+        MobileAds.initialize(
+                this,
+                new OnInitializationCompleteListener() {
+                    @Override
+                    public void onInitializationComplete(InitializationStatus status) {
+                        getBannerFromDFP();
+                    }
+                });
 
         // REQUIRED
         // 1 - Include AMR sdk
         // 2 - Include required adnetwork sdks
         // 3 - Initialize AMR SDK just once before calling banner or interstitial from DFP
 
-        getBannerFromDFP();
+
 
         findViewById(R.id.showInterstitial).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mPublisherInterstitialAd != null && mPublisherInterstitialAd.isLoaded()) {
-                    mPublisherInterstitialAd.show();
+                if (mPublisherInterstitialAd != null) {
+                    mPublisherInterstitialAd.show(DFPIntegrationSampleActivity.this);
                 } else {
                     getInterstitialFromDFP();
                 }
@@ -55,7 +71,7 @@ public class DFPIntegrationSampleActivity extends Activity {
 
     private void getBannerFromDFP() {
 
-        final PublisherAdView adView = new PublisherAdView(this);
+        final AdManagerAdView adView = new AdManagerAdView(this);
         adView.setAdUnitId("/96769799/amr_android_banner");
         adView.setAdSizes(new AdSize(320,50));
 
@@ -75,24 +91,14 @@ public class DFPIntegrationSampleActivity extends Activity {
         bundle.putParcelable("amr_binder", customBinder);
         // amr_binder : end
 
-        PublisherAdRequest adRequest = new PublisherAdRequest.Builder()
-                .addCustomEventExtrasBundle(AmrDfpCustomEventBanner.class, bundle)
-                .build();
+        AdManagerAdRequest adRequest = new AdManagerAdRequest.Builder().build();
+
+        // Start loading the ad in the background.
 
         adView.setAdListener(new AdListener() {
             @Override
             public void onAdClosed() {
                 super.onAdClosed();
-            }
-
-            @Override
-            public void onAdFailedToLoad(int i) {
-                super.onAdFailedToLoad(i);
-            }
-
-            @Override
-            public void onAdLeftApplication() {
-                super.onAdLeftApplication();
             }
 
             @Override
@@ -117,27 +123,41 @@ public class DFPIntegrationSampleActivity extends Activity {
 
     private void getInterstitialFromDFP() {
 
-        mPublisherInterstitialAd = new PublisherInterstitialAd(this);
-        mPublisherInterstitialAd.setAdUnitId("/96769799/amr_test");
+        AdManagerAdRequest adRequest = new AdManagerAdRequest.Builder().build();
+        AdManagerInterstitialAd.load(
+                this,
+                "/96769799/amr_test",
+                adRequest,
+                new AdManagerInterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull AdManagerInterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mPublisherInterstitialAd = interstitialAd;
+                        isInterstitialReady = true;
+                        ((Button) findViewById(R.id.showInterstitial)).setText("Show Interstitial");
+                        interstitialAd.setFullScreenContentCallback(
+                                new FullScreenContentCallback() {
+                                    @Override
+                                    public void onAdDismissedFullScreenContent() {
+                                        // Called when fullscreen content is dismissed.
+                                        ((Button) findViewById(R.id.showInterstitial)).setText("Get Interstitial");
+                                    }
 
-        mPublisherInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                super.onAdLoaded();
-                ((Button)findViewById(R.id.showInterstitial)).setText("Show Interstitial");
-            }
+                                    @Override
+                                    public void onAdFailedToShowFullScreenContent(AdError adError) {
+                                        // Called when fullscreen content failed to show.
 
-            @Override
-            public void onAdClosed() {
-                super.onAdClosed();
-                ((Button)findViewById(R.id.showInterstitial)).setText("Get Interstitial");
-            }
-        });
-        PublisherAdRequest adRequest = new PublisherAdRequest.Builder()
-                .build();
+                                    }
 
-        mPublisherInterstitialAd.loadAd(adRequest);
+                                    @Override
+                                    public void onAdShowedFullScreenContent() {
+                                        // Called when fullscreen content is shown.
 
+                                    }
+                                });
+                    }});
+        
     }
 
 
