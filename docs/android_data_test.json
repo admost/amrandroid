@@ -38,7 +38,8 @@
            "project_gradle": {
                "dependencies": [
                    {
-                       "maven": "http://repo.admost.com:8081/artifactory/amr"
+                       "maven": "http://repo.admost.com:8081/artifactory/amr",
+                       "allow_insecure_protocol": true
                    }
                ]
            }
