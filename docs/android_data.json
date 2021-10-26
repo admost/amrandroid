@@ -3,7 +3,7 @@
        {
            "name": "AMR",
            "status": true,
-           "adapter_version": "2.4.4",
+           "adapter_version": "2.4.5",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
@@ -11,7 +11,7 @@
                        "package": "com.android.volley:volley:1.1.1"
                    },
                    {
-                       "package": "com.admost.sdk:amr:2.4.4"
+                       "package": "com.admost.sdk:amr:2.4.5"
                    },
                    {
                        "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -76,12 +76,12 @@
        {
            "name": "AdColony",
            "status": false,
-           "adapter_version": "4.6.3.a26",
+           "adapter_version": "4.6.4.a26",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:adcolony:4.6.3.a26"
+                       "package": "com.admost.sdk:adcolony:4.6.4.a26"
                    }
                ]
            }
@@ -166,12 +166,12 @@
        {
            "name": "Applovin",
            "status": false,
-           "adapter_version": "10.3.3.a26",
+           "adapter_version": "10.3.4.a26",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:applovin:10.3.3.a26"
+                       "package": "com.admost.sdk:applovin:10.3.4.a26"
                    }
                ]
            },
@@ -263,12 +263,12 @@
        {
            "name": "Display IO",
            "status": false,
-           "adapter_version": "4.5.2.a26",
+           "adapter_version": "4.6.1.a26",
            "unity_support": false,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:displayio:4.5.2.a26"
+                       "package": "com.admost.sdk:displayio:4.6.1.a26"
                    },
                    {
                        "package": "androidx.appcompat:appcompat:1.0.0"
@@ -388,15 +388,15 @@
        {
            "name": "HyprMX",
            "status": false,
-           "adapter_version": "5.1.2.a26",
+           "adapter_version": "6.0.0.a26",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:hyprmx-adapter:5.1.2.a26"
+                       "package": "com.admost.sdk:hyprmx-adapter:6.0.0.a26"
                    },
                    {
-                       "package": "com.hyprmx.android:HyprMX-SDK:5.1.2"
+                       "package": "com.hyprmx.android:HyprMX-SDK:6.0.0"
                    }
                ]
            },
@@ -433,12 +433,12 @@
        {
            "name": "IronSource",
            "status": false,
-           "adapter_version": "7.1.10.a26",
+           "adapter_version": "7.1.11.a26",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:ironsource:7.1.10.a26"
+                       "package": "com.admost.sdk:ironsource:7.1.11.a26"
                    },
                    {
                        "package": "org.jetbrains.kotlin:kotlin-stdlib:1.4.32"
@@ -578,12 +578,12 @@
        {
            "name": "MyTarget",
            "status": false,
-           "adapter_version": "5.13.3.a26",
+           "adapter_version": "5.14.1.a26",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:mytarget:5.13.3.a26"
+                       "package": "com.admost.sdk:mytarget:5.14.1.a26"
                    }
                ]
            }
@@ -645,15 +645,15 @@
        {
            "name": "Ogury",
            "status": false,
-           "adapter_version": "5.0.10.a26",
+           "adapter_version": "5.1.0.a26",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "co.ogury:ogury-sdk:5.0.10"
+                       "package": "co.ogury:ogury-sdk:5.1.0"
                    },
                    {
-                       "package": "com.admost.sdk:ogury-adapter:5.0.10.a26"
+                       "package": "com.admost.sdk:ogury-adapter:5.1.0.a26"
                    }
                ]
            },
@@ -668,12 +668,12 @@
        {
            "name": "Pollfish",
            "status": false,
-           "adapter_version": "6.1.4.a26",
+           "adapter_version": "6.1.6.a26",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:pollfish:6.1.4.a26"
+                       "package": "com.admost.sdk:pollfish:6.1.6.a26"
                    },
                    {
                        "package": "org.jetbrains.kotlin:kotlin-stdlib:1.4.32"
@@ -684,15 +684,15 @@
        {
            "name": "Pubnative",
            "status": false,
-           "adapter_version": "2.6.1.a26",
+           "adapter_version": "2.7.0.a26",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "net.pubnative:hybid.sdk:2.6.1"
+                       "package": "net.pubnative:hybid.sdk:2.7.0"
                    },
                    {
-                       "package": "com.admost.sdk:pubnative-adapter:2.6.1.a26"
+                       "package": "com.admost.sdk:pubnative-adapter:2.7.0.a26"
                    }
                ]
            },
@@ -749,18 +749,18 @@
        {
            "name": "Smaato",
            "status": false,
-           "adapter_version": "21.6.3.a26",
+           "adapter_version": "21.6.4.a26",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:smaato-adapter:21.6.3.a26"
+                       "package": "com.admost.sdk:smaato-adapter:21.6.4.a26"
                    },
                    {
-                       "package": "com.smaato.android.sdk:smaato-sdk:21.6.3"
+                       "package": "com.smaato.android.sdk:smaato-sdk:21.6.4"
                    },
                    {
-                       "package": "com.smaato.android.sdk:smaato-sdk-native:21.6.3"
+                       "package": "com.smaato.android.sdk:smaato-sdk-native:21.6.4"
                    },
                    {
                        "package": "androidx.lifecycle:lifecycle-service:2.2.0"
@@ -778,12 +778,12 @@
        {
            "name": "StartApp",
            "status": false,
-           "adapter_version": "4.8.11.a26",
+           "adapter_version": "4.8.11.1.a26",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:startapp:4.8.11.a26"
+                       "package": "com.admost.sdk:startapp:4.8.11.1.a26"
                    },
                    {
                        "package": "androidx.annotation:annotation:1.2.0"
@@ -836,12 +836,12 @@
        {
            "name": "Tiktok",
            "status": false,
-           "adapter_version": "3.9.0.3.a26",
+           "adapter_version": "4.0.1.0.a26",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:tiktok:3.9.0.3.a26"
+                       "package": "com.admost.sdk:tiktok:4.0.1.0.a26"
                    }
                ]
            }
