@@ -153,7 +153,7 @@
                             <li><a href="#iap">In App Purchase Tracking</a></li>
                             <li><a href="#amazoniap">Amazon Store In App Purchase Tracking</a></li>
                             <li><a href="#senduserid">Setting Application User Id</a></li>
-                            <li><a href="#sendadjustuserid">Setting Adjust User Id</a></li>
+                            <li><a href="#adjustIntegration">Adjust Integration <span class="label label-teal">Changed</span></a></li>
                             <li><a href="#sscallbacks">Server to Server Callbacks</a></li>
                             <li><a href="#privacycheck">Privacy Consent Check</a>
                             <li style="display:none"><a href="#campaigntracking">Campaign Tracking</a></li>
@@ -1612,17 +1612,12 @@ AdMost.getInstance().setUserId("APPLICATION_USER_ID");
 
                 </code></pre>
 
-                    <h3 id="sendadjustuserid">Setting Adjust User Id</h3>
+                    <h3 id="adjustIntegration">Adjust Integration</h3>
 
                     <p>
-                        You can use the following method to set adjust user id in Admost Analytics for enhanced tracking
-                        of your users.
+                        In order to enhance Admost data with the Adjust campaign tracking functionality, first you have to integrate Adjust sdk into your application as described in the Adjust documentation. Admost sdk will match the Adjust and Admost user definitions with the id provided by the Adjust sdk automatically. Please note that, in order to correctly attribute an app install to its source, Adjust needs information about the install referrer. So, implementing Google install referrer solution is important for Adjust. You can find the instructions from the following link. <br/><a href="https://github.com/adjust/android_sdk#install-referrer">adjust-install-referrer</a>
                     </p>
 
-                    <pre><code class="language-java">
-AdMost.getInstance().setAdjustUserId("ADJUST_USER_ID");
-
-                </code></pre>
                     <h3 id="sscallbacks">Server to Server Callbacks</h3>
 
                     <p>
