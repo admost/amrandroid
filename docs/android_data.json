@@ -836,12 +836,12 @@
        {
            "name": "Tiktok",
            "status": false,
-           "adapter_version": "4.1.1.2.a26",
+           "adapter_version": "4.1.1.2.1.a26",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:tiktok:4.1.1.2.a26"
+                       "package": "com.admost.sdk:tiktok:4.1.1.2.1.a26"
                    }
                ]
            }
