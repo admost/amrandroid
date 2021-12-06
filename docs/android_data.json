@@ -216,7 +216,8 @@
            "project_gradle": {
                "dependencies": [
                    {
-                       "maven": "http://dl.appnext.com/"
+                       "maven": "http://dl.appnext.com/",
+                       "allow_insecure_protocol": true
                    }
                ]
            }
@@ -371,7 +372,8 @@
            "project_gradle": {
                "dependencies": [
                    {
-                       "maven": "http://developer.huawei.com/repo/"
+                       "maven": "http://developer.huawei.com/repo/",
+                       "allow_insecure_protocol": true
                    }
                ]
            }
