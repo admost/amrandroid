@@ -394,7 +394,7 @@
            "project_gradle": {
                "dependencies": [
                    {
-                       "maven": "https://raw.githubusercontent.com/HyprMXMobile/Android-SDKs/master"
+                       "maven": "https://hyprmx.jfrog.io/artifactory/hyprmx"
                    }
                ]
            }
