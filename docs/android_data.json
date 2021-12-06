@@ -303,19 +303,6 @@
            }
        },
        {
-           "name": "Flurry",
-           "status": false,
-           "adapter_version": "12.13.0.a27",
-           "unity_support": false,
-           "app_gradle": {
-               "dependencies": [
-                   {
-                       "package": "com.admost.sdk:flurry:12.13.0.a27"
-                   }
-               ]
-           }
-       },
-       {
            "name": "Frecorp",
            "status": false,
            "adapter_version": "4.2.8.a27",
@@ -354,18 +341,15 @@
        {
            "name": "Huawei",
            "status": false,
-           "adapter_version": "13.4.49.301.a27",
+           "adapter_version": "3.4.49.301.a27",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:huawei-ads-adapter:13.4.49.301.a27"
+                       "package": "com.admost.sdk:huawei-ads-adapter:3.4.49.301.a27"
                    },
                    {
-                       "package": "com.huawei.hms:ads-lite:13.4.49.301"
-                   },
-                   {
-                       "package": "com.huawei.hms:ads-identifier:3.4.49.301"
+                       "package": "'com.huawei.hms:ads:3.4.49.301'"
                    }
                ]
            },
@@ -845,7 +829,7 @@
        {
            "name": "Tiktok-China",
            "status": false,
-           "adapter_version": "3.8.0.3.a27",
+           "adapter_version": "3.9.0.2.a27",
            "unity_support": false,
            "app_gradle": {
                "dependencies": [
