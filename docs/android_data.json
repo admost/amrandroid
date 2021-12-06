@@ -349,7 +349,7 @@
                        "package": "com.admost.sdk:huawei-ads-adapter:3.4.49.301.a27"
                    },
                    {
-                       "package": "'com.huawei.hms:ads:3.4.49.301'"
+                       "package": "com.huawei.hms:ads:3.4.49.301"
                    }
                ]
            },
