@@ -335,16 +335,7 @@
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:fyber-adapter:8.1.0.a27"
-                   },
-                   {
-                       "package": "com.admost.sdk:fyber-core:8.1.0.a27"
-                   },
-                   {
-                       "package": "com.admost.sdk:fyber-mraid:8.1.0.a27"
-                   },
-                   {
-                       "package": "com.admost.sdk:fyber-video:8.1.0.a27"
+                       "package": "com.admost.sdk:fyber:8.1.0.a27"
                    },
                    {
                        "package": "com.google.android.gms:play-services-ads:19.7.0"
