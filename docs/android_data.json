@@ -3,7 +3,7 @@
        {
            "name": "AMR",
            "status": true,
-           "adapter_version": "2.4.7",
+           "adapter_version": "2.4.8",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
@@ -11,7 +11,7 @@
                        "package": "com.android.volley:volley:1.2.1"
                    },
                    {
-                       "package": "com.admost.sdk:amr:2.4.7"
+                       "package": "com.admost.sdk:amr:2.4.8"
                    },
                    {
                        "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -458,45 +458,45 @@
        {
            "name": "Mintegral",
            "status": false,
-           "adapter_version": "15.7.51.a27",
+           "adapter_version": "15.7.71.a27",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:mintegral-adapter:15.7.51.a27"
+                       "package": "com.admost.sdk:mintegral-adapter:15.7.71.a27"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:mbbid:15.7.51"
+                       "package": "com.mbridge.msdk.oversea:mbbid:15.7.71"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:videojs:15.7.51"
+                       "package": "com.mbridge.msdk.oversea:videojs:15.7.71"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:mbjscommon:15.7.51"
+                       "package": "com.mbridge.msdk.oversea:mbjscommon:15.7.71"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:playercommon:15.7.51"
+                       "package": "com.mbridge.msdk.oversea:playercommon:15.7.71"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:reward:15.7.51"
+                       "package": "com.mbridge.msdk.oversea:reward:15.7.71"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:videocommon:15.7.51"
+                       "package": "com.mbridge.msdk.oversea:videocommon:15.7.71"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:interstitialvideo:15.7.51"
+                       "package": "com.mbridge.msdk.oversea:interstitialvideo:15.7.71"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:same:15.7.51"
+                       "package": "com.mbridge.msdk.oversea:same:15.7.71"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:mbnative:15.7.51"
+                       "package": "com.mbridge.msdk.oversea:mbnative:15.7.71"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:nativeex:15.7.51"
+                       "package": "com.mbridge.msdk.oversea:nativeex:15.7.71"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:mbbanner:15.7.51"
+                       "package": "com.mbridge.msdk.oversea:mbbanner:15.7.71"
                    }
                ]
            },
