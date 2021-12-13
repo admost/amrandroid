@@ -816,12 +816,12 @@
        {
            "name": "Tiktok",
            "status": false,
-           "adapter_version": "4.1.1.2.1.a27",
+           "adapter_version": "3.8.0.2.a27",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:tiktok:3.9.0.3.a27"
+                       "package": "com.admost.sdk:tiktok:3.8.0.2.a27"
                    }
                ]
            }
@@ -834,7 +834,7 @@
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:tiktokchina:3.8.0.3.a27"
+                       "package": "com.admost.sdk:tiktokchina:3.9.0.2.a27"
                    }
                ]
            }
