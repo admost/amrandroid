@@ -821,7 +821,7 @@
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:tiktok:4.1.1.2.1.a27"
+                       "package": "com.admost.sdk:tiktok:3.9.0.3.a27"
                    }
                ]
            }
