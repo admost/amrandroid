@@ -60,7 +60,7 @@
        {
            "name": "A4G",
            "status": false,
-           "adapter_version": "1.0.5.a28",
+           "adapter_version": "1.0.6.a28",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
@@ -68,7 +68,7 @@
                        "package": "com.google.android.gms:play-services-ads:19.7.0"
                    },
                    {
-                       "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.0.5.a28"
+                       "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.0.6.a28"
                    }
                ]
            }
@@ -684,7 +684,7 @@
        {
            "name": "Reklamup",
            "status": false,
-           "adapter_version": "1.0.5.a28",
+           "adapter_version": "1.0.6.a28",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
@@ -692,7 +692,7 @@
                        "package": "com.google.android.gms:play-services-ads:19.7.0"
                    },
                    {
-                       "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.0.5.a28"
+                       "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.0.6.a28"
                    }
                ]
            }
