@@ -800,12 +800,12 @@
        {
            "name": "Tiktok",
            "status": false,
-           "adapter_version": "3.8.0.2.a28",
+           "adapter_version": "4.1.1.8.a28",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:tiktok:3.8.0.2.a28"
+                       "package": "com.admost.sdk:tiktok:4.1.1.8.a28"
                    }
                ]
            }
