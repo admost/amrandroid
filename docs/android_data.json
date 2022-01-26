@@ -451,36 +451,36 @@
        {
            "name": "Mintegral",
            "status": false,
-           "adapter_version": "15.8.01.a28",
+           "adapter_version": "16.0.11.a28",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:mintegral-adapter:15.8.01.a28"
+                       "package": "com.admost.sdk:mintegral-adapter:16.0.11.a28"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:mbbid:15.8.01"
+                       "package": "com.mbridge.msdk.oversea:mbbid:16.0.11"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:reward:15.8.01"
+                       "package": "com.mbridge.msdk.oversea:reward:16.0.11"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:interstitialvideo:15.8.01"
+                       "package": "com.mbridge.msdk.oversea:interstitialvideo:16.0.11"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:interstitial:15.8.01"
+                       "package": "com.mbridge.msdk.oversea:interstitial:16.0.11"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:mbnative:15.8.01"
+                       "package": "com.mbridge.msdk.oversea:mbnative:16.0.11"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:interactiveads:15.8.01"
+                       "package": "com.mbridge.msdk.oversea:newinterstitial:16.0.11"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:mbnativeadvanced:15.8.01"
+                       "package": "com.mbridge.msdk.oversea:mbnativeadvanced:16.0.11"
                    },
                    {
-                       "package": "com.mbridge.msdk.oversea:mbbanner:15.8.01"
+                       "package": "com.mbridge.msdk.oversea:mbbanner:16.0.11"
                    }
                ]
            },
