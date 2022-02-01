@@ -399,9 +399,6 @@
                    },
                    {
                        "package": "androidx.browser:browser:1.3.0"
-                   },
-                   {
-                       "package": "com.android.support:support-v4:28.0.0"
                    }
                ]
            }
