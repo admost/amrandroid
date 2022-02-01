@@ -3,7 +3,7 @@
        {
            "name": "AMR",
            "status": true,
-           "adapter_version": "2.5.1",
+           "adapter_version": "2.5.2",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
@@ -11,7 +11,7 @@
                        "package": "com.android.volley:volley:1.2.1"
                    },
                    {
-                       "package": "com.admost.sdk:amr:2.5.1"
+                       "package": "com.admost.sdk:amr:2.5.2"
                    },
                    {
                        "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -52,7 +52,7 @@
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:admost:1.0.4.a28"
+                       "package": "com.admost.sdk:admost:1.0.5.a28"
                    }
                ]
            }
@@ -166,12 +166,12 @@
        {
            "name": "Applovin",
            "status": false,
-           "adapter_version": "10.3.5.a28",
+           "adapter_version": "11.1.0.a28",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:applovin:10.3.5.a28"
+                       "package": "com.admost.sdk:applovin:11.1.0.a28"
                    }
                ]
            },
@@ -381,15 +381,15 @@
        {
            "name": "InMobi",
            "status": false,
-           "adapter_version": "10.0.1.a28",
+           "adapter_version": "10.0.3.a28",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:inmobi-unified-adapter:10.0.1.a28"
+                       "package": "com.admost.sdk:inmobi-unified-adapter:10.0.3.a28"
                    },
                    {
-                        "package": "com.inmobi.monetization:inmobi-ads:10.0.1"
+                        "package": "com.inmobi.monetization:inmobi-ads:10.0.3"
                    },
                    {
                        "package": "com.squareup.picasso:picasso:2.71828"
@@ -399,6 +399,9 @@
                    },
                    {
                        "package": "androidx.browser:browser:1.3.0"
+                   },
+                   {
+                       "package": "com.android.support:support-v4:28.0.0"
                    }
                ]
            }
@@ -406,12 +409,12 @@
        {
            "name": "IronSource",
            "status": false,
-           "adapter_version": "7.1.13.1.a28",
+           "adapter_version": "7.1.14.0.a28",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:ironsource:7.1.13.1.a28"
+                       "package": "com.admost.sdk:ironsource:7.1.14.0.a28"
                    },
                    {
                        "package": "org.jetbrains.kotlin:kotlin-stdlib:1.4.32"
@@ -758,12 +761,12 @@
        {
            "name": "Tapjoy",
            "status": false,
-           "adapter_version": "12.8.1.a28",
+           "adapter_version": "12.9.0.a28",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:tapjoy:12.8.1.a28"
+                       "package": "com.admost.sdk:tapjoy:12.9.0.a28"
                    }
                ]
            }
@@ -800,12 +803,12 @@
        {
            "name": "Tiktok",
            "status": false,
-           "adapter_version": "4.1.1.8.a28",
+           "adapter_version": "4.1.1.9.a28",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:tiktok:4.1.1.8.a28"
+                       "package": "com.admost.sdk:tiktok:4.1.1.9.a28"
                    }
                ]
            }
