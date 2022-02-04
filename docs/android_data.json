@@ -3,7 +3,7 @@
        {
            "name": "AMR",
            "status": true,
-           "adapter_version": "2.5.2",
+           "adapter_version": "2.5.3",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
@@ -11,7 +11,7 @@
                        "package": "com.android.volley:volley:1.2.1"
                    },
                    {
-                       "package": "com.admost.sdk:amr:2.5.2"
+                       "package": "com.admost.sdk:amr:2.5.3"
                    },
                    {
                        "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -28,7 +28,7 @@
                        "package": "androidx.lifecycle:lifecycle-common:2.1.0"
                    },
                    {
-                       "package": "com.admost.sdk:unity-plugin:1.9.0"
+                       "package": "com.admost.sdk:unity-plugin:1.9.1"
                    },
                    {
                        "package": "com.google.android.gms:play-services-ads-identifier:17.0.0"
