@@ -3,7 +3,7 @@
        {
            "name": "AMR",
            "status": true,
-           "adapter_version": "2.5.3",
+           "adapter_version": "2.5.4",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
@@ -11,7 +11,7 @@
                        "package": "com.android.volley:volley:1.2.1"
                    },
                    {
-                       "package": "com.admost.sdk:amr:2.5.3"
+                       "package": "com.admost.sdk:amr:2.5.4"
                    },
                    {
                        "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -47,12 +47,12 @@
        {
            "name": "Admost",
            "status": false,
-           "adapter_version": "1.0.4.a28",
+           "adapter_version": "1.0.6.a28",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:admost:1.0.5.a28"
+                       "package": "com.admost.sdk:admost:1.0.6.a28"
                    }
                ]
            }

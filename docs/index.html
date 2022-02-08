@@ -152,6 +152,7 @@
                             <li><a href="#huaweiappgallery">Huawei AppGallery Applications</a></li>
                             <li><a href="#iap">In App Purchase Tracking</a></li>
                             <li><a href="#amazoniap">Amazon Store In App Purchase Tracking</a></li>
+                            <li><a href="#huaweiiap">Huawei AppGallery In App Purchase Tracking</a></li>
                             <li><a href="#senduserid">Setting Application User Id</a></li>
                             <li><a href="#adjustIntegration">Adjust Integration <span class="label label-teal">Changed</span></a></li>
                             <li><a href="#sscallbacks">Server to Server Callbacks</a></li>
@@ -1439,26 +1440,14 @@ AdMost.getInstance().init(configuration.build());
                     <h3 id="iap">In App Purchase Tracking</h3>
 
                     <p>
-                        The following call is used to track purchases with receipt validation:
+                        The following call is used to track purchases:
                     </p>
 
                     <pre><code class="language-java">
-AdMostIAPListener iabListener = new AdMostIAPListener() {
-	//Successful Purchase
-	@Override
-	public void onValidationSuccess(String admostIapID) {}
 
-	//Invalid purchase data..!
-	@Override
-	public void onValidationFail(String admostIapID, AdMostServerException e) {}
-
-	//Exception occurred, will be tried again automatically..!
-	@Override
-	public void onException(String admostIapID) {}
-};
-
-String admostIapID = AdMost.getInstance().trackPurchase(purchaseData, dataSignature, jsonSkuDetail, iabListener, isDebug);
-                </code></pre>
+AdMost.getInstance().trackIAP(purchaseData, signature, priceAmountMicros, currency, tags, isDebug);
+</code></pre>
+                
                     <p>Explanation and code samples of parameters:</p>
                     <ul>
                         <li><b>purchaseData (String)</b> – a String in JSON format that contains details about the
@@ -1471,51 +1460,29 @@ String admostIapID = AdMost.getInstance().trackPurchase(purchaseData, dataSignat
                             purchase call.
                         </li>
 
-                        <li><b>jsonSkuDetail (String)</b> – a String in JSON Object format that contains product item
-                            details
-                        </li>
-                        <li><b>iabListener (AdMostIAPListener)</b> - You can add this callback to be informed about the
-                            result of your purchase request. null value is
+                        <li><b>priceAmountMicros (Double)</b> – Price in micro-units, where 1,000,000 micro-units equal one unit of the currency.</li>
+                        <li><b>currency (String)</b> – ISO 4217 currency code for price and original price.</li>
+                        <li><b>tags (String[])</b> - You can add tags to the purchase to track it on Admost dashboard. If you don't want to use this parameter, leave it null.
                         </li>
                         <li><b>isDebug (boolean)</b> - Set true for test purchases.
                         </li>
                     </ul>
                     <pre><code class="language-java">
-//Handles an activity result that's part of the purchase flow in in-app billing
-void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-    String dataSignature = data.getStringExtra(RESPONSE_INAPP_SIGNATURE);
-    String purchaseData = data.getStringExtra(RESPONSE_INAPP_PURCHASE_DATA);
-
-    if(resultCode == RESULT_OK){
-        JSONObject purchasedProduct = new JSONObject(purchaseData);
-        String purchasedItemId = purchasedProduct.getString("productId");
-        for (String productData : responseList){
-            JSONObject product = new JSONObject(productData);
-        	String productId = product.getString("productId");
-            if(productId.equals(purchasedItemId){
-				AdMost.getInstance().trackPurchase(purchaseData, dataSignature, productData);
-        	}
+@Override
+public void onPurchasesUpdated(BillingResult billingResult, @Nullable List<Purchase> purchases) {
+    if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK
+            && purchases != null
+            && purchaseItem != null) {
+        for (Purchase purchase : purchases) {
+            if (purchase.getSkus().size() > 0 && purchase.getSkus().get(0).equals(skuToSend) && purchase.getPurchaseState() == Purchase.PurchaseState.PURCHASED) {
+                    AdMost.getInstance().trackIAP(purchase.getOriginalJson(), purchase.getSignature(), priceAmountMicros, currency, new String[] {"tag1","tag2"}, false );
+                    break;
+            }
         }
     }
-}
+}   
                 </code></pre>
-
-                    <p> This is the way of getting <var>responseList</var> from Google</p>
-                    <pre><code class="language-java">
-Bundle querySkus = new Bundle();
-querySkus.putStringArrayList(GET_SKU_DETAILS_ITEM_LIST, skuList);
-Bundle skuDetails = mService.getSkuDetails(3, mContext.getPackageName(), itemType, querySkus);
-
-ArrayList<String> responseList = skuDetails.getStringArrayList(RESPONSE_GET_SKU_DETAILS_LIST);
-                        </code></pre>
-
-                    <p>For further information;</p>
-                    <p><a
-                            href="https://developer.android.com/reference/com/android/billingclient/api/SkuDetails">https://developer.android.com/reference/com/android/billingclient/api/SkuDetails</a>
-                    </p>
-
-
+               
                     <div class="callout callout-danger" role="alert">
                         <p>After your integration complete, enter your app's public key on Admost Mediation dashboard.
                             (Mediation > My Apps > Edit App) </p>
@@ -1597,6 +1564,35 @@ String admostIapID = AdMost.getInstance().trackPurchaseAmazon(receiptJSON, purch
                         <li><b>isDebug (boolean)</b> - Set true for test purchases.
                         </li>
                     </ul>
+
+
+<h3 id="huaweiiap">Huawei AppGallery In App Purchase Tracking</h3>
+
+                    <p>
+                        The following call is used to track Huawei purchases:
+                    </p>
+
+                    <pre><code class="language-java">
+
+AdMost.getInstance().trackIAPForHuawei(purchaseData, signature, tags, isDebug);
+                </code></pre>
+                    <p>You can find the sample code below.</p>
+                    <pre><code class="language-java">//Handles an activity result that's part of the purchase flow in in-app billing
+void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+    super.onActivityResult(requestCode, resultCode, data);
+
+    if (requestCode == REQ_CODE_BUY) {
+        if (data == null) {
+            Toast.makeText(this, "error", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        PurchaseResultInfo purchaseResultInfo = Iap.getIapClient(this).parsePurchaseResultInfoFromIntent(data);
+        AdMost.getInstance().trackIAPForHuawei(purchaseResultInfo.getInAppPurchaseData(), purchaseResultInfo.getInAppDataSignature(), new String[]{"tags you want","another tag"}, false);
+    }
+}
+                </code></pre>
 
 
                     <h3 id="senduserid">Setting Application User Id</h3>
