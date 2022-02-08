@@ -164,7 +164,7 @@
            }
        },
        {
-           "name": "Applovin",
+           "name": "AppLovin",
            "status": false,
            "adapter_version": "11.1.0.a28",
            "unity_support": true,
@@ -798,7 +798,7 @@
            }
        },
        {
-           "name": "Tiktok",
+           "name": "TikTok",
            "status": false,
            "adapter_version": "4.1.1.9.a28",
            "unity_support": true,
@@ -811,7 +811,7 @@
            }
        },
        {
-           "name": "Tiktok-China",
+           "name": "TikTok-China",
            "status": false,
            "adapter_version": "3.9.0.2.a28",
            "unity_support": false,
