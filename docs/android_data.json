@@ -742,12 +742,12 @@
        {
            "name": "StartApp",
            "status": false,
-           "adapter_version": "4.9.1.a28",
+           "adapter_version": "4.9.1.1.a28",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:startapp:4.9.1.a28"
+                       "package": "com.admost.sdk:startapp:4.9.1.1.a28"
                    },
                    {
                        "package": "androidx.annotation:annotation:1.2.0"
