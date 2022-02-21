@@ -5,7 +5,7 @@ android {
     buildToolsVersion '30.0.3'
     defaultConfig {
         applicationId 'com.kokteyl.amrunity'
-        minSdkVersion 16
+        minSdkVersion 20
         targetSdkVersion 30
         versionCode 106
         versionName "2.2.5"
@@ -42,9 +42,10 @@ repositories {
     flatDir {
         dirs 'libs'
     }
-    maven { url "https://jitpack.io" }
-    maven { url 'http://repo.admost.com:8081/artifactory/amr' } // Required for AdMost SDK
-    jcenter()
+    maven { url 'http://repo.admost.com:8081/artifactory/amr'; allowInsecureProtocol true }
+    maven { url 'http://developer.huawei.com/repo/'; allowInsecureProtocol true }
+    maven { url 'https://verve.jfrog.io/artifactory/verve-gradle-release' }
+    maven { url 'https://jitpack.io' }
     google()
 }
 dependencies {
@@ -57,24 +58,33 @@ dependencies {
 
 
     // base admost sdks
-    implementation 'com.android.volley:volley:1.1.1'
-    implementation 'com.admost.sdk:amr:2.4.4'
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'com.admost.sdk:amr:2.5.5'
     implementation 'com.google.android.gms:play-services-base:17.1.0'
-    implementation 'com.admost.sdk:admost:1.0.2.a26'
+
 
     // ad network sdks
+    implementation 'com.admost.sdk:admost:1.0.6.a29'
+    implementation 'com.admost.sdk:adcolony:4.6.5.a29'
     implementation 'com.google.android.gms:play-services-ads:20.4.0'
-    implementation 'com.admost.sdk:admob-gt-19.7.0-adapter:1.0.5.a26'
-    implementation 'com.admost.sdk:applovin:10.3.3.a26'
-    implementation 'com.admost.sdk:chartboost:8.2.1.a26'
-    implementation 'com.admost.sdk:facebook:6.7.0.a26'
+    implementation 'com.admost.sdk:admob-gt-19.7.0-adapter:1.0.8.a29'
+    implementation 'com.admost.sdk:applovin:11.1.0.a29'
+    implementation 'com.admost.sdk:chartboost:8.3.0.a29'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.10'
+    implementation 'com.admost.sdk:facebook:6.8.0.a29'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'androidx.annotation:annotation:1.2.0'
-    implementation 'com.admost.sdk:ironsource:7.1.10.a26'
+    implementation 'com.admost.sdk:huawei-ads-adapter:3.4.49.301.a29'
+    implementation 'com.huawei.hms:ads:3.4.49.301'
+    implementation 'com.admost.sdk:ironsource:7.1.14.0.a29'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.4.32'
-    implementation 'com.admost.sdk:unity:3.7.2.1.a26'
-    implementation 'com.vungle:publisher-sdk-android:6.10.2'
-    implementation 'com.admost.sdk:vungle-adapter:6.10.2.a26'
+    implementation 'com.admost.sdk:kidoz:8.9.4.a29'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'net.pubnative:hybid.sdk:2.9.0'
+    implementation 'com.admost.sdk:pubnative-adapter:2.9.0.a29'
+    implementation 'com.admost.sdk:unity:4.0.0.a29'
+    implementation 'com.vungle:publisher-sdk-android:6.10.3'
+    implementation 'com.admost.sdk:vungle-adapter:6.10.3.a29'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     
     // Optional libraries
