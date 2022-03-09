@@ -1038,7 +1038,7 @@ ZONE_ID : Your ZONE_ID defined on admost mediation panels.
 BINDER  : You can use your own layout design for banners, if you leave BINDER value null, default design will be applied.
 */
 
-BANNER = new AdMostView(ACTIVITY, < ZONE_ID >, new AdMostViewListener() {
+BANNER = new AdMostView(ACTIVITY, < ZONE_ID >, new AdMostBannerCallBack() {
     @Override
     public void onReady(String network, int ecpm, View adView){
         // Ad is loaded and ready to be shown.
@@ -1057,6 +1057,10 @@ BANNER = new AdMostView(ACTIVITY, < ZONE_ID >, new AdMostViewListener() {
     @Override
     public void onClick(String network) {
         //Ad clicked
+    }
+    @Override
+    public void onAdRevenuePaid(AdMostImpressionData impressionData) {
+        // It indicates that the impression is counted
     }
 
 }, < BINDER >);
@@ -1139,7 +1143,7 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
         android:visibility="gone" /></code></pre>
                     <h3 id="interstitial">Interstitial</h3>
 
-                    <pre><code class="language-java">AdMostInterstitial INTERSTITIAL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
+                    <pre><code class="language-java">AdMostInterstitial INTERSTITIAL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostFullScreenCallBack() {
     @Override
     public void onDismiss(String message) {
         // It indicates that the interstitial ad is closed by clicking cross button/back button
@@ -1175,6 +1179,10 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
         // status code
         // 1 - AdMost.AD_STATUS_CHANGE_FREQ_CAP_ENDED
     }
+    @Override
+    public void onAdRevenuePaid(AdMostImpressionData impressionData) {
+        // It indicates that the impression is counted
+    }
 
 });
 
@@ -1205,7 +1213,7 @@ INTERSTITIAL.show(TAG);
                     <pre><code class="language-java">INTERSTITIAL.destroy();</code></pre>
                     <h3 id="rewarded">Rewarded</h3>
 
-                    <pre><code class="language-java">AdMostInterstitial VIDEO = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
+                    <pre><code class="language-java">AdMostInterstitial VIDEO = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostFullScreenCallBack() {
         @Override
          public void onReady(String network, int ecpm) {
             // It indicates that the rewarded video ad is loaded and ready to show.
@@ -1245,6 +1253,10 @@ INTERSTITIAL.show(TAG);
             // status code
             // 1 - AdMost.AD_STATUS_CHANGE_FREQ_CAP_ENDED
         }
+        @Override
+        public void onAdRevenuePaid(AdMostImpressionData impressionData) {
+            // It indicates that the impression is counted
+        }
 		
     });
                 </code></pre>
@@ -1276,7 +1288,7 @@ VIDEO.show(TAG);
 
                     <h3 id="offerwalls">Offerwalls</h3>
 
-                    <pre><code class="language-java">OFFERWALL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostAdListener() {
+                    <pre><code class="language-java">OFFERWALL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostFullScreenCallBack() {
         @Override
         public void onReady(String network) {
             // Ad Loaded
