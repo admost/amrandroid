@@ -175,13 +175,13 @@
        {
            "name": "AppLovin",
            "status": false,
-           "sdk_version": "11.1.2",
-           "adapter_version": "11.1.2.a29",
+           "sdk_version": "11.3.1",
+           "adapter_version": "11.3.1.a29",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:applovin:11.1.2.a29"
+                       "package": "com.admost.sdk:applovin:11.3.1.a29"
                    }
                ]
            },
