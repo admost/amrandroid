@@ -3,8 +3,8 @@
        {
            "name": "AMR",
            "status": true,
-           "sdk_version": "2.5.8",
-           "adapter_version": "2.5.8",
+           "sdk_version": "2.5.9",
+           "adapter_version": "2.5.9",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
@@ -12,7 +12,7 @@
                        "package": "com.android.volley:volley:1.2.1"
                    },
                    {
-                       "package": "com.admost.sdk:amr:2.5.8"
+                       "package": "com.admost.sdk:amr:2.5.9"
                    },
                    {
                        "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -48,13 +48,13 @@
        {
            "name": "Admost",
            "status": false,
-           "sdk_version": "1.0.8",
-           "adapter_version": "1.0.8.a30",
+           "sdk_version": "1.0.9",
+           "adapter_version": "1.0.9.a30",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:admost:1.0.8.a30"
+                       "package": "com.admost.sdk:admost:1.0.9.a30"
                    }
                ]
            }
@@ -351,16 +351,19 @@
        {
            "name": "Huawei",
            "status": false,
-           "sdk_version": "3.4.53.300",
-           "adapter_version": "3.4.53.300.a30",
+           "sdk_version": "13.4.53.300",
+           "adapter_version": "13.4.53.300.a30",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:huawei-ads-adapter:3.4.53.300.a30"
+                       "package": "com.admost.sdk:huawei-ads-adapter:13.4.53.300.a30"
                    },
                    {
-                       "package": "com.huawei.hms:ads:3.4.53.300"
+                       "package": "com.huawei.hms:ads-lite:13.4.53.300"
+                   },
+                   {
+                       "package": "com.huawei.hms:ads-identifier:3.4.46.300"
                    }
                ]
            },
