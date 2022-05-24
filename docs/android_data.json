@@ -236,13 +236,13 @@
        {
            "name": "Chartboost",
            "status": false,
-           "sdk_version": "8.4.1",
-           "adapter_version": "8.4.1.a30",
+           "sdk_version": "8.4.3",
+           "adapter_version": "8.4.3.a30",
            "unity_support": true,
            "app_gradle": {
                "dependencies": [
                    {
-                       "package": "com.admost.sdk:chartboost:8.4.1.a30"
+                       "package": "com.admost.sdk:chartboost:8.4.3.a30"
                    },
                    {
                        "package": "com.google.android.gms:play-services-ads:20.4.0"
