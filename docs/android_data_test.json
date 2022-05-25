@@ -335,13 +335,13 @@
         {
             "name": "Huawei",
             "status": false,
-            "sdk_version": "13.4.54.300",
-            "adapter_version": "13.4.54.300.a31",
+            "sdk_version": "3.4.54.300",
+            "adapter_version": "3.4.54.300.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:huawei-ads-adapter:13.4.54.300.a31"
+                        "package": "com.admost.sdk:huawei-ads-adapter:3.4.54.300.a31"
                     },
                     {
                         "package": "com.huawei.hms:ads-identifier:3.4.46.300"
@@ -801,13 +801,13 @@
         {
             "name": "UnityAds",
             "status": false,
-            "sdk_version": "4.2.0",
-            "adapter_version": "4.2.0.a31",
+            "sdk_version": "4.2.1",
+            "adapter_version": "4.2.1.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:unity-adapter:4.2.0.a31"
+                        "package": "com.admost.sdk:unity-adapter:4.2.1.a31"
                     }
                 ]
             }
