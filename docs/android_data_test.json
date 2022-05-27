@@ -133,13 +133,13 @@
         {
             "name": "Adtiming",
             "status": false,
-            "sdk_version": "2.6.2",
-            "adapter_version": "2.6.2.a31",
+            "sdk_version": "2.6.3",
+            "adapter_version": "2.6.3.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:adtiming-adapter:2.6.2.a31"
+                        "package": "com.admost.sdk:adtiming-adapter:2.6.3.a31"
                     }
                 ]
             },
@@ -182,13 +182,13 @@
         {
             "name": "AppLovin",
             "status": false,
-            "sdk_version": "11.3.3",
-            "adapter_version": "11.3.3.a31",
+            "sdk_version": "11.4.2",
+            "adapter_version": "11.4.2.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:applovin-adapter:11.3.3.a31"
+                        "package": "com.admost.sdk:applovin-adapter:11.4.2.a31"
                     }
                 ]
             },
@@ -206,13 +206,13 @@
         {
             "name": "Appnext",
             "status": false,
-            "sdk_version": "2.6.2.473",
-            "adapter_version": "2.6.2.473.a31",
+            "sdk_version": "2.6.5.473",
+            "adapter_version": "2.6.5.473.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:appnext-adapter:2.6.2.473.a31"
+                        "package": "com.admost.sdk:appnext-adapter:2.6.5.473.a31"
                     },
                     {
                         "package": "com.google.android.gms:play-services-location:17.0.0"
@@ -293,13 +293,13 @@
         {
             "name": "Facebook",
             "status": false,
-            "sdk_version": "6.10.0",
-            "adapter_version": "6.10.0.a31",
+            "sdk_version": "6.11.0",
+            "adapter_version": "6.11.0.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:facebook-adapter:6.10.0.a31"
+                        "package": "com.admost.sdk:facebook-adapter:6.11.0.a31"
                     },
                     {
                         "package": "androidx.annotation:annotation:1.2.0"
@@ -383,13 +383,13 @@
         {
             "name": "InMobi",
             "status": false,
-            "sdk_version": "10.0.5",
-            "adapter_version": "10.0.5.a31",
+            "sdk_version": "10.0.7",
+            "adapter_version": "10.0.7.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:inmobi-unified-adapter:10.0.5.a31"
+                        "package": "com.admost.sdk:inmobi-unified-adapter:10.0.7.a31"
                     }
                 ]
             }
@@ -397,13 +397,13 @@
         {
             "name": "IronSource",
             "status": false,
-            "sdk_version": "7.2.1.1",
-            "adapter_version": "7.2.1.1.a31",
+            "sdk_version": "7.2.2",
+            "adapter_version": "7.2.2.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:ironsource-adapter:7.2.1.1.a31"
+                        "package": "com.admost.sdk:ironsource-adapter:7.2.2.a31"
                     },
                     {
                         "package": "com.google.android.gms:play-services-appset:16.0.2"
@@ -422,13 +422,13 @@
         {
             "name": "Kidoz",
             "status": false,
-            "sdk_version": "8.9.5",
-            "adapter_version": "8.9.5.a31",
+            "sdk_version": "8.9.7",
+            "adapter_version": "8.9.7.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:kidoz-adapter:8.9.5.a31"
+                        "package": "com.admost.sdk:kidoz-adapter:8.9.7.a31"
                     },
                     {
                         "package": "org.greenrobot:eventbus:3.2.0"
@@ -495,13 +495,13 @@
         {
             "name": "MyTarget",
             "status": false,
-            "sdk_version": "5.15.1",
-            "adapter_version": "5.15.1.a31",
+            "sdk_version": "5.15.2",
+            "adapter_version": "5.15.2.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:mytarget-adapter:5.15.1.a31"
+                        "package": "com.admost.sdk:mytarget-adapter:5.15.2.a31"
                     }
                 ]
             }
@@ -605,13 +605,13 @@
         {
             "name": "Pubnative",
             "status": false,
-            "sdk_version": "2.13.0",
-            "adapter_version": "2.13.0.a31",
+            "sdk_version": "2.13.1",
+            "adapter_version": "2.13.1.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:pubnative-adapter:2.13.0.a31",
+                        "package": "com.admost.sdk:pubnative-adapter:2.13.1.a31",
                         "exclude": true,
                         "group": "net.pubnative", 
                         "module": "hybid.omsdk"
@@ -709,13 +709,13 @@
         {
             "name": "Tapjoy",
             "status": false,
-            "sdk_version": "12.9.1",
-            "adapter_version": "12.9.1.a31",
+            "sdk_version": "12.10.0",
+            "adapter_version": "12.10.0.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:tapjoy-adapter:12.9.1.a31"
+                        "package": "com.admost.sdk:tapjoy-adapter:12.10.0.a31"
                     }
                 ]
             },
@@ -765,13 +765,13 @@
         {
             "name": "TikTok",
             "status": false,
-            "sdk_version": "4.3.0.9",
-            "adapter_version": "4.3.0.9.a31",
+            "sdk_version": "4.5.0.3",
+            "adapter_version": "4.5.0.3.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:tiktok-adapter:4.3.0.9.a31"
+                        "package": "com.admost.sdk:tiktok-adapter:4.5.0.3.a31"
                     }
                 ]
             },
