@@ -48,13 +48,13 @@
         {
             "name": "Admost",
             "status": false,
-            "sdk_version": "1.1.0",
-            "adapter_version": "1.1.0.a31",
+            "sdk_version": "1.1.1",
+            "adapter_version": "1.1.1.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:admost-adapter:1.1.0.a31"
+                        "package": "com.admost.sdk:admost-adapter:1.1.1.a31"
                     }
                 ]
             }
@@ -99,7 +99,10 @@
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:adgem-adapter:3.0.1.a31"
+                        "package": "com.admost.sdk:adgem-adapter:3.0.1.a31",
+                        "exclude": true,
+                        "group": "com.adgem", 
+                        "module": "adgem-android"
                     },
                     {
                         "package": "com.squareup.retrofit2:retrofit:2.6.4"
@@ -608,7 +611,10 @@
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:pubnative-adapter:2.13.0.a31"
+                        "package": "com.admost.sdk:pubnative-adapter:2.13.0.a31",
+                        "exclude": true,
+                        "group": "net.pubnative", 
+                        "module": "hybid.omsdk"
                     }
                 ]
             },
@@ -759,13 +765,13 @@
         {
             "name": "TikTok",
             "status": false,
-            "sdk_version": "4.3.1.9",
-            "adapter_version": "4.3.1.9.a31",
+            "sdk_version": "4.3.0.9",
+            "adapter_version": "4.3.0.9.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:tiktok-adapter:4.3.1.9.a31"
+                        "package": "com.admost.sdk:tiktok-adapter:4.3.0.9.a31"
                     }
                 ]
             },
