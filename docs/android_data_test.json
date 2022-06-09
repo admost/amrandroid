@@ -807,13 +807,13 @@
         {
             "name": "UnityAds",
             "status": false,
-            "sdk_version": "4.2.1",
-            "adapter_version": "4.2.1.a31",
+            "sdk_version": "4.0.0",
+            "adapter_version": "4.0.0.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:unity-adapter:4.2.1.a31"
+                        "package": "com.admost.sdk:unity-adapter:4.0.0.a31"
                     }
                 ]
             }
@@ -899,13 +899,13 @@
         {
             "name": "YandexAds",
             "status": false,
-            "sdk_version": "5.1.0",
-            "adapter_version": "5.1.0.a31",
+            "sdk_version": "5.1.1",
+            "adapter_version": "5.1.1.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:yandex-adapter:5.1.0.a31"
+                        "package": "com.admost.sdk:yandex-adapter:5.1.1.a31"
                     }
                 ]
             }
