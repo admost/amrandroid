@@ -3,8 +3,8 @@
         {
             "name": "AMR",
             "status": true,
-            "sdk_version": "2.6.0",
-            "adapter_version": "2.6.0",
+            "sdk_version": "2.6.1",
+            "adapter_version": "2.6.1",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
@@ -12,7 +12,7 @@
                         "package": "com.android.volley:volley:1.2.1"
                     },
                     {
-                        "package": "com.admost.sdk:amr:2.6.0"
+                        "package": "com.admost.sdk:amr:2.6.1"
                     },
                     {
                         "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -79,13 +79,13 @@
         {
             "name": "AdColony",
             "status": false,
-            "sdk_version": "4.7.1",
-            "adapter_version": "4.7.1.a31",
+            "sdk_version": "4.8.0",
+            "adapter_version": "4.8.0.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:adcolony-adapter:4.7.1.a31"
+                        "package": "com.admost.sdk:adcolony-adapter:4.8.0.a31"
                     }
                 ]
             }
@@ -154,13 +154,13 @@
         {
             "name": "AFA",
             "status": false,
-            "sdk_version": "0.1.5",
-            "adapter_version": "0.1.5.a31",
+            "sdk_version": "0.1.6",
+            "adapter_version": "0.1.6.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:afa-adapter:0.1.5.a31"
+                        "package": "com.admost.sdk:afa-adapter:0.1.6.a31"
                     }
                 ]
             }
@@ -182,13 +182,13 @@
         {
             "name": "AppLovin",
             "status": false,
-            "sdk_version": "11.4.2",
-            "adapter_version": "11.4.2.a31",
+            "sdk_version": "11.4.3",
+            "adapter_version": "11.4.3.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:applovin-adapter:11.4.2.a31"
+                        "package": "com.admost.sdk:applovin-adapter:11.4.3.a31"
                     }
                 ]
             },
@@ -397,13 +397,13 @@
         {
             "name": "IronSource",
             "status": false,
-            "sdk_version": "7.2.2",
-            "adapter_version": "7.2.2.a31",
+            "sdk_version": "7.2.2.1",
+            "adapter_version": "7.2.2.1.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:ironsource-adapter:7.2.2.a31"
+                        "package": "com.admost.sdk:ironsource-adapter:7.2.2.1.a31"
                     },
                     {
                         "package": "com.google.android.gms:play-services-appset:16.0.2"
@@ -453,13 +453,13 @@
         {
             "name": "Mintegral",
             "status": false,
-            "sdk_version": "16.1.21",
-            "adapter_version": "16.1.21.a31",
+            "sdk_version": "16.1.51",
+            "adapter_version": "16.1.51.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:mintegral-adapter:16.1.21.a31"
+                        "package": "com.admost.sdk:mintegral-adapter:16.1.51.a31"
                     }
                 ]
             },
@@ -570,13 +570,13 @@
         {
             "name": "Ogury",
             "status": false,
-            "sdk_version": "5.2.0",
-            "adapter_version": "5.2.0.a31",
+            "sdk_version": "5.3.0",
+            "adapter_version": "5.3.0.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:ogury-adapter:5.2.0.a31"
+                        "package": "com.admost.sdk:ogury-adapter:5.3.0.a31"
                     }
                 ]
             },
@@ -765,13 +765,13 @@
         {
             "name": "TikTok",
             "status": false,
-            "sdk_version": "4.5.0.3",
-            "adapter_version": "4.5.0.3.a31",
+            "sdk_version": "4.5.0.4",
+            "adapter_version": "4.5.0.4.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:tiktok-adapter:4.5.0.3.a31"
+                        "package": "com.admost.sdk:tiktok-adapter:4.5.0.4.a31"
                     }
                 ]
             },
@@ -875,13 +875,13 @@
         {
             "name": "Wortise",
             "status": false,
-            "sdk_version": "1.2.1",
-            "adapter_version": "1.2.1.a31",
+            "sdk_version": "1.3.1",
+            "adapter_version": "1.3.1.a31",
             "unity_support": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:wortise-adapter:1.2.1.a31",
+                        "package": "com.admost.sdk:wortise-adapter:1.3.1.a31",
                         "exclude": true,
                         "group": "com.google.ads.mediation",
                         "module": "facebook"
