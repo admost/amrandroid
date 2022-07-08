@@ -154,13 +154,13 @@
         {
             "name": "AFA",
             "status": false,
-            "sdk_version": "0.1.6",
-            "adapter_version": "0.1.6.a31",
+            "sdk_version": "0.1.7",
+            "adapter_version": "0.1.7.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:afa-adapter:0.1.6.a31"
+                        "package": "com.admost.sdk:afa-adapter:0.1.7.a31"
                     }
                 ]
             }
