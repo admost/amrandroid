@@ -3,8 +3,8 @@
         {
             "name": "AMR",
             "status": true,
-            "sdk_version": "2.6.2",
-            "adapter_version": "2.6.2",
+            "sdk_version": "2.6.3",
+            "adapter_version": "2.6.3",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
@@ -12,7 +12,7 @@
                         "package": "com.android.volley:volley:1.2.1"
                     },
                     {
-                        "package": "com.admost.sdk:amr:2.6.2"
+                        "package": "com.admost.sdk:amr:2.6.3"
                     },
                     {
                         "package": "com.google.android.gms:play-services-base:17.1.0"
