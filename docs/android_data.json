@@ -169,12 +169,12 @@
             "name": "Amazon",
             "status": false,
             "sdk_version": "9.5.4",
-            "adapter_version": "9.5.4.a31",
+            "adapter_version": "9.5.4.1.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:amazon-adapter:9.5.4.a31"
+                        "package": "com.admost.sdk:amazon-adapter:9.5.4.1.a31"
                     }
                 ]
             }
