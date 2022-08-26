@@ -3,8 +3,8 @@
         {
             "name": "AMR",
             "status": true,
-            "sdk_version": "2.6.3",
-            "adapter_version": "2.6.3",
+            "sdk_version": "2.6.4",
+            "adapter_version": "2.6.4",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
@@ -12,7 +12,7 @@
                         "package": "com.android.volley:volley:1.2.1"
                     },
                     {
-                        "package": "com.admost.sdk:amr:2.6.3"
+                        "package": "com.admost.sdk:amr:2.6.4"
                     },
                     {
                         "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -294,12 +294,12 @@
             "name": "Facebook",
             "status": false,
             "sdk_version": "6.11.0",
-            "adapter_version": "6.11.0.a31",
+            "adapter_version": "6.11.0.1.a31",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:facebook-adapter:6.11.0.a31"
+                        "package": "com.admost.sdk:facebook-adapter:6.11.0.1.a31"
                     },
                     {
                         "package": "androidx.annotation:annotation:1.2.0"
