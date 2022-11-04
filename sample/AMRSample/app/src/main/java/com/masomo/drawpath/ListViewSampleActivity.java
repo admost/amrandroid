@@ -1,4 +1,4 @@
-package com.kokteyl.amrunity;
+package com.masomo.drawpath;
 
 import android.app.Activity;
 import android.os.Bundle;

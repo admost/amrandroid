@@ -1,4 +1,4 @@
-package com.kokteyl.amrunity;
+package com.masomo.drawpath;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -22,7 +22,6 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import admost.sdk.AdMostViewBinder;
-import admost.sdk.dfp.AmrDfpCustomEventBanner;
 
 public class DFPIntegrationSampleActivity extends Activity {
 

@@ -434,6 +434,20 @@
             }
         },
         {
+            "name": "Liftoff",
+            "status": false,
+            "sdk_version": "1.10.0",
+            "adapter_version": "1.10.0.a33",
+            "unity_support": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:liftoff-adapter:1.10.0.a33"
+                    }
+                ]
+            }
+        },
+        {
             "name": "Loopme",
             "status": false,
             "sdk_version": "8.0.1",
@@ -534,32 +548,6 @@
                 "dependencies": [
                     {
                         "maven": "https://fan-adn.github.io/nendSDK-Android-lib/library"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Nexage(AOL)",
-            "status": false,
-            "sdk_version": "6.8.3",
-            "adapter_version": "6.8.3.a33",
-            "unity_support": true,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:millenial-adapter:6.8.3.a33"
-                    }
-                ]
-            },
-            "android_manifest": {
-                "application": [
-                    {
-                        "provider": {
-                            "name": "com.millennialmedia.internal.utils.MediaContentProvider",
-                            "authorities": "< PACKAGE_NAME >.MediaContentProvider",
-                            "grantUriPermissions": "true",
-                            "exported": "false"
-                        }
                     }
                 ]
             }

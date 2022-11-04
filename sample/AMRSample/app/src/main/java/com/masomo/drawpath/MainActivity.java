@@ -1,4 +1,4 @@
-package com.kokteyl.amrunity;
+package com.masomo.drawpath;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -17,11 +17,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+
+import java.util.HashSet;
+import java.util.Set;
+
 import admost.sdk.AdMostInterstitial;
 import admost.sdk.AdMostView;
 import admost.sdk.AdMostViewBinder;
 import admost.sdk.base.AdMost;
+import admost.sdk.base.AdMostAdNetwork;
 import admost.sdk.base.AdMostConfiguration;
+import admost.sdk.base.AdMostLog;
 import admost.sdk.listener.AdMostAdListener;
 import admost.sdk.listener.AdMostInitListener;
 import admost.sdk.listener.AdMostViewListener;
@@ -53,6 +60,12 @@ public class MainActivity extends Activity {
         // IMPORTANT: Use your applications's BuildConfig file not the other third party sdks. It is critical.
         configuration.showUIWarningsForDebuggableBuild(BuildConfig.DEBUG);
 
+        Set<String> network = new HashSet<String>();
+        //network.add(AdMostAdNetwork.FYBER);
+        network.add(AdMostAdNetwork.UNITY);
+        network.add(AdMostAdNetwork.S2SBIDDING);
+        //configuration.enableOnlySubsetOfAdNetworksForTesters(network);
+
         // Arrange GDPR related controls based on your needs, it is the responsibility of publisher.
         // If setUserConsent is not used, AdMost SDK uses its internal logic for personalized ads.
         //configuration.setUserConsent(true); // if you have user's consent about GDPR, you can set this boolean. If not, it would be better not to call this method
@@ -68,6 +81,8 @@ public class MainActivity extends Activity {
             @Override
             public void onInitCompleted() {
                 Log.i(Statics.TAG, "AdMost onInitCompleted");
+                AdMostLog.e("consent: " +AdMost.getInstance().getConfiguration().showPersonalizedAdForGDPR());
+
             }
 
             @Override
@@ -75,6 +90,7 @@ public class MainActivity extends Activity {
                 Log.i(Statics.TAG, "AdMost onInitFailed: status code " + i);
             }
         });
+
 
         // You need to read AdMost documents (https://admost.github.io/amrandroid/) about GDPR to determine who are required to show such a dialog.
         // Note: This is just an example usage. Showing a pop-up is optional.
@@ -119,7 +135,7 @@ public class MainActivity extends Activity {
 
     private void getNative() {
         // This is just for your own style, left null if you want default layout style
-        final AdMostViewBinder customBinder = new AdMostViewBinder.Builder(R.layout.custom_layout_native_250)
+        final AdMostViewBinder customBinder = new AdMostViewBinder.Builder(R.layout.custom_layout_native_90)
                 .iconImageId(R.id.ad_app_icon)
                 .titleId(R.id.ad_headline)
                 .callToActionId(R.id.ad_call_to_action)
