@@ -540,12 +540,7 @@ Add following lines to AndroidManifest.xml file under application tag.
 -keep class com.google.android.exoplayer2.**{ *;}
 -keep class android.support.v4.app.DialogFragment { *; }
 -keep class android.support.v4.util.LruCache { *; }
-
-
-# VOLLEY
--keep class com.android.volley.** { *; }
--keep interface com.android.volley.** { *; }
--keep class org.apache.commons.logging.**
+                        
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
@@ -617,17 +612,6 @@ public static &lt;fields&gt;;
 # APPNEXT
 -keep class com.appnext.** { *; }
 -dontwarn com.appnext.**
-
-# APPSAMURAI
--keepclassmembers,allowobfuscation class * {
-  @com.google.gson.annotations.SerializedName &lt;fields&gt;;
-}
-
-# AVOCARROT - GLISPA
--keep class com.avocarrot.** { *; }
--dontwarn com.avocarrot.**
--keep class com.google.android.exoplayer2.SimpleExoPlayer
--dontwarn com.google.android.exoplayer2.SimpleExoPlayer
 
 # CHARTBOOST
 -dontwarn org.apache.http.**
@@ -875,11 +859,8 @@ public static &lt;fields&gt;;
 -dontwarn com.tappx.**
 
 #TIKTOK
--keep class com.bytedance.sdk.openadsdk.** { *; }
--keep public interface com.bytedance.sdk.openadsdk.downloadnew.** {*;}
--keep class com.pgl.sys.ces.** {*;}
--keep class com.bytedance.embed_dr.** {*;}
--keep class com.bytedance.embedapplog.** {*;}
+-dontwarn com.bytedance.**
+-keep class com.bytedance.** {*;}
 
 # UNITY
 -dontwarn com.unity3d.**
