@@ -678,6 +678,27 @@
             }
         },
         {
+            "name": "SmartAd",
+            "status": false,
+            "sdk_version": "7.18.0.4",
+            "adapter_version": "7.18.0.4.a33",
+            "unity_support": true,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:smartad-adapter:7.18.0.4.a33"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://packagecloud.io/smartadserver/android/maven2"
+                    }
+                ]
+            }
+        },
+        {
             "name": "StartApp",
             "status": false,
             "sdk_version": "4.10.2",
