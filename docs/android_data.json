@@ -771,13 +771,13 @@
         {
             "name": "TikTok",
             "status": false,
-            "sdk_version": "4.7.0.7",
-            "adapter_version": "4.7.0.7.a33",
+            "sdk_version": "4.7.0.7.1",
+            "adapter_version": "4.7.0.7.1.a33",
             "unity_support": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:tiktok-adapter:4.7.0.7.a33"
+                        "package": "com.admost.sdk:tiktok-adapter:4.7.0.7.1.a33"
                     }
                 ]
             },
