@@ -5,6 +5,7 @@ var htmlProjectGradle = '<div class="col-md-11" > <p Add the following lines ins
 var htmlAppGradle = '<div class="col-md-11"> <p> Add the following lines inside <var> dependencies{}</var> bracelets in <code>/app/src/build.gradle</code>file </div><div class="col-md-1"><button class="btn btn-xs btn-primary" onclick="copyToClipboard(\'#code-appgradle\')"><i class="fa fa-copy"></i></if></li> Copy</button> </div><div class="col-md-12" id="file-appgradle"> <pre><code id="code-appgradle"></code></pre> </div>';
 var htmlAndroidManifest = '<div class="col-md-11"> <p> Add the following lines inside <var> &lt;application&gt;</var> tags in <code>/app/src/main/AndroidManifest.xml</code> file </div><div class="col-md-1"><button class="btn btn-xs btn-primary" onclick="copyToClipboard(\'#code-androidmanifest\')"><i class="fa fa-copy"></i></if></li> Copy</button> </div><div class="col-md-12" id="file-androidmanifest"> <pre><code id="code-androidmanifest"></code></pre> </div>';
 var arrayAppGradlePackages = [];
+var pageIsLite = false
 
 function amrInitPage(adNetworkJson) {
   obj = adNetworkJson;
@@ -96,15 +97,26 @@ function getPositionOfAdNetworkOnJSONArray(adNetworkName) {
 }
 
 function fillAdNetworkList() {
+
     htmlString = '<div class="btn-group" style="margin:8px;" id="btn-group-network-AMR"> <button type="button" id="btn-name-network-AMR" class="btn btn-success">AMR</button>  </div>&nbsp;';
     for (var i = 1; i < obj.ad_networks.length; i++) {
-        htmlString = htmlString + '<div class="btn-group" style="margin:8px; id="btn-group-network-' + obj.ad_networks[i].name + '"> <button type="button" id="btn-name-network-' + obj.ad_networks[i].name + '" class="btn btn-default">' + obj.ad_networks[i].name + '</button> <button type="button" id="btn-icon-network-' + obj.ad_networks[i].name + '" onclick="toggleAdNetworkStatus(\'' + obj.ad_networks[i].name + '\');" class="btn btn-';
+        
+        if(pageIsLite === false || (pageIsLite === true && obj.ad_networks[i].isLite )){
+            
+            if((pageIsLite === true && obj.ad_networks[i].isLite )){
+                obj.ad_networks[i].status = true
+                htmlString = htmlString + '<div class="btn-group" style="margin:8px; id="btn-group-network-' + obj.ad_networks[i].name + '"> <button type="button" id="btn-name-network-' + obj.ad_networks[i].name + '" class="btn btn-success">' + obj.ad_networks[i].name + '</button> </div>';
+            }else{
+                console.log(obj.ad_networks[i].name + "-" + obj.ad_networks[i].status )
+                htmlString = htmlString + '<div class="btn-group" style="margin:8px; id="btn-group-network-' + obj.ad_networks[i].name + '"> <button type="button" id="btn-name-network-' + obj.ad_networks[i].name + '" class="btn btn-default">' + obj.ad_networks[i].name + '</button> <button type="button" id="btn-icon-network-' + obj.ad_networks[i].name + '" onclick="toggleAdNetworkStatus(\'' + obj.ad_networks[i].name + '\');" class="btn btn-';
 
-        obj.ad_networks[i].status ? htmlString = htmlString + "danger" : htmlString = htmlString + "success";
-        htmlString = htmlString + ' dropdown-toggle"> <span class="fa fa-';
-
-        obj.ad_networks[i].status ? htmlString = htmlString + "minus" : htmlString = htmlString + "plus";
-        htmlString = htmlString + '"></span> </button> </div>'
+                obj.ad_networks[i].status ? htmlString = htmlString + "danger" : htmlString = htmlString + "success";
+                htmlString = htmlString + ' dropdown-toggle"> <span class="fa fa-';
+        
+                obj.ad_networks[i].status ? htmlString = htmlString + "minus" : htmlString = htmlString + "plus";
+                htmlString = htmlString + '"></span> </button> </div>'
+            }
+        }
     }
     $("#adnetwork-button-list").html(htmlString);
 }
@@ -283,4 +295,24 @@ function getProjectGradleFileString() {
 
 function getAndroidManifestFileString() {
 
+}
+
+function checkPageStatus(){
+
+    var queryString = window.location.search;
+    var params = new URLSearchParams(queryString);
+
+    pageIsLite = (params.get("islite") === "true")
+
+    if(pageIsLite){
+        var notLiteElements = document.getElementsByClassName("not-lite");
+        for(let i = 0; i < notLiteElements.length; i++ ){
+            notLiteElements[i].style.display = "none";
+        }
+    }else{
+        var isLiteElements = document.getElementsByClassName("is-lite");
+        for(let i = 0; i < isLiteElements.length; i++ ){
+            isLiteElements[i].style.display = "none";
+        }
+    }
 }

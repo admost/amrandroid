@@ -124,19 +124,19 @@
                     <li>
                         <a href="#usage">Usage</a>
                         <ul>
-                            <li><a href="#init">Init</a></li>
+                            <li><a href="#init">Initialization</a></li>
                             <ul style="display: block;">
                                 <li><a href="#initgdpr">GDPR</a></li>
 								<li><a href="#initccpa">CCPA</a></li>
                             </ul>
-                            <li><a href="#banner-ads">Banner/Native Ads</a></li>
+                            <li><a href="#banner-ads">Banner Ads</a></li>
                             <ul style="display: block;">
-                                <li><a href="#native-ads">Custom Native Design</a></li>
+                                <li><a class="not-lite" href="#native-ads">Custom Native Design</a></li>
                             </ul>
                             <li><a href="#interstitial">Interstitial Ads</a></li>
                             <li><a href="#rewarded">Rewarded Ads</a></li>
 
-                            <li>
+                            <li class="not-lite">
                                 <a href="#offerwalls" class="has-child open">Offerwall Ads</a>
                                 <ul style="display: block;">
                                     <li><a href="#spending-virtual-currencies">Spending Virtual Currencies</a></li>
@@ -145,7 +145,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="#extras">Extras</a>
+                    <li class="not-lite"><a href="#extras">Extras</a>
                         <ul>
                             <li><a href="#dfp">Google AdManager Integration</a></li>
                             <li><a href="#testsuite">Test Suite</a></li>
@@ -523,7 +523,9 @@ Add following lines to AndroidManifest.xml file under application tag.
                 </div>
 
                 -->
-                    <pre class="pre-scrollable"><code class="language-typescript" id="code-proguard">
+                
+<pre class="pre-scrollable not-lite">
+    <code class="language-typescript" id="code-proguard">
 # ADMOST
 -keepattributes Exceptions, InnerClasses
 -dontwarn admost.sdk.**
@@ -858,7 +860,7 @@ public static &lt;fields&gt;;
 -keep public class com.tappx.** { *; }
 -dontwarn com.tappx.**
 
-#TIKTOK
+#PANGLE
 -dontwarn com.bytedance.**
 -keep class com.bytedance.** {*;}
 
@@ -920,8 +922,80 @@ public static &lt;fields&gt;;
 public *;
 }
 -keep class com.verizon.ads**
-</code>
-          </pre>
+    </code>
+</pre>
+          
+<pre class="pre-scrollable is-lite" >
+    <code class="language-typescript" id="code-proguard">
+        # ADMOST
+        -keepattributes Exceptions, InnerClasses
+        -dontwarn admost.sdk.**
+        -keep class admost.sdk.** {*;}
+        -dontwarn com.amr.unity.**
+        -keep class com.amr.unity.** {*;}
+        -dontwarn admost.adserver.**
+        -keep class com.adjust.sdk.** {*;}
+        -dontwarn com.adjust.sdk.**
+        -keep class com.appsflyer.** {*;}
+        -dontwarn com.appsflyer.**
+        -keep class admost.adserver.** { *; }
+        -dontwarn com.google.android.exoplayer2.**
+        -keep class com.google.android.exoplayer2.**{ *;}
+        -keep class android.support.v4.app.DialogFragment { *; }
+        -keep class android.support.v4.util.LruCache { *; }
+        
+        # ADMOB / ADX / GOOGLE
+        -keep class com.android.vending.billing.**
+        -keep public class com.google.android.gms.ads.** { public *; }
+        -keep public class com.google.ads.** { public *; }
+        -keep class com.google.android.gms.** { *; }
+        -dontwarn com.google.android.gms.**
+        -keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
+        -keepnames class * implements android.os.Parcelable
+        -keepclassmembers class * implements android.os.Parcelable { public static final *** CREATOR; }
+        -keep @interface android.support.annotation.Keep
+        -keep @android.support.annotation.Keep class *
+        -keepclasseswithmembers class * { @android.support.annotation.Keep &lt;fields&gt;; }
+        -keepclasseswithmembers class * { @android.support.annotation.Keep &lt;methods&gt;; }
+        -keep @interface com.google.android.gms.common.annotation.KeepName
+        -keepnames @com.google.android.gms.common.annotation.KeepName class *
+        -keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
+        -keep @interface com.google.android.gms.common.util.DynamiteApi
+        -keep public @com.google.android.gms.common.util.DynamiteApi class * { public &lt;fields&gt;; public &lt;methods&gt;; }
+        -keep public @com.google.android.gms.common.util.DynamiteApi class * { *; }
+        -keep class com.google.android.apps.common.proguard.UsedBy*
+        -keep @com.google.android.apps.common.proguard.UsedBy* class *
+        -keepclassmembers class * { @com.google.android.apps.common.proguard.UsedBy* *; }
+        -dontwarn android.security.NetworkSecurityPolicy
+        -dontwarn android.app.Notification
+        
+        # FACEBOOK
+        -dontwarn com.facebook.ads.**
+        -dontnote com.facebook.ads.**
+        -keep class com.facebook.** { *; }
+        -keepattributes Signature
+        -keep class com.google.android.exoplayer2.** {*;}
+        -dontwarn com.google.android.exoplayer2.**
+        
+        # MINTEGRAL
+        -keepattributes Signature
+        -keepattributes *Annotation*
+        -keep class com.mbridge.** {*; }
+        -keep interface com.mbridge.** {*; }
+        -keep interface androidx.** { *; }
+        -keep class androidx.** { *; }
+        -keep public class * extends androidx.** { *; }
+        -dontwarn com.mbridge.**
+        
+        #PANGLE
+        -dontwarn com.bytedance.**
+        -keep class com.bytedance.** {*;}
+        -keep class **.R$* { public static final int mbridge*; }
+    </code>
+</pre>
+
+
+          
                     <h3 id="shrink">Shrink Resources</h3>
                     <p>If you are using <code>shrinkResources true</code>, please add the lines below to your <code>/app/src/res/raw/keep.xml</code> file</p>
 
@@ -940,7 +1014,7 @@ public *;
 
                     <p>Admost Mediation library is a lean yet complete library that allows you to request and show ads.
                         Basic integration steps are:</p>
-                    <h3 id="init">Init Ads</h3>
+                    <h3 id="init">Initialization</h3>
                     <p>Initialize the Admost Mediation SDK in your application’s launcher Activity. This starts
                         pre-caching
                         and prepares the SDK to display ads.</p>
@@ -1012,7 +1086,8 @@ AdMost.getInstance().init(configuration.build(), new AdMostInitListener() {
 					<p><b>IMPORTANT NOTE:</b> We strongly recommend you to read our <b><a target="_blank"
                                 href="https://admost.github.io/privacy.html#ccparules">CCPA section</a></b>. </p>
                     
-                    <h3 id="banner-ads">Banner/Native Ads</h3>
+
+                    <h3 id="banner-ads">Banner Ads</h3>
                     <pre><code class="language-java">/*
 ZONE_ID : Your ZONE_ID defined on admost mediation panels.
 BINDER  : You can use your own layout design for banners, if you leave BINDER value null, default design will be applied.
@@ -1048,7 +1123,7 @@ BANNER = new AdMostView(ACTIVITY, < ZONE_ID >, new AdMostBannerCallBack() {
 BANNER.load();
 
                 </code></pre>
-
+<div class="not-lite">
                     <p>
                         You can use tag functionality for banner zones. Tags will let you monitor the performance of the
                         ads across different dimensions for the same zone. You can switch ads on and off for any
@@ -1059,6 +1134,7 @@ BANNER.load();
 // Just start using, it will be automatically detected
 BANNER.load(TAG);
 				</code></pre>
+            </div>
 
                     <p>You have to call destroy(), pause() and resume() methods in the activity.
 
@@ -1083,7 +1159,7 @@ public void onDestroy() {
     BANNER.destroy();
 }
 </code></pre>
-
+<div class="not-lite">
                     <h4 id="native-ads">Custom Native Design</h4>
 
                     <p>If you want to create your own design for native ads, you have to create a binder object and pass
@@ -1121,6 +1197,8 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
         android:src="@drawable/ad_privacy"
         android:layout_alignParentRight="true"
         android:visibility="gone" /></code></pre>
+
+</div>
                     <h3 id="interstitial">Interstitial</h3>
 
                     <pre><code class="language-java">AdMostInterstitial INTERSTITIAL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostFullScreenCallBack() {
@@ -1178,6 +1256,7 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
                         Otherwise, you need to call show() method manually.
                     </p>
                     <pre><code class="language-java">INTERSTITIAL.show();</code></pre>
+                    <div class="not-lite">
                     <p>
                         You can use tag functionality for interstitial zones. Tags will let you monitor the performance
                         of the ads across different dimensions for the same zone. You can switch ads on and off for any
@@ -1188,6 +1267,7 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
 // Just start using, it will be automatically detected
 INTERSTITIAL.show(TAG);
 				</code></pre>
+                    </div>
                     <p> You have to call destroy method when you are done with the interstitial.
                     </p>
                     <pre><code class="language-java">INTERSTITIAL.destroy();</code></pre>
@@ -1252,6 +1332,7 @@ INTERSTITIAL.show(TAG);
                         Otherwise, you need to call show() method manually.
                     </p>
                     <pre><code class="language-java">VIDEO.show();</code></pre>
+                    <div class="not-lite">
                     <p>
                         You can use tag functionality for rewarded video zones. Tags will let you monitor the
                         performance of the ads across different dimensions for the same zone. You can switch ads on and
@@ -1262,10 +1343,13 @@ INTERSTITIAL.show(TAG);
 // Just start using, it will be automatically detected
 VIDEO.show(TAG);
 				</code></pre>
+                    </div>
+
                     <p> You have to call destroy method when you are done with the rewarded video.
                     </p>
                     <pre><code class="language-java">VIDEO.destroy();</code></pre>
 
+    <div class="not-lite">
                     <h3 id="offerwalls">Offerwalls</h3>
 
                     <pre><code class="language-java">OFFERWALL = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostFullScreenCallBack() {
@@ -1340,7 +1424,8 @@ OFFERWALL.show(TAG);
 });
                 </code>
     </pre>
-
+</div>
+    <div class="not-lite">
                     <h2 id="extras">Extras</h2>
 
                     <h3 id="dfp">Google AdManager Integration</h3>
@@ -1717,6 +1802,7 @@ dependencies {
 }
                 </code></pre>
                     </div>
+</div>
                 </section>
 
 
@@ -1770,6 +1856,7 @@ dependencies {
         //var jsonpath_android = 'https://www.kokteyl.com/paket/android_data.json?' + Date.now();
 
         $.getJSON(jsonpath_android, function( data ) {
+            checkPageStatus()
             amrInitPage(data);
         });
     </script>
