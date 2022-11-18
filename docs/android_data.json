@@ -6,6 +6,7 @@
             "sdk_version": "2.6.7",
             "adapter_version": "2.6.7",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -48,6 +49,7 @@
             "sdk_version": "1.1.3",
             "adapter_version": "1.1.3.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -62,6 +64,7 @@
             "sdk_version": "21.1.0",
             "adapter_version": "1.0.8.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -79,6 +82,7 @@
             "sdk_version": "4.8.0",
             "adapter_version": "4.8.0.3.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -93,6 +97,7 @@
             "sdk_version": "3.0.1",
             "adapter_version": "3.0.1.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -116,6 +121,7 @@
             "sdk_version": "21.1.0",
             "adapter_version": "1.0.8.a33",
             "unity_support": true,
+            "isLite": true,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -133,6 +139,7 @@
             "sdk_version": "2.6.5",
             "adapter_version": "2.6.5.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -154,6 +161,7 @@
             "sdk_version": "1.0.0",
             "adapter_version": "1.0.0.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -168,6 +176,7 @@
             "sdk_version": "9.5.6",
             "adapter_version": "9.5.6.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -182,6 +191,7 @@
             "sdk_version": "11.5.5",
             "adapter_version": "11.5.5.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -206,6 +216,7 @@
             "sdk_version": "2.6.5.473",
             "adapter_version": "2.6.5.473.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -234,6 +245,7 @@
             "sdk_version": "9.1.0",
             "adapter_version": "9.1.0.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -251,6 +263,7 @@
             "sdk_version": "4.4.0.1",
             "adapter_version": "4.4.0.1.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -272,6 +285,7 @@
             "sdk_version": "4.6.2",
             "adapter_version": "4.6.2.a33",
             "unity_support": false,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -293,6 +307,7 @@
             "sdk_version": "6.12.0",
             "adapter_version": "6.12.0.a33",
             "unity_support": true,
+            "isLite": true,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -310,6 +325,7 @@
             "sdk_version": "4.2.8",
             "adapter_version": "4.2.8.a33",
             "unity_support": false,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -324,6 +340,7 @@
             "sdk_version": "8.2.0",
             "adapter_version": "8.2.0.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -338,6 +355,7 @@
             "sdk_version": "3.4.56.302",
             "adapter_version": "3.4.56.302.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -362,6 +380,7 @@
             "sdk_version": "6.0.3",
             "adapter_version": "6.0.3.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -383,6 +402,7 @@
             "sdk_version": "10.0.8",
             "adapter_version": "10.0.8.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -397,6 +417,7 @@
             "sdk_version": "7.2.4.1",
             "adapter_version": "7.2.4.1.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -422,6 +443,7 @@
             "sdk_version": "8.9.7",
             "adapter_version": "8.9.7.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -439,6 +461,7 @@
             "sdk_version": "1.10.0",
             "adapter_version": "1.10.0.a33",
             "unity_support": false,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -453,6 +476,7 @@
             "sdk_version": "8.0.1",
             "adapter_version": "8.0.1.a33",
             "unity_support": false,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -467,6 +491,7 @@
             "sdk_version": "16.2.51",
             "adapter_version": "16.2.51.a33",
             "unity_support": true,
+            "isLite": true,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -488,6 +513,7 @@
             "sdk_version": "4.3.2",
             "adapter_version": "4.3.2.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -509,6 +535,7 @@
             "sdk_version": "5.15.5",
             "adapter_version": "5.15.5.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -523,6 +550,7 @@
             "sdk_version": "5.5.9",
             "adapter_version": "5.5.9.a33",
             "unity_support": false,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -537,6 +565,7 @@
             "sdk_version": "5.1.1",
             "adapter_version": "5.1.1.a33",
             "unity_support": false,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -558,6 +587,7 @@
             "sdk_version": "5.3.0",
             "adapter_version": "5.3.0.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -579,6 +609,7 @@
             "sdk_version": "6.3.0",
             "adapter_version": "6.3.0.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -593,6 +624,7 @@
             "sdk_version": "2.16.0",
             "adapter_version": "2.16.0.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -617,6 +649,7 @@
             "sdk_version": "0.3.3",
             "adapter_version": "0.3.3.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -631,6 +664,7 @@
             "sdk_version": "21.1.0",
             "adapter_version": "1.0.8.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -648,6 +682,7 @@
             "sdk_version": "10.0.0",
             "adapter_version": "10.0.0.a33",
             "unity_support": false,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -662,6 +697,7 @@
             "sdk_version": "21.8.5",
             "adapter_version": "21.8.5.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -683,6 +719,7 @@
             "sdk_version": "7.18.0.4",
             "adapter_version": "7.18.0.4.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -704,6 +741,7 @@
             "sdk_version": "4.10.2",
             "adapter_version": "4.10.2.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -718,6 +756,7 @@
             "sdk_version": "12.11.0",
             "adapter_version": "12.11.0.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -739,6 +778,7 @@
             "sdk_version": "4.0.1",
             "adapter_version": "4.0.1.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -753,6 +793,7 @@
             "sdk_version": "2.0.15",
             "adapter_version": "2.0.15.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -774,6 +815,7 @@
             "sdk_version": "4.7.0.7.1",
             "adapter_version": "4.7.0.7.1.a33",
             "unity_support": true,
+            "isLite": true,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -795,6 +837,7 @@
             "sdk_version": "4.4.1",
             "adapter_version": "4.4.1.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -809,6 +852,7 @@
             "sdk_version": "1.14.0",
             "adapter_version": "1.14.0.a33",
             "unity_support": false,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -830,6 +874,7 @@
             "sdk_version": "6.12.0",
             "adapter_version": "6.12.0.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -863,6 +908,7 @@
             "sdk_version": "1.4.0",
             "adapter_version": "1.4.0.a33",
             "unity_support": false,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -887,6 +933,7 @@
             "sdk_version": "5.3.2",
             "adapter_version": "5.3.2.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
@@ -901,6 +948,7 @@
             "sdk_version": "5.0.1",
             "adapter_version": "5.0.1.a33",
             "unity_support": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
