@@ -302,24 +302,6 @@
             }
         },
         {
-            "name": "Meta",
-            "status": false,
-            "sdk_version": "6.12.0",
-            "adapter_version": "6.12.0.a33",
-            "unity_support": true,
-            "isLite": true,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:facebook-adapter:6.12.0.a33"
-                    },
-                    {
-                        "package": "androidx.annotation:annotation:1.2.0"
-                    }
-                ]
-            }
-        },
-        {
             "name": "Frecorp",
             "status": false,
             "sdk_version": "4.2.8",
@@ -486,6 +468,24 @@
             }
         },
         {
+            "name": "Meta",
+            "status": false,
+            "sdk_version": "6.12.0",
+            "adapter_version": "6.12.0.a33",
+            "unity_support": true,
+            "isLite": true,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:facebook-adapter:6.12.0.a33"
+                    },
+                    {
+                        "package": "androidx.annotation:annotation:1.2.0"
+                    }
+                ]
+            }
+        },
+        {
             "name": "Mintegral",
             "status": false,
             "sdk_version": "16.2.51",
@@ -599,6 +599,28 @@
                 "dependencies": [
                     {
                         "maven": "https://maven.ogury.co"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Pangle (Tiktok)",
+            "status": false,
+            "sdk_version": "4.7.0.7.1",
+            "adapter_version": "4.7.0.7.1.a33",
+            "unity_support": true,
+            "isLite": true,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:tiktok-adapter:4.7.0.7.1.a33"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://artifact.bytedance.com/repository/pangle"
                     }
                 ]
             }
@@ -805,28 +827,6 @@
                 "dependencies": [
                     {
                         "maven": "https://artifactory.tools.tapresearch.io/artifactory/tapresearch-android-sdk/"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Pangle (Tiktok)",
-            "status": false,
-            "sdk_version": "4.7.0.7.1",
-            "adapter_version": "4.7.0.7.1.a33",
-            "unity_support": true,
-            "isLite": true,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:tiktok-adapter:4.7.0.7.1.a33"
-                    }
-                ]
-            },
-            "project_gradle": {
-                "dependencies": [
-                    {
-                        "maven": "https://artifact.bytedance.com/repository/pangle"
                     }
                 ]
             }
