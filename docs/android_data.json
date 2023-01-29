@@ -3,14 +3,14 @@
         {
             "name": "AMR",
             "status": true,
-            "sdk_version": "2.7.0",
-            "adapter_version": "2.7.0",
+            "sdk_version": "2.7.1",
+            "adapter_version": "2.7.1",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:amr:2.7.0"
+                        "package": "com.admost.sdk:amr:2.7.1"
                     },
                     {
                         "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -319,14 +319,14 @@
         {
             "name": "Fyber",
             "status": false,
-            "sdk_version": "8.2.0",
-            "adapter_version": "8.2.0.a34",
+            "sdk_version": "8.2.1",
+            "adapter_version": "8.2.1.a34",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:fyber-adapter:8.2.0.a34"
+                        "package": "com.admost.sdk:fyber-adapter:8.2.1.a34"
                     }
                 ]
             }
@@ -606,14 +606,14 @@
         {
             "name": "Pangle (Tiktok)",
             "status": false,
-            "sdk_version": "4.8.0.9",
-            "adapter_version": "4.8.0.9.a34",
+            "sdk_version": "4.9.0.8",
+            "adapter_version": "4.9.0.8.a34",
             "unity_support": true,
             "isLite": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:tiktok-adapter:4.8.0.9.a34"
+                        "package": "com.admost.sdk:tiktok-adapter:4.9.0.8.a34"
                     }
                 ]
             },
