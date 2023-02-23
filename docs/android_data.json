@@ -3,14 +3,14 @@
         {
             "name": "AMR",
             "status": true,
-            "sdk_version": "2.7.1",
-            "adapter_version": "2.7.1",
+            "sdk_version": "2.7.2",
+            "adapter_version": "2.7.2",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:amr:2.7.1"
+                        "package": "com.admost.sdk:amr:2.7.2"
                     },
                     {
                         "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -62,7 +62,7 @@
             "name": "A4G",
             "status": false,
             "sdk_version": "21.1.0",
-            "adapter_version": "1.1.0.a34",
+            "adapter_version": "1.1.1.a34",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
@@ -71,7 +71,7 @@
                         "package": "com.google.android.gms:play-services-ads:21.4.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.0.a34"
+                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.1.a34"
                     }
                 ]
             }
@@ -119,7 +119,7 @@
             "name": "AdMob",
             "status": false,
             "sdk_version": "21.1.0",
-            "adapter_version": "1.1.0.a34",
+            "adapter_version": "1.1.1.a34",
             "unity_support": true,
             "isLite": true,
             "app_gradle": {
@@ -128,7 +128,7 @@
                         "package": "com.google.android.gms:play-services-ads:21.4.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.0.a34"
+                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.1.a34"
                     }
                 ]
             }
@@ -684,7 +684,7 @@
             "name": "Reklamup",
             "status": false,
             "sdk_version": "21.1.0",
-            "adapter_version": "1.1.0.a34",
+            "adapter_version": "1.1.1.a34",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
@@ -693,7 +693,7 @@
                         "package": "com.google.android.gms:play-services-ads:21.4.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.0.a34"
+                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.1.a34"
                     }
                 ]
             }
