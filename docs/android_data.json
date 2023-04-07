@@ -276,13 +276,13 @@
             "name": "Criteo",
             "status": false,
             "sdk_version": "4.9.0",
-            "adapter_version": "4.9.0.a35",
+            "adapter_version": "4.9.0.1.a35",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:criteo-adapter:4.9.0.a35"
+                        "package": "com.admost.sdk:criteo-adapter:4.9.0.1.a35"
                     }
                 ]
             },
