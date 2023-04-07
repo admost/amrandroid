@@ -485,14 +485,14 @@
         {
             "name": "Meta",
             "status": false,
-            "sdk_version": "6.12.0",
-            "adapter_version": "6.12.0.a35",
+            "sdk_version": "6.13.7",
+            "adapter_version": "6.13.7.a35",
             "unity_support": true,
             "isLite": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:facebook-adapter:6.12.0.a35"
+                        "package": "com.admost.sdk:facebook-adapter:6.13.7.a35"
                     },
                     {
                         "package": "androidx.annotation:annotation:1.2.0"
