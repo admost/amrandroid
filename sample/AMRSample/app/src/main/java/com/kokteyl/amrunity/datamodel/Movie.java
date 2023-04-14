@@ -1,4 +1,4 @@
-package com.masomo.drawpath.datamodel;
+package com.kokteyl.amrunity.datamodel;
 
 
 public class Movie {

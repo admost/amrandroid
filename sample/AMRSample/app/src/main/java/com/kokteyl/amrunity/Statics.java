@@ -1,11 +1,12 @@
-package com.masomo.drawpath;
+package com.kokteyl.amrunity;
 
 public class Statics {
     public static final String TAG = "ADMOST_SAMPLE_APP";
 //
+
     //Test Ids
     final static String AMR_APP_ID = "6cc8e89a-b52a-4e9a-bb8c-579f7ec538fe";
-    final static String BANNER_ZONE = "86644357-21d0-45a4-906a-37262461df65";
+    final static String BANNER_ZONE = "d97a05cb-da51-42b8-90a0-d2cb1b7d645a";
     final static String FULLSCREEN_ZONE = "92a31414-0b8d-431d-ac43-8d9fc92cbb7e";
     final static String VIDEO_ZONE =  "e5efb075-59ff-401b-892e-8500ee6f841f";
     final static String OFFERWALL = "fa1072e4-afcf-49b6-a919-1ab1ab1b0aa9";

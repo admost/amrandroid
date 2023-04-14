@@ -46,14 +46,14 @@
         {
             "name": "Admost",
             "status": false,
-            "sdk_version": "1.1.7",
-            "adapter_version": "1.1.7.a35",
+            "sdk_version": "1.1.8",
+            "adapter_version": "1.1.8.a35",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:admost-adapter:1.1.7.a35"
+                        "package": "com.admost.sdk:admost-adapter:1.1.8.a35"
                     }
                 ]
             }

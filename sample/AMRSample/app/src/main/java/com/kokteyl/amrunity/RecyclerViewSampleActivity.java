@@ -1,4 +1,4 @@
-package com.masomo.drawpath;
+package com.kokteyl.amrunity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.masomo.drawpath.datamodel.Movie;
+import com.kokteyl.amrunity.datamodel.Movie;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -150,7 +150,7 @@ public class RecyclerViewSampleActivity extends Activity {
     }
 
     private AdMostView prepareAd() {
-        final AdMostViewBinder customBinder = new AdMostViewBinder.Builder(R.layout.custom_layout_native_250)
+        final AdMostViewBinder customBinder = new AdMostViewBinder.Builder(R.layout.row_recyclerview_ad_native)
                 .iconImageId(R.id.ad_app_icon)
                 .titleId(R.id.ad_headline)
                 .callToActionId(R.id.ad_call_to_action)
@@ -162,7 +162,7 @@ public class RecyclerViewSampleActivity extends Activity {
                 .isRoundedMode(true)
                 .build();
 
-        AdMostView ad = new AdMostView(this, Statics.BANNER_ZONE, AdMostManager.getInstance().AD_BANNER, new AdMostViewListener() {
+        AdMostView ad = new AdMostView(this, Statics.NATIVE_ZONE, AdMostManager.getInstance().AD_BANNER, new AdMostViewListener() {
 
             @Override
             public void onReady(String s, int ecpm, View view) {

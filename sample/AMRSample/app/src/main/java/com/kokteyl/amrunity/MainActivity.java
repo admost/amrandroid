@@ -1,4 +1,4 @@
-package com.masomo.drawpath;
+package com.kokteyl.amrunity;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -16,7 +16,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 
 import java.util.HashSet;
@@ -62,9 +61,10 @@ public class MainActivity extends Activity {
 
         Set<String> network = new HashSet<String>();
         //network.add(AdMostAdNetwork.FYBER);
-        network.add(AdMostAdNetwork.UNITY);
+        network.add(AdMostAdNetwork.ADMOB);
         network.add(AdMostAdNetwork.S2SBIDDING);
         //configuration.enableOnlySubsetOfAdNetworksForTesters(network);
+        configuration.setUseHttps();
 
         // Arrange GDPR related controls based on your needs, it is the responsibility of publisher.
         // If setUserConsent is not used, AdMost SDK uses its internal logic for personalized ads.
@@ -128,14 +128,17 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(String network) {
 
+
             }
         }, null);
         ad.load();
     }
 
     private void getNative() {
+        ad.load();
+        AdMostLog.e("new req");
         // This is just for your own style, left null if you want default layout style
-        final AdMostViewBinder customBinder = new AdMostViewBinder.Builder(R.layout.custom_layout_native_90)
+       /* final AdMostViewBinder customBinder = new AdMostViewBinder.Builder(R.layout.custom_layout_native_90)
                 .iconImageId(R.id.ad_app_icon)
                 .titleId(R.id.ad_headline)
                 .callToActionId(R.id.ad_call_to_action)
@@ -177,7 +180,7 @@ public class MainActivity extends Activity {
 
             }
         }, customBinder);
-        nativeBanner.load();
+        nativeBanner.load();*/
     }
 
     private void getVideo() {

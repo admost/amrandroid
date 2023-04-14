@@ -1,4 +1,4 @@
-package com.masomo.drawpath;
+package com.kokteyl.amrunity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.masomo.drawpath.datamodel.Movie;
+import com.kokteyl.amrunity.datamodel.Movie;
 
 import java.util.ArrayList;
 import java.util.List;
