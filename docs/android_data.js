@@ -58,6 +58,19 @@ function getAndroidNetworks() {
            }
        },
        {
+           "name": "Adserver",
+           "status": false,
+           "adapterVersion": "1.0.4.a25",
+           "unitySupport": true,
+           "app_gradle": {
+               "dependencies": [
+                   {
+                       "package": "com.admost.sdk:adserver:1.0.4.a25"
+                   }
+               ]
+           }
+       },
+       {
            "name": "A4G",
            "status": false,
            "adapterVersion": "1.0.7.a25",
