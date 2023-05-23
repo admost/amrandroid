@@ -76,7 +76,7 @@
             "name": "A4G",
             "status": false,
             "sdk_version": "21.1.0",
-            "adapter_version": "1.1.4.a36",
+            "adapter_version": "1.1.5.a36",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
@@ -85,7 +85,7 @@
                         "package": "com.google.android.gms:play-services-ads:21.4.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.4.a36"
+                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.5.a36"
                     }
                 ]
             }
@@ -133,7 +133,7 @@
             "name": "AdMob",
             "status": false,
             "sdk_version": "21.1.0",
-            "adapter_version": "1.1.4.a36",
+            "adapter_version": "1.1.5.a36",
             "unity_support": true,
             "isLite": true,
             "app_gradle": {
@@ -142,7 +142,7 @@
                         "package": "com.google.android.gms:play-services-ads:21.4.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.4.a36"
+                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.5.a36"
                     }
                 ]
             }
@@ -710,7 +710,7 @@
             "name": "Reklamup",
             "status": false,
             "sdk_version": "21.1.0",
-            "adapter_version": "1.1.4.a36",
+            "adapter_version": "1.1.5.a36",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
@@ -719,7 +719,7 @@
                         "package": "com.google.android.gms:play-services-ads:21.4.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.4.a36"
+                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.5.a36"
                     }
                 ]
             }
