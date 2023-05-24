@@ -966,6 +966,12 @@
                         "package": "com.admost.sdk:yabbi-adapter:1.4.0.a36"
                     }
                 ]
+            },"project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://mobileadx.ru/maven"
+                    }
+                ]
             }
         },
         {
