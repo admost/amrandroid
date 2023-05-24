@@ -954,6 +954,21 @@
             }
         },
         {
+            "name": "Yabbi",
+            "status": false,
+            "sdk_version": "1.4.0",
+            "adapter_version": "1.4.0.a36",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:yabbi-adapter:1.4.0.a36"
+                    }
+                ]
+            }
+        },
+        {
             "name": "YandexAds",
             "status": false,
             "sdk_version": "5.7.0",
