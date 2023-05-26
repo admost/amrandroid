@@ -39,6 +39,13 @@ public class MainActivity extends Activity {
     AdMostInterstitial video;
     AdMostView nativeBanner;
 
+   public static Button lastClickButton = null;
+
+    public static View nativeView;
+    public static View bannerView;
+
+
+
     // GDPR related variables. You can implement your own GDPR logic.
     private static final String MY_PREFS = "myAppuserInfo";
     private static final String PERSONALIZED_ENABLED = "showPersonalizedAds";
@@ -99,6 +106,8 @@ public class MainActivity extends Activity {
         }*/
     }
 
+
+
     private void getBanner() {
         ((LinearLayout) findViewById(R.id.adLayout)).removeAllViews();
         if (ad != null) {
@@ -110,6 +119,9 @@ public class MainActivity extends Activity {
             @Override
             public void onReady(String network, int ecpm, View adView) {
                 Log.i(Statics.TAG, "onReady : " + network);
+                Log.d(Statics.TAG, "Banner for another activity onReady network: " + network + " ecpm: " + ecpm);
+                Toast.makeText(MainActivity.this,"Banner for another activity onReady network: " + network + " ecpm: " + ecpm, Toast.LENGTH_SHORT).show();
+                bannerView = adView;
                 LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
                 viewAd.removeAllViews();
                 if (adView.getParent() != null && adView.getParent() instanceof ViewGroup) {
@@ -134,11 +146,12 @@ public class MainActivity extends Activity {
         ad.load();
     }
 
+
+
     private void getNative() {
-        ad.load();
-        AdMostLog.e("new req");
+
         // This is just for your own style, left null if you want default layout style
-       /* final AdMostViewBinder customBinder = new AdMostViewBinder.Builder(R.layout.custom_layout_native_90)
+        final AdMostViewBinder customBinder = new AdMostViewBinder.Builder(R.layout.custom_layout_native_90)
                 .iconImageId(R.id.ad_app_icon)
                 .titleId(R.id.ad_headline)
                 .callToActionId(R.id.ad_call_to_action)
@@ -160,6 +173,9 @@ public class MainActivity extends Activity {
             @Override
             public void onReady(String network, int ecpm, View adView) {
                 Log.d(Statics.TAG, "MainActivity native onReady network: " + network + " ecpm: " + ecpm);
+                Log.d(Statics.TAG, "Native for another activity onReady network: " + network + " ecpm: " + ecpm);
+                Toast.makeText(MainActivity.this,"Native for another activity onReady network: " + network + " ecpm: " + ecpm, Toast.LENGTH_SHORT).show();
+                nativeView = adView;
                 LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
                 viewAd.removeAllViews();
                 if (adView.getParent() != null && adView.getParent() instanceof ViewGroup) {
@@ -180,7 +196,7 @@ public class MainActivity extends Activity {
 
             }
         }, customBinder);
-        nativeBanner.load();*/
+        nativeBanner.load();
     }
 
     private void getVideo() {
@@ -236,7 +252,6 @@ public class MainActivity extends Activity {
         if (interstitial == null) {
             AdMostAdListener listener = new AdMostAdListener() {
 
-                @Override
                 public void onDismiss(String message) {
                     ((Button) findViewById(R.id.showInterstitial)).setText("Get Interstitial");
                     Log.d(Statics.TAG, "MainActivity interstitial onDismiss network: " + message);
@@ -291,11 +306,28 @@ public class MainActivity extends Activity {
                 }
             }
         });
+
         findViewById(R.id.refreshBanner).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Banner is refreshing...", Toast.LENGTH_SHORT).show();
                 getBanner();
+            }
+        });
+
+        findViewById(R.id.bannerPage).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BannerSampleActivity.class);
+                LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
+
+                viewAd.removeAllViews();
+
+                lastClickButton = (Button) v;
+
+                startActivity(intent);
+
+
             }
         });
         findViewById(R.id.showVideo).setOnClickListener(new View.OnClickListener() {
@@ -309,6 +341,7 @@ public class MainActivity extends Activity {
                 }
             }
         });
+
         findViewById(R.id.native_ad).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -316,6 +349,22 @@ public class MainActivity extends Activity {
                 getNative();
             }
         });
+        findViewById(R.id.nativePage).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NativeSampleActivity.class);
+                LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
+
+                viewAd.removeAllViews();
+
+                lastClickButton = (Button) v;
+
+                startActivity(intent);
+
+
+            }
+        });
+
         findViewById(R.id.listPage).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -377,6 +426,8 @@ public class MainActivity extends Activity {
         });
     }
 
+
+
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -384,8 +435,7 @@ public class MainActivity extends Activity {
             interstitial.destroy();
         if (video != null)
             video.destroy();
-        if (ad != null)
-            ad.destroy();
+
         if (nativeBanner != null)
             nativeBanner.destroy();
 
@@ -484,6 +534,40 @@ public class MainActivity extends Activity {
         Log.i(Statics.TAG, "MainActivity " + type + " onFail errorCode : " + errorCode + " message : " + message);
         Toast.makeText(MainActivity.this," onFail errorCode : " + errorCode + " message : " + message, Toast.LENGTH_SHORT ).show();
         return message;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (lastClickButton == findViewById(R.id.bannerPage)) {
+            if (bannerView != null) {
+                LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
+                viewAd.removeAllViews();
+                if (bannerView.getParent() != null && bannerView.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) bannerView.getParent()).removeAllViews();
+                }
+                viewAd.addView(bannerView);
+            }
+        }
+
+        if (lastClickButton == findViewById(R.id.nativePage)) {
+            if (nativeView != null) {
+
+                LinearLayout viewAd = (LinearLayout) findViewById(R.id.adLayout);
+                viewAd.removeAllViews();
+                if (nativeView.getParent() != null && nativeView.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) nativeView.getParent()).removeAllViews();
+                }
+                viewAd.addView(nativeView);
+
+            }
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 }
 
