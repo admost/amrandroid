@@ -740,31 +740,6 @@ public static &lt;fields&gt;;
 -keep class com.mobfox.adapter.** { *; }
 -keep class com.mobfox.sdk.** { *; }
 
-# MOPUB
--keepclassmembers class com.mopub.** { public *; }
--dontnote com.mopub.**
--dontwarn com.mopub.**
--keep public class com.mopub.**
--keep class com.mopub.mobileads.** { *; }
--keep class * extends com.mopub.mobileads.CustomEventBanner {}
--keep class * extends com.mopub.mobileads.CustomEventInterstitial {}
--keep class * extends com.mopub.nativeads.CustomEventNative {}
--keep class * extends com.mopub.nativeads.CustomEventRewardedAd {}
--keepclassmembers class ** { @com.mopub.common.util.ReflectionTarget *; }
--keepclassmembers class com.integralads.avid.library.mopub.** { public *; }
--keep public class com.integralads.avid.library.mopub.**
--keepclassmembers class com.moat.analytics.mobile.mpub.** { public *; }
--keep public class com.moat.analytics.mobile.mpub.**
--keep class com.google.android.gms.common.GooglePlayServicesUtil { *; }
--keep class com.google.android.gms.ads.identifier.AdvertisingIdClient { *; }
--keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info { *; }
--keep class * extends java.util.ListResourceBundle { protected Object[][] getContents(); }
--keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
--keepnames @com.google.android.gms.common.annotation.KeepName class *
--keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
--keepnames class * implements android.os.Parcelable { public static final ** CREATOR; }
--keep public class android.webkit.JavascriptInterface {}
-
 # MYTARGET
 -keep class com.my.target.** {*;} 
 
@@ -1176,7 +1151,7 @@ AdMostViewBinder BINDER = new AdMostViewBinder.Builder(layout)
 	.mainImageId(R.id.ad_image)
 	.backImageId(R.id.ad_back)
 	.attributionId(R.id.ad_attribution)
-	.privacyIconId(R.id.ad_privacy) // it is only required for MOPUB and INMOBI native ads
+	.privacyIconId(R.id.ad_privacy) // it is only required for INMOBI native ads
 	.isRoundedMode(false)
 	.isFixed(false)
 	.isCloseable(false)
