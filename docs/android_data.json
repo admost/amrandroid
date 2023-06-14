@@ -466,14 +466,33 @@
         {
             "name": "Liftoff",
             "status": false,
-            "sdk_version": "1.10.0",
-            "adapter_version": "1.10.0.a36",
-            "unity_support": false,
+            "sdk_version": "6.12.1",
+            "adapter_version": "6.12.1.1.a36",
+            "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:liftoff-adapter:1.10.0.a36"
+                        "package": "com.admost.sdk:vungle-adapter:6.12.1.1.a36"
+                    },
+                    {
+                        "package": "androidx.appcompat:appcompat:1.3.0"
+                    },
+                    {
+                        "package": "com.google.android.gms:play-services-ads-identifier:18.0.1"
+                    },
+                    {
+                        "package": "com.google.android.gms:play-services-tasks:18.0.1"
+                    },
+                    {
+                        "package": "com.google.android.gms:play-services-appset:16.0.2"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://jitpack.io"
                     }
                 ]
             }
@@ -890,40 +909,6 @@
                 "dependencies": [
                     {
                         "maven": "https://artifactory.verizonmedia.com/artifactory/maven/"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Vungle",
-            "status": false,
-            "sdk_version": "6.12.1",
-            "adapter_version": "6.12.1.1.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:vungle-adapter:6.12.1.1.a36"
-                    },
-                    {
-                        "package": "androidx.appcompat:appcompat:1.3.0"
-                    },
-                    {
-                        "package": "com.google.android.gms:play-services-ads-identifier:18.0.1"
-                    },
-                    {
-                        "package": "com.google.android.gms:play-services-tasks:18.0.1"
-                    },
-                    {
-                        "package": "com.google.android.gms:play-services-appset:16.0.2"
-                    }
-                ]
-            },
-            "project_gradle": {
-                "dependencies": [
-                    {
-                        "maven": "https://jitpack.io"
                     }
                 ]
             }
