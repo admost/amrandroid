@@ -3,14 +3,14 @@
         {
             "name": "AMR",
             "status": true,
-            "sdk_version": "2.7.6",
-            "adapter_version": "2.7.6",
+            "sdk_version": "2.7.9",
+            "adapter_version": "2.7.9",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:amr:2.7.6"
+                        "package": "com.admost.sdk:amr:2.7.9"
                     },
                     {
                         "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -27,7 +27,7 @@
                         "package": "androidx.lifecycle:lifecycle-common:2.1.0"
                     },
                     {
-                        "package": "com.admost.sdk:unity-plugin:1.9.7"
+                        "package": "com.admost.sdk:unity-plugin:1.9.8"
                     },
                     {
                         "package": "com.google.android.gms:play-services-ads-identifier:17.0.0"
@@ -46,13 +46,13 @@
             "name": "Admost",
             "status": false,
             "sdk_version": "1.1.8",
-            "adapter_version": "1.1.8.a36",
+            "adapter_version": "1.1.8.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:admost-adapter:1.1.8.a36"
+                        "package": "com.admost.sdk:admost-adapter:1.1.8.a37"
                     }
                 ]
             }
@@ -60,14 +60,14 @@
         {
             "name": "Adserver",
             "status": false,
-            "sdk_version": "1.0.4",
-            "adapter_version": "1.0.4.a36",
+            "sdk_version": "1.0.5",
+            "adapter_version": "1.0.5.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:adserver-adapter:1.0.4.a36"
+                        "package": "com.admost.sdk:adserver-adapter:1.0.5.a37"
                     }
                 ]
             }
@@ -76,7 +76,7 @@
             "name": "A4G",
             "status": false,
             "sdk_version": "21.1.0",
-            "adapter_version": "1.1.4.a36",
+            "adapter_version": "1.1.8.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
@@ -85,7 +85,7 @@
                         "package": "com.google.android.gms:play-services-ads:21.4.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.4.a36"
+                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.8.a37"
                     }
                 ]
             }
@@ -94,13 +94,13 @@
             "name": "AdColony",
             "status": false,
             "sdk_version": "4.8.0",
-            "adapter_version": "4.8.0.3.a36",
+            "adapter_version": "4.8.0.3.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:adcolony-adapter:4.8.0.3.a36"
+                        "package": "com.admost.sdk:adcolony-adapter:4.8.0.3.a37"
                     }
                 ]
             }
@@ -108,14 +108,14 @@
         {
             "name": "AdGem",
             "status": false,
-            "sdk_version": "3.0.1",
-            "adapter_version": "3.0.1.a36",
+            "sdk_version": "3.2.0",
+            "adapter_version": "3.2.0.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:adgem-adapter:3.0.1.a36",
+                        "package": "com.admost.sdk:adgem-adapter:3.2.0.a37",
                         "exclude": true,
                         "group": "com.adgem",
                         "module": "adgem-android"
@@ -133,7 +133,7 @@
             "name": "AdMob",
             "status": false,
             "sdk_version": "21.1.0",
-            "adapter_version": "1.1.4.a36",
+            "adapter_version": "1.1.8.a37",
             "unity_support": true,
             "isLite": true,
             "app_gradle": {
@@ -142,7 +142,7 @@
                         "package": "com.google.android.gms:play-services-ads:21.4.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.4.a36"
+                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.8.a37"
                     }
                 ]
             }
@@ -151,13 +151,13 @@
             "name": "Adtiming",
             "status": false,
             "sdk_version": "2.6.5",
-            "adapter_version": "2.6.5.a36",
+            "adapter_version": "2.6.5.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:adtiming-adapter:2.6.5.a36"
+                        "package": "com.admost.sdk:adtiming-adapter:2.6.5.a37"
                     }
                 ]
             },
@@ -173,13 +173,13 @@
             "name": "AFA",
             "status": false,
             "sdk_version": "1.0.0",
-            "adapter_version": "1.0.0.a36",
+            "adapter_version": "1.0.0.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:afa-adapter:1.0.0.a36"
+                        "package": "com.admost.sdk:afa-adapter:1.0.0.a37"
                     }
                 ]
             }
@@ -188,13 +188,13 @@
             "name": "Amazon",
             "status": false,
             "sdk_version": "9.8.1",
-            "adapter_version": "9.8.1.a36",
+            "adapter_version": "9.8.1.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:amazon-adapter:9.8.1.a36"
+                        "package": "com.admost.sdk:amazon-adapter:9.8.1.a37"
                     }
                 ]
             }
@@ -202,14 +202,14 @@
         {
             "name": "AppLovin",
             "status": false,
-            "sdk_version": "11.9.0",
-            "adapter_version": "11.9.0.a36",
+            "sdk_version": "11.10.1",
+            "adapter_version": "11.10.1.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:applovin-adapter:11.9.0.a36"
+                        "package": "com.admost.sdk:applovin-adapter:11.10.1.a37"
                     }
                 ]
             },
@@ -228,13 +228,13 @@
             "name": "Appnext",
             "status": false,
             "sdk_version": "2.6.9.473",
-            "adapter_version": "2.6.9.473.a36",
+            "adapter_version": "2.6.9.473.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:appnext-adapter:2.6.9.473.a36"
+                        "package": "com.admost.sdk:appnext-adapter:2.6.9.473.a37"
                     },
                     {
                         "package": "com.google.android.gms:play-services-ads-identifier:17.0.0"
@@ -268,17 +268,24 @@
         {
             "name": "Chartboost",
             "status": false,
-            "sdk_version": "9.2.0",
-            "adapter_version": "9.2.0.a36",
+            "sdk_version": "9.3.0",
+            "adapter_version": "9.3.0.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:chartboost-adapter:9.2.0.a36"
+                        "package": "com.admost.sdk:chartboost-adapter:9.3.0.a37"
                     },
                     {
                         "package": "com.google.android.gms:play-services-ads-identifier:18.0.1"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://cboost.jfrog.io/artifactory/chartboost-ads/"
                     }
                 ]
             }
@@ -287,13 +294,13 @@
             "name": "Criteo",
             "status": false,
             "sdk_version": "4.9.0",
-            "adapter_version": "4.9.0.1.a36",
+            "adapter_version": "4.9.0.1.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:criteo-adapter:4.9.0.1.a36"
+                        "package": "com.admost.sdk:criteo-adapter:4.9.0.1.a37"
                     }
                 ]
             },
@@ -309,13 +316,13 @@
             "name": "Display IO",
             "status": false,
             "sdk_version": "4.6.2",
-            "adapter_version": "4.6.2.a36",
+            "adapter_version": "4.6.2.a37",
             "unity_support": false,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:displayio-adapter:4.6.2.a36"
+                        "package": "com.admost.sdk:displayio-adapter:4.6.2.a37"
                     }
                 ]
             },
@@ -331,13 +338,13 @@
             "name": "Frecorp",
             "status": false,
             "sdk_version": "4.2.8",
-            "adapter_version": "4.2.8.a36",
+            "adapter_version": "4.2.8.a37",
             "unity_support": false,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:frecorp-adapter:4.2.8.a36"
+                        "package": "com.admost.sdk:frecorp-adapter:4.2.8.a37"
                     }
                 ]
             }
@@ -346,13 +353,13 @@
             "name": "Fyber",
             "status": false,
             "sdk_version": "8.2.3",
-            "adapter_version": "8.2.3.a36",
+            "adapter_version": "8.2.3.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:fyber-adapter:8.2.3.a36"
+                        "package": "com.admost.sdk:fyber-adapter:8.2.3.a37"
                     }
                 ]
             }
@@ -361,13 +368,13 @@
             "name": "Huawei",
             "status": false,
             "sdk_version": "3.4.62.302",
-            "adapter_version": "3.4.62.302.a36",
+            "adapter_version": "3.4.62.302.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:huawei-ads-adapter:3.4.62.302.a36"
+                        "package": "com.admost.sdk:huawei-ads-adapter:3.4.62.302.a37"
                     },
                     {
                         "package": "com.huawei.hms:ads-identifier:3.4.46.300"
@@ -385,14 +392,14 @@
         {
             "name": "HyprMX",
             "status": false,
-            "sdk_version": "6.0.3",
-            "adapter_version": "6.0.3.a36",
+            "sdk_version": "6.2.0",
+            "adapter_version": "6.2.0.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:hyprmx-adapter:6.0.3.a36"
+                        "package": "com.admost.sdk:hyprmx-adapter:6.2.0.a37"
                     }
                 ]
             },
@@ -408,13 +415,13 @@
             "name": "InMobi",
             "status": false,
             "sdk_version": "10.1.3",
-            "adapter_version": "10.1.3.a36",
+            "adapter_version": "10.1.3.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:inmobi-unified-adapter:10.1.3.a36"
+                        "package": "com.admost.sdk:inmobi-unified-adapter:10.1.3.a37"
                     }
                 ]
             }
@@ -422,14 +429,14 @@
         {
             "name": "IronSource",
             "status": false,
-            "sdk_version": "7.3.0.1",
-            "adapter_version": "7.3.0.1.1.a36",
+            "sdk_version": "7.3.1",
+            "adapter_version": "7.3.1.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:ironsource-adapter:7.3.0.1.1.a36"
+                        "package": "com.admost.sdk:ironsource-adapter:7.3.1.a37"
                     },
                     {
                         "package": "com.google.android.gms:play-services-appset:16.0.2"
@@ -448,14 +455,14 @@
         {
             "name": "Kidoz",
             "status": false,
-            "sdk_version": "8.9.7",
-            "adapter_version": "8.9.7.a36",
+            "sdk_version": "8.9.9",
+            "adapter_version": "8.9.9.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:kidoz-adapter:8.9.7.a36"
+                        "package": "com.admost.sdk:kidoz-adapter:8.9.9.a37"
                     },
                     {
                         "package": "org.greenrobot:eventbus:3.2.0"
@@ -466,445 +473,14 @@
         {
             "name": "Liftoff",
             "status": false,
-            "sdk_version": "1.10.0",
-            "adapter_version": "1.10.0.a36",
-            "unity_support": false,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:liftoff-adapter:1.10.0.a36"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Loopme",
-            "status": false,
-            "sdk_version": "8.0.1",
-            "adapter_version": "8.0.1.a36",
-            "unity_support": false,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:loopme-adapter:8.0.1.a36"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Meta",
-            "status": false,
-            "sdk_version": "6.14.0",
-            "adapter_version": "6.14.0.a36",
-            "unity_support": true,
-            "isLite": true,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:facebook-adapter:6.14.0.a36"
-                    },
-                    {
-                        "package": "androidx.annotation:annotation:1.2.0"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Mintegral",
-            "status": false,
-            "sdk_version": "16.4.11",
-            "adapter_version": "16.4.11.a36",
-            "unity_support": true,
-            "isLite": true,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:mintegral-adapter:16.4.11.a36"
-                    }
-                ]
-            },
-            "project_gradle": {
-                "dependencies": [
-                    {
-                        "maven": "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Mobfox",
-            "status": false,
-            "sdk_version": "4.3.2",
-            "adapter_version": "4.3.2.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:mobfox-adapter:4.3.2.a36"
-                    }
-                ]
-            },
-            "project_gradle": {
-                "dependencies": [
-                    {
-                        "maven": "https://jitpack.io"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "MyTarget",
-            "status": false,
-            "sdk_version": "5.16.4",
-            "adapter_version": "5.16.4.1.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:mytarget-adapter:5.16.4.1.a36"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Nativex",
-            "status": false,
-            "sdk_version": "5.5.9",
-            "adapter_version": "5.5.9.a36",
-            "unity_support": false,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:nativex-adapter:5.5.9.a36"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Nend",
-            "status": false,
-            "sdk_version": "5.1.1",
-            "adapter_version": "5.1.1.a36",
-            "unity_support": false,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:nend-adapter:5.1.1.a36"
-                    }
-                ]
-            },
-            "project_gradle": {
-                "dependencies": [
-                    {
-                        "maven": "https://fan-adn.github.io/nendSDK-Android-lib/library"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Ogury",
-            "status": false,
-            "sdk_version": "5.5.0",
-            "adapter_version": "5.5.0.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:ogury-adapter:5.5.0.a36"
-                    }
-                ]
-            },
-            "project_gradle": {
-                "dependencies": [
-                    {
-                        "maven": "https://maven.ogury.co"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Pangle (Tiktok)",
-            "status": false,
-            "sdk_version": "5.1.0.9",
-            "adapter_version": "5.1.0.9.a36",
-            "unity_support": true,
-            "isLite": true,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:tiktok-adapter:5.1.0.9.a36"
-                    }
-                ]
-            },
-            "project_gradle": {
-                "dependencies": [
-                    {
-                        "maven": "https://artifact.bytedance.com/repository/pangle"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Pollfish",
-            "status": false,
-            "sdk_version": "6.4.0",
-            "adapter_version": "6.4.0.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:pollfish-adapter:6.4.0.a36"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Pubnative",
-            "status": false,
-            "sdk_version": "2.18.1",
-            "adapter_version": "2.18.1.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:pubnative-adapter:2.18.1.a36",
-                        "exclude": true,
-                        "group": "net.pubnative",
-                        "module": "hybid.omsdk"
-                    }
-                ]
-            },
-            "project_gradle": {
-                "dependencies": [
-                    {
-                        "maven": "https://verve.jfrog.io/artifactory/verve-gradle-release"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Qumpara",
-            "status": false,
-            "sdk_version": "0.3.3",
-            "adapter_version": "0.3.3.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:qumpara-adapter:0.3.3.a36"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Reklamup",
-            "status": false,
-            "sdk_version": "21.1.0",
-            "adapter_version": "1.1.4.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.google.android.gms:play-services-ads:21.4.0"
-                    },
-                    {
-                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.4.a36"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Revmob",
-            "status": false,
-            "sdk_version": "10.0.0",
-            "adapter_version": "10.0.0.a36",
-            "unity_support": false,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:revmob-adapter:10.0.0.a36"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Smaato",
-            "status": false,
-            "sdk_version": "22.1.1",
-            "adapter_version": "22.1.1.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:smaato-adapter:22.1.1.a36"
-                    }
-                ]
-            },
-            "project_gradle": {
-                "dependencies": [
-                    {
-                        "maven": "https://s3.amazonaws.com/smaato-sdk-releases/"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "SmartAd",
-            "status": false,
-            "sdk_version": "7.21.0",
-            "adapter_version": "7.21.0.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:smartad-adapter:7.21.0.a36"
-                    }
-                ]
-            },
-            "project_gradle": {
-                "dependencies": [
-                    {
-                        "maven": "https://packagecloud.io/smartadserver/android/maven2"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "StartApp",
-            "status": false,
-            "sdk_version": "4.10.8",
-            "adapter_version": "4.10.8.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:startapp-adapter:4.10.8.a36"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Tapjoy",
-            "status": false,
-            "sdk_version": "12.11.1",
-            "adapter_version": "12.11.1.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:tapjoy-adapter:12.11.1.a36"
-                    }
-                ]
-            },
-            "project_gradle": {
-                "dependencies": [
-                    {
-                        "maven": "https://sdk.tapjoy.com/"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Tappx",
-            "status": false,
-            "sdk_version": "4.0.1",
-            "adapter_version": "4.0.1.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:tappx-adapter:4.0.1.a36"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "TapResearch",
-            "status": false,
-            "sdk_version": "2.0.15",
-            "adapter_version": "2.0.15.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:tapresearch-adapter:2.0.15.a36"
-                    }
-                ]
-            },
-            "project_gradle": {
-                "dependencies": [
-                    {
-                        "maven": "https://artifactory.tools.tapresearch.io/artifactory/tapresearch-android-sdk/"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "UnityAds",
-            "status": false,
-            "sdk_version": "4.7.1",
-            "adapter_version": "4.7.1.a36",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:unity-adapter:4.7.1.a36"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Verizon",
-            "status": false,
-            "sdk_version": "1.14.0",
-            "adapter_version": "1.14.0.a36",
-            "unity_support": false,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:verizon-adapter:1.14.0.a36"
-                    }
-                ]
-            },
-            "project_gradle": {
-                "dependencies": [
-                    {
-                        "maven": "https://artifactory.verizonmedia.com/artifactory/maven/"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Vungle",
-            "status": false,
             "sdk_version": "6.12.1",
-            "adapter_version": "6.12.1.1.a36",
+            "adapter_version": "6.12.1.1.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:vungle-adapter:6.12.1.1.a36"
+                        "package": "com.admost.sdk:vungle-adapter:6.12.1.1.a37"
                     },
                     {
                         "package": "androidx.appcompat:appcompat:1.3.0"
@@ -929,16 +505,434 @@
             }
         },
         {
-            "name": "Wortise",
+            "name": "Loopme",
             "status": false,
-            "sdk_version": "1.4.1",
-            "adapter_version": "1.4.1.a36",
+            "sdk_version": "8.0.1",
+            "adapter_version": "8.0.1.a37",
             "unity_support": false,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:wortise-adapter:1.4.1.a36",
+                        "package": "com.admost.sdk:loopme-adapter:8.0.1.a37"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Meta",
+            "status": false,
+            "sdk_version": "6.14.0",
+            "adapter_version": "6.14.0.a37",
+            "unity_support": true,
+            "isLite": true,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:facebook-adapter:6.14.0.a37"
+                    },
+                    {
+                        "package": "androidx.annotation:annotation:1.2.0"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Mintegral",
+            "status": false,
+            "sdk_version": "16.4.11",
+            "adapter_version": "16.4.11.a37",
+            "unity_support": true,
+            "isLite": true,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:mintegral-adapter:16.4.11.a37"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Mobfox",
+            "status": false,
+            "sdk_version": "4.3.2",
+            "adapter_version": "4.3.2.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:mobfox-adapter:4.3.2.a37"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://jitpack.io"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "MyTarget",
+            "status": false,
+            "sdk_version": "5.16.5",
+            "adapter_version": "5.16.5.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:mytarget-adapter:5.16.5.a37",
+                        "exclude": true,
+                        "group": "com.my.tracker"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Nativex",
+            "status": false,
+            "sdk_version": "5.5.9",
+            "adapter_version": "5.5.9.a37",
+            "unity_support": false,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:nativex-adapter:5.5.9.a37"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Nend",
+            "status": false,
+            "sdk_version": "5.1.1",
+            "adapter_version": "5.1.1.a37",
+            "unity_support": false,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:nend-adapter:5.1.1.a37"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://fan-adn.github.io/nendSDK-Android-lib/library"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Ogury",
+            "status": false,
+            "sdk_version": "5.5.0",
+            "adapter_version": "5.5.0.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:ogury-adapter:5.5.0.a37"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://maven.ogury.co"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Pangle (Tiktok)",
+            "status": false,
+            "sdk_version": "5.2.0.6",
+            "adapter_version": "5.2.0.6.a37",
+            "unity_support": true,
+            "isLite": true,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:tiktok-adapter:5.2.0.6.a37"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://artifact.bytedance.com/repository/pangle"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Pollfish",
+            "status": false,
+            "sdk_version": "6.4.0",
+            "adapter_version": "6.4.0.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:pollfish-adapter:6.4.0.a37"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Pubnative",
+            "status": false,
+            "sdk_version": "2.18.1",
+            "adapter_version": "2.18.1.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:pubnative-adapter:2.18.1.a37",
+                        "exclude": true,
+                        "group": "net.pubnative",
+                        "module": "hybid.omsdk"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://verve.jfrog.io/artifactory/verve-gradle-release"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Qumpara",
+            "status": false,
+            "sdk_version": "0.3.3",
+            "adapter_version": "0.3.3.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:qumpara-adapter:0.3.3.a37"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Reklamup",
+            "status": false,
+            "sdk_version": "21.1.0",
+            "adapter_version": "1.1.8.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.google.android.gms:play-services-ads:21.4.0"
+                    },
+                    {
+                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.8.a37"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Revmob",
+            "status": false,
+            "sdk_version": "10.0.0",
+            "adapter_version": "10.0.0.a37",
+            "unity_support": false,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:revmob-adapter:10.0.0.a37"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Smaato",
+            "status": false,
+            "sdk_version": "22.1.1",
+            "adapter_version": "22.1.1.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:smaato-adapter:22.1.1.a37"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://s3.amazonaws.com/smaato-sdk-releases/"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "SmartAd",
+            "status": false,
+            "sdk_version": "7.21.0",
+            "adapter_version": "7.21.0.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:smartad-adapter:7.21.0.a37"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://packagecloud.io/smartadserver/android/maven2"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "StartApp",
+            "status": false,
+            "sdk_version": "4.11.0",
+            "adapter_version": "4.11.0.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:startapp-adapter:4.11.0.a37"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Tapjoy",
+            "status": false,
+            "sdk_version": "13.0.1",
+            "adapter_version": "13.0.1.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:tapjoy-adapter:13.0.1.a37"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://sdk.tapjoy.com/"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Tappx",
+            "status": false,
+            "sdk_version": "4.0.1",
+            "adapter_version": "4.0.1.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:tappx-adapter:4.0.1.a37"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "TapResearch",
+            "status": false,
+            "sdk_version": "2.0.15",
+            "adapter_version": "2.0.15.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:tapresearch-adapter:2.0.15.a37"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://artifactory.tools.tapresearch.io/artifactory/tapresearch-android-sdk/"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "UnityAds",
+            "status": false,
+            "sdk_version": "4.7.1",
+            "adapter_version": "4.7.1.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:unity-adapter:4.7.1.a37"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Verizon",
+            "status": false,
+            "sdk_version": "1.14.0",
+            "adapter_version": "1.14.0.a37",
+            "unity_support": false,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:verizon-adapter:1.14.0.a37"
+                    }
+                ]
+            },
+            "project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://artifactory.verizonmedia.com/artifactory/maven/"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Wortise",
+            "status": false,
+            "sdk_version": "1.4.1",
+            "adapter_version": "1.4.1.a37",
+            "unity_support": false,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:wortise-adapter:1.4.1.a37",
                         "exclude": true,
                         "group": "com.google.ads.mediation",
                         "module": "facebook"
@@ -954,16 +948,37 @@
             }
         },
         {
-            "name": "YandexAds",
+            "name": "Yabbi",
             "status": false,
-            "sdk_version": "5.7.0",
-            "adapter_version": "5.7.0.a36",
+            "sdk_version": "1.4.0",
+            "adapter_version": "1.4.0.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:yandex-adapter:5.7.0.a36"
+                        "package": "com.admost.sdk:yabbi-adapter:1.4.0.a37"
+                    }
+                ]
+            },"project_gradle": {
+                "dependencies": [
+                    {
+                        "maven": "https://mobileadx.ru/maven"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "YandexAds",
+            "status": false,
+            "sdk_version": "5.8.0",
+            "adapter_version": "5.8.0.a37",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:yandex-adapter:5.8.0.a37"
                     }
                 ]
             }
