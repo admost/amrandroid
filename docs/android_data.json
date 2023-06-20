@@ -60,14 +60,14 @@
         {
             "name": "Adserver",
             "status": false,
-            "sdk_version": "1.0.5",
-            "adapter_version": "1.0.5.a37",
+            "sdk_version": "1.0.6",
+            "adapter_version": "1.0.6.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:adserver-adapter:1.0.5.a37"
+                        "package": "com.admost.sdk:adserver-adapter:1.0.6.a37"
                     }
                 ]
             }
