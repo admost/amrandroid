@@ -414,14 +414,14 @@
         {
             "name": "InMobi",
             "status": false,
-            "sdk_version": "10.1.3",
-            "adapter_version": "10.1.3.a37",
+            "sdk_version": "10.1.4",
+            "adapter_version": "10.1.4.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:inmobi-unified-adapter:10.1.3.a37"
+                        "package": "com.admost.sdk:inmobi-unified-adapter:10.1.4.a37"
                     }
                 ]
             }
