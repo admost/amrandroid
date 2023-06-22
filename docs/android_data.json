@@ -973,13 +973,13 @@
             "name": "YandexAds",
             "status": false,
             "sdk_version": "5.8.0",
-            "adapter_version": "5.8.0.a37",
+            "adapter_version": "5.8.0.1.a37",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:yandex-adapter:5.8.0.a37"
+                        "package": "com.admost.sdk:yandex-adapter:5.8.0.1.a37"
                     }
                 ]
             }
