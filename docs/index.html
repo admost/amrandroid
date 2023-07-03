@@ -158,8 +158,8 @@
                             <li><a href="#sscallbacks">Server to Server Callbacks</a></li>
                             <li><a href="#privacycheck">Privacy Consent Check</a>
                             <li style="display:none"><a href="#campaigntracking">Campaign Tracking</a></li>
-                            <li><a href="#remoteconfig">Remote Config <span class="label label-teal">New</span></a>
-                            <li><a href="#abtest">A/B Test <span class="label label-teal">New</span></a>
+                            <li><a href="#remoteconfig">Remote Config</a>
+                            <li><a href="#abtest">A/B Test</a>
                             </li>
                         </ul>
                     </li>
@@ -1046,8 +1046,12 @@ AdMost.getInstance().init(configuration.build(), new AdMostInitListener() {
                         set it true. If you know the user is not subject to GDPR, set it false. </p>
                     <p>If you don’t pass the user’s consent or subjectToGDPR to the SDK, the default rules of Admost SDK
                         will be applied.</p>
-                    <p><b>IMPORTANT NOTE:</b> We strongly recommend you to read our <b><a target="_blank"
-                                href="https://admost.github.io/privacy.html#gdprrules">GDPR section</a></b>. </p>
+                    <p>We strongly recommend you to read the following articles before continue;
+                        <ul>
+                            <li><a target="_blank" href="https://admost.github.io/privacy.html#gdprrules">Admost GDPR rules</a></li>
+                            <li><a target="_blank" href="tcf-cmp.html">Google consent management requirements for serving ads in the EEA and UK</a> <span class="label label-teal">NEW</span></li>
+                        </ul>
+                    </p>
 <br/>
 					<h4 id="initccpa">CCPA</h4>
                     <p> Once you have collected the user’s consent, you can pass it onto the SDK using the init
@@ -1737,7 +1741,7 @@ AdMostRemoteConfig.getInstance().getBoolean("isDebug",false);
                     <p style="display:none">
                     <a href="#">Click here</a> to see the documentation about the capabilities of Admost A/B test.  
                     </p>                    
-
+                    
                     <div style="display:none">
                         <h3 id="campaigntracking">Campaign Tracking</h3>
 

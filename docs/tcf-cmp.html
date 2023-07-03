@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <title>AMR - CMP integration</title>
+
+    <!-- Styles -->
+    <link href="assets/css/theDocs.all.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/css/skin/skin-teal.css" rel="stylesheet">
+
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"><style type="text/css">@import url(https://themes.googleusercontent.com/fonts/css?kit=dpiI8CyVsrzWsJLBFKehGpLhv3qFjX7dUn1mYxfCXhI);ol.lst-kix_gjb06sn3ynw6-6.start{counter-reset:lst-ctn-kix_gjb06sn3ynw6-6 0}.lst-kix_gjb06sn3ynw6-7>li{counter-increment:lst-ctn-kix_gjb06sn3ynw6-7}.lst-kix_gjb06sn3ynw6-4>li{counter-increment:lst-ctn-kix_gjb06sn3ynw6-4}.lst-kix_gjb06sn3ynw6-8>li:before{content:"" counter(lst-ctn-kix_gjb06sn3ynw6-8,lower-roman) ". "}.lst-kix_gjb06sn3ynw6-6>li:before{content:"" counter(lst-ctn-kix_gjb06sn3ynw6-6,decimal) ". "}.lst-kix_gjb06sn3ynw6-7>li:before{content:"" counter(lst-ctn-kix_gjb06sn3ynw6-7,lower-latin) ". "}.lst-kix_gjb06sn3ynw6-5>li:before{content:"" counter(lst-ctn-kix_gjb06sn3ynw6-5,lower-roman) ". "}ol.lst-kix_gjb06sn3ynw6-1.start{counter-reset:lst-ctn-kix_gjb06sn3ynw6-1 0}ol.lst-kix_gjb06sn3ynw6-8{list-style-type:none}.lst-kix_gjb06sn3ynw6-2>li:before{content:"" counter(lst-ctn-kix_gjb06sn3ynw6-2,lower-roman) ". "}.lst-kix_gjb06sn3ynw6-3>li:before{content:"" counter(lst-ctn-kix_gjb06sn3ynw6-3,decimal) ". "}.lst-kix_gjb06sn3ynw6-2>li{counter-increment:lst-ctn-kix_gjb06sn3ynw6-2}.lst-kix_gjb06sn3ynw6-0>li:before{content:"" counter(lst-ctn-kix_gjb06sn3ynw6-0,decimal) ". "}.lst-kix_gjb06sn3ynw6-4>li:before{content:"" counter(lst-ctn-kix_gjb06sn3ynw6-4,lower-latin) ". "}ol.lst-kix_gjb06sn3ynw6-4.start{counter-reset:lst-ctn-kix_gjb06sn3ynw6-4 0}ol.lst-kix_gjb06sn3ynw6-2.start{counter-reset:lst-ctn-kix_gjb06sn3ynw6-2 0}ol.lst-kix_gjb06sn3ynw6-0{list-style-type:none}.lst-kix_gjb06sn3ynw6-3>li{counter-increment:lst-ctn-kix_gjb06sn3ynw6-3}ol.lst-kix_gjb06sn3ynw6-1{list-style-type:none}ol.lst-kix_gjb06sn3ynw6-2{list-style-type:none}.lst-kix_gjb06sn3ynw6-6>li{counter-increment:lst-ctn-kix_gjb06sn3ynw6-6}ol.lst-kix_gjb06sn3ynw6-3{list-style-type:none}ol.lst-kix_gjb06sn3ynw6-7.start{counter-reset:lst-ctn-kix_gjb06sn3ynw6-7 0}ol.lst-kix_gjb06sn3ynw6-4{list-style-type:none}.lst-kix_gjb06sn3ynw6-1>li:before{content:"" counter(lst-ctn-kix_gjb06sn3ynw6-1,lower-latin) ". "}ol.lst-kix_gjb06sn3ynw6-5{list-style-type:none}ol.lst-kix_gjb06sn3ynw6-6{list-style-type:none}ol.lst-kix_gjb06sn3ynw6-7{list-style-type:none}ol.lst-kix_gjb06sn3ynw6-0.start{counter-reset:lst-ctn-kix_gjb06sn3ynw6-0 0}.lst-kix_gjb06sn3ynw6-0>li{counter-increment:lst-ctn-kix_gjb06sn3ynw6-0}.lst-kix_gjb06sn3ynw6-5>li{counter-increment:lst-ctn-kix_gjb06sn3ynw6-5}ol.lst-kix_gjb06sn3ynw6-5.start{counter-reset:lst-ctn-kix_gjb06sn3ynw6-5 0}li.li-bullet-0:before{margin-left:-18pt;white-space:nowrap;display:inline-block;min-width:18pt}.lst-kix_gjb06sn3ynw6-8>li{counter-increment:lst-ctn-kix_gjb06sn3ynw6-8}ol.lst-kix_gjb06sn3ynw6-8.start{counter-reset:lst-ctn-kix_gjb06sn3ynw6-8 0}.lst-kix_gjb06sn3ynw6-1>li{counter-increment:lst-ctn-kix_gjb06sn3ynw6-1}ol.lst-kix_gjb06sn3ynw6-3.start{counter-reset:lst-ctn-kix_gjb06sn3ynw6-3 0}ol{margin:0;padding:0}table td,table th{padding:0}.c8{-webkit-text-decoration-skip:none;color:#000000;font-weight:400;text-decoration:underline;vertical-align:baseline;text-decoration-skip-ink:none;font-size:11pt;font-family:"Arial";font-style:italic}.c4{margin-left:36pt;padding-top:0pt;padding-left:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:justify}.c13{background-color:#ffffff;color:#1f1f1f;font-weight:700;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Roboto";font-style:normal}.c5{background-color:#ffffff;color:#1f1f1f;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Roboto";font-style:normal}.c16{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:20pt;font-family:"Arial";font-style:normal}.c0{background-color:#ffffff;-webkit-text-decoration-skip:none;color:#1155cc;font-weight:400;text-decoration:underline;text-decoration-skip-ink:none;font-family:"Roboto"}.c11{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Arial";font-style:normal}.c1{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:justify;height:11pt}.c12{background-color:#ffffff;padding-top:0pt;padding-bottom:6pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c6{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:justify}.c2{font-size:22pt;font-family:"Roboto";color:#1f1f1f;font-weight:400}.c10{background-color:#ffffff;font-family:"Roboto";color:#0b57d0;font-weight:400}.c14{text-decoration:none;vertical-align:baseline;font-size:12pt;font-style:normal}.c17{text-decoration-skip-ink:none;-webkit-text-decoration-skip:none;font-style:italic;text-decoration:underline}.c9{background-color:#ffffff;font-family:"Roboto";color:#1f1f1f;font-weight:400}.c15{background-color:#ffffff;max-width:468pt;padding:72pt 72pt 72pt 72pt}.c3{color:inherit;text-decoration:inherit}.c7{padding:0;margin:0}.title{padding-top:0pt;color:#000000;font-size:26pt;padding-bottom:3pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}.subtitle{padding-top:0pt;color:#666666;font-size:15pt;padding-bottom:16pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}li{color:#000000;font-size:11pt;font-family:"Arial"}p{margin:0;color:#000000;font-size:11pt;font-family:"Arial"}h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}</style>
+
+
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet'
+          type='text/css'>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Favicons -->
+    <link rel="icon" href="https://dashboard.admost.com/Assets/img/admostfavicon.png">
+</head>
+
+<body data-spy="scroll" data-target=".sidebar" data-offset="200">
+
+<header class="site-header navbar-transparent sticky">
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+
+            <!-- Toggle buttons and brand -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="true" aria-controls="navbar">
+                    <span class="glyphicon glyphicon-option-vertical"></span>
+                </button>
+
+                <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://admost.github.io"><img src="assets/img/logo-white.svg" alt="logo"></a>
+
+            </div>
+            <!-- END Toggle buttons and brand -->
+
+            <!-- Top navbar -->
+            <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Documentation</a></li>
+                    <li><a target="_blank" href="https://admost.github.io/privacy.html">Privacy Compliance</a></li>
+                    <li><a href="release-notes.html">Release Notes</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a target="_blank" href="https://github.com/admost/amrandroid/tree/master/">
+                        <i class="fa fa-mobile-phone"></i>&nbsp;&nbsp;Demo Project</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- END Top navbar -->
+        </div>
+    </nav>
+    <!-- END Top navbar & branding -->
+</header>
+
+
+<main class="container">
+    <div class="row col-sm-9 main-content">
+        <h1>New Google consent management requirements for serving ads in the EEA and UK</h1>
+        <!-- Main content -->
+        <p class="c6"><span class="c17">July 03, 2023</span></p><p class="c1"><span class="c11"></span></p><p class="c6"><span class="c9">Google announced the following blog post for GDPR and TCF compliance this year. According to this announcement, publishers and developers using Google AdSense, Ad Manager, or AdMob will be required to use a Consent Management Platform (CMP) that has been certified by Google and has integrated with the </span><span class="c10"><a class="c3" target="_blank" href="https://www.google.com/url?q=https://iabeurope.eu/transparency-consent-framework/&amp;sa=D&amp;source=editors&amp;ust=1688390737865721&amp;usg=AOvVaw2D8aDiIzujk5AN--iQ45Nh">IAB&#39;s Transparency and Consent Framework</a></span><span class="c5">&nbsp;(TCF) when serving ads to users in the European Economic Area or the UK. Google will follow up with more details regarding timing later in 2023.</span></p><p class="c1"><span class="c5"></span></p><p class="c6"><span class="c5">As Admost, we have integration with Google&rsquo;s CMP tool User Messaging Platform (UMP). As a publisher, if you chose to continue with the UMP, you have to be sure about the following steps;</span></p><p class="c1"><span class="c5"></span></p><ol class="c7 lst-kix_gjb06sn3ynw6-0 start" start="1"><li class="c4 li-bullet-0"><span class="c5">Add UMP SDK into your app and complete the integration according to the following integration documentation.</span></li><li class="c4 li-bullet-0"><span class="c5">Create a proper GDPR message for your app on the UMP dashboard. </span></li><li class="c4 li-bullet-0"><span class="c5">Select all active ad networks and &ldquo;Admost&rdquo; as Vendor on the UMP dashboard.</span></li><li class="c4 li-bullet-0"><span class="c5">Inform your Admost account manager about your integration to be able to enable it.</span></li></ol><p class="c1"><span class="c5"></span></p><p class="c6"><span class="c5">If you are planning to use another CMP platform for GDPR compliance, please inform your account manager. </span></p><p class="c1"><span class="c5"></span></p><p class="c6"><span class="c13">Google Announcement for new consent management requirements</span></p><p class="c6"><span class="c0"><a class="c3" target="_blank" href="https://www.google.com/url?q=https://support.google.com/admanager/answer/13554116&amp;sa=D&amp;source=editors&amp;ust=1688390737867400&amp;usg=AOvVaw1DRGl4RAkaaPpbfBqAmUq9">https://support.google.com/admanager/answer/13554116</a></span></p><p class="c1"><span class="c5"></span></p><p class="c6"><span class="c13">User Messaging Platform (UMP)</span></p><p class="c6"><span class="c0"><a class="c3"  target="_blank" href="https://www.google.com/url?q=https://support.google.com/admob/answer/10113005?sjid%3D5612213461346271875-EU&amp;sa=D&amp;source=editors&amp;ust=1688390737867955&amp;usg=AOvVaw3kjTSvOU5z_IM_dVVjNrha">https://support.google.com/admob/answer/10113005?sjid=5612213461346271875-EU</a></span></p><p class="c1"><span class="c9 c14"></span></p><p class="c1"><span class="c11"></span></p>
+        <!-- END Main content -->
+    </div>
+</main>
+
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <p>Copyright &copy; 2017. All right reserved</p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <ul class="footer-menu">
+                    <li><a href="http://admost.github.io/amrandroid">Android integration</a></li>
+                    <li><a href="http://admost.github.io/amrunity">Unity integration</a></li>
+                    <li><a href="mailto:amr@admost.com">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END Footer -->
+
+<!-- Scripts -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script>
+    window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
+</script>
+<script>function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+}
+</script>
+
+<script src="adnetworks.js" type="text/javascript"></script>
+<script src="assets/js/theDocs.all.min.js"></script>
+<script src="assets/js/custom.js"></script>
+
+</body>
+</html>
