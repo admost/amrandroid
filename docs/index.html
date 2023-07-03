@@ -996,7 +996,7 @@ public *;
                     <pre><code class="language-java">AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(this, < ADMOST_APP_ID >);
 					</code></pre>
 					
-					<p>For GDPR compliance, please read the <a href="#initgdpr">GDPR section</a> of this documentation. The following configuration parameters are added for GDPR compliance.</>
+					<p>For GDPR compliance, please read the <a href="#initgdpr">GDPR section</a> of this documentation. The following configuration parameters are added for GDPR compliance.</p>
 <pre><code class="language-java">
 configuration.setSubjectToGDPR(false);
 configuration.setUserConsent(true);
@@ -1007,7 +1007,7 @@ configuration.setSubjectToCCPA(false);
 </code></pre>
 
 <p>According to <a href="https://support.google.com/googleplay/android-developer/answer/9285070" target="_blank">Google Play Services policy</a>, if your app's target age group include children under the age of 18, ads shown to children must be served from a <a href="https://support.google.com/googleplay/android-developer/answer/9283445" rel="noopener" target="_blank">Google Play certified ad network</a>. A neutral age screen must be implemented so that any ads not suitable for children are only shown to older audiences.</p>
-<p>For this purpose, we added the following configuration parameter and it is needed to be set for the users considered as children.</>
+<p>For this purpose, we added the following configuration parameter and it is needed to be set for the users considered as children.</p>
 <pre><code class="language-java">
 // Only set true if you know the user is child. 
 configuration.setUserChild(true);
@@ -1019,7 +1019,7 @@ configuration.showUIWarningsForDebuggableBuild(BuildConfig.DEBUG);
 </code></pre>
 
 
-<p>After specifying related parameters, you have to call the following init method with configuration and listener parameters.</>
+<p>After specifying related parameters, you have to call the following init method with configuration and listener parameters.</p>
 <pre><code class="language-java">
 
 AdMost.getInstance().init(configuration.build(), new AdMostInitListener() {
