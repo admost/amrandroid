@@ -1,4 +1,4 @@
-package com.kokteyl.amrunity.datamodel;
+package com.kokteyl.amrtest.datamodel;
 
 
 public class Movie {

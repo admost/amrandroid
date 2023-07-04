@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.kokteyl.amrunity"> <!-- The tag below is not necessary for your app -->
+    package="com.kokteyl.amrtest"> <!-- The tag below is not necessary for your app -->
     <uses-sdk tools:overrideLibrary="         android.support.v4,         android.support.mediacompat,         android.support.fragment,         android.support.v7.recyclerview,         android.support.coreui,         android.support.coreutils,         android.support.compat,         android.arch.lifecycle,         com.adcolony.adcolonysdk,         com.adtrial.android.sdk,         com.appnext,com.appnext.core,com.appnext.nativeads,com.appnext.banners,         com.thecactusroad.sdk,         com.facebook.ads,         com.fyber,         com.loopme,         com.millennialmedia,         com.mobfox.sdk,         com.mobfox.sdk.all,         com.moat.analytics.mobile.mpub,         com.flurry.android.ads.sdk,         com.flurry.android.analytics.sdk,         com.mopub.mobileads.base,com.mopub.mobileads.native_static,com.mopub.mobileads.native_video,com.mopub.mobileads.interstitial,com.mopub.mobileads.rewarded_video,com.mopub.mobileads.banner,com.mopub.mobileads,         net.pubnative.library,net.pubnative.advertising_id_client,net.pubnative.url_driller,net.pubnative.library.interstitial,net.pubnative.library.feed.banner,net.pubnative.library.video,net.pubnative.player,         com.moat.analytics.mobile.mat,         com.criteo,         com.smaato.soma,         com.google.firebase.messaging,         com.google.firebase.iid,         com.aiming.mdt,         com.pollfish,         net.pubnative.lite.sdk,         com.tappx.sdk.android,         com.tapr,         com.applovin.sdk,         com.chartboost.sdk,         com.ironsource.sdk.mediation,         com.unity3d.ads         " />
 
     <application
-        android:name=".ApplicationStart"
+        android:name="com.kokteyl.amrtest.ApplicationStart"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,10 +15,10 @@
         android:theme="@style/AppBaseTheme"
         tools:replace="android:allowBackup">
         <activity
-            android:name=".BannerSampleActivity"
+            android:name="com.kokteyl.amrtest.BannerSampleActivity"
             android:exported="false" />
         <activity
-            android:name=".NativeSampleActivity"
+            android:name="com.kokteyl.amrtest.NativeSampleActivity"
             android:exported="false" />
 
         <receiver
@@ -31,7 +31,7 @@
         </receiver>
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.kokteyl.amrtest.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,11 +39,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListViewSampleActivity" />
-        <activity android:name=".RecyclerViewSampleActivity" />
-        <activity android:name=".RecyclerViewMultipleAdsActivity" />
-        <activity android:name=".DFPIntegrationSampleActivity" />
-        <activity android:name=".BackPressAdShowExample" /> <!-- APPLOVIN -->
+        <activity android:name="com.kokteyl.amrtest.ListViewSampleActivity" />
+        <activity android:name="com.kokteyl.amrtest.RecyclerViewSampleActivity" />
+        <activity android:name="com.kokteyl.amrtest.RecyclerViewMultipleAdsActivity" />
+        <activity android:name="com.kokteyl.amrtest.DFPIntegrationSampleActivity" />
+        <activity android:name="com.kokteyl.amrtest.BackPressAdShowExample" /> <!-- APPLOVIN -->
         <meta-data
             android:name="applovin.sdk.key"
             android:value="LN_kr2mUpK0zI5JgqhgM2IW5FkVtb0pxOpeDsPifkic1owhcbM-efUlwDEnpFZkdNNrDnTtVFUW2ODe_ZceD6N" /> <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->

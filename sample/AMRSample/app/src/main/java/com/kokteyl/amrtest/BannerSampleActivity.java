@@ -1,25 +1,21 @@
-package com.kokteyl.amrunity;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.kokteyl.amrtest;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import admost.sdk.AdMostInterstitial;
 import admost.sdk.AdMostView;
 
-public class NativeSampleActivity extends Activity {
+public class BannerSampleActivity extends Activity {
 
     AdMostView ad;
     AdMostInterstitial interstitial;
     AdMostInterstitial video;
     AdMostView nativeBanner;
-    View nativeView;
 
+    View bannerView;
 
     // GDPR related variables. You can implement your own GDPR logic.
     private static final String MY_PREFS = "myAppuserInfo";
@@ -33,14 +29,12 @@ public class NativeSampleActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_native_sample);
+        setContentView(R.layout.activity_banner_sample);
 
-        nativeView = MainActivity.nativeView;
-        LinearLayout adLayoutNative = (LinearLayout) findViewById(R.id.adLayoutNative);
-        adLayoutNative.removeAllViews();
-        adLayoutNative.addView(nativeView);
-
-
+        bannerView= MainActivity.bannerView;
+        LinearLayout adLayoutBanner = (LinearLayout) findViewById(R.id.adLayoutBanner);
+        adLayoutBanner.removeAllViews();
+        adLayoutBanner.addView(bannerView);
 
 
         // You need to read AdMost documents (https://admost.github.io/amrandroid/) about GDPR to determine who are required to show such a dialog.

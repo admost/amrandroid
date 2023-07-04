@@ -1,4 +1,4 @@
-package com.kokteyl.amrunity;
+package com.kokteyl.amrtest;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.kokteyl.amrtest.R;
 
 import java.util.ArrayList;
 

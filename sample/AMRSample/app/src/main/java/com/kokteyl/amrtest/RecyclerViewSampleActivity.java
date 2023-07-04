@@ -1,4 +1,4 @@
-package com.kokteyl.amrunity;
+package com.kokteyl.amrtest;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kokteyl.amrunity.datamodel.Movie;
+import com.kokteyl.amrtest.datamodel.Movie;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +27,13 @@ public class RecyclerViewSampleActivity extends Activity {
     private List mList = new ArrayList<>();
     private MoviesAdapter mAdapter;
 
+    public static AdMostView nativeView;
+
+
+
+
+    private static final int DISTANCE_BETWEEN_TWO_ADS =12;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +45,7 @@ public class RecyclerViewSampleActivity extends Activity {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(mAdapter);
-
+        prepareAd();
         prepareMovieData();
 
     }
@@ -46,6 +53,7 @@ public class RecyclerViewSampleActivity extends Activity {
     public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private List rvList;
+
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
             public TextView title, year, genre;
@@ -133,23 +141,22 @@ public class RecyclerViewSampleActivity extends Activity {
         }
     }
 
+
     private void prepareMovieData() {
 
-        for (int i = 0; i < 8; i++) {
+        for(int i=0; i<100; i++){
+            if(i % DISTANCE_BETWEEN_TWO_ADS==0){
+                mList.add(nativeView);
+            }
             Movie movie = new Movie("Test Movie " + i, "Action & Adventure", "2015");
             mList.add(movie);
         }
-        mList.add(prepareAd());
-        for (int i = 8; i < 99; i++) {
-            Movie movie = new Movie("Test Movie " + i, "Action & Adventure", "2015");
-            mList.add(movie);
-        }
-
 
         mAdapter.notifyDataSetChanged();
     }
 
-    private AdMostView prepareAd() {
+    private void prepareAd() {
+        Log.i(Statics.TAG ,"prepareAd() called");
         final AdMostViewBinder customBinder = new AdMostViewBinder.Builder(R.layout.row_recyclerview_ad_native)
                 .iconImageId(R.id.ad_app_icon)
                 .titleId(R.id.ad_headline)
@@ -162,14 +169,17 @@ public class RecyclerViewSampleActivity extends Activity {
                 .isRoundedMode(true)
                 .build();
 
-        AdMostView ad = new AdMostView(this, Statics.NATIVE_ZONE, AdMostManager.getInstance().AD_BANNER, new AdMostViewListener() {
+        AdMostView ad = new AdMostView(this, Statics.BANNER_ZONE, AdMostManager.getInstance().AD_BANNER, new AdMostViewListener() {
 
             @Override
             public void onReady(String s, int ecpm, View view) {
+
+                Log.i(Statics.TAG ,"item load success");
             }
 
             @Override
             public void onFail(int i) {
+                Log.i(Statics.TAG ,"item load failed");
             }
 
             @Override
@@ -178,7 +188,9 @@ public class RecyclerViewSampleActivity extends Activity {
             }
         }, customBinder);
 
-        return ad;
+
+        //mAdapter.getPreparedAds().add(nativeView);
+        nativeView = ad;
     }
 
     @Override

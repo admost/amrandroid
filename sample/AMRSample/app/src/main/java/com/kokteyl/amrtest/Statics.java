@@ -1,4 +1,4 @@
-package com.kokteyl.amrunity;
+package com.kokteyl.amrtest;
 
 public class Statics {
     public static final String TAG = "ADMOST_SAMPLE_APP";
@@ -9,6 +9,7 @@ public class Statics {
     final static String BANNER_ZONE = "d97a05cb-da51-42b8-90a0-d2cb1b7d645a";
     final static String FULLSCREEN_ZONE = "92a31414-0b8d-431d-ac43-8d9fc92cbb7e";
     final static String VIDEO_ZONE =  "e5efb075-59ff-401b-892e-8500ee6f841f";
+
     final static String OFFERWALL = "fa1072e4-afcf-49b6-a919-1ab1ab1b0aa9";
     final static String NATIVE_ZONE = "951d398e-b6ec-40a7-bc80-6b4b223418df";
 /*

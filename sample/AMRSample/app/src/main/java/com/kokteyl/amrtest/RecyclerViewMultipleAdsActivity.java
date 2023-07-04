@@ -1,4 +1,4 @@
-package com.kokteyl.amrunity;
+package com.kokteyl.amrtest;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kokteyl.amrunity.datamodel.Movie;
+import com.kokteyl.amrtest.datamodel.Movie;
 
 import java.util.ArrayList;
 import java.util.List;

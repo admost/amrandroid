@@ -1,9 +1,12 @@
-package com.kokteyl.amrunity;
+package com.kokteyl.amrtest;
 
 import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+
+import com.kokteyl.amrtest.R;
+
 
 public class BackPressAdShowExample extends Activity {
 
