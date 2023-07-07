@@ -952,13 +952,13 @@
             "name": "Yabbi",
             "status": false,
             "sdk_version": "1.4.0",
-            "adapter_version": "1.4.0.a38",
+            "adapter_version": "1.4.0.1.a38",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:yabbi-adapter:1.4.0.a38"
+                        "package": "com.admost.sdk:yabbi-adapter:1.4.0.1.a38"
                     }
                 ]
             },"project_gradle": {
