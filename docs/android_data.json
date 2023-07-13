@@ -3,14 +3,14 @@
         {
             "name": "AMR",
             "status": true,
-            "sdk_version": "2.8.0",
-            "adapter_version": "2.8.0",
+            "sdk_version": "2.8.1",
+            "adapter_version": "2.8.1",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:amr:2.8.0"
+                        "package": "com.admost.sdk:amr:2.8.1"
                     },
                     {
                         "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -150,14 +150,14 @@
         {
             "name": "Adtiming",
             "status": false,
-            "sdk_version": "2.6.5",
-            "adapter_version": "2.6.5.a38",
+            "sdk_version": "2.6.6",
+            "adapter_version": "2.6.6.a38",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:adtiming-adapter:2.6.5.a38"
+                        "package": "com.admost.sdk:adtiming-adapter:2.6.6.a38"
                     }
                 ]
             },
@@ -187,14 +187,14 @@
         {
             "name": "Amazon",
             "status": false,
-            "sdk_version": "9.8.1",
-            "adapter_version": "9.8.1.a38",
+            "sdk_version": "9.8.3",
+            "adapter_version": "9.8.3.a38",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:amazon-adapter:9.8.1.a38"
+                        "package": "com.admost.sdk:amazon-adapter:9.8.3.a38"
                     }
                 ]
             }
@@ -261,6 +261,21 @@
                     {
                         "maven": "https://dl.appnext.com/",
                         "allow_insecure_protocol": true
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Bigo",
+            "status": false,
+            "sdk_version": "3.0.0",
+            "adapter_version": "3.0.0.1.a38",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:bigo-adapter:3.0.0.1.a38"
                     }
                 ]
             }
@@ -429,14 +444,14 @@
         {
             "name": "IronSource",
             "status": false,
-            "sdk_version": "7.3.1",
-            "adapter_version": "7.3.1.a38",
+            "sdk_version": "7.3.1.1",
+            "adapter_version": "7.3.1.1.1.a38",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:ironsource-adapter:7.3.1.a38"
+                        "package": "com.admost.sdk:ironsource-adapter:7.3.1.1.1.a38"
                     },
                     {
                         "package": "com.google.android.gms:play-services-appset:16.0.2"
@@ -584,14 +599,14 @@
         {
             "name": "MyTarget",
             "status": false,
-            "sdk_version": "5.16.5",
-            "adapter_version": "5.16.5.a38",
+            "sdk_version": "5.17.0",
+            "adapter_version": "5.17.0.a38",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:mytarget-adapter:5.16.5.a38",
+                        "package": "com.admost.sdk:mytarget-adapter:5.17.0.a38",
                         "exclude": true,
                         "group": "com.my.tracker",
                         "module":""
@@ -639,14 +654,14 @@
         {
             "name": "Ogury",
             "status": false,
-            "sdk_version": "5.5.0",
-            "adapter_version": "5.5.0.a38",
+            "sdk_version": "5.6.0",
+            "adapter_version": "5.6.0.a38",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:ogury-adapter:5.5.0.a38"
+                        "package": "com.admost.sdk:ogury-adapter:5.6.0.a38"
                     }
                 ]
             },
@@ -661,14 +676,14 @@
         {
             "name": "Pangle (Tiktok)",
             "status": false,
-            "sdk_version": "5.2.0.6",
-            "adapter_version": "5.2.0.6.a38",
+            "sdk_version": "5.3.0.4",
+            "adapter_version": "5.3.0.4.a38",
             "unity_support": true,
             "isLite": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:tiktok-adapter:5.2.0.6.a38"
+                        "package": "com.admost.sdk:tiktok-adapter:5.3.0.4.a38"
                     }
                 ]
             },
@@ -771,14 +786,14 @@
         {
             "name": "Smaato",
             "status": false,
-            "sdk_version": "22.1.1",
-            "adapter_version": "22.1.1.a38",
+            "sdk_version": "22.2.0",
+            "adapter_version": "22.2.0.a38",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:smaato-adapter:22.1.1.a38"
+                        "package": "com.admost.sdk:smaato-adapter:22.2.0.a38"
                     }
                 ]
             },
@@ -889,14 +904,14 @@
         {
             "name": "UnityAds",
             "status": false,
-            "sdk_version": "4.7.1",
-            "adapter_version": "4.7.1.a38",
+            "sdk_version": "4.8.0",
+            "adapter_version": "4.8.0.a38",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:unity-adapter:4.7.1.a38"
+                        "package": "com.admost.sdk:unity-adapter:4.8.0.a38"
                     }
                 ]
             }
@@ -951,14 +966,14 @@
         {
             "name": "Yabbi",
             "status": false,
-            "sdk_version": "1.4.0",
-            "adapter_version": "1.4.0.1.a38",
+            "sdk_version": "1.4.1",
+            "adapter_version": "1.4.1.a38",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:yabbi-adapter:1.4.0.1.a38"
+                        "package": "com.admost.sdk:yabbi-adapter:1.4.1.a38"
                     }
                 ]
             },"project_gradle": {
@@ -972,14 +987,14 @@
         {
             "name": "YandexAds",
             "status": false,
-            "sdk_version": "5.8.0",
-            "adapter_version": "5.8.0.1.a38",
+            "sdk_version": "5.9.0",
+            "adapter_version": "5.9.0.2.a38",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:yandex-adapter:5.8.0.1.a38"
+                        "package": "com.admost.sdk:yandex-adapter:5.9.0.2.a38"
                     }
                 ]
             }
