@@ -3,14 +3,14 @@
         {
             "name": "AMR",
             "status": true,
-            "sdk_version": "2.8.1",
-            "adapter_version": "2.8.1",
+            "sdk_version": "2.8.2",
+            "adapter_version": "2.8.2",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:amr:2.8.1"
+                        "package": "com.admost.sdk:amr:2.8.2"
                     },
                     {
                         "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -538,13 +538,13 @@
             "name": "Meta",
             "status": false,
             "sdk_version": "6.14.0",
-            "adapter_version": "6.14.0.a38",
+            "adapter_version": "6.14.0.1.a38",
             "unity_support": true,
             "isLite": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:facebook-adapter:6.14.0.a38"
+                        "package": "com.admost.sdk:facebook-adapter:6.14.0.1.a38"
                     },
                     {
                         "package": "androidx.annotation:annotation:1.2.0"
@@ -988,13 +988,13 @@
             "name": "YandexAds",
             "status": false,
             "sdk_version": "5.9.0",
-            "adapter_version": "5.9.0.2.a38",
+            "adapter_version": "5.9.0.3.a38",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:yandex-adapter:5.9.0.2.a38"
+                        "package": "com.admost.sdk:yandex-adapter:5.9.0.3.a38"
                     }
                 ]
             }
