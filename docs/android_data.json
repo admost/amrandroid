@@ -3,14 +3,14 @@
         {
             "name": "AMR",
             "status": true,
-            "sdk_version": "2.8.2",
-            "adapter_version": "2.8.2",
+            "sdk_version": "2.8.3",
+            "adapter_version": "2.8.3",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:amr:2.8.2"
+                        "package": "com.admost.sdk:amr:2.8.3"
                     },
                     {
                         "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -75,17 +75,17 @@
         {
             "name": "A4G",
             "status": false,
-            "sdk_version": "21.1.0",
-            "adapter_version": "1.1.8.a38",
+            "sdk_version": "22.2.0",
+            "adapter_version": "1.1.9.a38",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.google.android.gms:play-services-ads:21.4.0"
+                        "package": "com.google.android.gms:play-services-ads:22.2.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.8.a38"
+                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.9.a38"
                     }
                 ]
             }
@@ -132,17 +132,17 @@
         {
             "name": "AdMob",
             "status": false,
-            "sdk_version": "21.1.0",
-            "adapter_version": "1.1.8.a38",
+            "sdk_version": "22.2.0",
+            "adapter_version": "1.1.9.a38",
             "unity_support": true,
             "isLite": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.google.android.gms:play-services-ads:21.4.0"
+                        "package": "com.google.android.gms:play-services-ads:22.2.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.8.a38"
+                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.9.a38"
                     }
                 ]
             }
@@ -269,13 +269,13 @@
             "name": "Bigo",
             "status": false,
             "sdk_version": "3.0.3",
-            "adapter_version": "3.0.3.a38",
+            "adapter_version": "3.0.3.1.a38",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:bigo-adapter:3.0.3.a38"
+                        "package": "com.admost.sdk:bigo-adapter:3.0.3.1.a38"
                     }
                 ]
             }
@@ -544,7 +544,7 @@
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:facebook-adapter:6.14.0.1.a38"
+                        "package": "com.admost.sdk:facebook-adapter:6.15.0.a38"
                     },
                     {
                         "package": "androidx.annotation:annotation:1.2.0"
@@ -753,17 +753,17 @@
         {
             "name": "Reklamup",
             "status": false,
-            "sdk_version": "21.1.0",
-            "adapter_version": "1.1.8.a38",
+            "sdk_version": "22.2.0",
+            "adapter_version": "1.1.9.a38",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.google.android.gms:play-services-ads:21.4.0"
+                        "package": "com.google.android.gms:play-services-ads:22.2.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.8.a38"
+                        "package": "com.admost.sdk:admob-gt-19.7.0-adapter:1.1.9.a38"
                     }
                 ]
             }
