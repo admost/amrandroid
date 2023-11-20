@@ -403,30 +403,6 @@ android.enableJetifier=true
 
                     <div class="row">
                         <div class="col-md-11">
-                            <p> Starting with Android 9.0 (API level 28), cleartext support is disabled by default. For
-                                applications <b>targetSdkVersion higher than 27</b> must use the following manifest
-                                config for AdMost <b>cleartext support.</b> </p>
-                        </div>
-                        <div class="col-md-1"><button class="btn btn-xs btn-primary"
-                                onclick="copyToClipboard(\'#code-androidmanifest2\')"><i class="fa fa-copy"></i></if>
-                                </li> Copy</button> </div>
-                        <div class="col-md-12" id="file-androidmanifest">
-                            <pre><code id="code-androidmanifest2">
-&lt;manifest ...&gt;
-    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
-    &lt;application
-        ...
-        android:networkSecurityConfig="@xml/admost_network_security_config"
-        ...&gt;
-        ...
-    &lt;/application&gt;
-&lt;/manifest&gt;
-				</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-11">
                             <p> If you are using Admob SDK (com.google.android.gms:play-services-ads) with version
                                 <b>17.0.0 and higher</b>, you must add your <b>AdMob App ID</b> to your Android Manifest
                                 file. </p>
@@ -436,14 +412,14 @@ android.enableJetifier=true
                                 </li> Copy</button> </div>
                         <div class="col-md-12" id="file-androidmanifest">
                             <pre><code id="code-androidmanifest2">
-        &lt;manifest&gt;
-          &lt;application&gt;
-              &lt;!-- Sample AdMob App ID: ca-app-pub-0000000000000000~0000000000 --&gt;
-              &lt;meta-data
-                  android:name="com.google.android.gms.ads.APPLICATION_ID"
-                  android:value="[ADMOB_APP_ID]"/&gt;
-          &lt;/application&gt;
-        &lt;/manifest&gt;
+&lt;manifest&gt;
+    &lt;application&gt;
+        &lt;!-- Sample AdMob App ID: ca-app-pub-0000000000000000~0000000000 --&gt;
+        &lt;meta-data
+        android:name="com.google.android.gms.ads.APPLICATION_ID"
+        android:value="[ADMOB_APP_ID]"/&gt;
+    &lt;/application&gt;
+&lt;/manifest&gt;
 				</code></pre>
                         </div>
                     </div>
@@ -999,9 +975,6 @@ public *;
                     &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; &lt;resources xmlns:tools=&quot;http://schemas.android.com/tools&quot;     tools:keep=&quot;@layout/tt_activity_full_video,@layout/tt_*,@drawable/mbridge*,@drawable-hdpi-v4/mbridge*,@drawable-hdpi/mbridge*,@layout/mbridge*,@values/mbridge*,@anim/mbridge*&quot; /&gt;
                     </code>
                     </pre>
-
-                    <br>
-
 
                 </section>
 
