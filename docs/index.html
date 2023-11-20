@@ -174,12 +174,13 @@
                             <li><a href="#amazoniap">Amazon Store In App Purchase Tracking</a></li>
                             <li><a href="#huaweiiap">Huawei AppGallery In App Purchase Tracking</a></li>
                             <li><a href="#senduserid">Setting Application User Id</a></li>
-                            <li><a href="#adjustIntegration">Adjust Integration <span class="label label-teal">Changed</span></a></li>
+                            <li><a href="#adjustIntegration">Adjust Integration</a></li>
                             <li><a href="#sscallbacks">Server to Server Callbacks</a></li>
                             <li><a href="#privacycheck">Privacy Consent Check</a>
                             <li style="display:none"><a href="#campaigntracking">Campaign Tracking</a></li>
                             <li><a href="#remoteconfig">Remote Config</a>
                             <li><a href="#abtest">A/B Test</a>
+                            <li><a href="#umpintegration">CMP Integration <span class="label label-teal">NEW</span></a>
                             </li>
                         </ul>
                     </li>
@@ -1758,6 +1759,48 @@ AdMostRemoteConfig.getInstance().getBoolean("isDebug",false);
                     </p>
                     <p>
                     For using A/B test feature, you don't need to do anything on client side. All settings can be done over the Dashboard. </p>
+                    <p style="display:none">
+                    <a href="#">Click here</a> to see the documentation about the capabilities of Admost A/B test.  
+                    </p>  
+
+                    <h3 id="umpintegration">CMP(Consent Management Platform) Integration</h3>
+                    <p>
+                         Starting January 16, 2024 Publishers and developers using Google AdSense, Ad Manager, or AdMob will be required to use a Consent Management Platform (CMP) that has been certified by Google and has integrated with the IAB's Transparency and Consent Framework (TCF) when serving ads to users in the European Economic Area or the UK.
+                    </p>
+                    <p>
+                        As Admost, we have integration with Google’s CMP tool User Messaging Platform (UMP). As a publisher, if you chose to continue with the UMP, you have to be sure about the following steps; 
+                    </p>
+                    <ul>
+                        <li>Add UMP SDK into your app and complete the integration according to the UMP integration documentation.</li>
+                        <li>Create a proper GDPR message for your app on the UMP dashboard.</li>
+                        <li>Select all active ad networks and "Admost" as Vendor on the UMP dashboard.</li>
+                        <li>Check Auto UMP Detection checkbox on Admost dashboard application edit popup.</li>
+                        <li>Inform Admost SDK about the result of the Consent flow with the following lines
+                            <p>
+                                Before Initialization;
+                                <pre><code class="language-java">
+                                configuration.canRequestAds(consentInformation.canRequestAds);
+                                </code></pre>
+                                After Initialization
+                                <pre><code class="language-java">
+                                AdMost.getInstance().setCanRequestAds(consentInformation.canRequestAds);
+                                </code></pre>
+                            </p>
+
+
+                        </li>
+                    </ul>
+                    <p>
+                        If you are using CMP tool other than UMP, after completing the integration with the CMP tool you have to inform Admost SDK about the consent result of Custom Vendors including ADMOST before Admost initialization. Custom vendors can be any ad network used for monetization which are created manually and are not registered with IAB. Even if you don't have any extra custom vendors in your application, you have to add ADMOST as a custom vendor. You can use the following code snippet; 
+                    </p>
+                    <p>
+                        <pre><code class="language-java">
+HashMap<String, Boolean> vendorMap = new HashMap<>();
+vendorMap.put(AdMostAdNetwork.ADMOST, CONSENT_RESULT_BOOLEAN);
+vendorMap.put(AdMostAdNetwork.APPLOVIN, CONSENT_RESULT_BOOLEAN);
+AdMost.getInstance().setCustomVendors(vendorMap);   
+                        </code></pre>
+                    </p>
                     <p style="display:none">
                     <a href="#">Click here</a> to see the documentation about the capabilities of Admost A/B test.  
                     </p>                    
