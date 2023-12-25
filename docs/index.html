@@ -154,6 +154,7 @@
                                 <li><a class="not-lite" href="#native-ads">Custom Native Design</a></li>
                             </ul>
                             <li><a href="#interstitial">Interstitial Ads</a></li>
+                            <li><a href="#appopen">App Open Ads</a></li>
                             <li><a href="#rewarded">Rewarded Ads</a></li>
 
                             <li class="not-lite">
@@ -1244,6 +1245,26 @@ INTERSTITIAL.show(TAG);
                     <p> You have to call destroy method when you are done with the interstitial.
                     </p>
                     <pre><code class="language-java">INTERSTITIAL.destroy();</code></pre>
+
+                    <h3 id="appopen">App Open</h3>
+                    <p> App open ad is a special ad format intended for publishers wishing to monetize their app load screens. App open ads can be closed at any time, and are designed to be shown when your users bring your app to the foreground.
+                    </p>
+
+                    <p> On Admost, app open ads are kind of Interstitial ads and you can use all interstitial functionality for this ad type. Only difference is, app open ads has to be shown when your users bring your app to the foreground but Interstitial ads should be displayed during natural pauses in the flow of an app. To have a better understanding, you may take a look at the Google Open Ads implementation details from the following guide <br/> <a href="https://developers.google.com/admob/android/app-open" target="_blank">AdMob App Open Ads Documentation</a></p>
+                    <p> If you prefer to show ads in the same way with the Admob App Open Ads documentation, you have to use Admost initialize method instead of Admob initialize and AdmostInterstitial load and show methods instead of Admob AppOpenAd methods.</p>
+
+                    <p> You may need to initialize Admost on application class before having an activity. In this situation, you can call init method as shown in the following example with null activity.</p>
+
+                    <pre><code class="language-java">AdMostConfiguration.Builder configuration = new AdMostConfiguration.Builder(null, ADMOST_APP_ID);
+configuration.setApplicationContext(getApplicationContext());
+AdMost.getInstance().init(configuration.build());
+                    </code></pre>
+
+                    <p> After initializing the sdk, if you still don't have an activity reference you can call app open load method with null activity and listen to ad callbacks.</p>
+                    <p> If you initialize the sdk without an activity reference, you have to set latest activity with the following command before showing ad. Because app open ads need an activity reference to be shown.</p>
+                    <pre><code class="language-java">AdMost.getInstance().setLauncherActivity(ACTIVITY);
+                    </code></pre>
+
                     <h3 id="rewarded">Rewarded</h3>
 
                     <pre><code class="language-java">AdMostInterstitial VIDEO = new AdMostInterstitial(ACTIVITY, < ZONE_ID >, new AdMostFullScreenCallBack() {
