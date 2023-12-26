@@ -182,6 +182,7 @@
                             <li><a href="#remoteconfig">Remote Config</a>
                             <li><a href="#abtest">A/B Test</a>
                             <li><a href="#umpintegration">CMP Integration <span class="label label-teal">NEW</span></a>
+                            <li><a href="#thirdpartyexperiment">Third Party A/B test <span class="label label-teal">NEW</span></a>
                             </li>
                         </ul>
                     </li>
@@ -1795,6 +1796,23 @@ vendorMap.put(AdMostAdNetwork.APPLOVIN, CONSENT_RESULT_BOOLEAN);
 AdMost.getInstance().setCustomVendors(vendorMap);   
                         </code></pre>
                     </p>
+                    <h3 id="thirdpartyexperiment">Third Party A/B Test</h3>
+                    <p>
+                         If you are running an A/B test on another platform and want to track A/B test users on Admost cohort analysis page, you have to follow the following steps; 
+                    </p>
+                    <ul>
+                        <li>Create an A/B test on Admost dashboard and connect your external A/B test with the new one</li>
+                        <li>Call the following method as soon as you get the proper A/B test and group id from the external platform
+                            <p>
+                                Call this method after Admost initialization
+                                <pre><code class="language-java">
+                                AdMost.getInstance().setThirdPartyExperiment("firebase-test-id","group_A");
+                                </code></pre>
+                                If the A/B test doesn't match with the id given on Admost dashboard, A/B test will not be followed on dashboard. <br/>
+                                Group Id is free text field, it can have any value like "A", "B", "Group A" etc. 
+                            </p>
+                        </li>
+                    </ul>
                     <p style="display:none">
                     <a href="#">Click here</a> to see the documentation about the capabilities of Admost A/B test.  
                     </p>                    
