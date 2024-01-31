@@ -230,7 +230,8 @@
                         "package": "androidx.lifecycle:lifecycle-common:2.5.1"
                     }
                 ]
-            },
+            }
+        },
         {
             "name": "AppLovin",
             "status": false,
