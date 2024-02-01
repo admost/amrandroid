@@ -3,14 +3,14 @@
         {
             "name": "AMR",
             "status": true,
-            "sdk_version": "2.9.5",
-            "adapter_version": "2.9.5",
+            "sdk_version": "2.9.6",
+            "adapter_version": "2.9.6",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:amr:2.9.5"
+                        "package": "com.admost.sdk:amr:2.9.6"
                     },
                     {
                         "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -588,14 +588,14 @@
         {
             "name": "Mintegral",
             "status": false,
-            "sdk_version": "16.5.91",
-            "adapter_version": "16.5.91.a43",
+            "sdk_version": "16.6.21",
+            "adapter_version": "16.6.21.a43",
             "unity_support": true,
             "isLite": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:mintegral-adapter:16.5.91.a43"
+                        "package": "com.admost.sdk:mintegral-adapter:16.6.21.a43"
                     }
                 ]
             },
