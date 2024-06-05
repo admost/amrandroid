@@ -202,14 +202,14 @@
         {
             "name": "Appharbr",
             "status": false,
-            "sdk_version": "2.19.1",
-            "adapter_version": "2.19.1.0.a47",
+            "sdk_version": "2.19.3",
+            "adapter_version": "2.19.3.0.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:appharbr-admost:2.19.1.0.a47"
+                        "package": "com.admost.sdk:appharbr-admost:2.19.3.0.a47"
                     }
                 ]
             },
@@ -224,14 +224,14 @@
         {
             "name": "AppLovin",
             "status": false,
-            "sdk_version": "12.3.1",
-            "adapter_version": "12.3.1.a47",
+            "sdk_version": "12.5.0",
+            "adapter_version": "12.5.0.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:applovin-adapter:12.3.1.a47"
+                        "package": "com.admost.sdk:applovin-adapter:12.5.0.a47"
                     }
                 ]
             },
@@ -290,8 +290,8 @@
         {
             "name": "Bigo",
             "status": false,
-            "sdk_version": "4.6.1",
-            "adapter_version": "4.6.1.a47",
+            "sdk_version": "4.7.3",
+            "adapter_version": "4.7.3.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
@@ -389,14 +389,14 @@
         {
             "name": "Fyber",
             "status": false,
-            "sdk_version": "8.2.6",
-            "adapter_version": "8.2.6.a47",
+            "sdk_version": "8.2.7",
+            "adapter_version": "8.2.7.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:fyber-adapter:8.2.6.a47"
+                        "package": "com.admost.sdk:fyber-adapter:8.2.7.a47"
                     }
                 ]
             }
@@ -404,14 +404,14 @@
         {
             "name": "Huawei",
             "status": false,
-            "sdk_version": "3.4.69.302",
-            "adapter_version": "3.4.69.302.a47",
+            "sdk_version": "3.4.71.300",
+            "adapter_version": "3.4.71.300.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:huawei-ads-adapter:3.4.69.302.a47"
+                        "package": "com.admost.sdk:huawei-ads-adapter:3.4.71.300.a47"
                     },
                     {
                         "package": "com.huawei.hms:ads-identifier:3.4.46.300"
@@ -559,14 +559,14 @@
         {
             "name": "Meta",
             "status": false,
-            "sdk_version": "6.16.0",
-            "adapter_version": "6.16.0.a47",
+            "sdk_version": "6.17.0",
+            "adapter_version": "6.17.0.a47",
             "unity_support": true,
             "isLite": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:facebook-adapter:6.16.0.a47"
+                        "package": "com.admost.sdk:facebook-adapter:6.17.0.a47"
                     },
                     {
                         "package": "androidx.annotation:annotation:1.2.0"
@@ -577,14 +577,14 @@
         {
             "name": "Mintegral",
             "status": false,
-            "sdk_version": "16.6.71",
-            "adapter_version": "16.6.71.a47",
+            "sdk_version": "16.7.31",
+            "adapter_version": "16.7.31.a47",
             "unity_support": true,
             "isLite": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:mintegral-adapter:16.6.71.a47"
+                        "package": "com.admost.sdk:mintegral-adapter:16.7.31.a47"
                     }
                 ]
             },
@@ -676,14 +676,14 @@
         {
             "name": "Ogury",
             "status": false,
-            "sdk_version": "5.6.2",
-            "adapter_version": "5.6.2.a47",
+            "sdk_version": "5.7.0",
+            "adapter_version": "5.7.0.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:ogury-adapter:5.6.2.a47"
+                        "package": "com.admost.sdk:ogury-adapter:5.7.0.a47"
                     }
                 ]
             },
@@ -698,14 +698,14 @@
         {
             "name": "Pangle (Tiktok)",
             "status": false,
-            "sdk_version": "5.8.1.0",
-            "adapter_version": "5.8.1.0.a47",
+            "sdk_version": "5.9.0.6",
+            "adapter_version": "5.9.0.6.a47",
             "unity_support": true,
             "isLite": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:tiktok-adapter:5.8.1.0.a47"
+                        "package": "com.admost.sdk:tiktok-adapter:5.9.0.6.a47"
                     }
                 ]
             },
@@ -808,14 +808,14 @@
         {
             "name": "Smaato",
             "status": false,
-            "sdk_version": "22.6.0",
-            "adapter_version": "22.6.0.a47",
+            "sdk_version": "22.6.1",
+            "adapter_version": "22.6.1.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:smaato-adapter:22.6.0.a47"
+                        "package": "com.admost.sdk:smaato-adapter:22.6.1.a47"
                     }
                 ]
             },
@@ -926,14 +926,14 @@
         {
             "name": "UnityAds",
             "status": false,
-            "sdk_version": "4.10.0",
-            "adapter_version": "4.10.0.a47",
+            "sdk_version": "4.11.3",
+            "adapter_version": "4.11.3.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:unity-adapter:4.10.0.a47"
+                        "package": "com.admost.sdk:unity-adapter:4.11.3.a47"
                     }
                 ]
             }
