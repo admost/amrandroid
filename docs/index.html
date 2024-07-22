@@ -889,6 +889,13 @@ public static &lt;fields&gt;;
    public &lt;init&gt;(byte[]);
 }
 
+-dontwarn com.google.protobuf.**
+-keepclassmembers class com.google.protobuf.** {
+ *;
+}
+-keep class * extends com.google.protobuf.GeneratedMessageLite { *; }
+
+
 #YANDEX
 -dontwarn com.yandex.**
 -keep class com.yandex.** { *; }                        
