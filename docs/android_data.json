@@ -926,14 +926,14 @@
         {
             "name": "UnityAds",
             "status": false,
-            "sdk_version": "4.11.3",
-            "adapter_version": "4.11.3.a47",
+            "sdk_version": "4.12.1",
+            "adapter_version": "4.12.1.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:unity-adapter:4.11.3.a47"
+                        "package": "com.admost.sdk:unity-adapter:4.12.1.a47"
                     }
                 ]
             }
