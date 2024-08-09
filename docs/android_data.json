@@ -61,13 +61,13 @@
             "name": "Adserver",
             "status": false,
             "sdk_version": "1.0.8",
-            "adapter_version": "1.0.8.a47",
+            "adapter_version": "1.0.8.2.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:adserver-adapter:1.0.8.a47"
+                        "package": "com.admost.sdk:adserver-adapter:1.0.8.2.a47"
                     }
                 ]
             }
