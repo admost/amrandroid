@@ -3,14 +3,14 @@
         {
             "name": "AMR",
             "status": true,
-            "sdk_version": "3.0.5",
-            "adapter_version": "3.0.5",
+            "sdk_version": "3.0.6",
+            "adapter_version": "3.0.6",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:amr:3.0.5"
+                        "package": "com.admost.sdk:amr:3.0.6"
                     },
                     {
                         "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -76,7 +76,7 @@
             "name": "A4G",
             "status": false,
             "sdk_version": "23.0.0",
-            "adapter_version": "23.0.0.a47",
+            "adapter_version": "23.0.2.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
@@ -85,7 +85,7 @@
                         "package": "com.google.android.gms:play-services-ads:23.0.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-adapter:23.0.0.a47"
+                        "package": "com.admost.sdk:admob-adapter:23.0.2.a47"
                     }
                 ]
             }
@@ -133,7 +133,7 @@
             "name": "AdMob",
             "status": false,
             "sdk_version": "23.0.0",
-            "adapter_version": "23.0.0.a47",
+            "adapter_version": "23.0.2.a47",
             "unity_support": true,
             "isLite": true,
             "app_gradle": {
@@ -142,7 +142,7 @@
                         "package": "com.google.android.gms:play-services-ads:23.0.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-adapter:23.0.0.a47"
+                        "package": "com.admost.sdk:admob-adapter:23.0.2.a47"
                     }
                 ]
             }
@@ -776,7 +776,7 @@
             "name": "Reklamup",
             "status": false,
             "sdk_version": "23.0.0",
-            "adapter_version": "23.0.0.a47",
+            "adapter_version": "23.0.2.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
@@ -785,7 +785,7 @@
                         "package": "com.google.android.gms:play-services-ads:23.0.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-adapter:23.0.0.a47"
+                        "package": "com.admost.sdk:admob-adapter:23.0.2.a47"
                     }
                 ]
             }
