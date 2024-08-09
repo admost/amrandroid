@@ -622,13 +622,13 @@
             "name": "MyTarget",
             "status": false,
             "sdk_version": "5.20.0",
-            "adapter_version": "5.20.0.a47",
+            "adapter_version": "5.20.0.1.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:mytarget-adapter:5.20.0.a47",
+                        "package": "com.admost.sdk:mytarget-adapter:5.20.0.1.a47",
                         "exclude": true,
                         "group": "com.my.tracker",
                         "module":""
