@@ -3,14 +3,14 @@
         {
             "name": "AMR",
             "status": true,
-            "sdk_version": "3.0.6",
-            "adapter_version": "3.0.6",
+            "sdk_version": "3.0.7",
+            "adapter_version": "3.0.7",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:amr:3.0.6"
+                        "package": "com.admost.sdk:amr:3.0.7"
                     },
                     {
                         "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -926,14 +926,14 @@
         {
             "name": "UnityAds",
             "status": false,
-            "sdk_version": "4.12.1",
-            "adapter_version": "4.12.1.a47",
+            "sdk_version": "4.12.2",
+            "adapter_version": "4.12.2.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:unity-adapter:4.12.1.a47"
+                        "package": "com.admost.sdk:unity-adapter:4.12.2.a47"
                     }
                 ]
             }
