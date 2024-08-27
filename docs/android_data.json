@@ -3,14 +3,14 @@
         {
             "name": "AMR",
             "status": true,
-            "sdk_version": "3.0.7",
-            "adapter_version": "3.0.7",
+            "sdk_version": "3.0.8",
+            "adapter_version": "3.0.8",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:amr:3.0.7"
+                        "package": "com.admost.sdk:amr:3.0.8"
                     },
                     {
                         "package": "com.google.android.gms:play-services-base:17.1.0"
@@ -125,6 +125,21 @@
                     },
                     {
                         "package": "com.squareup.retrofit2:converter-moshi:2.6.4"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Adjust",
+            "status": false,
+            "sdk_version": "5.0.0",
+            "adapter_version": "5.0.0.a47",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.admost.sdk:adjust-adapter:5.0.0.a47"
                     }
                 ]
             }
