@@ -806,21 +806,6 @@
             }
         },
         {
-            "name": "Revmob",
-            "status": false,
-            "sdk_version": "10.0.0",
-            "adapter_version": "10.0.0.a47",
-            "unity_support": false,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:revmob-adapter:10.0.0.a47"
-                    }
-                ]
-            }
-        },
-        {
             "name": "Smaato",
             "status": false,
             "sdk_version": "22.6.3",
@@ -949,28 +934,6 @@
                 "dependencies": [
                     {
                         "package": "com.admost.sdk:unity-adapter:4.12.2.a47"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "Verizon",
-            "status": false,
-            "sdk_version": "1.14.0",
-            "adapter_version": "1.14.0.a47",
-            "unity_support": false,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "com.admost.sdk:verizon-adapter:1.14.0.a47"
-                    }
-                ]
-            },
-            "project_gradle": {
-                "dependencies": [
-                    {
-                        "maven": "https://artifactory.verizonmedia.com/artifactory/maven/"
                     }
                 ]
             }

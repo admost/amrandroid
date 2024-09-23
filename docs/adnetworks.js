@@ -202,7 +202,7 @@ function fillAppGradleCode() {
                     }
                     else if (obj.ad_networks[i].app_gradle.dependencies[j].exclude == true){
                         if (obj.ad_networks[i].app_gradle.dependencies[j].module) {
-                            arrayAppGradlePackages.push("implementation ('" + obj.ad_networks[i].app_gradle.dependencies[j].package + "') {exclude group: '" + obj.ad_networks[i].app_gradle.dependencies[j].group + "' module: '" + obj.ad_networks[i].app_gradle.dependencies[j].module +  "' }<br>");
+                            arrayAppGradlePackages.push("implementation ('" + obj.ad_networks[i].app_gradle.dependencies[j].package + "') {exclude group: '" + obj.ad_networks[i].app_gradle.dependencies[j].group + "', module: '" + obj.ad_networks[i].app_gradle.dependencies[j].module +  "' }<br>");
                         } else {
                             arrayAppGradlePackages.push("implementation ('" + obj.ad_networks[i].app_gradle.dependencies[j].package + "') {exclude group: '" + obj.ad_networks[i].app_gradle.dependencies[j].group+  "' }<br>");
                         }
