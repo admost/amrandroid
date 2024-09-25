@@ -467,13 +467,13 @@
             "name": "InMobi",
             "status": false,
             "sdk_version": "10.7.7",
-            "adapter_version": "10.7.7.a47",
+            "adapter_version": "10.7.7.1.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:inmobi-unified-adapter:10.7.7.a47"
+                        "package": "com.admost.sdk:inmobi-unified-adapter:10.7.7.1.a47"
                     }
                 ]
             }
