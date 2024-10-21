@@ -217,14 +217,14 @@
         {
             "name": "Appharbr",
             "status": false,
-            "sdk_version": "2.19.3",
-            "adapter_version": "2.19.3.0.a47",
+            "sdk_version": "2.21.1",
+            "adapter_version": "2.21.1.0.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:appharbr-admost:2.19.3.0.a47"
+                        "package": "com.admost.sdk:appharbr-admost:2.21.1.0.a47"
                     }
                 ]
             },
