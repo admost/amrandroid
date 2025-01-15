@@ -404,14 +404,14 @@
         {
             "name": "Fyber",
             "status": false,
-            "sdk_version": "8.3.3",
-            "adapter_version": "8.3.3.a47",
+            "sdk_version": "8.3.5",
+            "adapter_version": "8.3.5.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:fyber-adapter:8.3.3.a47"
+                        "package": "com.admost.sdk:fyber-adapter:8.3.5.a47"
                     }
                 ]
             }
