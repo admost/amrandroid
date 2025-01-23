@@ -555,6 +555,10 @@ Add following lines to AndroidManifest.xml file under application tag.
 -keep class com.adgem.** { *; }
 -dontwarn com.adgem.**
 
+# Admatic
+-keep class com.pixad.** { public *; }
+-dontwarn com.pixad.**
+
 # ADMOB / ADX / GOOGLE
 -keep class com.android.vending.billing.**
 -keep public class com.google.android.gms.ads.** { public *; }
