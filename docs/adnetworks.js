@@ -196,19 +196,33 @@ function fillAppGradleCode() {
                         isDuplicate = true;
                     }
                 }
+
                 if (isDuplicate == false) {
+                    var appHarbrSelected = false
+                    for (var k = 1; k < obj.ad_networks.length; k++) {
+                        if (obj.ad_networks[k].status == true && obj.ad_networks[k].name == 'Appharbr') {
+                            appHarbrSelected = true;
+                        }
+                    }
+
+                    var localPackage = obj.ad_networks[i].app_gradle.dependencies[j].package; 
+
+                    if (appHarbrSelected == true && obj.ad_networks[i]?.appharbr_adapter_version != null) {
+                        localPackage = localPackage.replace(obj.ad_networks[i].adapter_version, obj.ad_networks[i].appharbr_adapter_version);
+                    }
+
                     if (obj.ad_networks[i].app_gradle.dependencies[j].transitive == true) {
-                        arrayAppGradlePackages.push("implementation ('" + obj.ad_networks[i].app_gradle.dependencies[j].package + "') {<br>transitive = true<br>}<br>");
+                        arrayAppGradlePackages.push("implementation ('" + localPackage + "') {<br>transitive = true<br>}<br>");
                     }
                     else if (obj.ad_networks[i].app_gradle.dependencies[j].exclude == true){
                         if (obj.ad_networks[i].app_gradle.dependencies[j].module) {
-                            arrayAppGradlePackages.push("implementation ('" + obj.ad_networks[i].app_gradle.dependencies[j].package + "') {exclude group: '" + obj.ad_networks[i].app_gradle.dependencies[j].group + "', module: '" + obj.ad_networks[i].app_gradle.dependencies[j].module +  "' }<br>");
+                            arrayAppGradlePackages.push("implementation ('" + localPackage + "') {exclude group: '" + obj.ad_networks[i].app_gradle.dependencies[j].group + "', module: '" + obj.ad_networks[i].app_gradle.dependencies[j].module +  "' }<br>");
                         } else {
-                            arrayAppGradlePackages.push("implementation ('" + obj.ad_networks[i].app_gradle.dependencies[j].package + "') {exclude group: '" + obj.ad_networks[i].app_gradle.dependencies[j].group+  "' }<br>");
+                            arrayAppGradlePackages.push("implementation ('" + localPackage + "') {exclude group: '" + obj.ad_networks[i].app_gradle.dependencies[j].group+  "' }<br>");
                         }
                     }
                     else {
-                        arrayAppGradlePackages.push("implementation '" + obj.ad_networks[i].app_gradle.dependencies[j].package + "' <br>");
+                        arrayAppGradlePackages.push("implementation '" + localPackage + "' <br>");
                     }
                 }
             }

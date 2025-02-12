@@ -354,6 +354,7 @@
                         selecting ad networks, continue with next <a href="#edit-files">step</a></p>
                     <div class="row" id="adnetwork-button-list">
                     </div>
+                    <p style="font-size:16px;padding-top:20px;"><b>Note :</b> <code>APPHARBR</code> compliant network sdk versions might be different. If you have Appharbr integation, always select Appharbr item from the Ad Networks list on the setup section to get the Appharbr compliant versions.</p>
                     <h3 id="required-files">Required Files</h3>
                     <p>With your selections you are going to work with following files;</p>
                     <ul id="list-of-files">
@@ -1933,7 +1934,7 @@ dependencies {
         //var jsonpath_android = 'https://www.kokteyl.com/paket/android_data.json?' + Date.now();
 
         $.getJSON(jsonpath_android, function( data ) {
-            checkPageStatus()
+            checkPageStatus();
             amrInitPage(data);
         });
     </script>
