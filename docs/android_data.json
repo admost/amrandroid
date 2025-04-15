@@ -13,7 +13,7 @@
                         "package": "com.admost.sdk:amr:3.1.7"
                     },
                     {
-                        "package": "com.google.android.gms:play-services-base:18.5.0"
+                        "package": "com.google.android.gms:play-services-base:18.6.0"
                     }
                 ],
                 "dependencies_unity": [
@@ -30,7 +30,7 @@
                         "package": "com.admost.sdk:unity-plugin:2.0.5"
                     },
                     {
-                        "package": "com.google.android.gms:play-services-ads-identifier:18.0.0"
+                        "package": "com.google.android.gms:play-services-ads-identifier:18.0.1"
                     }
                 ]
             },
@@ -75,17 +75,17 @@
         {
             "name": "A4G",
             "status": false,
-            "sdk_version": "23.0.0",
-            "adapter_version": "23.0.2.a47",
+            "sdk_version": "24.2.0",
+            "adapter_version": "24.0.0.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.google.android.gms:play-services-ads:23.0.0"
+                        "package": "com.google.android.gms:play-services-ads:24.2.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-adapter:23.0.3.a47"
+                        "package": "com.admost.sdk:admob-adapter:24.0.0.a47"
                     }
                 ]
             }
@@ -169,17 +169,17 @@
         {
             "name": "AdMob",
             "status": false,
-            "sdk_version": "23.0.0",
-            "adapter_version": "23.0.2.a47",
+            "sdk_version": "24.2.0",
+            "adapter_version": "24.0.0.a47",
             "unity_support": true,
             "isLite": true,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.google.android.gms:play-services-ads:23.0.0"
+                        "package": "com.google.android.gms:play-services-ads:24.2.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-adapter:23.0.3.a47"
+                        "package": "com.admost.sdk:admob-adapter:24.0.0.a47"
                     }
                 ]
             }
@@ -297,7 +297,7 @@
                         "package": "com.admost.sdk:appnext-adapter:2.6.9.473.a47"
                     },
                     {
-                        "package": "com.google.android.gms:play-services-ads-identifier:17.0.0"
+                        "package": "com.google.android.gms:play-services-ads-identifier:18.0.1"
                     },
                     {
                         "package": "androidx.annotation:annotation:1.1.0"
@@ -822,17 +822,17 @@
         {
             "name": "Reklamup",
             "status": false,
-            "sdk_version": "23.0.0",
-            "adapter_version": "23.0.2.a47",
+            "sdk_version": "24.2.0",
+            "adapter_version": "24.0.0.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.google.android.gms:play-services-ads:23.0.0"
+                        "package": "com.google.android.gms:play-services-ads:24.2.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-adapter:23.0.3.a47"
+                        "package": "com.admost.sdk:admob-adapter:24.0.0.a47"
                     }
                 ]
             }
