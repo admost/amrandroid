@@ -45,14 +45,14 @@
         {
             "name": "Admost",
             "status": false,
-            "sdk_version": "1.1.8",
-            "adapter_version": "1.1.8.a47",
+            "sdk_version": "1.1.9",
+            "adapter_version": "1.1.9.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:admost-adapter:1.1.8.a47"
+                        "package": "com.admost.sdk:admost-adapter:1.1.9.a47"
                     }
                 ]
             }
@@ -60,14 +60,14 @@
         {
             "name": "Adserver",
             "status": false,
-            "sdk_version": "1.1.5",
-            "adapter_version": "1.1.5.a47",
+            "sdk_version": "1.1.6",
+            "adapter_version": "1.1.6.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:adserver-adapter:1.1.5.a47"
+                        "package": "com.admost.sdk:adserver-adapter:1.1.6.a47"
                     }
                 ]
             }
