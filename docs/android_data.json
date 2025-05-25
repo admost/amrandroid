@@ -824,6 +824,7 @@
             "status": false,
             "sdk_version": "24.2.0",
             "adapter_version": "24.0.0.a47",
+            "appharbr_adapter_version": "24.0.0.a47",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
