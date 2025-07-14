@@ -498,7 +498,7 @@
             "status": false,
             "sdk_version": "8.8.0",
             "adapter_version": "8.8.0.a49",
-            "appharbr_adapter_version": "8.8.0.a49",
+            "appharbr_adapter_version": "8.7.0.a49",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
