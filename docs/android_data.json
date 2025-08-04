@@ -3,14 +3,14 @@
         {
             "name": "AMR",
             "status": true,
-            "sdk_version": "3.2.0",
-            "adapter_version": "3.2.0",
+            "sdk_version": "3.2.1",
+            "adapter_version": "3.2.1",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:amr:3.2.0"
+                        "package": "com.admost.sdk:amr:3.2.1"
                     },
                     {
                         "package": "com.google.android.gms:play-services-base:18.6.0"
