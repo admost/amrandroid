@@ -910,14 +910,14 @@
         {
             "name": "Tappx",
             "status": false,
-            "sdk_version": "4.1.13",
-            "adapter_version": "4.1.13.a49",
+            "sdk_version": "4.1.16",
+            "adapter_version": "4.1.16.a49",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:tappx-adapter:4.1.13.a49"
+                        "package": "com.admost.sdk:tappx-adapter:4.1.16.a49"
                     }
                 ]
             }
