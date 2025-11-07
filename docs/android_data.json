@@ -318,13 +318,13 @@
             "name": "Bigo",
             "status": false,
             "sdk_version": "5.5.1",
-            "adapter_version": "5.5.1.a49",
+            "adapter_version": "5.5.1.1.a49",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:bigo-adapter:5.5.1.a49"
+                        "package": "com.admost.sdk:bigo-adapter:5.5.1.1.a49"
                     }
                 ]
             }
