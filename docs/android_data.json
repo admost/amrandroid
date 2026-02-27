@@ -873,14 +873,14 @@
         {
             "name": "StartApp",
             "status": false,
-            "sdk_version": "4.11.0",
-            "adapter_version": "4.11.0.a49",
+            "sdk_version": "5.2.6",
+            "adapter_version": "5.2.6.a49",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "com.admost.sdk:startapp-adapter:4.11.0.a49"
+                        "package": "com.admost.sdk:startapp-adapter:5.2.6.a49"
                     }
                 ]
             }
