@@ -43,6 +43,24 @@
             }
         },
         {
+            "name": "AdManager",
+            "status": false,
+            "sdk_version": "1.4.0",
+            "adapter_version": "1.4.0.a50",
+            "unity_support": true,
+            "isLite": false,
+            "app_gradle": {
+                "dependencies": [
+                    {
+                        "package": "com.google.android.libraries.ads.mobile.sdk:ads-mobile-sdk:1.4.0"
+                    },
+                    {
+                        "package": "com.admost.sdk:admob-2-adapter:1.4.0.a50"
+                    }
+                ]
+            }
+        },
+        {
             "name": "Admost",
             "status": false,
             "sdk_version": "1.1.9",
@@ -68,24 +86,6 @@
                 "dependencies": [
                     {
                         "package": "com.admost.sdk:adserver-adapter:1.2.7.a50"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "AdManager",
-            "status": false,
-            "sdk_version": "1.4.0",
-            "adapter_version": "1.4.0.a50",
-            "unity_support": true,
-            "isLite": false,
-            "app_gradle": {
-                "dependencies": [
-                    {
-                        "package": "ccom.google.android.libraries.ads.mobile.sdk:ads-mobile-sdk:1.4.0"
-                    },
-                    {
-                        "package": "com.admost.sdk:admob-2-adapter:1.4.0.a50"
                     }
                 ]
             }
@@ -161,7 +161,7 @@
             "app_gradle": {
                 "dependencies": [
                     {
-                        "package": "ccom.google.android.libraries.ads.mobile.sdk:ads-mobile-sdk:1.4.0"
+                        "package": "com.google.android.libraries.ads.mobile.sdk:ads-mobile-sdk:1.4.0"
                     },
                     {
                         "package": "com.admost.sdk:admob-2-adapter:1.4.0.a50"
@@ -170,19 +170,19 @@
             }
         },
         {
-            "name": "AdMobOld",
+            "name": "AdMob-previous",
             "status": false,
             "sdk_version": "24.2.0",
-            "adapter_version": "24.0.0.1.a50",
+            "adapter_version": "24.0.0.1.a49",
             "unity_support": true,
-            "isLite": true,
+            "isLite": false,
             "app_gradle": {
                 "dependencies": [
                     {
                         "package": "com.google.android.gms:play-services-ads:24.2.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-adapter:24.0.0.1.a50"
+                        "package": "com.admost.sdk:admob-adapter:24.0.0.1.a49"
                     }
                 ]
             }
