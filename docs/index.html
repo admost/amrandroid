@@ -406,25 +406,9 @@ android.enableJetifier=true
 
                     <div class="row">
                         <div class="col-md-11">
-                            <p> If you are using Admob SDK (com.google.android.gms:play-services-ads) with version
-                                <b>17.0.0 and higher</b>, you must add your <b>AdMob App ID</b> to your Android Manifest
-                                file. </p>
+                            <p> AdMob has upgraded to its <span style="color: #FF0000">next-generation SDK</span>, which is released under the new adapter name admob-2-adapter. If you are using this version, please ensure you enter your AdMob Application ID in the settings page for the AdMob network on the Admost dashboard. </p>
                         </div>
-                        <div class="col-md-1"><button class="btn btn-xs btn-primary"
-                                onclick="copyToClipboard(\'#code-androidmanifest2\')"><i class="fa fa-copy"></i></if>
-                                </li> Copy</button> </div>
-                        <div class="col-md-12" id="file-androidmanifest">
-                            <pre><code id="code-androidmanifest2">
-&lt;manifest&gt;
-    &lt;application&gt;
-        &lt;!-- Sample AdMob App ID: ca-app-pub-0000000000000000~0000000000 --&gt;
-        &lt;meta-data
-        android:name="com.google.android.gms.ads.APPLICATION_ID"
-        android:value="[ADMOB_APP_ID]"/&gt;
-    &lt;/application&gt;
-&lt;/manifest&gt;
-				</code></pre>
-                        </div>
+                        
                     </div>
 
                     <div class="row" id="appsamurai_warning" style="display: none;">
