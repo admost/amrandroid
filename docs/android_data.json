@@ -78,8 +78,8 @@
         {
             "name": "Adserver",
             "status": false,
-            "sdk_version": "1.2.7",
-            "adapter_version": "1.2.7.a50",
+            "sdk_version": "1.3.2",
+            "adapter_version": "1.3.2.a50",
             "unity_support": true,
             "isLite": false,
             "app_gradle": {
