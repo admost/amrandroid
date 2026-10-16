@@ -179,11 +179,11 @@
                             <li><a href="#sscallbacks">Server to Server Callbacks</a></li>
                             <li><a href="#privacycheck">Privacy Consent Check</a>
                             <li style="display:none"><a href="#campaigntracking">Campaign Tracking</a></li>
-                            <li><a href="#remoteconfig">Remote Config</a>
-                            <li><a href="#abtest">A/B Test</a>
-                            <li><a href="#umpintegration">CMP Integration <span class="label label-teal">NEW</span></a>
-                            <li><a href="#thirdpartyexperiment">Third Party A/B test <span class="label label-teal">NEW</span></a>
-                            </li>
+                            <li><a href="#remoteconfig">Remote Config</a></li>
+                            <li><a href="#abtest">A/B Test</a></li>
+                            <li><a href="#umpintegration">CMP Integration</a></li>
+                            <li><a href="#thirdpartyexperiment">Third Party A/B test</a></li>
+                            <li><a href="#eventtracking">Event Tracking <span class="label label-teal">NEW</span></a></li>
                         </ul>
                     </li>
 
@@ -1421,6 +1421,27 @@ AdMost.getInstance().setCustomVendors(vendorMap);
                     <p style="display:none">
                     <a href="#">Click here</a> to see the documentation about the capabilities of Admost A/B test.  
                     </p>                    
+
+                    <h3 id="eventtracking">Event Tracking</h3>
+                    <p>
+                        You can track custom events in your app with the AdMost SDK. Viewing tracked events in the AdMost dashboard will be available soon. Call the following method after Admost initialization;
+                    </p>
+                    <pre><code class="language-java">
+AdMostEventData event = new AdMostEventData();
+event.EventName = "level_completed";                    // required
+event.EventType = AdMostEventData.EventTypeValues.User;
+event.Value     = 12;                                   // optional
+event.Currency  = "USD";                                // optional
+
+AdMostEventManager.getInstance().trackEvent(event);
+                    </code></pre>
+                    <p>
+                        Supported event types are <code>User</code>, <code>ScreenView</code>, <code>Design</code>, <code>Source</code> and <code>Sink</code>. You can also attach custom key-value <code>Properties</code> to an event.
+                    </p>
+                    <p>
+                        See the <a href="https://github.com/admost/amrandroid/blob/master/EventTracking/EVENT_TRACKING.en.md" target="_blank">Event Tracking documentation</a> for all fields, event types and examples.
+                    </p>
+                    <div style="min-height: 60vh;"></div>
                     
                     <div style="display:none">
                         <h3 id="campaigntracking">Campaign Tracking</h3>
