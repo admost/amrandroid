@@ -55,7 +55,7 @@
                         "package": "com.google.android.libraries.ads.mobile.sdk:ads-mobile-sdk:1.4.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-2-adapter:1.4.0.a50"
+                        "package": "com.admost.sdk:admob-2-adapter:1.4.0.2.a50"
                     }
                 ]
             }
@@ -164,7 +164,7 @@
                         "package": "com.google.android.libraries.ads.mobile.sdk:ads-mobile-sdk:1.4.0"
                     },
                     {
-                        "package": "com.admost.sdk:admob-2-adapter:1.4.0.a50"
+                        "package": "com.admost.sdk:admob-2-adapter:1.4.0.2.a50"
                     }
                 ]
             }
